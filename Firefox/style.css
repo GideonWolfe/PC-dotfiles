@@ -1,0 +1,78 @@
+@import url('file:///home/gideon/.cache/wal/colors.css');
+:root {
+    --width: 400px;
+    --foreground-alt: var(--color2);
+    --foreground-alt-alt: var(--color4);
+    --font: 'Terminus';
+}
+
+html,
+body,
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: var(--background);
+    height: 100%;
+    width: 100%;
+}
+
+main {
+    display: block;
+    font-family: var(--font);
+    left: 50%;
+    position: absolute;
+    top: 45%;
+    transform: translate(-50%,-50%);
+    width: 100%;
+}
+
+span {
+    display: inline-block;
+    font-size: 1.2em;
+    line-height: 1.5;
+    list-style: none;
+    margin-left: 5px;
+}
+
+h1 {
+    color: var(--foreground-alt-alt);
+    display: block;
+    margin: 0 auto;
+    text-align: left;
+    width: var(--width);
+}
+
+hr {
+    border: 0;
+    border-top: 1px solid var(--color6);
+    opacity: .4;
+    width: var(--width);
+}
+
+ul {
+    display: block;
+    margin: 0 auto;
+    width: var(--width);
+}
+
+li {
+    color: var(--foreground-alt);
+    display: inline-block;
+    font-size: 1.2em;
+    line-height: 1.5;
+    list-style: none;
+    margin: 5px;
+}
+
+a {
+    color: var(--foreground);
+    text-decoration: none;
+    transition: .2s;
+
+}
+a:hover {
+    color: var(--foreground-alt-alt);
+}
