@@ -52,15 +52,12 @@ padding-bottom = 4
 module-margin-left = 1
 module-margin-right = 1
 
-font-0 = "xTerminus:pixelsize=14;2"
-font-1 = "FontAwesome:pixelsize=12;2"
-font-2 = "Inconsolata:pixelsize=14;2"
-font-3 = "Noto Sans:size=14;2"
+font-0 = "Source Code Pro:pixelsize=14;2"
+font-1 = "FontAwesome:style=Regular:pixelsize=12;2"
 
 modules-left = i3
 modules-center = date
-modules-right = cpu pulseaudio volume_percentage
-
+modules-right = player-cmus pulseaudio volume_percentage cpu 
 ;fix tray position
 ;override-redirect = true
 
@@ -73,6 +70,13 @@ tray-padding = 0
 tray-scale = 1
 tray-background = ${colors.background}
 
+[module/player-cmus]
+type = custom/script
+exec = ~/.config/polybar/player-cmus.sh
+interval = 1
+click-left = cmus-remote -n
+click-right = cmus-remote -r
+click-middle = cmus-remote -u
 
 [module/xwindow]
 type = internal/xwindow
