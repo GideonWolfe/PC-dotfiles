@@ -70,6 +70,8 @@ let g:AutoPairsFlyMode = 0
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+let g:UltiSnipsListSnippets="<c-tab>"
+
 
 
 " uneeded?
