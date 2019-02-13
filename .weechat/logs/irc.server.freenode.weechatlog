@@ -1,0 +1,560 @@
+2019-02-03 13:01:49	--	irc: connecting to server chat.freenode.net/6667...
+2019-02-03 13:01:50	--	irc: connected to chat.freenode.net/6667 (2001:6b0:e:2a18::119)
+2019-02-03 13:01:50	--	leguin.freenode.net: *** Looking up your hostname...
+2019-02-03 13:01:50	--	leguin.freenode.net: *** Checking Ident
+2019-02-03 13:01:50	--	leguin.freenode.net: *** Couldn't look up your hostname
+2019-02-03 13:02:00	--	leguin.freenode.net: *** No Ident response
+2019-02-03 13:02:00	--	Welcome to the freenode Internet Relay Chat Network _Raijin
+2019-02-03 13:02:00	--	Your host is leguin.freenode.net[2001:6b0:e:2a18::119/6667], running version ircd-seven-1.1.7
+2019-02-03 13:02:00	--	This server was created Tue Sep 25 2018 at 13:21:19 UTC
+2019-02-03 13:02:00	--	leguin.freenode.net ircd-seven-1.1.7 DOQRSZaghilopswz CFILMPQSbcefgijklmnopqrstvz bkloveqjfI
+2019-02-03 13:02:00	--	CHANTYPES=# EXCEPTS INVEX CHANMODES=eIbq,k,flj,CFLMPQScgimnprstz CHANLIMIT=#:120 PREFIX=(ov)@+ MAXLIST=bqeI:100 MODES=4 NETWORK=freenode STATUSMSG=@+ CALLERID=g CASEMAPPING=rfc1459 :are supported by this server
+2019-02-03 13:02:00	--	CHARSET=ascii NICKLEN=16 CHANNELLEN=50 TOPICLEN=390 DEAF=D FNC TARGMAX=NAMES:1,LIST:1,KICK:1,WHOIS:1,PRIVMSG:4,NOTICE:4,ACCEPT:,MONITOR: EXTBAN=$,ajrxz CLIENTVER=3.0 CPRIVMSG CNOTICE KNOCK :are supported by this server
+2019-02-03 13:02:00	--	ETRACE SAFELIST ELIST=CTU WHOX :are supported by this server
+2019-02-03 13:02:00	--	There are 113 users and 85540 invisible on 32 servers
+2019-02-03 13:02:00	--	32 :IRC Operators online
+2019-02-03 13:02:00	--	4 :unknown connection(s)
+2019-02-03 13:02:00	--	51132 :channels formed
+2019-02-03 13:02:00	--	I have 4613 clients and 1 servers
+2019-02-03 13:02:00	--	4613 6762 :Current local users 4613, max 6762
+2019-02-03 13:02:00	--	85653 90411 :Current global users 85653, max 90411
+2019-02-03 13:02:00	--	Highest connection count: 6763 (6762 clients) (222884 connections received)
+2019-02-03 13:02:00	--	- leguin.freenode.net Message of the Day -
+2019-02-03 13:02:00	--	- Welcome to leguin.freenode.net in Umeå, Sweden, EU! Thanks to
+2019-02-03 13:02:00	--	- the Academic Computer Club at Umeå University for sponsoring
+2019-02-03 13:02:00	--	- this server!
+2019-02-03 13:02:00	--	-
+2019-02-03 13:02:00	--	- LE GUIN, URSULA K. (1929-2018) Born in Berkeley, California,
+2019-02-03 13:02:00	--	- Ursula Le Guin was an American author primarily known for
+2019-02-03 13:02:00	--	- her Science Fiction and Fantasy. She was awarded the Hugo
+2019-02-03 13:02:00	--	- and Nebula awards, and was best known for her Earthsea
+2019-02-03 13:02:00	--	- and Hainish series.
+2019-02-03 13:02:00	--	-
+2019-02-03 13:02:00	--	- Welcome to freenode - supporting the free and open source
+2019-02-03 13:02:00	--	- software communities since 1998.
+2019-02-03 13:02:00	--	-
+2019-02-03 13:02:00	--	- By connecting to freenode you indicate that you have read and
+2019-02-03 13:02:00	--	- accept our policies and guidelines as set out on https://freenode.net
+2019-02-03 13:02:00	--	-
+2019-02-03 13:02:00	--	- In the event that you observe behaviour that contravenes our policies,
+2019-02-03 13:02:00	--	- please notify a volunteer staff member via private message, or send us an
+2019-02-03 13:02:00	--	- e-mail to complaints@freenode.net -- we will do our best to address the
+2019-02-03 13:02:00	--	- situation within a reasonable period of time, and we may request further
+2019-02-03 13:02:00	--	- information or, as appropriate, involve other parties such as channel operators
+2019-02-03 13:02:00	--	- Group Contacts representing an on-topic group.
+2019-02-03 13:02:00	--	-
+2019-02-03 13:02:00	--	- freenode runs an open proxy scanner.
+2019-02-03 13:02:00	--	-
+2019-02-03 13:02:00	--	- If you are looking for assistance, you may be able to find a list of
+2019-02-03 13:02:00	--	- volunteer staff on '/stats p' (shows only on-call staff) or by joining
+2019-02-03 13:02:00	--	- #freenode and using the '/who freenode/staff/*' command. You may message
+2019-02-03 13:02:00	--	- any of us at any time. Please note that freenode predominantly provides
+2019-02-03 13:02:00	--	- assistance via private message, and while we have a network channel the
+2019-02-03 13:02:00	--	- primary venue for support requests is via private message to a member
+2019-02-03 13:02:00	--	- of the volunteer staff team.
+2019-02-03 13:02:00	--	-
+2019-02-03 13:02:00	--	- From time to time, volunteer staff may send server-wide notices relating to
+2019-02-03 13:02:00	--	- the project, or the communities that we host. The majority of such notices
+2019-02-03 13:02:00	--	- will be sent as wallops, and you can '/mode <yournick> +w' to ensure that you
+2019-02-03 13:02:00	--	- do not miss them. Important messages relating to the freenode project, including
+2019-02-03 13:02:00	--	- notices of upcoming maintenance and other scheduled downtime will be issued as
+2019-02-03 13:02:00	--	- global notices.
+2019-02-03 13:02:00	--	-
+2019-02-03 13:02:00	--	- Representing an on-topic project? Don't forget to register, more information
+2019-02-03 13:02:00	--	- can be found on the https://freenode.net website under "Group Registration".
+2019-02-03 13:02:00	--	-
+2019-02-03 13:02:00	--	- Thank you also to our server sponsors for the sustained support in keeping the
+2019-02-03 13:02:00	--	- network going for close to two decades.
+2019-02-03 13:02:00	--	-
+2019-02-03 13:02:00	--	- Thank you to all of our attendees, sponsors, speakers, exhibitors, helpers,
+2019-02-03 13:02:00	--	- and everyone else who made this year's freenode #live conference amazing.
+2019-02-03 13:02:00	--	- https://freenode.net/news/live-2018
+2019-02-03 13:02:00	--	-
+2019-02-03 13:02:00	--	- Thank you for using freenode!
+2019-02-03 13:02:00	--	End of /MOTD command.
+2019-02-03 13:02:00	--	User mode [+i] by _Raijin
+2019-02-03 13:02:01	--	freenode-connect (frigg@freenode/utility-bot/frigg): Welcome to freenode. To protect the network all new connections will be scanned for vulnerabilities. This will not harm your computer, and vulnerable hosts will be notified.
+2019-02-03 13:02:01	--	CTCP requested by freenode-connect: VERSION
+2019-02-03 13:02:01	--	CTCP reply to freenode-connect: VERSION WeeChat 2.3 (Jan  7 2019 01:04:29)
+2019-02-03 13:02:06	--	##Linux: Cannot join channel (+r) - you need to be identified with services - see https://freenode.net/kb/answer/registration
+2019-02-03 13:02:30	--	#linux: Cannot join channel (+i) - you must be invited
+2019-02-03 13:02:36	--	##linux: Cannot join channel (+r) - you need to be identified with services - see https://freenode.net/kb/answer/registration
+2019-02-03 13:04:32	--	MSG(NickServ): REGISTER ****************************
+2019-02-03 13:04:33	--	NickServ (NickServ@services.): An email containing nickname activation instructions has been sent to wolfeg2@wwu.edu.
+2019-02-03 13:04:33	--	NickServ (NickServ@services.): If you do not complete registration within one day, your nickname will expire.
+2019-02-03 13:04:33	--	NickServ (NickServ@services.): _Raijin is now registered to wolfeg2@wwu.edu, with the password !1!Birdbrain.
+2019-02-03 13:04:33	--	NickServ (NickServ@services.):  
+2019-02-03 13:04:33	--	NickServ (NickServ@services.): For frequently-asked questions about the network, please see the
+2019-02-03 13:04:33	--	NickServ (NickServ@services.): Knowledge Base page (http://freenode.net/kb/all). Should you need more
+2019-02-03 13:04:33	--	NickServ (NickServ@services.): help you can /join #freenode to find network staff.
+2019-02-03 13:04:56	=!=	irc: this buffer is not a channel!
+2019-02-03 13:05:07	--	MSG(NickServ): VERIFY REGISTER ********************
+2019-02-03 13:05:07	--	NickServ (NickServ@services.): _Raijin has now been verified.
+2019-02-03 13:05:07	--	NickServ (NickServ@services.): Thank you for verifying your e-mail address! You have taken steps in ensuring that your registrations are not exploited.
+2019-02-03 13:08:25	 - 	irc: connecting to server chat.freenode.net/6667...
+2019-02-03 13:08:25	 - 	irc: connected to chat.freenode.net/6667 (2001:6b0:e:2a18::119)
+2019-02-03 13:08:26	 - 	leguin.freenode.net: *** Looking up your hostname...
+2019-02-03 13:08:26	 - 	leguin.freenode.net: *** Checking Ident
+2019-02-03 13:08:26	 - 	leguin.freenode.net: *** Couldn't look up your hostname
+2019-02-03 13:08:35	 - 	leguin.freenode.net: *** No Ident response
+2019-02-03 13:08:35	 - 	Welcome to the freenode Internet Relay Chat Network _Raijin
+2019-02-03 13:08:35	 - 	Your host is leguin.freenode.net[2001:6b0:e:2a18::119/6667], running version ircd-seven-1.1.7
+2019-02-03 13:08:35	 - 	This server was created Tue Sep 25 2018 at 13:21:19 UTC
+2019-02-03 13:08:35	 - 	leguin.freenode.net ircd-seven-1.1.7 DOQRSZaghilopswz CFILMPQSbcefgijklmnopqrstvz bkloveqjfI
+2019-02-03 13:08:35	 - 	CHANTYPES=# EXCEPTS INVEX CHANMODES=eIbq,k,flj,CFLMPQScgimnprstz CHANLIMIT=#:120 PREFIX=(ov)@+ MAXLIST=bqeI:100 MODES=4 NETWORK=freenode STATUSMSG=@+ CALLERID=g CASEMAPPING=rfc1459 :are supported by this server
+2019-02-03 13:08:35	 - 	CHARSET=ascii NICKLEN=16 CHANNELLEN=50 TOPICLEN=390 DEAF=D FNC TARGMAX=NAMES:1,LIST:1,KICK:1,WHOIS:1,PRIVMSG:4,NOTICE:4,ACCEPT:,MONITOR: EXTBAN=$,ajrxz CLIENTVER=3.0 CPRIVMSG CNOTICE KNOCK :are supported by this server
+2019-02-03 13:08:35	 - 	ETRACE SAFELIST ELIST=CTU WHOX :are supported by this server
+2019-02-03 13:08:35	 - 	There are 113 users and 85515 invisible on 32 servers
+2019-02-03 13:08:35	 - 	32 :IRC Operators online
+2019-02-03 13:08:35	 - 	3 :unknown connection(s)
+2019-02-03 13:08:35	 - 	51141 :channels formed
+2019-02-03 13:08:35	 - 	I have 4615 clients and 1 servers
+2019-02-03 13:08:35	 - 	4615 6762 :Current local users 4615, max 6762
+2019-02-03 13:08:35	 - 	85628 90411 :Current global users 85628, max 90411
+2019-02-03 13:08:35	 - 	Highest connection count: 6763 (6762 clients) (222893 connections received)
+2019-02-03 13:08:35	 - 	- leguin.freenode.net Message of the Day -
+2019-02-03 13:08:35	 - 	- Welcome to leguin.freenode.net in Umeå, Sweden, EU! Thanks to
+2019-02-03 13:08:35	 - 	- the Academic Computer Club at Umeå University for sponsoring
+2019-02-03 13:08:35	 - 	- this server!
+2019-02-03 13:08:35	 - 	-
+2019-02-03 13:08:35	 - 	- LE GUIN, URSULA K. (1929-2018) Born in Berkeley, California,
+2019-02-03 13:08:35	 - 	- Ursula Le Guin was an American author primarily known for
+2019-02-03 13:08:35	 - 	- her Science Fiction and Fantasy. She was awarded the Hugo
+2019-02-03 13:08:35	 - 	- and Nebula awards, and was best known for her Earthsea
+2019-02-03 13:08:35	 - 	- and Hainish series.
+2019-02-03 13:08:35	 - 	-
+2019-02-03 13:08:35	 - 	- Welcome to freenode - supporting the free and open source
+2019-02-03 13:08:35	 - 	- software communities since 1998.
+2019-02-03 13:08:35	 - 	-
+2019-02-03 13:08:35	 - 	- By connecting to freenode you indicate that you have read and
+2019-02-03 13:08:35	 - 	- accept our policies and guidelines as set out on https://freenode.net
+2019-02-03 13:08:35	 - 	-
+2019-02-03 13:08:35	 - 	- In the event that you observe behaviour that contravenes our policies,
+2019-02-03 13:08:35	 - 	- please notify a volunteer staff member via private message, or send us an
+2019-02-03 13:08:35	 - 	- e-mail to complaints@freenode.net -- we will do our best to address the
+2019-02-03 13:08:35	 - 	- situation within a reasonable period of time, and we may request further
+2019-02-03 13:08:35	 - 	- information or, as appropriate, involve other parties such as channel operators
+2019-02-03 13:08:35	 - 	- Group Contacts representing an on-topic group.
+2019-02-03 13:08:35	 - 	-
+2019-02-03 13:08:35	 - 	- freenode runs an open proxy scanner.
+2019-02-03 13:08:35	 - 	-
+2019-02-03 13:08:35	 - 	- If you are looking for assistance, you may be able to find a list of
+2019-02-03 13:08:35	 - 	- volunteer staff on '/stats p' (shows only on-call staff) or by joining
+2019-02-03 13:08:35	 - 	- #freenode and using the '/who freenode/staff/*' command. You may message
+2019-02-03 13:08:35	 - 	- any of us at any time. Please note that freenode predominantly provides
+2019-02-03 13:08:35	 - 	- assistance via private message, and while we have a network channel the
+2019-02-03 13:08:35	 - 	- primary venue for support requests is via private message to a member
+2019-02-03 13:08:35	 - 	- of the volunteer staff team.
+2019-02-03 13:08:35	 - 	-
+2019-02-03 13:08:35	 - 	- From time to time, volunteer staff may send server-wide notices relating to
+2019-02-03 13:08:35	 - 	- the project, or the communities that we host. The majority of such notices
+2019-02-03 13:08:35	 - 	- will be sent as wallops, and you can '/mode <yournick> +w' to ensure that you
+2019-02-03 13:08:35	 - 	- do not miss them. Important messages relating to the freenode project, including
+2019-02-03 13:08:35	 - 	- notices of upcoming maintenance and other scheduled downtime will be issued as
+2019-02-03 13:08:35	 - 	- global notices.
+2019-02-03 13:08:35	 - 	-
+2019-02-03 13:08:35	 - 	- Representing an on-topic project? Don't forget to register, more information
+2019-02-03 13:08:35	 - 	- can be found on the https://freenode.net website under "Group Registration".
+2019-02-03 13:08:35	 - 	-
+2019-02-03 13:08:35	 - 	- Thank you also to our server sponsors for the sustained support in keeping the
+2019-02-03 13:08:35	 - 	- network going for close to two decades.
+2019-02-03 13:08:35	 - 	-
+2019-02-03 13:08:35	 - 	- Thank you to all of our attendees, sponsors, speakers, exhibitors, helpers,
+2019-02-03 13:08:35	 - 	- and everyone else who made this year's freenode #live conference amazing.
+2019-02-03 13:08:35	 - 	- https://freenode.net/news/live-2018
+2019-02-03 13:08:35	 - 	-
+2019-02-03 13:08:35	 - 	- Thank you for using freenode!
+2019-02-03 13:08:35	 - 	End of /MOTD command.
+2019-02-03 13:08:35	 - 	User mode [+i] by _Raijin
+2019-02-03 13:08:35	 - 	NickServ (NickServ@services.): This nickname is registered. Please choose a different nickname, or identify via /msg NickServ identify <password>.
+2019-02-03 13:08:36	 - 	freenode-connect (frigg@freenode/utility-bot/frigg): Welcome to freenode. To protect the network all new connections will be scanned for vulnerabilities. This will not harm your computer, and vulnerable hosts will be notified.
+2019-02-03 13:08:36	 - 	CTCP requested by freenode-connect: VERSION
+2019-02-03 13:08:36	 - 	CTCP reply to freenode-connect: VERSION WeeChat 2.3 (Jan  7 2019 01:04:29)
+2019-02-03 13:09:16	 - 	MSG(NickServ): identify ************
+2019-02-03 13:09:17	 - 	NickServ (NickServ@services.): You are now identified for _Raijin.
+2019-02-03 13:10:07	 - 	irc: connecting to server chat.freenode.net/6667...
+2019-02-03 13:10:07	 - 	irc: connected to chat.freenode.net/6667 (2001:708:40:2001::f5ee:d0de)
+2019-02-03 13:10:08	 - 	rajaniemi.freenode.net: *** Looking up your hostname...
+2019-02-03 13:10:08	 - 	rajaniemi.freenode.net: *** Checking Ident
+2019-02-03 13:10:08	 - 	rajaniemi.freenode.net: *** Couldn't look up your hostname
+2019-02-03 13:10:17	 - 	rajaniemi.freenode.net: *** No Ident response
+2019-02-03 13:10:17	 - 	Welcome to the freenode Internet Relay Chat Network _Raijin
+2019-02-03 13:10:17	 - 	Your host is rajaniemi.freenode.net[2001:708:40:2001::f5ee:d0de/6667], running version ircd-seven-1.1.7
+2019-02-03 13:10:17	 - 	This server was created Tue Sep 25 2018 at 13:21:15 UTC
+2019-02-03 13:10:17	 - 	rajaniemi.freenode.net ircd-seven-1.1.7 DOQRSZaghilopswz CFILMPQSbcefgijklmnopqrstvz bkloveqjfI
+2019-02-03 13:10:17	 - 	CHANTYPES=# EXCEPTS INVEX CHANMODES=eIbq,k,flj,CFLMPQScgimnprstz CHANLIMIT=#:120 PREFIX=(ov)@+ MAXLIST=bqeI:100 MODES=4 NETWORK=freenode STATUSMSG=@+ CALLERID=g CASEMAPPING=rfc1459 :are supported by this server
+2019-02-03 13:10:17	 - 	CHARSET=ascii NICKLEN=16 CHANNELLEN=50 TOPICLEN=390 DEAF=D FNC TARGMAX=NAMES:1,LIST:1,KICK:1,WHOIS:1,PRIVMSG:4,NOTICE:4,ACCEPT:,MONITOR: EXTBAN=$,ajrxz CLIENTVER=3.0 WHOX SAFELIST ELIST=CTU :are supported by this server
+2019-02-03 13:10:17	 - 	KNOCK CPRIVMSG CNOTICE ETRACE :are supported by this server
+2019-02-03 13:10:17	 - 	There are 113 users and 85497 invisible on 32 servers
+2019-02-03 13:10:17	 - 	32 :IRC Operators online
+2019-02-03 13:10:17	 - 	3 :unknown connection(s)
+2019-02-03 13:10:17	 - 	51145 :channels formed
+2019-02-03 13:10:17	 - 	I have 4409 clients and 1 servers
+2019-02-03 13:10:17	 - 	4409 4789 :Current local users 4409, max 4789
+2019-02-03 13:10:17	 - 	85610 89591 :Current global users 85610, max 89591
+2019-02-03 13:10:17	 - 	Highest connection count: 4790 (4789 clients) (185049 connections received)
+2019-02-03 13:10:17	 - 	- rajaniemi.freenode.net Message of the Day -
+2019-02-03 13:10:17	 - 	- Welcome to rajaniemi.freenode.net in Helsinki, Finland.  Our thanks to
+2019-02-03 13:10:17	 - 	- Aalto University for sponsoring this server!
+2019-02-03 13:10:17	 - 	-
+2019-02-03 13:10:17	 - 	- RAJANIEMI, Hannu  (1978-). Born in Ylivieska, Finland, Rajaniemi is the
+2019-02-03 13:10:17	 - 	- author of two novels and several short stories, and his debut novel 'The
+2019-02-03 13:10:17	 - 	- Quantum Thief' was nominated for the 2011 Locus Award for Best First
+2019-02-03 13:10:17	 - 	- Novel.  Rajaniemi lives in Edinburgh, Scotland where he is founding
+2019-02-03 13:10:17	 - 	- director of ThinkTank Maths, a commercial research organisation.
+2019-02-03 13:10:17	 - 	-
+2019-02-03 13:10:17	 - 	-
+2019-02-03 13:10:17	 - 	- Welcome to freenode - supporting the free and open source
+2019-02-03 13:10:17	 - 	- software communities since 1998.
+2019-02-03 13:10:17	 - 	-
+2019-02-03 13:10:17	 - 	- By connecting to freenode you indicate that you have read and
+2019-02-03 13:10:17	 - 	- accept our policies and guidelines as set out on https://freenode.net
+2019-02-03 13:10:17	 - 	-
+2019-02-03 13:10:17	 - 	- In the event that you observe behaviour that contravenes our policies,
+2019-02-03 13:10:17	 - 	- please notify a volunteer staff member via private message, or send us an
+2019-02-03 13:10:17	 - 	- e-mail to complaints@freenode.net -- we will do our best to address the
+2019-02-03 13:10:17	 - 	- situation within a reasonable period of time, and we may request further
+2019-02-03 13:10:17	 - 	- information or, as appropriate, involve other parties such as channel operators
+2019-02-03 13:10:17	 - 	- Group Contacts representing an on-topic group.
+2019-02-03 13:10:17	 - 	-
+2019-02-03 13:10:17	 - 	- freenode runs an open proxy scanner.
+2019-02-03 13:10:17	 - 	-
+2019-02-03 13:10:17	 - 	- If you are looking for assistance, you may be able to find a list of
+2019-02-03 13:10:17	 - 	- volunteer staff on '/stats p' (shows only on-call staff) or by joining
+2019-02-03 13:10:17	 - 	- #freenode and using the '/who freenode/staff/*' command. You may message
+2019-02-03 13:10:17	 - 	- any of us at any time. Please note that freenode predominantly provides
+2019-02-03 13:10:17	 - 	- assistance via private message, and while we have a network channel the
+2019-02-03 13:10:17	 - 	- primary venue for support requests is via private message to a member
+2019-02-03 13:10:17	 - 	- of the volunteer staff team.
+2019-02-03 13:10:17	 - 	-
+2019-02-03 13:10:17	 - 	- From time to time, volunteer staff may send server-wide notices relating to
+2019-02-03 13:10:17	 - 	- the project, or the communities that we host. The majority of such notices
+2019-02-03 13:10:17	 - 	- will be sent as wallops, and you can '/mode <yournick> +w' to ensure that you
+2019-02-03 13:10:17	 - 	- do not miss them. Important messages relating to the freenode project, including
+2019-02-03 13:10:17	 - 	- notices of upcoming maintenance and other scheduled downtime will be issued as
+2019-02-03 13:10:17	 - 	- global notices.
+2019-02-03 13:10:17	 - 	-
+2019-02-03 13:10:17	 - 	- Representing an on-topic project? Don't forget to register, more information
+2019-02-03 13:10:17	 - 	- can be found on the https://freenode.net website under "Group Registration".
+2019-02-03 13:10:17	 - 	-
+2019-02-03 13:10:17	 - 	- Thank you also to our server sponsors for the sustained support in keeping the
+2019-02-03 13:10:17	 - 	- network going for close to two decades.
+2019-02-03 13:10:17	 - 	-
+2019-02-03 13:10:17	 - 	- Thank you to all of our attendees, sponsors, speakers, exhibitors, helpers,
+2019-02-03 13:10:17	 - 	- and everyone else who made this year's freenode #live conference amazing.
+2019-02-03 13:10:17	 - 	- https://freenode.net/news/live-2018
+2019-02-03 13:10:17	 - 	-
+2019-02-03 13:10:17	 - 	- Thank you for using freenode!
+2019-02-03 13:10:17	 - 	End of /MOTD command.
+2019-02-03 13:10:17	 - 	User mode [+i] by _Raijin
+2019-02-03 13:10:17	 - 	NickServ (NickServ@services.): This nickname is registered. Please choose a different nickname, or identify via /msg NickServ identify <password>.
+2019-02-03 13:10:18	 - 	freenode-connect (frigg@freenode/utility-bot/frigg): Welcome to freenode. To protect the network all new connections will be scanned for vulnerabilities. This will not harm your computer, and vulnerable hosts will be notified.
+2019-02-03 13:10:18	 - 	CTCP requested by freenode-connect: VERSION
+2019-02-03 13:10:18	 - 	CTCP reply to freenode-connect: VERSION WeeChat 2.3 (Jan  7 2019 01:04:29)
+2019-02-03 13:10:23	 - 	##linux: Cannot join channel (+r) - you need to be identified with services - see https://freenode.net/kb/answer/registration
+2019-02-03 13:10:53	 - 	MSG(NickServ): identify ************
+2019-02-03 13:10:54	 - 	NickServ (NickServ@services.): You are now identified for _Raijin.
+2019-02-03 13:16:04	 - 	irc: connecting to server chat.freenode.net/6667...
+2019-02-03 13:16:04	 - 	irc: connected to chat.freenode.net/6667 (2001:1bc0:c1::6667)
+2019-02-03 13:16:05	 - 	kornbluth.freenode.net: *** Looking up your hostname...
+2019-02-03 13:16:05	 - 	kornbluth.freenode.net: *** Checking Ident
+2019-02-03 13:16:05	 - 	kornbluth.freenode.net: *** Couldn't look up your hostname
+2019-02-03 13:16:11	 - 	kornbluth.freenode.net: *** No Ident response
+2019-02-03 13:16:11	 - 	Welcome to the freenode Internet Relay Chat Network _Raijin
+2019-02-03 13:16:11	 - 	MSG(nickserv): identify ************
+2019-02-03 13:16:11	 - 	Your host is kornbluth.freenode.net[2001:1bc0:c1::6667/6667], running version ircd-seven-1.1.7
+2019-02-03 13:16:11	 - 	This server was created Tue Sep 25 2018 at 13:23:57 UTC
+2019-02-03 13:16:11	 - 	kornbluth.freenode.net ircd-seven-1.1.7 DOQRSZaghilopswz CFILMPQSbcefgijklmnopqrstvz bkloveqjfI
+2019-02-03 13:16:11	 - 	CHANTYPES=# EXCEPTS INVEX CHANMODES=eIbq,k,flj,CFLMPQScgimnprstz CHANLIMIT=#:120 PREFIX=(ov)@+ MAXLIST=bqeI:100 MODES=4 NETWORK=freenode STATUSMSG=@+ CALLERID=g CASEMAPPING=rfc1459 :are supported by this server
+2019-02-03 13:16:11	 - 	CHARSET=ascii NICKLEN=16 CHANNELLEN=50 TOPICLEN=390 DEAF=D FNC TARGMAX=NAMES:1,LIST:1,KICK:1,WHOIS:1,PRIVMSG:4,NOTICE:4,ACCEPT:,MONITOR: EXTBAN=$,ajrxz CLIENTVER=3.0 SAFELIST ELIST=CTU CPRIVMSG :are supported by this server
+2019-02-03 13:16:11	 - 	CNOTICE KNOCK WHOX ETRACE :are supported by this server
+2019-02-03 13:16:11	 - 	There are 112 users and 85422 invisible on 32 servers
+2019-02-03 13:16:11	 - 	32 :IRC Operators online
+2019-02-03 13:16:11	 - 	6 :unknown connection(s)
+2019-02-03 13:16:11	 - 	51127 :channels formed
+2019-02-03 13:16:11	 - 	I have 4618 clients and 1 servers
+2019-02-03 13:16:11	 - 	4618 6458 :Current local users 4618, max 6458
+2019-02-03 13:16:11	 - 	85534 94264 :Current global users 85534, max 94264
+2019-02-03 13:16:11	 - 	Highest connection count: 6459 (6458 clients) (248035 connections received)
+2019-02-03 13:16:11	 - 	- kornbluth.freenode.net Message of the Day -
+2019-02-03 13:16:11	 - 	- Welcome to kornbluth.freenode.net in Frankfurt, DE, EU.
+2019-02-03 13:16:11	 - 	- Thanks to Probe Networks (www.probe-networks.de) for
+2019-02-03 13:16:11	 - 	- sponsoring this server!
+2019-02-03 13:16:11	 - 	-
+2019-02-03 13:16:11	 - 	- KORNBLUTH, CYRIL M. [1923-1958].  Born in New York City and
+2019-02-03 13:16:11	 - 	- an active member of the Futurians, Cyril Kornbluth sold his
+2019-02-03 13:16:11	 - 	- first story professionally at age 15.  By the 1940's his
+2019-02-03 13:16:11	 - 	- stories appeared widely under several pennames, including
+2019-02-03 13:16:11	 - 	- S.D. Gottesman and Cecil Corman.  He left his university
+2019-02-03 13:16:11	 - 	- studies in Chicago to serve in the Army in Europe during
+2019-02-03 13:16:11	 - 	- WWII, then returned to school and work in Chicago until he
+2019-02-03 13:16:11	 - 	- began writing full-time in 1951.  The author of The Marching
+2019-02-03 13:16:11	 - 	- Morons and the novels The Space Merchants (with Frederik
+2019-02-03 13:16:11	 - 	- Pohl) and The Syndic, he's best known for his biting social
+2019-02-03 13:16:11	 - 	- satire and his collaborations with Pohl and with Judith
+2019-02-03 13:16:11	 - 	- Merril.
+2019-02-03 13:16:11	 - 	- Welcome to freenode - supporting the free and open source
+2019-02-03 13:16:11	 - 	- software communities since 1998.
+2019-02-03 13:16:11	 - 	-
+2019-02-03 13:16:11	 - 	- By connecting to freenode you indicate that you have read and
+2019-02-03 13:16:11	 - 	- accept our policies and guidelines as set out on https://freenode.net
+2019-02-03 13:16:11	 - 	-
+2019-02-03 13:16:11	 - 	- In the event that you observe behaviour that contravenes our policies,
+2019-02-03 13:16:11	 - 	- please notify a volunteer staff member via private message, or send us an
+2019-02-03 13:16:11	 - 	- e-mail to complaints@freenode.net -- we will do our best to address the
+2019-02-03 13:16:11	 - 	- situation within a reasonable period of time, and we may request further
+2019-02-03 13:16:11	 - 	- information or, as appropriate, involve other parties such as channel operators
+2019-02-03 13:16:11	 - 	- Group Contacts representing an on-topic group.
+2019-02-03 13:16:11	 - 	-
+2019-02-03 13:16:11	 - 	- freenode runs an open proxy scanner.
+2019-02-03 13:16:11	 - 	-
+2019-02-03 13:16:11	 - 	- If you are looking for assistance, you may be able to find a list of
+2019-02-03 13:16:11	 - 	- volunteer staff on '/stats p' (shows only on-call staff) or by joining
+2019-02-03 13:16:11	 - 	- #freenode and using the '/who freenode/staff/*' command. You may message
+2019-02-03 13:16:11	 - 	- any of us at any time. Please note that freenode predominantly provides
+2019-02-03 13:16:11	 - 	- assistance via private message, and while we have a network channel the
+2019-02-03 13:16:11	 - 	- primary venue for support requests is via private message to a member
+2019-02-03 13:16:11	 - 	- of the volunteer staff team.
+2019-02-03 13:16:11	 - 	-
+2019-02-03 13:16:11	 - 	- From time to time, volunteer staff may send server-wide notices relating to
+2019-02-03 13:16:11	 - 	- the project, or the communities that we host. The majority of such notices
+2019-02-03 13:16:11	 - 	- will be sent as wallops, and you can '/mode <yournick> +w' to ensure that you
+2019-02-03 13:16:11	 - 	- do not miss them. Important messages relating to the freenode project, including
+2019-02-03 13:16:11	 - 	- notices of upcoming maintenance and other scheduled downtime will be issued as
+2019-02-03 13:16:11	 - 	- global notices.
+2019-02-03 13:16:11	 - 	-
+2019-02-03 13:16:11	 - 	- Representing an on-topic project? Don't forget to register, more information
+2019-02-03 13:16:11	 - 	- can be found on the https://freenode.net website under "Group Registration".
+2019-02-03 13:16:11	 - 	-
+2019-02-03 13:16:11	 - 	- Thank you also to our server sponsors for the sustained support in keeping the
+2019-02-03 13:16:11	 - 	- network going for close to two decades.
+2019-02-03 13:16:11	 - 	-
+2019-02-03 13:16:11	 - 	- Thank you to all of our attendees, sponsors, speakers, exhibitors, helpers,
+2019-02-03 13:16:11	 - 	- and everyone else who made this year's freenode #live conference amazing.
+2019-02-03 13:16:11	 - 	- https://freenode.net/news/live-2018
+2019-02-03 13:16:11	 - 	-
+2019-02-03 13:16:11	 - 	- Thank you for using freenode!
+2019-02-03 13:16:11	 - 	End of /MOTD command.
+2019-02-03 13:16:11	 - 	User mode [+i] by _Raijin
+2019-02-03 13:16:11	 - 	NickServ (NickServ@services.): This nickname is registered. Please choose a different nickname, or identify via /msg NickServ identify <password>.
+2019-02-03 13:16:11	 - 	freenode-connect (frigg@freenode/utility-bot/frigg): Welcome to freenode. To protect the network all new connections will be scanned for vulnerabilities. This will not harm your computer, and vulnerable hosts will be notified.
+2019-02-03 13:16:12	 - 	CTCP requested by freenode-connect: VERSION
+2019-02-03 13:16:12	 - 	CTCP reply to freenode-connect: VERSION WeeChat 2.3 (Jan  7 2019 01:04:29)
+2019-02-03 13:16:19	 - 	irc: connecting to server chat.freenode.net/6667...
+2019-02-03 13:16:19	 - 	irc: connected to chat.freenode.net/6667 (2a01:7e00::f03c:91ff:fee2:413b)
+2019-02-03 13:16:19	 - 	niven.freenode.net: *** Looking up your hostname...
+2019-02-03 13:16:19	 - 	niven.freenode.net: *** Checking Ident
+2019-02-03 13:16:19	 - 	niven.freenode.net: *** Couldn't look up your hostname
+2019-02-03 13:16:29	 - 	niven.freenode.net: *** No Ident response
+2019-02-03 13:16:29	 - 	Welcome to the freenode Internet Relay Chat Network _Raijin
+2019-02-03 13:16:29	 - 	MSG(nickserv): identify ************
+2019-02-03 13:16:29	 - 	Your host is niven.freenode.net[2a01:7e00::f03c:91ff:fee2:413b/6667], running version ircd-seven-1.1.7
+2019-02-03 13:16:29	 - 	This server was created Tue Aug 21 2018 at 19:57:37 UTC
+2019-02-03 13:16:29	 - 	niven.freenode.net ircd-seven-1.1.7 DOQRSZaghilopswz CFILMPQSbcefgijklmnopqrstvz bkloveqjfI
+2019-02-03 13:16:29	 - 	CHANTYPES=# EXCEPTS INVEX CHANMODES=eIbq,k,flj,CFLMPQScgimnprstz CHANLIMIT=#:120 PREFIX=(ov)@+ MAXLIST=bqeI:100 MODES=4 NETWORK=freenode STATUSMSG=@+ CALLERID=g CASEMAPPING=rfc1459 :are supported by this server
+2019-02-03 13:16:29	 - 	CHARSET=ascii NICKLEN=16 CHANNELLEN=50 TOPICLEN=390 DEAF=D FNC TARGMAX=NAMES:1,LIST:1,KICK:1,WHOIS:1,PRIVMSG:4,NOTICE:4,ACCEPT:,MONITOR: EXTBAN=$,ajrxz CLIENTVER=3.0 SAFELIST ELIST=CTU CPRIVMSG :are supported by this server
+2019-02-03 13:16:29	 - 	CNOTICE WHOX ETRACE KNOCK :are supported by this server
+2019-02-03 13:16:29	 - 	There are 112 users and 85425 invisible on 32 servers
+2019-02-03 13:16:29	 - 	32 :IRC Operators online
+2019-02-03 13:16:29	 - 	3 :unknown connection(s)
+2019-02-03 13:16:29	 - 	51129 :channels formed
+2019-02-03 13:16:29	 - 	I have 4608 clients and 1 servers
+2019-02-03 13:16:29	 - 	4608 8977 :Current local users 4608, max 8977
+2019-02-03 13:16:29	 - 	85537 94264 :Current global users 85537, max 94264
+2019-02-03 13:16:29	 - 	Highest connection count: 8978 (8977 clients) (409048 connections received)
+2019-02-03 13:16:29	 - 	- niven.freenode.net Message of the Day -
+2019-02-03 13:16:29	 - 	- Welcome to niven.freenode.net in London, United Kingdom, EU.
+2019-02-03 13:16:29	 - 	- thanks to Linode for sponsoring this server!
+2019-02-03 13:16:29	 - 	-
+2019-02-03 13:16:29	 - 	- NIVEN, LAWRENCE VAN COTT [1938-].  Architect of Known Space,
+2019-02-03 13:16:29	 - 	- the setting of Protector, World of Ptaavs and the
+2019-02-03 13:16:29	 - 	- Ringworld series.  Author of "Flash Crowd", a canonical
+2019-02-03 13:16:29	 - 	- sociological hard science fiction short story dealing with
+2019-02-03 13:16:29	 - 	- effects of near instantaneous transportation on a modern
+2019-02-03 13:16:29	 - 	- technological society.  In addition, he is well known for his
+2019-02-03 13:16:29	 - 	- collaborations with Jerry Pournelle, including The Mote in
+2019-02-03 13:16:29	 - 	- God's Eye and Lucifer's Hammer.
+2019-02-03 13:16:29	 - 	-
+2019-02-03 13:16:29	 - 	- Welcome to freenode - supporting the free and open source
+2019-02-03 13:16:29	 - 	- software communities since 1998.
+2019-02-03 13:16:29	 - 	-
+2019-02-03 13:16:29	 - 	- By connecting to freenode you indicate that you have read and
+2019-02-03 13:16:29	 - 	- accept our policies and guidelines as set out on https://freenode.net
+2019-02-03 13:16:29	 - 	-
+2019-02-03 13:16:29	 - 	- In the event that you observe behaviour that contravenes our policies,
+2019-02-03 13:16:29	 - 	- please notify a volunteer staff member via private message, or send us an
+2019-02-03 13:16:29	 - 	- e-mail to complaints@freenode.net -- we will do our best to address the
+2019-02-03 13:16:29	 - 	- situation within a reasonable period of time, and we may request further
+2019-02-03 13:16:29	 - 	- information or, as appropriate, involve other parties such as channel operators
+2019-02-03 13:16:29	 - 	- Group Contacts representing an on-topic group.
+2019-02-03 13:16:29	 - 	-
+2019-02-03 13:16:29	 - 	- freenode runs an open proxy scanner.
+2019-02-03 13:16:29	 - 	-
+2019-02-03 13:16:29	 - 	- If you are looking for assistance, you may be able to find a list of
+2019-02-03 13:16:29	 - 	- volunteer staff on '/stats p' (shows only on-call staff) or by joining
+2019-02-03 13:16:29	 - 	- #freenode and using the '/who freenode/staff/*' command. You may message
+2019-02-03 13:16:29	 - 	- any of us at any time. Please note that freenode predominantly provides
+2019-02-03 13:16:29	 - 	- assistance via private message, and while we have a network channel the
+2019-02-03 13:16:29	 - 	- primary venue for support requests is via private message to a member
+2019-02-03 13:16:29	 - 	- of the volunteer staff team.
+2019-02-03 13:16:29	 - 	-
+2019-02-03 13:16:29	 - 	- From time to time, volunteer staff may send server-wide notices relating to
+2019-02-03 13:16:29	 - 	- the project, or the communities that we host. The majority of such notices
+2019-02-03 13:16:29	 - 	- will be sent as wallops, and you can '/mode <yournick> +w' to ensure that you
+2019-02-03 13:16:29	 - 	- do not miss them. Important messages relating to the freenode project, including
+2019-02-03 13:16:29	 - 	- notices of upcoming maintenance and other scheduled downtime will be issued as
+2019-02-03 13:16:29	 - 	- global notices.
+2019-02-03 13:16:29	 - 	-
+2019-02-03 13:16:29	 - 	- Representing an on-topic project? Don't forget to register, more information
+2019-02-03 13:16:29	 - 	- can be found on the https://freenode.net website under "Group Registration".
+2019-02-03 13:16:29	 - 	-
+2019-02-03 13:16:29	 - 	- Thank you also to our server sponsors for the sustained support in keeping the
+2019-02-03 13:16:29	 - 	- network going for close to two decades.
+2019-02-03 13:16:29	 - 	-
+2019-02-03 13:16:29	 - 	- Thank you to all of our attendees, sponsors, speakers, exhibitors, helpers,
+2019-02-03 13:16:29	 - 	- and everyone else who made this year's freenode #live conference amazing.
+2019-02-03 13:16:29	 - 	- https://freenode.net/news/live-2018
+2019-02-03 13:16:29	 - 	-
+2019-02-03 13:16:29	 - 	- Thank you for using freenode!
+2019-02-03 13:16:29	 - 	End of /MOTD command.
+2019-02-03 13:16:29	 - 	User mode [+i] by _Raijin
+2019-02-03 13:16:29	 - 	NickServ (NickServ@services.): This nickname is registered. Please choose a different nickname, or identify via /msg NickServ identify <password>.
+2019-02-03 13:16:29	 - 	freenode-connect (frigg@freenode/utility-bot/frigg): Welcome to freenode. To protect the network all new connections will be scanned for vulnerabilities. This will not harm your computer, and vulnerable hosts will be notified.
+2019-02-03 13:16:30	 - 	CTCP requested by freenode-connect: VERSION
+2019-02-03 13:16:30	 - 	CTCP reply to freenode-connect: VERSION WeeChat 2.3 (Jan  7 2019 01:04:29)
+2019-02-03 13:16:35	 - 	NickServ (NickServ@services.): You are now identified for _Raijin.
+2019-02-03 13:18:38	 - 	irc: connecting to server chat.freenode.net/6667...
+2019-02-03 13:18:38	 - 	irc: connected to chat.freenode.net/6667 (2a01:7e00::f03c:91ff:fee2:413b)
+2019-02-03 13:18:38	 - 	niven.freenode.net: *** Looking up your hostname...
+2019-02-03 13:18:38	 - 	niven.freenode.net: *** Checking Ident
+2019-02-03 13:18:38	 - 	niven.freenode.net: *** Couldn't look up your hostname
+2019-02-03 13:18:45	 - 	niven.freenode.net: *** No Ident response
+2019-02-03 13:18:45	 - 	Welcome to the freenode Internet Relay Chat Network _Raijin
+2019-02-03 13:18:45	 - 	MSG(nickserv): identify ************
+2019-02-03 13:18:45	 - 	Your host is niven.freenode.net[2a01:7e00::f03c:91ff:fee2:413b/6667], running version ircd-seven-1.1.7
+2019-02-03 13:18:45	 - 	This server was created Tue Aug 21 2018 at 19:57:37 UTC
+2019-02-03 13:18:45	 - 	niven.freenode.net ircd-seven-1.1.7 DOQRSZaghilopswz CFILMPQSbcefgijklmnopqrstvz bkloveqjfI
+2019-02-03 13:18:45	 - 	CHANTYPES=# EXCEPTS INVEX CHANMODES=eIbq,k,flj,CFLMPQScgimnprstz CHANLIMIT=#:120 PREFIX=(ov)@+ MAXLIST=bqeI:100 MODES=4 NETWORK=freenode STATUSMSG=@+ CALLERID=g CASEMAPPING=rfc1459 :are supported by this server
+2019-02-03 13:18:45	 - 	CHARSET=ascii NICKLEN=16 CHANNELLEN=50 TOPICLEN=390 DEAF=D FNC TARGMAX=NAMES:1,LIST:1,KICK:1,WHOIS:1,PRIVMSG:4,NOTICE:4,ACCEPT:,MONITOR: EXTBAN=$,ajrxz CLIENTVER=3.0 SAFELIST ELIST=CTU CPRIVMSG :are supported by this server
+2019-02-03 13:18:45	 - 	CNOTICE WHOX ETRACE KNOCK :are supported by this server
+2019-02-03 13:18:45	 - 	There are 112 users and 85412 invisible on 32 servers
+2019-02-03 13:18:45	 - 	32 :IRC Operators online
+2019-02-03 13:18:45	 - 	3 :unknown connection(s)
+2019-02-03 13:18:45	 - 	51144 :channels formed
+2019-02-03 13:18:45	 - 	I have 4617 clients and 1 servers
+2019-02-03 13:18:45	 - 	4617 8977 :Current local users 4617, max 8977
+2019-02-03 13:18:45	 - 	85524 94264 :Current global users 85524, max 94264
+2019-02-03 13:18:45	 - 	Highest connection count: 8978 (8977 clients) (409058 connections received)
+2019-02-03 13:18:45	 - 	- niven.freenode.net Message of the Day -
+2019-02-03 13:18:45	 - 	- Welcome to niven.freenode.net in London, United Kingdom, EU.
+2019-02-03 13:18:45	 - 	- thanks to Linode for sponsoring this server!
+2019-02-03 13:18:45	 - 	-
+2019-02-03 13:18:45	 - 	- NIVEN, LAWRENCE VAN COTT [1938-].  Architect of Known Space,
+2019-02-03 13:18:45	 - 	- the setting of Protector, World of Ptaavs and the
+2019-02-03 13:18:45	 - 	- Ringworld series.  Author of "Flash Crowd", a canonical
+2019-02-03 13:18:45	 - 	- sociological hard science fiction short story dealing with
+2019-02-03 13:18:45	 - 	- effects of near instantaneous transportation on a modern
+2019-02-03 13:18:45	 - 	- technological society.  In addition, he is well known for his
+2019-02-03 13:18:45	 - 	- collaborations with Jerry Pournelle, including The Mote in
+2019-02-03 13:18:45	 - 	- God's Eye and Lucifer's Hammer.
+2019-02-03 13:18:45	 - 	-
+2019-02-03 13:18:45	 - 	- Welcome to freenode - supporting the free and open source
+2019-02-03 13:18:45	 - 	- software communities since 1998.
+2019-02-03 13:18:45	 - 	-
+2019-02-03 13:18:45	 - 	- By connecting to freenode you indicate that you have read and
+2019-02-03 13:18:45	 - 	- accept our policies and guidelines as set out on https://freenode.net
+2019-02-03 13:18:45	 - 	-
+2019-02-03 13:18:45	 - 	- In the event that you observe behaviour that contravenes our policies,
+2019-02-03 13:18:45	 - 	- please notify a volunteer staff member via private message, or send us an
+2019-02-03 13:18:45	 - 	- e-mail to complaints@freenode.net -- we will do our best to address the
+2019-02-03 13:18:45	 - 	- situation within a reasonable period of time, and we may request further
+2019-02-03 13:18:45	 - 	- information or, as appropriate, involve other parties such as channel operators
+2019-02-03 13:18:45	 - 	- Group Contacts representing an on-topic group.
+2019-02-03 13:18:45	 - 	-
+2019-02-03 13:18:45	 - 	- freenode runs an open proxy scanner.
+2019-02-03 13:18:45	 - 	-
+2019-02-03 13:18:45	 - 	- If you are looking for assistance, you may be able to find a list of
+2019-02-03 13:18:45	 - 	- volunteer staff on '/stats p' (shows only on-call staff) or by joining
+2019-02-03 13:18:45	 - 	- #freenode and using the '/who freenode/staff/*' command. You may message
+2019-02-03 13:18:45	 - 	- any of us at any time. Please note that freenode predominantly provides
+2019-02-03 13:18:45	 - 	- assistance via private message, and while we have a network channel the
+2019-02-03 13:18:45	 - 	- primary venue for support requests is via private message to a member
+2019-02-03 13:18:45	 - 	- of the volunteer staff team.
+2019-02-03 13:18:45	 - 	-
+2019-02-03 13:18:45	 - 	- From time to time, volunteer staff may send server-wide notices relating to
+2019-02-03 13:18:45	 - 	- the project, or the communities that we host. The majority of such notices
+2019-02-03 13:18:45	 - 	- will be sent as wallops, and you can '/mode <yournick> +w' to ensure that you
+2019-02-03 13:18:45	 - 	- do not miss them. Important messages relating to the freenode project, including
+2019-02-03 13:18:45	 - 	- notices of upcoming maintenance and other scheduled downtime will be issued as
+2019-02-03 13:18:45	 - 	- global notices.
+2019-02-03 13:18:45	 - 	-
+2019-02-03 13:18:45	 - 	- Representing an on-topic project? Don't forget to register, more information
+2019-02-03 13:18:45	 - 	- can be found on the https://freenode.net website under "Group Registration".
+2019-02-03 13:18:45	 - 	-
+2019-02-03 13:18:46	 - 	- Thank you also to our server sponsors for the sustained support in keeping the
+2019-02-03 13:18:46	 - 	- network going for close to two decades.
+2019-02-03 13:18:46	 - 	-
+2019-02-03 13:18:46	 - 	- Thank you to all of our attendees, sponsors, speakers, exhibitors, helpers,
+2019-02-03 13:18:46	 - 	- and everyone else who made this year's freenode #live conference amazing.
+2019-02-03 13:18:46	 - 	- https://freenode.net/news/live-2018
+2019-02-03 13:18:46	 - 	-
+2019-02-03 13:18:46	 - 	- Thank you for using freenode!
+2019-02-03 13:18:46	 - 	End of /MOTD command.
+2019-02-03 13:18:46	 - 	User mode [+i] by _Raijin
+2019-02-03 13:18:46	 - 	NickServ (NickServ@services.): This nickname is registered. Please choose a different nickname, or identify via /msg NickServ identify <password>.
+2019-02-03 13:18:46	 - 	freenode-connect (frigg@freenode/utility-bot/frigg): Welcome to freenode. To protect the network all new connections will be scanned for vulnerabilities. This will not harm your computer, and vulnerable hosts will be notified.
+2019-02-03 13:18:46	 - 	CTCP requested by freenode-connect: VERSION
+2019-02-03 13:18:46	 - 	CTCP reply to freenode-connect: VERSION WeeChat 2.3 (Jan  7 2019 01:04:29)
+2019-02-03 13:18:51	 - 	NickServ (NickServ@services.): You are now identified for _Raijin.
+2019-02-03 13:19:06	 - 	#linux: ##linux :Forwarding to another channel
+2019-02-12 17:57:38	 - 	irc: connecting to server chat.freenode.net/6667...
+2019-02-12 17:57:38	 - 	irc: connected to chat.freenode.net/6667 (2a01:7e00::f03c:91ff:fee2:413b)
+2019-02-12 17:57:38	 - 	niven.freenode.net: *** Looking up your hostname...
+2019-02-12 17:57:38	 - 	niven.freenode.net: *** Checking Ident
+2019-02-12 17:57:38	 - 	niven.freenode.net: *** Couldn't look up your hostname
+2019-02-12 17:57:45	 - 	niven.freenode.net: *** No Ident response
+2019-02-12 17:57:45	 - 	Welcome to the freenode Internet Relay Chat Network _Raijin
+2019-02-12 17:57:45	 - 	MSG(nickserv): identify ************
+2019-02-12 17:57:45	 - 	Your host is niven.freenode.net[2a01:7e00::f03c:91ff:fee2:413b/6667], running version ircd-seven-1.1.7
+2019-02-12 17:57:45	 - 	This server was created Tue Aug 21 2018 at 19:57:37 UTC
+2019-02-12 17:57:45	 - 	niven.freenode.net ircd-seven-1.1.7 DOQRSZaghilopswz CFILMPQSbcefgijklmnopqrstvz bkloveqjfI
+2019-02-12 17:57:45	 - 	CHANTYPES=# EXCEPTS INVEX CHANMODES=eIbq,k,flj,CFLMPQScgimnprstz CHANLIMIT=#:120 PREFIX=(ov)@+ MAXLIST=bqeI:100 MODES=4 NETWORK=freenode STATUSMSG=@+ CALLERID=g CASEMAPPING=rfc1459 :are supported by this server
+2019-02-12 17:57:45	 - 	CHARSET=ascii NICKLEN=16 CHANNELLEN=50 TOPICLEN=390 DEAF=D FNC TARGMAX=NAMES:1,LIST:1,KICK:1,WHOIS:1,PRIVMSG:4,NOTICE:4,ACCEPT:,MONITOR: EXTBAN=$,ajrxz CLIENTVER=3.0 SAFELIST ELIST=CTU CPRIVMSG :are supported by this server
+2019-02-12 17:57:45	 - 	CNOTICE WHOX ETRACE KNOCK :are supported by this server
+2019-02-12 17:57:45	 - 	There are 111 users and 85880 invisible on 32 servers
+2019-02-12 17:57:45	 - 	34 :IRC Operators online
+2019-02-12 17:57:45	 - 	51467 :channels formed
+2019-02-12 17:57:45	 - 	I have 5276 clients and 1 servers
+2019-02-12 17:57:45	 - 	5276 8977 :Current local users 5276, max 8977
+2019-02-12 17:57:45	 - 	85991 94264 :Current global users 85991, max 94264
+2019-02-12 17:57:45	 - 	Highest connection count: 8978 (8977 clients) (416040 connections received)
+2019-02-12 17:57:45	 - 	- niven.freenode.net Message of the Day -
+2019-02-12 17:57:45	 - 	- Welcome to niven.freenode.net in London, United Kingdom, EU.
+2019-02-12 17:57:45	 - 	- thanks to Linode for sponsoring this server!
+2019-02-12 17:57:45	 - 	-
+2019-02-12 17:57:45	 - 	- NIVEN, LAWRENCE VAN COTT [1938-].  Architect of Known Space,
+2019-02-12 17:57:45	 - 	- the setting of Protector, World of Ptaavs and the
+2019-02-12 17:57:45	 - 	- Ringworld series.  Author of "Flash Crowd", a canonical
+2019-02-12 17:57:45	 - 	- sociological hard science fiction short story dealing with
+2019-02-12 17:57:45	 - 	- effects of near instantaneous transportation on a modern
+2019-02-12 17:57:45	 - 	- technological society.  In addition, he is well known for his
+2019-02-12 17:57:45	 - 	- collaborations with Jerry Pournelle, including The Mote in
+2019-02-12 17:57:45	 - 	- God's Eye and Lucifer's Hammer.
+2019-02-12 17:57:45	 - 	-
+2019-02-12 17:57:45	 - 	- Welcome to freenode - supporting the free and open source
+2019-02-12 17:57:45	 - 	- software communities since 1998.
+2019-02-12 17:57:45	 - 	-
+2019-02-12 17:57:45	 - 	- By connecting to freenode you indicate that you have read and
+2019-02-12 17:57:45	 - 	- accept our policies and guidelines as set out on https://freenode.net
+2019-02-12 17:57:45	 - 	-
+2019-02-12 17:57:45	 - 	- In the event that you observe behaviour that contravenes our policies,
+2019-02-12 17:57:45	 - 	- please notify a volunteer staff member via private message, or send us an
+2019-02-12 17:57:45	 - 	- e-mail to complaints@freenode.net -- we will do our best to address the
+2019-02-12 17:57:45	 - 	- situation within a reasonable period of time, and we may request further
+2019-02-12 17:57:45	 - 	- information or, as appropriate, involve other parties such as channel operators
+2019-02-12 17:57:45	 - 	- Group Contacts representing an on-topic group.
+2019-02-12 17:57:45	 - 	-
+2019-02-12 17:57:45	 - 	- freenode runs an open proxy scanner.
+2019-02-12 17:57:45	 - 	-
+2019-02-12 17:57:45	 - 	- If you are looking for assistance, you may be able to find a list of
+2019-02-12 17:57:45	 - 	- volunteer staff on '/s

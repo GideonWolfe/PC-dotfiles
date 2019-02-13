@@ -1,0 +1,48 @@
+2019-02-03 13:11:24	> 	_Raijin (~gideon@2603:3023:708:9c00::5b) has joined ##linux
+2019-02-03 13:11:24	 - 	Topic for ##linux is "Channel website: https://freenode.linux.community | Pastebin: https://paste.linux.community | Need an op? Join ##linux-ops | CoC? ##linux-offtopic, please."
+2019-02-03 13:11:24	 - 	Topic set by sauvin on  
+2019-02-03 13:11:25	 - 	Channel ##linux: 2083 nicks (0 ops, 0 voices, 2083 normals)
+2019-02-03 13:11:25	 - 	PvNotice(ChanServ): Please see https://freenode.linux.community/how-to-connect/ on how to register or identify your nick. By joining this channel you agree to abide by the channel rules and guidelines laid out at https://freenode.linux.community/channel-rules/.
+2019-02-03 13:11:25	 - 	URL for ##linux: http://linux.chat
+2019-02-03 13:11:27	 - 	Channel created on  
+2019-02-03 13:11:35	> 	thunor (~thunor@unaffiliated/thunor) has joined ##linux
+2019-02-03 13:11:42	thunor	hi
+2019-02-03 13:11:49	thunor	how do you simulate logging off on linux?
+2019-02-03 13:11:51	barteks2x	I spend good 10 minutes wondering why the data makes absolutely no sense
+2019-02-03 13:11:58	thunor	i want all the effects of logging off without logging off
+2019-02-03 13:12:11	thunor	because it fixes a bug in a program
+2019-02-03 13:12:14	loeken	^^
+2019-02-03 13:12:21	 <<< 	nurdie (~nurdie@unaffiliated/nurdie) has quit (Ping timeout: 244 seconds)
+2019-02-03 13:12:22	 <<< 	NetTerminalGene (~NetTermin@unaffiliated/dontknow) has quit (Remote host closed the connection)
+2019-02-03 13:12:32	> 	vuoto (~vuoto@customer-212-237-101-103.ip4.gigabit.dk) has joined ##linux
+2019-02-03 13:12:38	> 	TheKeymaster (~thekeymas@2001:1970:529a:6b00::f4fe) has joined ##linux
+2019-02-03 13:13:10	MrElendig	no it doesn't
+2019-02-03 13:13:18	MrElendig	at best it is a horrible workaround
+2019-02-03 13:13:20	barteks2x	actually... it shows indicuual bytes in the wrong order
+2019-02-03 13:13:24	MrElendig	it is not an actual fix
+2019-02-03 13:13:25	barteks2x	but that's assuming 2 byte chunks...
+2019-02-03 13:13:27	koollman	thunor: which program ? how would that fix a big ?
+2019-02-03 13:13:30	koollman	*bug
+2019-02-03 13:13:48	MrElendig	a fix would prevent the issue from happening in the first place.....
+2019-02-03 13:13:52	thunor	koollman, minecraft, something to do with pixmap error or it doesn't run at all
+2019-02-03 13:14:07	koollman	thunor: maybe read the error messages, then
+2019-02-03 13:14:15	 <<< 	vuoto (~vuoto@customer-212-237-101-103.ip4.gigabit.dk) has quit (Client Quit)
+2019-02-03 13:14:15	barteks2x	how logging can have anything to do with minecraft?
+2019-02-03 13:14:19	barteks2x	there is no way that's true
+2019-02-03 13:14:24	 <<< 	Karyon (~karyon@unaffiliated/karyon) has quit (Quit: Leaving)
+2019-02-03 13:14:32	thunor	logging off
+2019-02-03 13:14:40	loeken	if you logg of you close the program :p
+2019-02-03 13:14:51	loeken	so maybe that's how he "solves" the problem
+2019-02-03 13:15:17	TJ-	barteks2x: sounds like you're describing the difference between big- and little- endian words
+2019-02-03 13:15:33	barteks2x	I would expect a hexdump to show the bytes exactly as they are...
+2019-02-03 13:15:58	> 	synth3tic (~Thunderbi@185.206.227.172) has joined ##linux
+2019-02-03 13:19:06	> 	_Raijin (~gideon@2603:3023:708:9c00::5b) has joined ##linux
+2019-02-03 13:19:06	 - 	Topic for ##linux is "Channel website: https://freenode.linux.community | Pastebin: https://paste.linux.community | Need an op? Join ##linux-ops | CoC? ##linux-offtopic, please."
+2019-02-03 13:19:06	 - 	Topic set by sauvin on  
+2019-02-03 13:19:06	 - 	Channel ##linux: 2083 nicks (0 ops, 0 voices, 2083 normals)
+2019-02-03 13:19:06	 - 	PvNotice(ChanServ): Please see https://freenode.linux.community/how-to-connect/ on how to register or identify your nick. By joining this channel you agree to abide by the channel rules and guidelines laid out at https://freenode.linux.community/channel-rules/.
+2019-02-03 13:19:06	 - 	URL for ##linux: http://linux.chat
+2019-02-03 13:19:07	 - 	Channel created on  
+2019-02-03 13:19:08	barteks2x	that looks like a GPU driver issue to me. Or maybe a bad mod, if it's modded
+2019-02-03 13:19:17	thunor	what are you talking about? LOGGING OFF fixes the issue
+2019-02-03 13:19:24	TJ-	barteks2x: are you sure xxd (by default) isn't displaying big-endian ? see its "-e" switch

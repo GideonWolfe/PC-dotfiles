@@ -1,0 +1,17 @@
+2019-02-03 12:59:15		New key binding (context "default"): meta-meta-OQ => /bar scroll buflist * e
+2019-02-03 12:59:15		New key binding (context "default"): meta-meta-OP => /bar scroll buflist * b
+2019-02-03 12:59:15		New key binding (context "default"): meta-OQ => /bar scroll buflist * +100%
+2019-02-03 12:59:15		New key binding (context "default"): meta-OP => /bar scroll buflist * -100%
+2019-02-03 12:59:15		Plugins loaded: alias, aspell, buflist, charset, exec, fifo, fset, irc, logger, lua, perl, python, relay, script, trigger, xfer
+2019-02-03 13:00:01		Plugins loaded: alias, aspell, buflist, charset, exec, fifo, fset, irc, logger, lua, perl, python, relay, script, trigger, xfer
+2019-02-03 13:00:07		irc: server freenode added
+2019-02-03 13:01:16		Option changed: irc.server.freenode.nicks = "_Raijin,Raijin_,Astraeus_,_Astraeus"  (default if null: "gideon,gideon1,gideon2,gideon3,gideon4")
+2019-02-03 13:01:25		Option changed: irc.server.freenode.autoconnect = on  (default if null: off)
+2019-02-03 13:08:25		Plugins loaded: alias, aspell, buflist, charset, exec, fifo, fset, irc, logger, lua, perl, python, relay, script, trigger, xfer
+2019-02-03 13:10:07		Plugins loaded: alias, aspell, buflist, charset, exec, fifo, fset, irc, logger, lua, perl, python, relay, script, trigger, xfer
+2019-02-03 13:15:57		Option changed: irc.server.freenode.command = "/msg nickserv identify !1!Birdbrain"  (default if null: "")
+2019-02-03 13:16:04		Plugins loaded: alias, aspell, buflist, charset, exec, fifo, fset, irc, logger, lua, perl, python, relay, script, trigger, xfer
+2019-02-03 13:16:13		Option changed: irc.server.freenode.command = "/msg nickserv identify !1!Birdbrain"  (default if null: "")
+2019-02-03 13:16:19		Plugins loaded: alias, aspell, buflist, charset, exec, fifo, fset, irc, logger, lua, perl, python, relay, script, trigger, xfer
+2019-02-03 13:18:38		Plugins loaded: alias, aspell, buflist, charset, exec, fifo, fset, irc, logger, lua, perl, python, relay, script, trigger, xfer
+2019-02-03 13:18:44	 !!! 	irc: command "join" must be executed on connected irc server
