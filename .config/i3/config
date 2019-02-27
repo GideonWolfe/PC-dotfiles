@@ -79,6 +79,7 @@ bindsym $mod+a focus parent
 #bindsym $mod+d focus child
 
 
+
 # reload the configuration file
 bindsym $mod+Shift+c reload
 
@@ -198,28 +199,39 @@ exec_always wal -R
 #remerge Xresources
 exec --no-startup-id xrdb /home/gideon/.Xresources
 
+#set dpi
+exec --no-startup-id xrandr --dpi 210
+
 
 # Strartup apps
 
+#firefox
 exec --no-startup-id i3-msg 'workspace 2: Web ; exec /usr/bin/firefox'
 
-exec --no-startup-id xrandr --dpi 210
-
+#polybar
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+
+#math scratchpad
+exec_always urxvt -name math -e fish -c 'qalc'
+for_window [instance="math"] floating enable;
+for_window [instance="math"] move scratchpad; move position center;
+bindsym $mod+m [instance="math"] scratchpad show
+
+#terminal scratchpad
+exec_always urxvt -name quickterm -e fish -c 'neofetch'
+for_window [instance="quickterm"] floating enable;
+for_window [instance="quickterm"] move scratchpad; move position center;
+bindsym $mod+t [instance="quickterm"] scratchpad show
+
 
 # Media player controls
 bindsym XF86AudioPlay exec cmus-remote -u 
 bindsym XF86AudioNext exec cmus-remote -n
 bindsym XF86AudioPrev exec cmus-remote -r
-#bindsym XF86AudioNext exec mpc next
-#bindsym XF86AudioPlay exec mpc toggle
-#bindsym XF86AudioPrev exec mpc prev
-
 
 bindsym XF86AudioRaiseVolume exec pactl set-sink-volume 0 +2%
 bindsym XF86AudioLowerVolume exec pactl set-sink-volume 0 -2%
 bindsym XF86AudioMute exec pactl set-sink-mute 0 toggle
-
 
 # Disables screen blanking
 exec --no-startup-id xset s off
