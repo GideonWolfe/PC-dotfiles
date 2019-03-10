@@ -72,14 +72,15 @@ let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 let g:UltiSnipsListSnippets="<c-tab>"
 
-
+" Echodoc settings
+let g:echodoc#enable_at_startup= 1
 
 " uneeded?
-"let g:syntastic_always_populate_loc_list = 0
-"let g:syntastic_auto_loc_list = 1
-"let g:syntastic_check_on_open = 0
-"let g:syntastic_check_on_wq = 0
-"let g:ycm_autoclose_preview_window_after_insertion = 1
+let g:syntastic_always_populate_loc_list = 0
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 0
+let g:syntastic_check_on_wq = 0
+let g:ycm_autoclose_preview_window_after_insertion = 1
 
 
 """"""""""""""""
@@ -129,3 +130,23 @@ augroup numbertoggle
   autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
   autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
 augroup END
+
+"alphsubs ---------------------- {{{
+        execute "digraphs ks " . 0x2096 
+        execute "digraphs as " . 0x2090
+        execute "digraphs es " . 0x2091
+        execute "digraphs hs " . 0x2095
+        execute "digraphs is " . 0x1D62
+        execute "digraphs ks " . 0x2096
+        execute "digraphs ls " . 0x2097
+        execute "digraphs ms " . 0x2098
+        execute "digraphs ns " . 0x2099
+        execute "digraphs os " . 0x2092
+        execute "digraphs ps " . 0x209A
+        execute "digraphs rs " . 0x1D63
+        execute "digraphs ss " . 0x209B
+        execute "digraphs ts " . 0x209C
+        execute "digraphs us " . 0x1D64
+        execute "digraphs vs " . 0x1D65
+        execute "digraphs xs " . 0x2093
+"}}}
