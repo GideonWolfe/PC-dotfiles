@@ -1,5 +1,8 @@
 #!/usr/bin/env fish
 
+# This script is a rplacement for the "zathura" command.
+# It refreshes the color from wal and then sets it in the zathura config
+
 set filename (readlink -f $argv[1])
 eval "bash genzathurarc > $HOME/.config/zathura/zathurarc"
 eval "zathura "'""$filename""'" &"
