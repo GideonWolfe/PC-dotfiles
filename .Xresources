@@ -13,39 +13,71 @@ XTerm*cursorColor:  #F3F3F2
 UXTerm*cursorColor: #F3F3F2
 URxvt*borderColor:  [100]#131811
 
+*.color0: {color0}
+*color0:  {color0}
+*.color1: {color1}
+*color1:  {color1}
+*.color2: {color2}
+*color2:  {color2}
+*.color3: {color3}
+*color3:  {color3}
+*.color4: {color4}
+*color4:  {color4}
+*.color5: {color5}
+*color5:  {color5}
+*.color6: {color6}
+*color6:  {color6}
+*.color7: {color7}
+*color7:  {color7}
+*.color8: {color8}
+*color8:  {color8}
+*.color9: {color9}
+*color9:  {color9}
+*.color10: {color10}
+*color10:  {color10}
+*.color11: {color11}
+*color11:  {color11}
+*.color12: {color12}
+*color12:  {color12}
+*.color13: {color13}
+*color13:  {color13}
+*.color14: {color14}
+*color14:  {color14}
+*.color15: {color15}
+*color15: {color15}
 ! Colors 0-15.
 
-*color0:  #131811
-
-*color1:  #798690
-
-*color2:  #99A3AB
-
-*color3:  #C0C1BD
-
-*color4:  #B0BAC4
-
-*color5:  #BAC4CB
-
-*color6:  #CED4D7
-
-*color7:  #F3F3F2
-
-*color8:  #717470
-
-*color9:  #798690
-
-*color10:  #99A3AB
-
-*color11:  #C0C1BD
-
-*color12:  #B0BAC4
-
-*color13:  #BAC4CB
-
-*color14:  #CED4D7
-
-*color15:  #F3F3F2
+!*color0:  #131811
+!
+!*color1:  #798690
+!
+!*color2:  #99A3AB
+!
+!*color3:  #C0C1BD
+!
+!*color4:  #B0BAC4
+!
+!*color5:  #BAC4CB
+!
+!*color6:  #CED4D7
+!
+!*color7:  #F3F3F2
+!
+!*color8:  #717470
+!
+!*color9:  #798690
+!
+!*color10:  #99A3AB
+!
+!*color11:  #C0C1BD
+!
+!*color12:  #B0BAC4
+!
+!*color13:  #BAC4CB
+!
+!*color14:  #CED4D7
+!
+!*color15:  #F3F3F2
 
 ! Black color that will not be affected by bold highlighting.
 *.color66: #131811
@@ -54,7 +86,7 @@ URxvt*borderColor:  [100]#131811
 ! rofi setup
 rofi.color-enabled:         true
 rofi.separator-style:       solid
-rofi.font:                  Iosevka 20
+rofi.font:                  curieMedium 20
 rofi.bw:                    2
 rofi.columns:               1
 rofi.yoffset:               0
@@ -83,7 +115,7 @@ XClock*secondColor: rgba:f3/f3/f2/ff
 !-------------------------------------------------------------------------------
 
 Xft.dpi:                    150
-Xft.antialias:              false
+Xft.antialias:              true
 Xft.rgba:                   rgb
 Xft.hinting:                true
 Xft.hintstyle:              hintslight
@@ -99,27 +131,29 @@ URxvt.fading:               0
 ! URxvt.urgentOnBell:         true
 ! URxvt.visualBell:           true
 URxvt.loginShell:           true
-URxvt.saveLines:            200
+URxvt.saveLines:            1000
 URxvt.internalBorder:       7
 URxvt*externalBorder: 	    5
 URxvt*borderLess:           false
 URxvt.lineSpace:            0
 
 ! Fonts
-URxvt.font: xft:Terminus :pixelsize=23:antialias=true:hinting=true
-
+URxvt.font:                  xft:Hack Nerd Font Mono:size=9:antialias=true
+!URxvt.font:                 xft:Iosevka Light:size=9:antialias=true
 URxvt.allow_bold:           true
 
 ! Fix font space
-URxvt*letterSpace: -1
+URxvt*letterSpace:          -1
 
 ! Scrollbar
 URxvt.scrollStyle:          rxvt
 URxvt.scrollBar:            false
 
 ! Perl extensions
+URxvt.perl-ext-common:      default,matcher,resize-font,url-select,keyboard-select,
 URxvt.matcher.button:       1
 URxvt.urlLauncher:          firefox
+
 
 ! Cursor
 URxvt.cursorBlink:          true
