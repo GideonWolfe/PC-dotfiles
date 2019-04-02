@@ -192,7 +192,7 @@ client.background $bg
 
 # Custom Keybinds
 bindsym $mod+f exec urxvt -e ranger
-
+bindsym $mod+Shift+Return exec urxvt -cd "`xcwd`" 
 
 ###################
 # Startup commands#
