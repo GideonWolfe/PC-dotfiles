@@ -1,0 +1,239 @@
+# ___  ________          ________  ________  ________   ________ ___  ________     
+#|\  \|\_____  \        |\   ____\|\   __  \|\   ___  \|\  _____\\  \|\   ____\    
+#\ \  \|____|\ /_       \ \  \___|\ \  \|\  \ \  \\ \  \ \  \__/\ \  \ \  \___|    
+# \ \  \    \|\  \       \ \  \    \ \  \\\  \ \  \\ \  \ \   __\\ \  \ \  \  ___  
+#  \ \  \  __\_\  \       \ \  \____\ \  \\\  \ \  \\ \  \ \  \_| \ \  \ \  \|\  \ 
+#   \ \__\|\_______\       \ \_______\ \_______\ \__\\ \__\ \__\   \ \__\ \_______\
+#    \|__|\|_______|        \|_______|\|_______|\|__| \|__|\|__|    \|__|\|_______|
+
+
+
+###############
+# Keybindings #
+###############
+
+
+# Mod Key Binding
+set $mod Mod4
+
+# Use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod
+
+# start a terminal
+bindsym $mod+Return exec urxvt
+
+# kill focused window
+bindsym $mod+Shift+q kill
+
+# start rofi (a program launcher)
+bindsym $mod+d exec rofi -show run
+
+# change focus
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+
+# alternatively, you can use the cursor keys:
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+# move focused window
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
+
+# alternatively, you can use the cursor keys:
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+# split in horizontal orientation
+bindsym $mod+b split h
+
+# split in vertical orientation
+bindsym $mod+v split v
+
+# enter fullscreen mode for the focused container
+bindsym $mod+Shift+f fullscreen toggle
+
+# change container layout (stacked, tabbed, toggle split)
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
+
+# toggle tiling / floating
+bindsym $mod+Shift+space floating toggle
+
+# change focus between tiling / floating windows
+bindsym $mod+space focus mode_toggle
+
+# focus the parent container
+bindsym $mod+a focus parent
+
+# focus the child container
+#bindsym $mod+d focus child
+
+# middle mouse on title bars/borders kills window
+bindsym --border button2 kill
+
+
+# reload the configuration file
+bindsym $mod+Shift+c reload
+
+# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym $mod+Shift+r restart
+
+# exit i3 (logs you out of your X session)
+
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+
+# resize window (you can also use the mouse for that)
+mode "resize" {
+        # These bindings trigger as soon as you enter the resize mode
+
+        # Pressing left will shrink the window’s width.
+        # Pressing right will grow the window’s width.
+        # Pressing up will shrink the window’s height.
+        # Pressing down will grow the window’s height.
+        bindsym j resize shrink width 10 px or 10 ppt
+        bindsym k resize grow height 10 px or 10 ppt
+        bindsym l resize shrink height 10 px or 10 ppt
+        bindsym semicolon resize grow width 10 px or 10 ppt
+
+        # same bindings, but for the arrow keys
+        bindsym Left resize shrink width 10 px or 10 ppt
+        bindsym Down resize grow height 10 px or 10 ppt
+        bindsym Up resize shrink height 10 px or 10 ppt
+        bindsym Right resize grow width 10 px or 10 ppt
+
+        # back to normal: Enter or Escape or $mod+r
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+        bindsym $mod+r mode "default"
+}
+
+bindsym $mod+r mode "resize"
+
+
+################
+# Workstations #
+################
+
+set $ws1 "1: Home "
+set $ws2 "2: Web "
+set $ws3 "3: Music "
+set $ws4 "4: School "
+set $ws5 "5: Projects "
+set $ws6 "6: Terminal "
+set $ws7 "7: 7"
+
+# switch to workspace
+bindsym $mod+1 workspace $ws1
+bindsym $mod+2 workspace $ws2
+bindsym $mod+3 workspace $ws3
+bindsym $mod+4 workspace $ws4
+bindsym $mod+5 workspace $ws5
+bindsym $mod+6 workspace $ws6
+bindsym $mod+7 workspace $ws7
+
+# move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace $ws1
+bindsym $mod+Shift+2 move container to workspace $ws2
+bindsym $mod+Shift+3 move container to workspace $ws3
+bindsym $mod+Shift+4 move container to workspace $ws4
+bindsym $mod+Shift+5 move container to workspace $ws5
+bindsym $mod+Shift+6 move container to workspace $ws6
+bindsym $mod+Shift+7 move container to workspace $ws7
+
+#############
+
+
+# Gaps settings
+new_window pixel 2
+for_window [class="^.*"] border pixel 4
+gaps inner 10
+gaps outer 5
+
+
+
+#Importing colors from .Xresources
+
+set_from_resource $bg           i3wm.color3 #ff0000
+set_from_resource $bg-alt       i3wm.color0 #ff0000
+set_from_resource $fg           i3wm.color15 #ff0000
+set_from_resource $fg-alt       i3wm.color2 #ff0000
+set_from_resource $hl           i3wm.color4 #ff0000
+
+
+# Applying these colors to UI elements
+
+# class                 border  backgr. text indicator      child_border
+client.focused          $fg-alt $bg     $fg  $fg-alt        $hl
+client.focused_inactive $bg     $bg-alt $fg  $bg            $bg
+client.unfocused        $bg     $bg-alt $fg  $bg            $bg
+client.urgent           $bg     $bg-alt $fg  $bg            $bg
+client.placeholder      $bg     $bg-alt $fg  $bg            $bg
+
+client.background $bg
+
+
+# Custom Keybinds
+bindsym $mod+f exec urxvt -e ranger
+bindsym $mod+Shift+Return exec urxvt -cd "`xcwd`" 
+
+###################
+# Startup commands#
+###################
+
+
+#retrieve wallpaper
+exec ~/.fehbg  
+
+#reset colorscheme 
+exec_always wal -R
+
+#remerge Xresources
+exec --no-startup-id xrdb /home/gideon/.Xresources
+
+#set dpi
+exec --no-startup-id xrandr --dpi 210
+
+
+# Strartup apps
+
+#firefox
+exec --no-startup-id i3-msg 'workspace 2: Web ; exec /usr/bin/firefox'
+
+#polybar
+exec_always pkill -9 polybar ; polybar main
+
+#math scratchpad
+exec_always urxvt -name math -e fish -c 'qalc'
+for_window [instance="math"] floating enable;
+for_window [instance="math"] move scratchpad; move position center;
+bindsym $mod+m [instance="math"] scratchpad show
+
+#terminal scratchpad
+exec_always urxvt -name quickterm -e fish -c 'neofetch'
+for_window [instance="quickterm"] floating enable;
+for_window [instance="quickterm"] move scratchpad; move position center;
+bindsym $mod+t [instance="quickterm"] scratchpad show
+
+bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +2%; exec pactl set-sink-mute @DEFAULT_SINK@ 0
+bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -2%; exec pactl set-sink-mute @DEFAULT_SINK@ 0
+bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
+bindsym XF86AudioPlay exec playerctl play-pause
+bindsym XF86AudioNext exec playerctl next
+bindsym XF86AudioPrev exec playerctl previous
+bindsym XF86MonBrightnessUp exec light -A 10 # increase screen brightness
+bindsym XF86MonBrightnessDown exec light -S 1 # decrease screen brightness
+
+
+# Disables screen blanking
+exec --no-startup-id xset s off
+exec --no-startup-id xset -dpms
