@@ -216,11 +216,7 @@ exec mopidy
 exec --no-startup-id i3-msg 'workspace 2: Web ; exec /usr/bin/firefox'
 
 #polybar
-<<<<<<< HEAD
-exec_always killal polybar ; polybar main 
-=======
 exec_always pkill -9 polybar ; polybar main
->>>>>>> 61187e7a0b626b574b72ad5f2648b98382d25e6f
 
 #math scratchpad
 exec_always urxvt -name math -e fish -c 'qalc'
