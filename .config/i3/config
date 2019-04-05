@@ -14,7 +14,7 @@
 
 
 # Mod Key Binding
-set $mod Mod4
+set $mod Mod1
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -100,10 +100,10 @@ mode "resize" {
         # Pressing right will grow the window’s width.
         # Pressing up will shrink the window’s height.
         # Pressing down will grow the window’s height.
-        bindsym h resize shrink width 10 px or 10 ppt
-        bindsym j resize grow height 10 px or 10 ppt
-        bindsym k resize shrink height 10 px or 10 ppt
-        bindsym l resize grow width 10 px or 10 ppt
+        bindsym j resize shrink width 10 px or 10 ppt
+        bindsym k resize grow height 10 px or 10 ppt
+        bindsym l resize shrink height 10 px or 10 ppt
+        bindsym semicolon resize grow width 10 px or 10 ppt
 
         # same bindings, but for the arrow keys
         bindsym Left resize shrink width 10 px or 10 ppt
@@ -124,13 +124,21 @@ bindsym $mod+r mode "resize"
 # Workstations #
 ################
 
-set $ws1 "1: Home "
-set $ws2 "2: Web "
-set $ws3 "3: Music "
-set $ws4 "4: School "
-set $ws5 "5: Projects "
-set $ws6 "6: Terminal "
-set $ws7 "7: 7"
+set $ws1 "1: Music "
+set $ws2 "2: Comms "
+set $ws3 "3: Home "
+set $ws4 "4: Web "
+set $ws5 "5: School "
+set $ws6 "6: Projects "
+set $ws7 "7: Terminal "
+set $ws8 "8: 8"
+workspace $ws1 output DVI-I-1
+workspace $ws2 output DVI-I-1
+workspace $ws3 output DVI-I-0
+workspace $ws4 output DVI-D-0
+workspace $ws5 output DVI-D-0
+workspace $ws6 output DVI-D-0
+workspace $ws7 output DVI-D-0
 
 # switch to workspace
 bindsym $mod+1 workspace $ws1
@@ -206,21 +214,11 @@ exec --no-startup-id xrandr --dpi 210
 
 # Strartup apps
 
-#keyboard backlight
-exec python /usr/bin/kb-light.py + 1000
-
-#mopidy server
-exec mopidy
-
 #firefox
-exec --no-startup-id i3-msg 'workspace 2: Web ; exec /usr/bin/firefox'
+exec --no-startup-id i3-msg 'workspace 4: Web ; exec /usr/bin/firefox'
 
 #polybar
-<<<<<<< HEAD
 exec_always killal polybar ; polybar main 
-=======
-exec_always pkill -9 polybar ; polybar main
->>>>>>> 61187e7a0b626b574b72ad5f2648b98382d25e6f
 
 #math scratchpad
 exec_always urxvt -name math -e fish -c 'qalc'
@@ -234,15 +232,15 @@ for_window [instance="quickterm"] floating enable;
 for_window [instance="quickterm"] move scratchpad; move position center;
 bindsym $mod+t [instance="quickterm"] scratchpad show
 
-bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +2%; exec pactl set-sink-mute @DEFAULT_SINK@ 0
-bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -2%; exec pactl set-sink-mute @DEFAULT_SINK@ 0
-bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
-bindsym XF86AudioPlay exec playerctl play-pause
-bindsym XF86AudioNext exec playerctl next
-bindsym XF86AudioPrev exec playerctl previous
-bindsym XF86MonBrightnessUp exec light -A 10 # increase screen brightness
-bindsym XF86MonBrightnessDown exec light -S 1 # decrease screen brightness
 
+# Media player controls
+bindsym XF86AudioPlay exec cmus-remote -u 
+bindsym XF86AudioNext exec cmus-remote -n
+bindsym XF86AudioPrev exec cmus-remote -r
+
+bindsym XF86AudioRaiseVolume exec pactl set-sink-volume 0 +2%
+bindsym XF86AudioLowerVolume exec pactl set-sink-volume 0 -2%
+bindsym XF86AudioMute exec pactl set-sink-mute 0 toggle
 
 # Disables screen blanking
 exec --no-startup-id xset s off
