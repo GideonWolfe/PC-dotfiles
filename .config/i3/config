@@ -218,7 +218,7 @@ exec --no-startup-id xrandr --dpi 210
 exec --no-startup-id i3-msg 'workspace 4: Web ; exec /usr/bin/firefox'
 
 #polybar
-exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+exec_always killal polybar ; polybar main 
 
 #math scratchpad
 exec_always urxvt -name math -e fish -c 'qalc'
