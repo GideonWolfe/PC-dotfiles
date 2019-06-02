@@ -5,7 +5,7 @@ e asm.cmtright=true
 e asm.pseudo = true
 
 # Sets disassembly syntax to AT&T
-e asm.syntax att
+e asm.syntax = att
 
 # Use UTF-8 to show cool arrows that do not look like crap :)
 e scr.utf8 = true
