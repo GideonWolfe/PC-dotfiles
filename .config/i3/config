@@ -100,10 +100,10 @@ mode "resize" {
         # Pressing right will grow the window’s width.
         # Pressing up will shrink the window’s height.
         # Pressing down will grow the window’s height.
-        bindsym j resize shrink width 10 px or 10 ppt
+        bindsym h resize shrink width 10 px or 10 ppt
         bindsym k resize grow height 10 px or 10 ppt
-        bindsym l resize shrink height 10 px or 10 ppt
-        bindsym semicolon resize grow width 10 px or 10 ppt
+        bindsym j resize shrink height 10 px or 10 ppt
+        bindsym l resize grow width 10 px or 10 ppt
 
         # same bindings, but for the arrow keys
         bindsym Left resize shrink width 10 px or 10 ppt
@@ -132,13 +132,16 @@ set $ws5 "5: School "
 set $ws6 "6: Projects "
 set $ws7 "7: Terminal "
 set $ws8 "8: 8"
+set $ws9 "9: 9"
 workspace $ws1 output DVI-I-1
 workspace $ws2 output DVI-I-1
-workspace $ws3 output DVI-I-0
+workspace $ws3 output DVI-I-1
 workspace $ws4 output DVI-D-0
 workspace $ws5 output DVI-D-0
 workspace $ws6 output DVI-D-0
-workspace $ws7 output DVI-D-0
+workspace $ws7 output HDMI-0
+workspace $ws8 output HDMI-0
+workspace $ws9 output HDMI-0
 
 # switch to workspace
 bindsym $mod+1 workspace $ws1
@@ -148,6 +151,8 @@ bindsym $mod+4 workspace $ws4
 bindsym $mod+5 workspace $ws5
 bindsym $mod+6 workspace $ws6
 bindsym $mod+7 workspace $ws7
+bindsym $mod+8 workspace $ws8
+bindsym $mod+9 workspace $ws9
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace $ws1
@@ -157,6 +162,8 @@ bindsym $mod+Shift+4 move container to workspace $ws4
 bindsym $mod+Shift+5 move container to workspace $ws5
 bindsym $mod+Shift+6 move container to workspace $ws6
 bindsym $mod+Shift+7 move container to workspace $ws7
+bindsym $mod+Shift+8 move container to workspace $ws8
+bindsym $mod+Shift+9 move container to workspace $ws9
 
 #############
 
@@ -214,11 +221,15 @@ exec --no-startup-id xrandr --dpi 210
 
 # Strartup apps
 
+# automount usb
+#exec udiskie &
+
 #firefox
 exec --no-startup-id i3-msg 'workspace 4: Web ; exec /usr/bin/firefox'
 
 #polybar
-exec_always killal polybar ; polybar main 
+#exec_always urxvt -e fish -c 'cd ~/.config/polybar/ ; ./launch.sh'
+exec_always ~/.config/polybar/launch.sh 
 
 #math scratchpad
 exec_always urxvt -name math -e fish -c 'qalc'
@@ -238,9 +249,9 @@ bindsym XF86AudioPlay exec cmus-remote -u
 bindsym XF86AudioNext exec cmus-remote -n
 bindsym XF86AudioPrev exec cmus-remote -r
 
-bindsym XF86AudioRaiseVolume exec pactl set-sink-volume 0 +2%
-bindsym XF86AudioLowerVolume exec pactl set-sink-volume 0 -2%
-bindsym XF86AudioMute exec pactl set-sink-mute 0 toggle
+bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +2%
+bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -2%
+bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
 
 # Disables screen blanking
 exec --no-startup-id xset s off
