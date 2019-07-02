@@ -124,6 +124,10 @@ if has("autocmd")
     \| exe "normal! g'\"" | endif
 endif
 
+" Share the yank buffer
+set clipboard=unnamedplus
+
+
 " Relative line numbers
 augroup numbertoggle
   autocmd!
@@ -150,3 +154,16 @@ augroup END
         execute "digraphs vs " . 0x1D65
         execute "digraphs xs " . 0x2093
 "}}}
+
+" Enable spellchecking for certain files
+augroup markdownSpell
+    autocmd!
+    autocmd FileType markdown setlocal spell
+    autocmd BufRead,BufNewFile *.md setlocal spell
+augroup END
+
+augroup textSpell
+    autocmd!
+    autocmd FileType text setlocal spell
+    autocmd BufRead,BufNewFile *.txt setlocal spell
+augroup END
