@@ -11,48 +11,69 @@
 """""""""""
 " PLUGINS "
 """""""""""
-
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-Plugin 'VundleVim/Vundle.vim'
+call plug#begin('~/.vim/plugged')
 
 " Code Snippets Engine
-Plugin 'SirVer/ultisnips'
+Plug 'SirVer/ultisnips'
 
 " Snippets for ultisnips
-Plugin 'honza/vim-snippets'
-
-" Function Signatures
-Plugin 'Shougo/echodoc.vim'
+Plug 'honza/vim-snippets'
 
 " Wal for colorscheme
-Plugin 'dylanaraps/wal'
-
-" Autocomplete
-Plugin 'Shougo/deoplete.nvim'
+Plug 'dylanaraps/wal'
 
 " Vim Surround
-Plugin 'tpope/vim-surround'
+Plug 'tpope/vim-surround'
 
 " Linter
-Plugin 'w0rp/ale' 
+Plug 'w0rp/ale' 
 
 " Auto pairs
-Plugin 'jiangmiao/auto-pairs' 
+Plug 'jiangmiao/auto-pairs' 
 
 " Multiple Cursors
-Plugin 'terryma/vim-multiple-cursors'
+Plug 'terryma/vim-multiple-cursors'
 
 " Indent guides
-Plugin 'Yggdroot/indentLine' 
+Plug 'Yggdroot/indentLine' 
 
+" COC
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
-call vundle#end()
+" Custom start page
+Plug 'mhinz/vim-startify'
+
+" Vim Javascript
+Plug 'pangloss/vim-javascript'
+
+" Language Packs
+Plug 'sheerun/vim-polyglot'
+
+" Status bar
+Plug 'vim-airline/vim-airline'
+
+" Tabular auto-align
+Plug 'godlygeek/tabular'
+
+" Comfy scroll
+Plug 'yuttie/comfortable-motion.vim'
+
+" Add DevIcons
+Plug 'ryanoasis/vim-devicons'
+
+call plug#end()
 
 
 """"""""""""""""""""
 " Plugin Settings "
 """"""""""""""""""""
+" COC Settings
+
+" Comfy Scroll
+noremap <silent> <ScrollWheelDown> :call comfortable_motion#flick(40)<CR>
+noremap <silent> <ScrollWheelUp>   :call comfortable_motion#flick(-40)<CR>
+let g:comfortable_motion_friction = 50.0
+let g:comfortable_motion_air_drag = 1.0
 
 " Autocomplete Settings
 let g:deoplete#enable_at_startup = 1
@@ -72,9 +93,6 @@ let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 let g:UltiSnipsListSnippets="<c-tab>"
 
-" Echodoc settings
-let g:echodoc#enable_at_startup= 1
-
 " uneeded?
 let g:syntastic_always_populate_loc_list = 0
 let g:syntastic_auto_loc_list = 1
@@ -82,13 +100,54 @@ let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 0
 let g:ycm_autoclose_preview_window_after_insertion = 1
 
+" Startify settings
+let g:startify_custom_header = [
+            \"▄▄        ▄  ▄▄▄▄▄▄▄▄▄▄▄  ▄▄▄▄▄▄▄▄▄▄▄  ▄               ▄  ▄▄▄▄▄▄▄▄▄▄▄  ▄▄       ▄▄ ",
+            \"▐░░▌      ▐░▌▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌▐░▌             ▐░▌▐░░░░░░░░░░░▌▐░░▌     ▐░░▌",
+            \"▐░▌░▌     ▐░▌▐░█▀▀▀▀▀▀▀▀▀ ▐░█▀▀▀▀▀▀▀█░▌ ▐░▌           ▐░▌  ▀▀▀▀█░█▀▀▀▀ ▐░▌░▌   ▐░▐░▌",
+            \"▐░▌▐░▌    ▐░▌▐░▌          ▐░▌       ▐░▌  ▐░▌         ▐░▌       ▐░▌     ▐░▌▐░▌ ▐░▌▐░▌",
+            \"▐░▌ ▐░▌   ▐░▌▐░█▄▄▄▄▄▄▄▄▄ ▐░▌       ▐░▌   ▐░▌       ▐░▌        ▐░▌     ▐░▌ ▐░▐░▌ ▐░▌",
+            \"▐░▌  ▐░▌  ▐░▌▐░░░░░░░░░░░▌▐░▌       ▐░▌    ▐░▌     ▐░▌         ▐░▌     ▐░▌  ▐░▌  ▐░▌",
+            \"▐░▌   ▐░▌ ▐░▌▐░█▀▀▀▀▀▀▀▀▀ ▐░▌       ▐░▌     ▐░▌   ▐░▌          ▐░▌     ▐░▌   ▀   ▐░▌",
+            \"▐░▌    ▐░▌▐░▌▐░▌          ▐░▌       ▐░▌      ▐░▌ ▐░▌           ▐░▌     ▐░▌       ▐░▌",
+            \"▐░▌     ▐░▐░▌▐░█▄▄▄▄▄▄▄▄▄ ▐░█▄▄▄▄▄▄▄█░▌       ▐░▐░▌        ▄▄▄▄█░█▄▄▄▄ ▐░▌       ▐░▌",
+            \"▐░▌      ▐░░▌▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌        ▐░▌        ▐░░░░░░░░░░░▌▐░▌       ▐░▌",
+            \" ▀        ▀▀  ▀▀▀▀▀▀▀▀▀▀▀  ▀▀▀▀▀▀▀▀▀▀▀          ▀          ▀▀▀▀▀▀▀▀▀▀▀  ▀         ▀ ",
+			\]
+
+let g:startify_custom_footer = [
+    \"               ...",
+    \"             ;::::;",
+    \"           ;::::; :;",
+    \"         ;:::::'   :;",
+    \"        ;:::::;     ;.",
+    \"       ,:::::'       ;           OOO\ ",
+    \"       ::::::;       ;          OOOOO\ ",
+    \"       ;:::::;       ;         OOOOOOOO",
+    \"      ,;::::::;     ;'         / OOOOOOO",
+    \"    ;:::::::::`. ,,,;.        /  / DOOOOOO",
+    \"  .';:::::::::::::::::;,     /  /     DOOOO",
+    \" ,::::::;::::::;;;;::::;,   /  /        DOOO",
+    \";`::::::`'::::::;;;::::: ,#/  /          DOOO",
+    \":`:::::::`;::::::;;::: ;::#  /            DOOO",
+    \"::`:::::::`;:::::::: ;::::# /              DOO",
+    \"`:`:::::::`;:::::: ;::::::#/               DOO",
+    \" :::`:::::::`;; ;:::::::::##                OO",
+    \" ::::`:::::::`;::::::::;:::#                OO",
+    \" `:::::`::::::::::::;'`:;::#                O",
+    \"  `:::::`::::::::;' /  / `:#",
+    \"   ::::::`:::::;'  /  /   `#",
+  \]
 
 """"""""""""""""
 " Vim Settings "
 """"""""""""""""
 
-" Statusline Config
-set statusline+=%*
+" Enable mouse scroll
+set mouse=a
+
+"Statusline Config
+set statusline+=%F
 set cmdheight=2
 
 " Tab Settings
@@ -97,14 +156,11 @@ set tabstop=4
 set shiftwidth=4
 
 " Misc
+syntax on
+filetype plugin indent on
 set showmatch
-set number
 set formatoptions+=o
-set statusline+=%F
-set number
 set nocompatible
-filetype off
-set background=dark
 colorscheme wal
 set clipboard=unnamed
 
@@ -129,6 +185,7 @@ set clipboard=unnamedplus
 
 
 " Relative line numbers
+set number
 augroup numbertoggle
   autocmd!
   autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
@@ -167,3 +224,43 @@ augroup textSpell
     autocmd FileType text setlocal spell
     autocmd BufRead,BufNewFile *.txt setlocal spell
 augroup END
+
+
+" COC TEST SETTINGS
+set hidden
+
+set updatetime=300
+
+let g:coc_snippet_next = '<TAB>'
+let g:coc_snippet_prev = '<S-TAB>'
+let g:coc_status_error_sign = '•'
+let g:coc_status_warning_sign = '•'
+let g:coc_global_extensions =['coc-html','coc-css','coc-snippets','coc-prettier','coc-eslint','coc-emmet','coc-tsserver','coc-pairs','coc-json','coc-python','coc-imselect','coc-highlight','coc-git','coc-emoji','coc-lists','coc-post','coc-stylelint','coc-yaml','coc-template','coc-tabnine']
+
+augroup MyAutoCmd
+  autocmd!
+  " Setup formatexpr specified filetype(s).
+  autocmd FileType typescript,json setl formatexpr=CocAction('formatSelected')
+  " Update signature help on jump placeholder
+  autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
+augroup end
+
+" Highlight symbol under cursor on CursorHold
+autocmd CursorHold * silent call CocActionAsync('highlight')
+
+"Use tab for trigger completion with characters ahead and navigate
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+"inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
+
