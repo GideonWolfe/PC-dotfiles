@@ -83,6 +83,7 @@ inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 " Indent Guide Settings 
 let g:indentLine_char = '▏'
 filetype plugin indent on    " required
+let g:indentLine_fileTypeExclude = ['defx', 'denite', 'startify', 'tagbar', 'vista_kind', 'vista']
 
 " Autopairs Config
 let g:AutoPairsFlyMode = 0
@@ -93,15 +94,16 @@ let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 let g:UltiSnipsListSnippets="<c-tab>"
 
-" uneeded?
-let g:syntastic_always_populate_loc_list = 0
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 0
-let g:syntastic_check_on_wq = 0
-let g:ycm_autoclose_preview_window_after_insertion = 1
-
 " Startify settings
-let g:startify_custom_header = [
+"
+function! s:center(lines) abort
+  let longest_line   = max(map(copy(a:lines), 'strwidth(v:val)'))
+  let centered_lines = map(copy(a:lines),
+        \ 'repeat(" ", (&columns / 2) - (longest_line / 2)) . v:val')
+  return centered_lines
+endfunction
+
+let s:header= [
             \"▄▄        ▄  ▄▄▄▄▄▄▄▄▄▄▄  ▄▄▄▄▄▄▄▄▄▄▄  ▄               ▄  ▄▄▄▄▄▄▄▄▄▄▄  ▄▄       ▄▄ ",
             \"▐░░▌      ▐░▌▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌▐░▌             ▐░▌▐░░░░░░░░░░░▌▐░░▌     ▐░░▌",
             \"▐░▌░▌     ▐░▌▐░█▀▀▀▀▀▀▀▀▀ ▐░█▀▀▀▀▀▀▀█░▌ ▐░▌           ▐░▌  ▀▀▀▀█░█▀▀▀▀ ▐░▌░▌   ▐░▐░▌",
@@ -115,7 +117,7 @@ let g:startify_custom_header = [
             \" ▀        ▀▀  ▀▀▀▀▀▀▀▀▀▀▀  ▀▀▀▀▀▀▀▀▀▀▀          ▀          ▀▀▀▀▀▀▀▀▀▀▀  ▀         ▀ ",
 			\]
 
-let g:startify_custom_footer = [
+let s:footer = [
     \"               ...",
     \"             ;::::;",
     \"           ;::::; :;",
@@ -139,6 +141,8 @@ let g:startify_custom_footer = [
     \"   ::::::`:::::;'  /  /   `#",
   \]
 
+let g:startify_custom_header = s:center(s:header)
+let g:startify_custom_footer = s:center(s:footer)
 """"""""""""""""
 " Vim Settings "
 """"""""""""""""
