@@ -13,6 +13,9 @@
 """""""""""
 call plug#begin('~/.vim/plugged')
 
+" Git wrapper
+Plug 'tpope/vim-fugitive'
+
 " Code Snippets Engine
 Plug 'SirVer/ultisnips'
 
@@ -40,6 +43,9 @@ Plug 'Yggdroot/indentLine'
 " COC
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
+" Smart completion (to work with CoC)
+Plug 'zxqfl/tabnine-vim'
+
 " Custom start page
 Plug 'mhinz/vim-startify'
 
@@ -51,6 +57,7 @@ Plug 'sheerun/vim-polyglot'
 
 " Status bar
 Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 
 " Tabular auto-align
 Plug 'godlygeek/tabular'
@@ -61,13 +68,97 @@ Plug 'yuttie/comfortable-motion.vim'
 " Add DevIcons
 Plug 'ryanoasis/vim-devicons'
 
+" Tagbar
+Plug 'majutsushi/tagbar'
+
+" NERDTree
+Plug 'scrooloose/nerdtree'
+Plug 'Xuyuanp/nerdtree-git-plugin'
+
+" Emoji support
+Plug 'junegunn/vim-emoji'
+
+" goyo distraction free mode 
+Plug 'junegunn/goyo.vim'
+
 call plug#end()
 
-
+set completefunc=emoji#complete
 """"""""""""""""""""
 " Plugin Settings "
 """"""""""""""""""""
+" Goyo settings
+nmap <F6> :Goyo<CR>
+let g:goyo_width=100
+
+"Tagbar Settings
+nmap <F8> :TagbarToggle<CR>
+let g:tagbar_width=35
+let g:tagbar_type_go = {
+    \ 'ctagstype' : 'go',
+    \ 'kinds' : [
+        \ 'p:package',
+        \ 'i:imports:1',
+        \ 'c:constants',
+        \ 'v:variables',
+        \ 't:types',
+        \ 'n:interfaces',
+        \ 'w:fields',
+        \ 'e:embedded',
+        \ 'm:methods',
+        \ 'r:constructor',
+        \ 'f:functions'
+    \ ],
+    \ 'sro' : '.',
+    \ 'kind2scope' : {
+        \ 't' : 'ctype',
+        \ 'n' : 'ntype'
+    \ },
+    \ 'scope2kind' : {
+        \ 'ctype' : 't',
+        \ 'ntype' : 'n'
+    \ },
+    \ 'ctagsbin' : 'gotags',
+    \ 'ctagsargs' : '-sort -silent'
+    \ }
+
+" NERDTree settings"
+map <F7> :NERDTreeToggle<CR>
+let nerdtreequitonopen = 0
+let NERDTreeShowHidden=0
+let nerdchristmastree=1
+let g:nerdtreewinsize = 25
+let g:NERDTreeDirArrowExpandable = '▷'
+let g:NERDTreeDirArrowCollapsible = '▼'
+let NERDTreeAutoCenter=1
+let g:NERDTreeIndicatorMapCustom = {
+        \ "modified"  : "✹",
+        \ "staged"    : "✚",
+        \ "untracked" : "✭",
+        \ "renamed"   : "➜",
+        \ "unmerged"  : "═",
+        \ "deleted"   : "✖",
+        \ "dirty"     : "✗",
+        \ "clean"     : "✔︎",
+        \ 'ignored'   : '☒',
+        \ "unknown"   : "?"
+        \ }
+
 " COC Settings
+
+" Vim-Airline setings
+let g:airline_left_sep = ''
+let g:airline_left_alt_sep = ''
+let g:airline_right_sep = ''
+let g:airline_right_alt_sep = ''
+let g:airline_symbols_branch = ''
+let g:airline_powerline_fonts = 1
+
+" DevIcon settings
+let g:webdevicons_enable = 1
+let g:webdevicons_enable_airline_tabline = 1
+let g:webdevicons_enable_airline_statusline = 1
+let g:WebDevIconsUnicodeGlyphDoubleWidth = 1
 
 " Comfy Scroll
 noremap <silent> <ScrollWheelDown> :call comfortable_motion#flick(40)<CR>
@@ -95,7 +186,6 @@ let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 let g:UltiSnipsListSnippets="<c-tab>"
 
 " Startify settings
-"
 function! s:center(lines) abort
   let longest_line   = max(map(copy(a:lines), 'strwidth(v:val)'))
   let centered_lines = map(copy(a:lines),
@@ -104,18 +194,18 @@ function! s:center(lines) abort
 endfunction
 
 let s:header= [
-            \"▄▄        ▄  ▄▄▄▄▄▄▄▄▄▄▄  ▄▄▄▄▄▄▄▄▄▄▄  ▄               ▄  ▄▄▄▄▄▄▄▄▄▄▄  ▄▄       ▄▄ ",
-            \"▐░░▌      ▐░▌▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌▐░▌             ▐░▌▐░░░░░░░░░░░▌▐░░▌     ▐░░▌",
-            \"▐░▌░▌     ▐░▌▐░█▀▀▀▀▀▀▀▀▀ ▐░█▀▀▀▀▀▀▀█░▌ ▐░▌           ▐░▌  ▀▀▀▀█░█▀▀▀▀ ▐░▌░▌   ▐░▐░▌",
-            \"▐░▌▐░▌    ▐░▌▐░▌          ▐░▌       ▐░▌  ▐░▌         ▐░▌       ▐░▌     ▐░▌▐░▌ ▐░▌▐░▌",
-            \"▐░▌ ▐░▌   ▐░▌▐░█▄▄▄▄▄▄▄▄▄ ▐░▌       ▐░▌   ▐░▌       ▐░▌        ▐░▌     ▐░▌ ▐░▐░▌ ▐░▌",
-            \"▐░▌  ▐░▌  ▐░▌▐░░░░░░░░░░░▌▐░▌       ▐░▌    ▐░▌     ▐░▌         ▐░▌     ▐░▌  ▐░▌  ▐░▌",
-            \"▐░▌   ▐░▌ ▐░▌▐░█▀▀▀▀▀▀▀▀▀ ▐░▌       ▐░▌     ▐░▌   ▐░▌          ▐░▌     ▐░▌   ▀   ▐░▌",
-            \"▐░▌    ▐░▌▐░▌▐░▌          ▐░▌       ▐░▌      ▐░▌ ▐░▌           ▐░▌     ▐░▌       ▐░▌",
-            \"▐░▌     ▐░▐░▌▐░█▄▄▄▄▄▄▄▄▄ ▐░█▄▄▄▄▄▄▄█░▌       ▐░▐░▌        ▄▄▄▄█░█▄▄▄▄ ▐░▌       ▐░▌",
-            \"▐░▌      ▐░░▌▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌        ▐░▌        ▐░░░░░░░░░░░▌▐░▌       ▐░▌",
-            \" ▀        ▀▀  ▀▀▀▀▀▀▀▀▀▀▀  ▀▀▀▀▀▀▀▀▀▀▀          ▀          ▀▀▀▀▀▀▀▀▀▀▀  ▀         ▀ ",
-			\]
+    \"▄▄        ▄  ▄▄▄▄▄▄▄▄▄▄▄  ▄▄▄▄▄▄▄▄▄▄▄  ▄               ▄  ▄▄▄▄▄▄▄▄▄▄▄  ▄▄       ▄▄ ",
+    \"▐░░▌      ▐░▌▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌▐░▌             ▐░▌▐░░░░░░░░░░░▌▐░░▌     ▐░░▌",
+    \"▐░▌░▌     ▐░▌▐░█▀▀▀▀▀▀▀▀▀ ▐░█▀▀▀▀▀▀▀█░▌ ▐░▌           ▐░▌  ▀▀▀▀█░█▀▀▀▀ ▐░▌░▌   ▐░▐░▌",
+    \"▐░▌▐░▌    ▐░▌▐░▌          ▐░▌       ▐░▌  ▐░▌         ▐░▌       ▐░▌     ▐░▌▐░▌ ▐░▌▐░▌",
+    \"▐░▌ ▐░▌   ▐░▌▐░█▄▄▄▄▄▄▄▄▄ ▐░▌       ▐░▌   ▐░▌       ▐░▌        ▐░▌     ▐░▌ ▐░▐░▌ ▐░▌",
+    \"▐░▌  ▐░▌  ▐░▌▐░░░░░░░░░░░▌▐░▌       ▐░▌    ▐░▌     ▐░▌         ▐░▌     ▐░▌  ▐░▌  ▐░▌",
+    \"▐░▌   ▐░▌ ▐░▌▐░█▀▀▀▀▀▀▀▀▀ ▐░▌       ▐░▌     ▐░▌   ▐░▌          ▐░▌     ▐░▌   ▀   ▐░▌",
+    \"▐░▌    ▐░▌▐░▌▐░▌          ▐░▌       ▐░▌      ▐░▌ ▐░▌           ▐░▌     ▐░▌       ▐░▌",
+    \"▐░▌     ▐░▐░▌▐░█▄▄▄▄▄▄▄▄▄ ▐░█▄▄▄▄▄▄▄█░▌       ▐░▐░▌        ▄▄▄▄█░█▄▄▄▄ ▐░▌       ▐░▌",
+    \"▐░▌      ▐░░▌▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌        ▐░▌        ▐░░░░░░░░░░░▌▐░▌       ▐░▌",
+    \" ▀        ▀▀  ▀▀▀▀▀▀▀▀▀▀▀  ▀▀▀▀▀▀▀▀▀▀▀          ▀          ▀▀▀▀▀▀▀▀▀▀▀  ▀         ▀ ",
+    \]
 
 let s:footer = [
     \"               ...",
@@ -140,7 +230,7 @@ let s:footer = [
     \"  `:::::`::::::::;' /  / `:#",
     \"   ::::::`:::::;'  /  /   `#",
   \]
-
+let g:startify_change_to_dir = 1
 let g:startify_custom_header = s:center(s:header)
 let g:startify_custom_footer = s:center(s:footer)
 """"""""""""""""
