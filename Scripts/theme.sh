@@ -17,6 +17,9 @@ FILEPATH=$(readlink -f "$1")
 wal -i $FILEPATH ${@:2}
 echo ""
 
+# Set wallpaper to stretch all monitors
+#feh $FILEPATH --bg-fill --no-xinerama
+
 # Set the colors for telegram-desktop
 # Chat background not setting for some reason, must set manually
 echo "##########################"
@@ -36,7 +39,8 @@ echo ""
 echo "###########################"
 echo "# Updating Keyboard Color #"
 echo "###########################"
-KEYBOARDCOLOR=$(cat $HOME/.cache/wal/colors | head -n 3 | tail -n 1 | sed 's/#//')
+#KEYBOARDCOLOR=$(cat $HOME/.cache/wal/colors | head -n 3 | tail -n 1 | sed 's/#//')
+KEYBOARDCOLOR=$(cat colors.css | grep color6 | awk '{print $2}' | cut -c2- | rev | cut -c2- | rev)
 echo rgb $KEYBOARDCOLOR > /dev/input/ckb1/cmd
 echo "Keyboard Color Set"
 echo ""
@@ -45,7 +49,7 @@ echo ""
 echo "##########################"
 echo "# Updating Spotify Color #"
 echo "##########################"
-oomoxify-cli  $HOME/cache/wal/colors-oomox -s /opt/spotify/Apps/
+oomoxify-cli  $HOME/.cache/wal/colors-oomox -s /opt/spotify/Apps/
 echo "Spotify Theme Set"
 echo ""
 
