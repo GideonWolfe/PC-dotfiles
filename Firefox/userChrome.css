@@ -9,6 +9,11 @@ Change 'ecly' to your username. */
     --font: 'Iosevka';
 }
 
+#TabsToolbar .tabbrowser-tab .tab-line[selected="true"] {
+    background-color: var(--foreground-alt) !important;
+}
+
+
 /* --- General coloring of header panel --- */
 /* text area coloring */
 textarea, input, select {
