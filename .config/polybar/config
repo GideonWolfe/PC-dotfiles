@@ -75,7 +75,8 @@ tray-background = ${colors.background}
 [module/spotify]
 type = custom/script
 interval = 1
-format-prefix = " "
+format-prefix = "| "
+format-suffix = " |"
 format = <label>
 exec = python /home/gideon/.config/polybar/spotify.py -f '{artist}: {song}'
 click-left = dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next
@@ -91,6 +92,8 @@ interval = 1
 click-left = cmus-remote -n
 click-right = cmus-remote -r
 click-middle = cmus-remote -u
+format-prefix = " | "
+format-suffix = " |"
 
 [module/xwindow]
 type = internal/xwindow
