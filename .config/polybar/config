@@ -23,7 +23,8 @@ margin-top = 3
 margin-bottom = 3
 
 [bar/main]
-;monitor = ${env:MONITOR:HDMI-1}
+monitor = ${env:MONITOR:}
+;monitor = DVI-D-0
 width = 100%
 height = 25
 ;offset-x = 1%
@@ -57,18 +58,31 @@ font-1 = "FontAwesome:style=Regular:pixelsize=12;2"
 
 modules-left = i3
 modules-center = date
-modules-right = player-cmus pulseaudio volume_percentage cpu 
+modules-right = player-cmus spotify volume_percentage cpu 
 ;fix tray position
 ;override-redirect = true
 
 tray-detached = false
-tray-position =
+tray-position = right
 tray-offset-x = 0
 tray-offset-y = 0
 tray-maxsize = 16
 tray-padding = 0
 tray-scale = 1
 tray-background = ${colors.background}
+
+
+[module/spotify]
+type = custom/script
+interval = 1
+format-prefix = " "
+format = <label>
+exec = python /home/gideon/.config/polybar/spotify.py -f '{artist}: {song}'
+click-left = dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next
+click-right = dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous
+click-middle = dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause 
+
+
 
 [module/player-cmus]
 type = custom/script
@@ -85,7 +99,6 @@ label-foreground = ${colors.foreground}
 
 [module/i3]
 type = internal/i3
-
 ; Only show workspaces defined on the same output as the bar
 ;
 ; Useful if you want to show monitor specific workspaces
@@ -198,7 +211,7 @@ time-alt = " %z %Z."
 label = " %date%%time% "
 
 [module/volume]
-type = internal/volume
+type = internal/alsa
 
 format-volume = <label-volume> <bar-volume>
 label-volume = VOL
@@ -226,7 +239,7 @@ bar-volume-empty-font = 2
 bar-volume-empty-foreground = ${colors.foreground-alt}
 
 [module/volume_percentage]
-type = internal/volume
+type = internal/alsa
 
 format-volume-prefix = " "
 format-volume-prefix-foreground = ${colors.foreground-alt}
