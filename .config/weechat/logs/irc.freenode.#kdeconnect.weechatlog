@@ -1,0 +1,883 @@
+2019-07-19 13:32:27	> 	_Raijin (~gideon@2603:3023:708:9c00::fb07) has joined #kdeconnect
+2019-07-19 13:32:27	 - 	Topic for #kdeconnect is "KDE Connect Development"
+2019-07-19 13:32:27	 - 	Topic set by nicolasfella (~nico@wcvh021.rzhousing.uni-wuerzburg.de) on  
+2019-07-19 13:32:27	 - 	Channel #kdeconnect: 50 nicks (0 ops, 0 voices, 50 normals)
+2019-07-19 13:32:29	 - 	Channel created on  
+2019-07-19 13:33:36	_Raijin	Hey guys, I am having problems with my phone and PC seeing each other. My app on my phone and PC are up to date, and my opened the necessary ports on my firewall. I go into more detail in my post here: https://www.reddit.com/r/archlinux/comments/cfcljw/anyone_having_connection_issues_with_kde_connect/
+2019-07-19 13:44:13	> 	IceCold2000 (~icecold20@cpc137966-brom13-2-0-cust296.16-1.cable.virginm.net) has joined #kdeconnect
+2019-07-19 13:59:14	pursuivant	kdeconnect-android (albertvaka/presenter-pointer) v1.12.9.2-8-g2595d97f * Albert Vaca Cintora: src/org/kde/kdeconnect (2 files in 2 dirs)
+2019-07-19 13:59:15	pursuivant	Use capabilities to enable presenter pointer
+2019-07-19 13:59:15	pursuivant	https://invent.kde.org/kde/kdeconnect-android/commit/2595d97fad5c72d8d3a0c26bb05d9d2b9cf7ce83
+2019-07-19 14:02:52	pursuivant	kdeconnect-android (master) v1.12.93-22-gbdcefe4a * Albert Vaca Cintora:  (3 files in 3 dirs)
+2019-07-19 14:02:52	pursuivant	Merge branch 'albertvaka/presenter-pointer'
+2019-07-19 14:02:54	pursuivant	# Conflicts:
+2019-07-19 14:02:54	pursuivant	#res/values/strings.xml
+2019-07-19 14:02:54	pursuivant	#src/org/kde/kdeconnect/Plugins/PresenterPlugin/PresenterActivity.java
+2019-07-19 14:02:55	pursuivant	https://invent.kde.org/kde/kdeconnect-android/commit/bdcefe4a2b12b1d39dbe8708cda48fce0efd2d0d
+2019-07-19 14:22:37	pursuivant	kdeconnect-kde (master) v1.3.3-648-g52603bfe * Nicolas Fella: data (2 files)
+2019-07-19 14:22:38	pursuivant	Install desktop file to open files on remote device
+2019-07-19 14:22:38	pursuivant	https://invent.kde.org/kde/kdeconnect-kde/commit/52603bfe9309e0572eb5f0563aef79f657b66211
+2019-07-19 14:25:17	pursuivant	kdeconnect-kde (master) v1.3.3-649-g0d26b037 * Aleix Pol: plugins/presenter/presenterplugin.cpp
+2019-07-19 14:25:18	pursuivant	presenter plugin: reduce disappear timeout to 500ms
+2019-07-19 14:25:19	pursuivant	In contrast to 2000ms
+2019-07-19 14:25:19	pursuivant	https://invent.kde.org/kde/kdeconnect-kde/commit/0d26b037c4ef87e7bbe3694064a5ef26c69054d6
+2019-07-19 14:34:38	pursuivant	kdeconnect-android (master) v1.12.93-23-gffe722b2 * Albert Vaca Cintora: src/org/kde/kdeconnect/Plugins/PresenterPlugin/PresenterActivity.java
+2019-07-19 14:34:38	pursuivant	Make pointer go back immediately after pushing against a screen edge
+2019-07-19 14:34:39	pursuivant	https://invent.kde.org/kde/kdeconnect-android/commit/ffe722b23a30168d288abc9e46756d7d359c82d0
+2019-07-19 14:42:06	pursuivant	kdeconnect-android (master) v1.12.93-24-g8d2e2fa6 * Nicolas Fella: res/values/strings.xml
+2019-07-19 14:42:07	pursuivant	Remove unused strings
+2019-07-19 14:42:07	pursuivant	https://invent.kde.org/kde/kdeconnect-android/commit/8d2e2fa69878ca7c21fc9c4cf4c7931252634040
+2019-07-19 14:50:37	 <<< 	smithjd (~enderw@node-1w7jra24sjglsna0eluvgpdph.ipv6.telus.net) has quit (Ping timeout: 250 seconds)
+2019-07-19 14:58:13	 <<< 	bitwinery (~bruno@c-71-59-192-149.hsd1.wa.comcast.net) has quit (Quit: Leaving)
+2019-07-19 15:06:01	 <<< 	sredman (~sredman@195.135.221.19) has quit (Ping timeout: 246 seconds)
+2019-07-19 15:41:24	> 	smithjd (~enderw@node-1w7jra24sjglsna0eluvgpdph.ipv6.telus.net) has joined #kdeconnect
+2019-07-19 15:46:05	 <<< 	smithjd (~enderw@node-1w7jra24sjglsna0eluvgpdph.ipv6.telus.net) has quit (Ping timeout: 250 seconds)
+2019-07-19 17:38:10	> 	shut1n (shutin@gateway/vpn/privateinternetaccess/shutin) has joined #kdeconnect
+2019-07-19 17:40:20	shut1n	hey all. I installed kdeconnect-kde_Nightly_win64 and clicked "request to pair" on my android. on my win10 laptop i see the tiny dialog that says "Accept" and "Reject" but clicking "Accept" doesnt do anything except close the popup and the request times out.
+2019-07-19 17:41:02	shut1n	is there a workaround for that? I know win10 isnt officially supported yet but I really want to use this soi figured i'd ask
+2019-07-19 17:42:10	IrcsomeBot	<brute4s99> yeah the notofocation bit is under review. You should have a better experience with the notification once the official release is out
+2019-07-19 18:17:33	 <<< 	shut1n (shutin@gateway/vpn/privateinternetaccess/shutin) has quit (Ping timeout: 245 seconds)
+2019-07-19 18:17:53	> 	shut1n (~shutin@unaffiliated/shutin) has joined #kdeconnect
+2019-07-19 18:58:03	> 	smithjd (~enderw@node-1w7jra24sjglsna0eluvgpdph.ipv6.telus.net) has joined #kdeconnect
+2019-07-19 20:32:05	 <<< 	smithjd (~enderw@node-1w7jra24sjglsna0eluvgpdph.ipv6.telus.net) has quit (Ping timeout: 250 seconds)
+2019-07-19 20:50:33	> 	bitwinery (~bruno@c-71-59-192-149.hsd1.wa.comcast.net) has joined #kdeconnect
+2019-07-19 22:09:52	 <<< 	shut1n (~shutin@unaffiliated/shutin) has quit (Ping timeout: 246 seconds)
+2019-07-19 23:47:17	IrcsomeBot	<sredman> shut1n: you can initiate the pairing from Windows and accept on the other device. If you don't have a tray icon on Windows, install the latest nightly. That was broken until very recently (nightly with the proper person might not have even been rebuilt yet)
+2019-07-19 23:53:24	 <<< 	cookiealice[m] (cookieal1@gateway/shell/matrix.org/x-eexjfhizyfxzscgm) has quit (Quit: Idle kick: User has been idle for 30 days.)
+2019-07-20 00:22:57	 <<< 	Lord_of_Life (~Lord@unaffiliated/lord-of-life/x-0885362) has quit (Ping timeout: 245 seconds)
+2019-07-20 00:23:59	> 	Lord_of_Life (~Lord@unaffiliated/lord-of-life/x-0885362) has joined #kdeconnect
+2019-07-20 01:06:51	pursuivant	kdeconnect-kde (master) v1.3.3-650-g2ef3c0ce * Aleix Pol: plugins/presenter (2 files)
+2019-07-20 01:06:51	pursuivant	presenter: tweak the particles so they can be seen on white background
+2019-07-20 01:06:52	pursuivant	https://invent.kde.org/kde/kdeconnect-kde/commit/2ef3c0ce54835efc358e2d53cb4357393a582dd4
+2019-07-20 01:07:39	> 	sredman (~sredman@195.135.221.19) has joined #kdeconnect
+2019-07-20 01:12:50	 <<< 	sredman (~sredman@195.135.221.19) has quit (Ping timeout: 248 seconds)
+2019-07-20 01:23:40	pursuivant	kdeconnect-kde (master) v1.3.3-651-geb53f01e * Nicolas Fella: indicator (2 files)
+2019-07-20 01:23:41	pursuivant	Enable running commands from the indicator
+2019-07-20 01:23:41	pursuivant	https://invent.kde.org/kde/kdeconnect-kde/commit/eb53f01e25cbd1b6f85f57f381845919903d4c91
+2019-07-20 01:39:34	> 	sredman (~sredman@195.135.221.19) has joined #kdeconnect
+2019-07-20 02:00:35	IrcsomeBot	<AleixPol> Andy how do we generate certificates in GSConnect?
+2019-07-20 02:17:10	pursuivant	kdeconnect-kde (master) v1.3.3-652-g5e827917 * Weixuan Xiao:  (2 files in 2 dirs)
+2019-07-20 02:17:10	pursuivant	Close kdeconnectd from kdeconnect-cli with DBus
+2019-07-20 02:17:11	pursuivant	https://invent.kde.org/kde/kdeconnect-kde/commit/5e827917a58ac6ac1bbbfb80f6e94179f6524990
+2019-07-20 02:47:25	IrcsomeBot	<nicofee> https://notes.kde.org/p/kdeconnect-new-protocol
+2019-07-20 02:53:55	IrcsomeBot	<brute4s99> @nicofee, cool!
+2019-07-20 03:29:54	pursuivant	kdeconnect-kde (master) v1.3.3-653-gcda12804 * Matthijs Tijink: core/backends/bluetooth (8 files)
+2019-07-20 03:29:54	pursuivant	Add connection multiplexer
+2019-07-20 03:29:55	pursuivant	https://invent.kde.org/kde/kdeconnect-kde/commit/cda12804562d64bbdb493bb835c75ab18a2a7cf1
+2019-07-20 03:30:02	pursuivant	kdeconnect-kde (master) v1.3.3-654-g0b6224fc * Matthijs Tijink: core/backends (10 files in 2 dirs)
+2019-07-20 03:30:02	pursuivant	Bluetooth multiplexer integration and assorted fixes
+2019-07-20 03:30:03	pursuivant	https://invent.kde.org/kde/kdeconnect-kde/commit/0b6224fc0e51d68f2be6f787211eb928b7636241
+2019-07-20 03:31:25	pursuivant	kdeconnect-android (master) v1.12.93-26-g720914dd * Matthijs Tijink: src/org/kde/kdeconnect/Backends/BluetoothBackend (2 files)
+2019-07-20 03:31:25	pursuivant	Use connection multiplexer in bluetooth link provider
+2019-07-20 03:31:26	pursuivant	https://invent.kde.org/kde/kdeconnect-android/commit/720914dd5927ab5e7cabc96929d87cacb80d8f5a
+2019-07-20 03:31:33	pursuivant	kdeconnect-android (master) v1.12.93-25-gbfd8ea92 * Matthijs Tijink: src/org/kde/kdeconnect/Backends/BluetoothBackend/ConnectionMultiplexer.java
+2019-07-20 03:31:33	pursuivant	Add connection multiplexer
+2019-07-20 03:31:34	pursuivant	https://invent.kde.org/kde/kdeconnect-android/commit/bfd8ea92b8dfbc922e6376cf6d909e66be404ac4
+2019-07-20 04:09:14	pursuivant	kdeconnect-kde (master) v1.3.3-655-gf1b0d016 * Nicolas Fella:  (2 files in 2 dirs)
+2019-07-20 04:09:15	pursuivant	Always build Kirigami app
+2019-07-20 04:09:16	pursuivant	Summary: It is functional on the desktop as well and provides a place for controls for desktop to desktop features (e.g. MprisRemote, LockPlugin) and controls for non-Plasma desktops (e.g. Remotekeyboard, not yet implemented)
+2019-07-20 04:09:17	pursuivant	Test Plan: Builds
+2019-07-20 04:09:17	pursuivant	https://invent.kde.org/kde/kdeconnect-kde/commit/f1b0d016ab7c1eeadd0f7487a5253d0681a23bae
+2019-07-20 04:12:17	pursuivant	kdeconnect-kde (master) v1.3.3-657-gf776ee2e * Nicolas Fella: plugins/notifications/notification.cpp
+2019-07-20 04:12:18	pursuivant	Use QDir::setPath
+2019-07-20 04:12:18	pursuivant	https://invent.kde.org/kde/kdeconnect-kde/commit/f776ee2ec2ebd406ffbb6ef9467843b26c06add5
+2019-07-20 04:12:25	pursuivant	kdeconnect-kde (master) v1.3.3-656-g3394c6da * Nicolas Fella: tests/testnotificationlistener.cpp
+2019-07-20 04:12:26	pursuivant	Use QImage::sizeInBytes()
+2019-07-20 04:12:26	pursuivant	https://invent.kde.org/kde/kdeconnect-kde/commit/3394c6da5dc114401cd54dd0dcb561c1d12cc92d
+2019-07-20 04:26:54	> 	asturm (~andreas@213162073171.public.t-mobile.at) has joined #kdeconnect
+2019-07-20 04:26:54	 <<< 	asturm (~andreas@213162073171.public.t-mobile.at) has quit (Changing host)
+2019-07-20 04:26:54	> 	asturm (~andreas@gentoo/developer/asturm) has joined #kdeconnect
+2019-07-20 04:33:07	pursuivant	kdeconnect-android (albertvaka/human-name-lib) v1.12.9.2-7-g7c56aa9c * Albert Vaca Cintora: src/org/kde/kdeconnect/Helpers/DeviceHelper.java
+2019-07-20 04:33:07	pursuivant	Error handling
+2019-07-20 04:33:08	pursuivant	https://invent.kde.org/kde/kdeconnect-android/commit/7c56aa9ce18ee330ac8ff3c7dd652ee7c462c446
+2019-07-20 04:38:17	pursuivant	kdeconnect-android (master) v1.12.93-29-gea72327a * Albert Vaca Cintora: src/org/kde/kdeconnect/UserInterface/MainActivity.java
+2019-07-20 04:38:18	pursuivant	Merge branch 'albertvaka/human-name-lib'
+2019-07-20 04:38:18	pursuivant	https://invent.kde.org/kde/kdeconnect-android/commit/ea72327abe25dcb655ba45e3f7b6bb9852c7dbcf
+2019-07-20 04:46:27	pursuivant	kdeconnect-kde (master) v1.3.3-658-g9597017b * Aleix Pol: smsapp/main.cpp
+2019-07-20 04:46:27	pursuivant	Fix running kdeconnect-sms on gnome
+2019-07-20 04:46:28	pursuivant	https://invent.kde.org/kde/kdeconnect-kde/commit/9597017bf3bde010c3594b057255bc85ea48b720
+2019-07-20 04:54:33	pursuivant	kdeconnect-kde (master) v1.3.3-659-g2ca09a5e * Albert Vaca Cintora: smsapp/qml/ConversationList.qml
+2019-07-20 04:54:34	pursuivant	Added a todo
+2019-07-20 04:54:34	pursuivant	https://invent.kde.org/kde/kdeconnect-kde/commit/2ca09a5ec115bb7028f16463e2cc8f35def87226
+2019-07-20 06:39:24	IrcsomeBot	<IIInoki> 1. link cli to the path … 2. Mpris … 3. Input focus … 4. Virtual input plugin; keyboard … 5. SMS(launch from indicator), app(qml) … 6. Notification
+2019-07-20 06:42:57	pursuivant	kdeconnect-kde (master) v1.3.3-660-g43cac10b * Nicolas Fella: plugins/photo/photoplugin.cpp
+2019-07-20 06:42:57	pursuivant	[plugins/photo] Remove requests from queue when cancel packet is received
+2019-07-20 06:42:58	pursuivant	https://invent.kde.org/kde/kdeconnect-kde/commit/43cac10b6a28427e43e3743a019ae798230882df
+2019-07-20 06:43:56	pursuivant	kdeconnect-kde (master) v1.3.3-661-g2df3b6eb * Simon Redman: README.md
+2019-07-20 06:43:56	pursuivant	Update Phabricator link to Gitlab
+2019-07-20 06:43:57	pursuivant	https://invent.kde.org/kde/kdeconnect-kde/commit/2df3b6eb16cc217e107fc9c9daf3d66a9e94f611
+2019-07-20 06:46:45	pursuivant	kdeconnect-kde (master) v1.3.3-662-g9f4716c3 * Simon Redman: CMakeLists.txt
+2019-07-20 06:46:46	pursuivant	Build SMS app by default
+2019-07-20 06:46:46	pursuivant	https://invent.kde.org/kde/kdeconnect-kde/commit/9f4716c3c527007b976ba4b69b69cab49f7ebcc1
+2019-07-20 07:04:40	pursuivant	kdeconnect-android (master) v1.12.93-30-g6da33902 * Nicolas Fella: src/org/kde/kdeconnect/Plugins/PhotoPlugin (2 files)
+2019-07-20 07:04:40	pursuivant	[plugins/photo] Send cancel packet when user aborts camera
+2019-07-20 07:04:40	pursuivant	https://invent.kde.org/kde/kdeconnect-android/commit/6da339028dbb649aef234cba8d97802d226b294c
+2019-07-20 07:07:19	pursuivant	kdeconnect-kde (sms-indicator) v1.3.3-660-g25c593e4 * Aleix Pol: indicator/main.cpp
+2019-07-20 07:07:20	pursuivant	Add a menu entry on the kdeconnect-indicator for kdeconnect-sms
+2019-07-20 07:07:20	pursuivant	https://invent.kde.org/kde/kdeconnect-kde/commit/25c593e40f308d8f71a80c7b8db8027fd775937c
+2019-07-20 07:30:27	pursuivant	kdeconnect-kde (sms-indicator) v1.3.3-661-gb3967e23 * Aleix Pol: indicator/main.cpp
+2019-07-20 07:30:27	pursuivant	Actually start the process
+2019-07-20 07:30:28	pursuivant	https://invent.kde.org/kde/kdeconnect-kde/commit/b3967e23eaf4ded2e09b01fef5c5fc5f3b27be12
+2019-07-20 08:47:56	IrcsomeBot	<IIInoki> @IIInoki, 3. Input focus lost because LSBackgroundOnly is set to true. kdeconnect becomes a background app and will never get focus😂 Change to "<key>LSUIElement</key><string>1</string>", focus is okay and dock icon is hidden as well
+2019-07-20 08:52:36	pursuivant	kdeconnect-kde (albertvaka/mdns) v1.3.3-663-g0047d71c * Albert Vaca Cintora:  (7 files in 3 dirs)
+2019-07-20 08:52:36	pursuivant	WIP: MDNS discovery poc
+2019-07-20 08:52:37	pursuivant	https://invent.kde.org/kde/kdeconnect-kde/commit/0047d71c289858d887df3d7f9ed49c9f17a502dc
+2019-07-20 08:57:22	 <<< 	justanotheruser (justanothe@gateway/vpn/nordvpn/justanotheruser) has quit (Ping timeout: 246 seconds)
+2019-07-20 08:58:56	pursuivant	kdeconnect-kde (albertvaka/mdns) v1.3.3-664-gf019222d * Albert Vaca Cintora: core/backends/lan/mdnslinkprovider.cpp
+2019-07-20 08:58:57	pursuivant	Missing connects
+2019-07-20 08:58:57	pursuivant	https://invent.kde.org/kde/kdeconnect-kde/commit/f019222de50e0c79bce599ebf205fe8e5ba98f64
+2019-07-20 09:07:08	 <<< 	sredman (~sredman@195.135.221.19) has quit (Ping timeout: 258 seconds)
+2019-07-20 09:12:51	> 	sredman (~sredman@195.135.221.19) has joined #kdeconnect
+2019-07-20 09:16:35	> 	justanotheruser (~justanoth@unaffiliated/justanotheruser) has joined #kdeconnect
+2019-07-20 09:22:09	pursuivant	kdeconnect-kde (master) v1.3.3-663-g24eb0799 * Matthijs Tijink: plasmoid/package/contents/ui (2 files)
+2019-07-20 09:22:10	pursuivant	Show install instructions for Android when there are no devices
+2019-07-20 09:22:10	pursuivant	https://invent.kde.org/kde/kdeconnect-kde/commit/24eb0799f1ff8331175b6afa075d412517d37704
+2019-07-20 09:27:26	pursuivant	kdeconnect-kde (albertvaka/mdns) v1.3.3-665-g63005970 * Albert Vaca Cintora: core/backends/lan/mdnslinkprovider.cpp
+2019-07-20 09:27:26	pursuivant	Code duplication++
+2019-07-20 09:27:27	pursuivant	https://invent.kde.org/kde/kdeconnect-kde/commit/63005970fc98fd7c58a04d3f9c63c37251b1f3c2
+2019-07-20 09:29:51	pursuivant	kdeconnect-kde (master) v1.3.3-664-g97a5f91c * Albert Vaca Cintora: plugins/CMakeLists.txt
+2019-07-20 09:29:51	pursuivant	Build presenter plugin by default
+2019-07-20 09:29:52	pursuivant	https://invent.kde.org/kde/kdeconnect-kde/commit/97a5f91ceffc8ce057cb63d79c4434127c577f1e
+2019-07-20 09:31:45	pursuivant	kdeconnect-kde (master) v1.3.3-665-g796953d8 * Albert Vaca Cintora: CMakeLists.txt
+2019-07-20 09:31:46	pursuivant	Remove SMS app cmake flag
+2019-07-20 09:31:46	pursuivant	https://invent.kde.org/kde/kdeconnect-kde/commit/796953d853edc5c9bd5c1f6b2bf5466a0b721b63
+2019-07-20 09:37:19	pursuivant	kdeconnect-kde (1.x) v1.3.4-41-g8f1660d5 * David Faure: core/backends (2 files in 2 dirs)
+2019-07-20 09:37:20	pursuivant	Port away from QString::null
+2019-07-20 09:37:20	pursuivant	https://invent.kde.org/kde/kdeconnect-kde/commit/8f1660d580367c0032b39797f80522ad77869c7d
+2019-07-20 09:49:46	> 	cotko (~cotko@93-103-115-77.dynamic.t-2.net) has joined #kdeconnect
+2019-07-20 09:50:27	 <<< 	cotko (~cotko@93-103-115-77.dynamic.t-2.net) has quit (Client Quit)
+2019-07-20 09:50:41	> 	cotko (~cotko@93-103-115-77.dynamic.t-2.net) has joined #kdeconnect
+2019-07-20 09:52:16	> 	cotko_ (~cotko@93-103-115-77.dynamic.t-2.net) has joined #kdeconnect
+2019-07-20 09:52:27	 <<< 	cotko (~cotko@93-103-115-77.dynamic.t-2.net) has quit (Read error: Connection reset by peer)
+2019-07-20 09:54:17	pursuivant	kdeconnect-kde (fastInsert) v1.3.4-42-gb2555747 * David Faure:  (2 files in 2 dirs)
+2019-07-20 09:54:18	pursuivant	Port kdeconnect's kioslave to UDSEntry::fastInsert.
+2019-07-20 09:54:19	pursuivant	This requires KF 5.48, released in July 2018.
+2019-07-20 09:54:19	pursuivant	https://invent.kde.org/kde/kdeconnect-kde/commit/b255574746be6236f51a79cbd657da0477399ec4
+2019-07-20 10:33:43	> 	smithjd (~enderw@node-1w7jra24sjglsna0eluvgpdph.ipv6.telus.net) has joined #kdeconnect
+2019-07-20 10:54:13	pursuivant	kdeconnect-kde (master) v1.3.3-666-geabdb1ea * Matthijs Tijink: daemon/kdeconnectd.cpp
+2019-07-20 10:54:14	pursuivant	Fix --replace option of daemon
+2019-07-20 10:54:14	pursuivant	https://invent.kde.org/kde/kdeconnect-kde/commit/eabdb1ea3784388d93acf483ce6e5885fe594cfd
+2019-07-20 11:01:09	 <<< 	cotko_ (~cotko@93-103-115-77.dynamic.t-2.net) has quit (Quit: Konversation terminated!)
+2019-07-20 11:01:24	> 	cotko_ (~cotko@93-103-115-77.dynamic.t-2.net) has joined #kdeconnect
+2019-07-20 12:06:21	 <<< 	justanotheruser (~justanoth@unaffiliated/justanotheruser) has quit (Ping timeout: 250 seconds)
+2019-07-20 12:20:55	> 	Lord_of_Life_ (~Lord@unaffiliated/lord-of-life/x-0885362) has joined #kdeconnect
+2019-07-20 12:23:52	 <<< 	Lord_of_Life (~Lord@unaffiliated/lord-of-life/x-0885362) has quit (Ping timeout: 246 seconds)
+2019-07-20 12:23:57	 - 	Lord_of_Life_ is now known as Lord_of_Life
+2019-07-20 12:25:14	> 	justanotheruser (~justanoth@unaffiliated/justanotheruser) has joined #kdeconnect
+2019-07-20 12:59:03	 <<< 	justanotheruser (~justanoth@unaffiliated/justanotheruser) has quit (Read error: Connection reset by peer)
+2019-07-20 13:00:50	> 	justanotheruser (justanothe@gateway/vpn/nordvpn/justanotheruser) has joined #kdeconnect
+2019-07-20 13:03:21	 <<< 	cotko_ (~cotko@93-103-115-77.dynamic.t-2.net) has quit (Quit: Konversation terminated!)
+2019-07-20 13:15:06	> 	cotko (~cotko@93-103-115-77.dynamic.t-2.net) has joined #kdeconnect
+2019-07-20 13:15:29	 <<< 	cotko (~cotko@93-103-115-77.dynamic.t-2.net) has quit (Client Quit)
+2019-07-20 13:21:53	pursuivant	kdeconnect-android (master) v1.12.93-31-g66aa6696 * Matthijs Tijink: src/org/kde/kdeconnect (4 files in 2 dirs)
+2019-07-20 13:21:54	pursuivant	Use a queue of unsent packets instead of threads
+2019-07-20 13:21:55	pursuivant	This also allows "unsending" packets (if they're still in the queue).
+2019-07-20 13:21:55	pursuivant	This patch does that for mouse move packets, so they get accumulated
+2019-07-20 13:21:56	pursuivant	together (sending less stuff over a congested link).
+2019-07-20 13:21:56	pursuivant	https://invent.kde.org/kde/kdeconnect-android/commit/66aa6696ccf6f88ac6ce33bb34a0d46fe3efc6cf
+2019-07-20 13:27:14	 <<< 	pursuivant (pursuivant@kde/bot/commit-notifications) has quit (Quit: transmission timeout)
+2019-07-20 13:29:12	> 	pursuivant (pursuivant@kde/bot/commit-notifications) has joined #kdeconnect
+2019-07-20 13:29:13	pursuivant	kdeconnect-android (master) v1.12.93-32-gd5b697f2 * Matthijs Tijink: src/org/kde/kdeconnect/DevicePacketQueue.java
+2019-07-20 13:29:13	pursuivant	Don't remove packets from the queue without adding a replacing one
+2019-07-20 13:29:14	pursuivant	https://invent.kde.org/kde/kdeconnect-android/commit/d5b697f2c4edd91f242ed6b26280696340fd4457
+2019-07-20 13:35:14	IrcsomeBot	<Andy Holmes> @AleixPol, We just the `openssl` binary, i think it came from a comment in kdeconnectd source
+2019-07-20 13:36:25	pursuivant	kdeconnect-kde (master) v1.3.3-667-g1f3dfc9a * Simon Redman: plugins/sms/smsplugin.h
+2019-07-20 13:36:25	pursuivant	Update packet documentation
+2019-07-20 13:36:26	pursuivant	https://invent.kde.org/kde/kdeconnect-kde/commit/1f3dfc9a9e236015587f73e97c3c619f1064c1e6
+2019-07-20 13:43:49	IrcsomeBot	<Andy Holmes> @sredman sorry, i've been too busy to get the mms-group stuff working in gsconnect. I'll try and get to it soon, but go ahead and move forward without me if you're ready
+2019-07-20 13:59:46	IrcsomeBot	<AleixPol> @Andy Holmes, cool, we were considering what to do there, maybe the same
+2019-07-20 14:05:56	IrcsomeBot	<sredman> @Andy Holmes, Okay. We are moving forward at an accelerated pace since we are at the sprint now :) -- The changes are on the master branch of the Android repo, so the next release will probably break you
+2019-07-20 14:09:34	pursuivant	kdeconnect-android (master) v1.12.93-33-g2604bc95 * Matthijs Tijink: src/org/kde/kdeconnect (2 files in 2 dirs)
+2019-07-20 14:09:35	pursuivant	Use the packet-in-queue removing in the presenter plugin pointer
+2019-07-20 14:09:35	pursuivant	https://invent.kde.org/kde/kdeconnect-android/commit/2604bc9595eaa4f3e148085588669f4037c47bea
+2019-07-20 14:11:32	IrcsomeBot	<mtijink> @Andy: we've been discussing architectural changes to KDE Connect. E.g. using avahi/zeroconf/mDNS to discover devices. … Is there anything you think should be changed/improved at some point?
+2019-07-20 14:38:36	pursuivant	kdeconnect-kde (albertvaka/mdns) v1.3.3-668-g96308f32 * Albert Vaca Cintora:  (7 files in 3 dirs)
+2019-07-20 14:38:36	pursuivant	WIP: MDNS discovery poc
+2019-07-20 14:38:37	pursuivant	https://invent.kde.org/kde/kdeconnect-kde/commit/96308f3237d4af869293b6c240fbcf83f631d9f9
+2019-07-20 15:00:21	 <<< 	asturm (~andreas@gentoo/developer/asturm) has quit (Quit: Konversation terminated!)
+2019-07-20 15:01:41	> 	asturm (~andreas@213162073171.public.t-mobile.at) has joined #kdeconnect
+2019-07-20 15:01:41	 <<< 	asturm (~andreas@213162073171.public.t-mobile.at) has quit (Changing host)
+2019-07-20 15:01:41	> 	asturm (~andreas@gentoo/developer/asturm) has joined #kdeconnect
+2019-07-20 15:02:10	pursuivant	kdeconnect-kde (master) v1.3.3-668-g4c6ebdbd * Weixuan Xiao: indicator (2 files)
+2019-07-20 15:02:10	pursuivant	Use our own plist template, hide icon and set HighRes
+2019-07-20 15:02:11	pursuivant	https://invent.kde.org/kde/kdeconnect-kde/commit/4c6ebdbd8602d464aedb6b5b5f1d37e92f7d696b
+2019-07-20 15:12:52	 <<< 	pursuivant (pursuivant@kde/bot/commit-notifications) has quit (Quit: transmission timeout)
+2019-07-20 15:21:46	 <<< 	sredman (~sredman@195.135.221.19) has quit (Ping timeout: 268 seconds)
+2019-07-20 15:23:07	> 	a17r (~andreas@46.125.250.79) has joined #kdeconnect
+2019-07-20 15:23:46	 <<< 	asturm (~andreas@gentoo/developer/asturm) has quit (Ping timeout: 246 seconds)
+2019-07-20 15:35:12	IrcsomeBot	<Andy Holmes> @mtijink mDNS sounds like a good idea
+2019-07-20 15:35:56	IrcsomeBot	<Andy Holmes> @AleixPol, i've also used gnutls successfully to do the same, but I think that's C only
+2019-07-20 15:36:16	IrcsomeBot	<Andy Holmes> @sredman, do you have an eta for the next android release?
+2019-07-20 15:36:49	IrcsomeBot	<sredman> @Andy Holmes, Likely "soon" because we're aiming to do a desktop release "soon"
+2019-07-20 15:41:24	IrcsomeBot	<Andy Holmes> @sredman, ok, i'll try and get it to by monday. also i need someone to group mms with 😂
+2019-07-20 15:42:28	> 	pursuivant (pursuivant@kde/bot/commit-notifications) has joined #kdeconnect
+2019-07-20 15:42:29	pursuivant	kdeconnect-android (pinter-delta) v1.12.93-34-g7c3a297b * Albert Vaca Cintora: src/org/kde/kdeconnect/Plugins/PresenterPlugin (2 files)
+2019-07-20 15:42:29	pursuivant	Pointer plugin: send delta and not abs value
+2019-07-20 15:42:30	pursuivant	https://invent.kde.org/kde/kdeconnect-android/commit/7c3a297bca069f89c792bd04dbe6b52b10c0032a
+2019-07-20 16:02:32	IrcsomeBot	<brute4s99> split config MR ready for review.
+2019-07-20 16:07:00	IrcsomeBot	<brute4s99> https://invent.kde.org/kde/kdeconnect-kde/merge_requests/124
+2019-07-20 16:43:15	IrcsomeBot	<MicroTransactionsMatterToo> Found the issue with Samsung sms conversation stuff. The manufacturer string is lowercase on my phone at least, so I've just set it to convert it to lowercase in the .equals call
+2019-07-20 16:56:11	IrcsomeBot	<MicroTransactionsMatterToo> Ok, fixed that issue, but it seems the "msg_box" column doesn't exist on samsung
+2019-07-20 17:23:59	IrcsomeBot	<MicroTransactionsMatterToo> Right, I can't really do much more. I wanted to take a look at the phones message database, but I can't access it without root, and I don't want to void my warranty
+2019-07-20 18:58:27	 <<< 	smithjd (~enderw@node-1w7jra24sjglsna0eluvgpdph.ipv6.telus.net) has quit (Ping timeout: 250 seconds)
+2019-07-20 19:25:45	> 	smithjd (~enderw@node-1w7jra24sjglsna0eluvgpdph.ipv6.telus.net) has joined #kdeconnect
+2019-07-20 19:26:08	 <<< 	smithjd (~enderw@node-1w7jra24sjglsna0eluvgpdph.ipv6.telus.net) has quit (Client Quit)
+2019-07-20 19:57:14	IrcsomeBot	iamMd5 was added by: iamMd5
+2019-07-20 21:26:51	> 	shutin (~shutin@unaffiliated/shutin) has joined #kdeconnect
+2019-07-20 21:38:24	 <<< 	shutin (~shutin@unaffiliated/shutin) has quit (Ping timeout: 272 seconds)
+2019-07-20 21:38:36	> 	shut1n (shutin@gateway/vpn/privateinternetaccess/shutin) has joined #kdeconnect
+2019-07-20 23:26:04	 <<< 	shut1n (shutin@gateway/vpn/privateinternetaccess/shutin) has quit (Ping timeout: 246 seconds)
+2019-07-21 00:05:10	IrcsomeBot	<sredman> @MicroTransactionsMatterToo, Ah. Okay, good to know. I guess maybe we'll need to compare it without considering casing since I think it was written that way when I looked it up. Thanks for looking at this!
+2019-07-21 00:06:07	IrcsomeBot	<sredman> @MicroTransactionsMatterToo, At what stage of using the GUI app do you get a problem?
+2019-07-21 00:22:25	 <<< 	Lord_of_Life (~Lord@unaffiliated/lord-of-life/x-0885362) has quit (Ping timeout: 246 seconds)
+2019-07-21 00:26:24	> 	Lord_of_Life (~Lord@unaffiliated/lord-of-life/x-0885362) has joined #kdeconnect
+2019-07-21 00:48:01	 - 	a17r is now known as asturm
+2019-07-21 00:48:37	 <<< 	pursuivant (pursuivant@kde/bot/commit-notifications) has quit (Quit: transmission timeout)
+2019-07-21 01:07:06	> 	pursuivant (pursuivant@kde/bot/commit-notifications) has joined #kdeconnect
+2019-07-21 01:07:06	pursuivant	kdeconnect-android (pointer-delta) v1.12.93-35-g377d2ddc * Albert Vaca Cintora: src/org/kde/kdeconnect/Plugins/PresenterPlugin/PresenterPlugin.java
+2019-07-21 01:07:06	pursuivant	Fix delta
+2019-07-21 01:07:07	pursuivant	https://invent.kde.org/kde/kdeconnect-android/commit/377d2ddcd16115a18e75e7c18fc74da6c4dc47a3
+2019-07-21 01:11:03	> 	sredman (~sredman@195.135.221.19) has joined #kdeconnect
+2019-07-21 01:18:55	pursuivant	kdeconnect-android (pointer-delta) v1.12.93-36-g16362ae8 * Matthijs Tijink: src/org/kde/kdeconnect/Plugins/PresenterPlugin (2 files)
+2019-07-21 01:18:55	pursuivant	Send a stop pointer message so we don't need to wait for timeout
+2019-07-21 01:18:56	pursuivant	https://invent.kde.org/kde/kdeconnect-android/commit/16362ae8f64e54cc9db71b4573e76dd1b88422f6
+2019-07-21 01:33:07	 <<< 	asturm (~andreas@46.125.250.79) has quit (Quit: Konversation terminated!)
+2019-07-21 01:33:26	> 	asturm (~andreas@46.125.250.79) has joined #kdeconnect
+2019-07-21 01:33:26	 <<< 	asturm (~andreas@46.125.250.79) has quit (Changing host)
+2019-07-21 01:33:26	> 	asturm (~andreas@gentoo/developer/asturm) has joined #kdeconnect
+2019-07-21 01:54:11	pursuivant	kdeconnect-kde (master) v1.3.3-670-gaa7d6d23 * Matthijs Tijink: plugins/presenter/Presenter.qml
+2019-07-21 01:54:12	pursuivant	Fix devicePixelRatio in presenter plugin
+2019-07-21 01:54:13	pursuivant	https://invent.kde.org/kde/kdeconnect-kde/commit/aa7d6d2339322a9ba80f4b6c1af80a6944aeb657
+2019-07-21 02:18:43	IrcsomeBot	<AceHW> Is there a place I can get a KDE Connect appimage from?
+2019-07-21 02:19:41	IrcsomeBot	<nicofee> No
+2019-07-21 02:30:00	pursuivant	kdeconnect-kde (apol/waylandclipboard) v1.3.3-671-g9ee096d1 * Aleix Pol: plugins/clipboard (7 files)
+2019-07-21 02:30:00	pursuivant	clipboard: add support for wayland DataDeviceControl
+2019-07-21 02:30:01	pursuivant	https://invent.kde.org/kde/kdeconnect-kde/commit/9ee096d18cb59b612f8094bddc6cf865a9d6611e
+2019-07-21 02:35:10	 <<< 	pursuivant (pursuivant@kde/bot/commit-notifications) has quit (Quit: transmission timeout)
+2019-07-21 02:53:15	 <<< 	sredman (~sredman@195.135.221.19) has quit (Quit: Konversation terminated!)
+2019-07-21 02:56:31	> 	AlexP0s (~AlexP0s@213.226.141.171) has joined #kdeconnect
+2019-07-21 03:02:02	IrcsomeBot	<Hritik Yadav> @brute4s99, Nope
+2019-07-21 03:02:03	IrcsomeBot	<Hritik Yadav> The only issue I have is that of ring plugin
+2019-07-21 03:09:23	IrcsomeBot	stressedcucumber was added by: stressedcucumber
+2019-07-21 03:13:28	IrcsomeBot	<AceHW> @nicofee, Why not?
+2019-07-21 03:23:55	> 	a17r (~andreas@212095005030.public.telering.at) has joined #kdeconnect
+2019-07-21 03:24:02	 <<< 	asturm (~andreas@gentoo/developer/asturm) has quit (Ping timeout: 248 seconds)
+2019-07-21 03:25:24	IrcsomeBot	<IIInoki> When will I finllay kill qca? Crash appears again caused by qca duplicated import. https://invent.kde.org/snippets/334 😂
+2019-07-21 03:27:15	> 	pursuivant (pursuivant@kde/bot/commit-notifications) has joined #kdeconnect
+2019-07-21 03:27:15	pursuivant	kdeconnect-android (master) v1.12.93-37-g01cb7381 * Albert Vaca Cintora: src/org/kde/kdeconnect/Plugins/PresenterPlugin/PresenterActivity.java
+2019-07-21 03:27:16	pursuivant	Lower sensitivity
+2019-07-21 03:27:16	pursuivant	https://invent.kde.org/kde/kdeconnect-android/commit/01cb7381655574d5f5251c8cdb9fd17c89ed0b50
+2019-07-21 03:27:33	pursuivant	kdeconnect-kde (master) v1.3.3-671-g0d13da97 * Albert Vaca Cintora: plugins/presenter/presenterplugin.cpp
+2019-07-21 03:27:33	pursuivant	Support stop packet
+2019-07-21 03:27:33	pursuivant	https://invent.kde.org/kde/kdeconnect-kde/commit/0d13da97861f2e3b1a3817508d3f65485f7f8aa9
+2019-07-21 03:27:38	pursuivant	kdeconnect-kde (master) v1.3.3-672-g9a4bb293 * Albert Vaca Cintora: plugins/presenter (2 files)
+2019-07-21 03:27:39	pursuivant	Receive deltas instead of abs positions from phone
+2019-07-21 03:27:39	pursuivant	https://invent.kde.org/kde/kdeconnect-kde/commit/9a4bb293a715617f1c206dcc1666acd02bc92264
+2019-07-21 03:29:37	pursuivant	kdeconnect-android (master) v1.12.93-40-gd84f3126 * Albert Vaca Cintora: src/org/kde/kdeconnect/Plugins/PresenterPlugin/PresenterActivity.java
+2019-07-21 03:29:37	pursuivant	Optimize imports
+2019-07-21 03:29:38	pursuivant	https://invent.kde.org/kde/kdeconnect-android/commit/d84f312694a0b8e2a1cb0b19aeecac61a8332dc5
+2019-07-21 03:35:31	pursuivant	kdeconnect-kde (master) v1.3.3-673-ged9e3028 * Aleix Pol: smsapp/qml/ConversationList.qml
+2019-07-21 03:35:32	pursuivant	sms: improve the conversation delegate
+2019-07-21 03:35:33	pursuivant	Keep the two elements (name and last message) separate so we can elide
+2019-07-21 03:35:33	pursuivant	the texts on the right.
+2019-07-21 03:35:34	pursuivant	https://invent.kde.org/kde/kdeconnect-kde/commit/ed9e3028be45b4e7ccef7014b3f8ed42a5933b61
+2019-07-21 03:36:59	 - 	a17r is now known as asturm
+2019-07-21 03:41:54	IrcsomeBot	<nicofee> @IIInoki, Well, I ported away from QCA but people didnt want it
+2019-07-21 03:41:58	IrcsomeBot	<nicofee> 🤷‍♀️
+2019-07-21 03:42:04	> 	sredman (~sredman@195.135.221.19) has joined #kdeconnect
+2019-07-21 03:43:01	IrcsomeBot	<nicofee> @AceHW, Because appimage is 1) horrible 2) Not suited for the way KDE Connect works
+2019-07-21 03:53:37	pursuivant	kdeconnect-kde (albertvaka/mdns) v1.3.3-669-g5737a1b9 * Albert Vaca Cintora: core/backends/lan/mdnslinkprovider.cpp
+2019-07-21 03:53:38	pursuivant	cout
+2019-07-21 03:53:39	pursuivant	https://invent.kde.org/kde/kdeconnect-kde/commit/5737a1b95a111b843da02c02f7b9f37c2ab79870
+2019-07-21 03:55:39	pursuivant	kdeconnect-kde (master) v1.3.3-674-gf256e32f * Aleix Pol: smsapp (4 files in 2 dirs)
+2019-07-21 03:55:39	pursuivant	smsapp: add main contextual actions
+2019-07-21 03:55:40	pursuivant	Includes an about page and a refresh button for the conversations.
+2019-07-21 03:55:41	pursuivant	https://invent.kde.org/kde/kdeconnect-kde/commit/f256e32fb211922f574b835a4a1978f8be22b516
+2019-07-21 04:02:31	pursuivant	kdeconnect-kde (master) v1.3.3-675-g245eb954 * Nicolas Fella: app (3 files)
+2019-07-21 04:02:32	pursuivant	Rename kcapp to kdeconnect
+2019-07-21 04:02:32	pursuivant	https://invent.kde.org/kde/kdeconnect-kde/commit/245eb954d581eee416b496966fb607f4859c72a4
+2019-07-21 04:09:02	 <<< 	pursuivant (pursuivant@kde/bot/commit-notifications) has quit (Quit: transmission timeout)
+2019-07-21 04:09:17	> 	pursuivant (pursuivant@kde/bot/commit-notifications) has joined #kdeconnect
+2019-07-21 04:09:17	pursuivant	kdeconnect-kde (master) v1.3.3-676-ga5f55acf * Matthijs Tijink: smsapp/qml/ConversationList.qml
+2019-07-21 04:09:18	pursuivant	Don't interpret HTML in SMS messages
+2019-07-21 04:09:18	pursuivant	https://invent.kde.org/kde/kdeconnect-kde/commit/a5f55acf0e6294d43cbdc963f13fc37227663fb5
+2019-07-21 04:13:13	IrcsomeBot	mrjanhalhiwUx was added by: mrjanhalhiwUx
+2019-07-21 04:17:50	pursuivant	kdeconnect-kde (master) v1.3.3-677-g19025fb2 * Simon Redman: smsapp/qml/ConversationDisplay.qml
+2019-07-21 04:17:51	pursuivant	Make the sms app load the proper number of messages to fill the initial screen and make it instantly show the most-recent message
+2019-07-21 04:17:51	pursuivant	https://invent.kde.org/kde/kdeconnect-kde/commit/19025fb287df142afb395777b3c76ba6ca685c7f
+2019-07-21 04:19:27	pursuivant	kdeconnect-kde (master) v1.3.3-678-ga7ee4ef0 * Aleix Pol: smsapp (3 files)
+2019-07-21 04:19:27	pursuivant	smsapp: cache persondata instances
+2019-07-21 04:19:28	pursuivant	We were instanciating them all the time and it became rather slow.
+2019-07-21 04:19:29	pursuivant	Reviewed by Simon
+2019-07-21 04:19:30	pursuivant	https://invent.kde.org/kde/kdeconnect-kde/commit/a7ee4ef0c5292a73fc976b9c1e731e3ab935fa69
+2019-07-21 04:28:42	pursuivant	kdeconnect-kde (master) v1.3.3-679-ga8c28a7f * Aleix Pol: smsapp/smshelper.cpp
+2019-07-21 04:28:42	pursuivant	smsapp: Offer the default avatar if another wasn't found
+2019-07-21 04:28:43	pursuivant	https://invent.kde.org/kde/kdeconnect-kde/commit/a8c28a7ff1f5d968499e77834db0b220f1d26572
+2019-07-21 04:32:45	pursuivant	kdeconnect-kde (master) v1.3.3-680-g9c442455 * Matthijs Tijink: smsapp/main.cpp
+2019-07-21 04:32:45	pursuivant	Display the KDE Connect icon instead of the X icon
+2019-07-21 04:32:46	pursuivant	https://invent.kde.org/kde/kdeconnect-kde/commit/9c442455d2209bfeedd79539a7c8e31b49c7acd0
+2019-07-21 05:18:31	 <<< 	sredman (~sredman@195.135.221.19) has quit (Ping timeout: 246 seconds)
+2019-07-21 06:49:26	> 	sredman (~sredman@195.135.221.19) has joined #kdeconnect
+2019-07-21 07:42:36	pursuivant	kdeconnect-kde (master) v1.3.3-681-gbc468f1e * Simon Redman: smsapp/qml/ChatMessage.qml
+2019-07-21 07:42:37	pursuivant	Use proper theme setting for text colour
+2019-07-21 07:42:37	pursuivant	https://invent.kde.org/kde/kdeconnect-kde/commit/bc468f1e07ddda6eec3adc93db6b3451da916d6b
+2019-07-21 08:23:52	pursuivant	kdeconnect-kde (sms-indicator) v1.3.3-682-gb7f8ceef * Aleix Pol:  (8 files in 6 dirs)
+2019-07-21 08:23:52	pursuivant	sms:  Added opening kdeconnect-sms on the plasmoid and indicator
+2019-07-21 08:23:53	pursuivant	Add a menu entry on the kdeconnect-indicator within devices' submenu that opens kdeconnect-sms.
+2019-07-21 08:23:54	pursuivant	Also add it in the plasmoid in the device delegate.
+2019-07-21 08:23:54	pursuivant	https://invent.kde.org/kde/kdeconnect-kde/commit/b7f8ceefcf7ef7c0c2a4bca56b232c2d0f225ef8
+2019-07-21 08:45:04	pursuivant	kdeconnect-kde (master) v1.3.3-682-gc08c2545 * Simon Redman: smsapp/main.cpp
+2019-07-21 08:45:04	pursuivant	Update KAboutData
+2019-07-21 08:45:05	pursuivant	https://invent.kde.org/kde/kdeconnect-kde/commit/c08c2545557a835244cfbda834a53d002703e6ed
+2019-07-21 08:49:05	pursuivant	kdeconnect-kde (apol/apple-icons) v1.3.3-682-g3f9e8b93 * Aleix Pol:  (2 files in 2 dirs)
+2019-07-21 08:49:05	pursuivant	Use kirigami_package_breeze_icons to save the icons on Apple
+2019-07-21 08:49:06	pursuivant	Otherwise we'd get nothing
+2019-07-21 08:49:07	pursuivant	https://invent.kde.org/kde/kdeconnect-kde/commit/3f9e8b93405363051784c7a8dafae15483bea642
+2019-07-21 08:51:20	pursuivant	kdeconnect-kde (master) v1.3.3-683-ge883a792 * Nicolas Fella:  (4 files in 2 dirs)
+2019-07-21 08:51:20	pursuivant	Add ProxyModel for filtering for plugins
+2019-07-21 08:51:21	pursuivant	https://invent.kde.org/kde/kdeconnect-kde/commit/e883a792e6b43e646d1f4d5f0da48ddcd195850c
+2019-07-21 09:23:24	pursuivant	kdeconnect-kde (master) v1.3.3-684-g9405cb58 * Albert Astals Cid: core (2 files)
+2019-07-21 09:23:24	pursuivant	Add NOTIFY signal to statusIconName property
+2019-07-21 09:23:25	pursuivant	Device::statusIconName depends on isReachable() and isTrusted()
+2019-07-21 09:23:26	pursuivant	Not sure how the property is used but it's good that they have a NOTIFY is defined if it's needed for completion
+2019-07-21 09:23:27	pursuivant	https://invent.kde.org/kde/kdeconnect-kde/commit/9405cb58b060eef93e4e11c7b1d9f01bd806eb22
+2019-07-21 09:30:37	 <<< 	asturm (~andreas@212095005030.public.telering.at) has quit (Quit: Konversation terminated!)
+2019-07-21 09:31:38	pursuivant	kdeconnect-kde (master) v1.3.3-685-gc1797288 * Aleix Pol:  (8 files in 6 dirs)
+2019-07-21 09:31:39	pursuivant	sms:  Added opening kdeconnect-sms on the plasmoid and indicator
+2019-07-21 09:31:40	pursuivant	Add a menu entry on the kdeconnect-indicator within devices' submenu that opens kdeconnect-sms.
+2019-07-21 09:31:40	pursuivant	Also add it in the plasmoid in the device delegate.
+2019-07-21 09:31:41	pursuivant	https://invent.kde.org/kde/kdeconnect-kde/commit/c17972881b68a5979f4cc9c33dc09087b0dedece
+2019-07-21 09:32:24	> 	asturm (~andreas@gentoo/developer/asturm) has joined #kdeconnect
+2019-07-21 09:38:34	IrcsomeBot	<MicroTransactionsMatterToo> @sredman I primarily debugged by sending the request for all conversations using D-Feet, but when using the GUI, it's the first request sent to the phone. As such, the GUI remains blank on the computer side. If someone has a rooted Samsung Phone, and can dump and post the schema of the file at `/data/data/com.android.providers.telephony/database`. Might be somewhere else, but that's the standard location.
+2019-07-21 10:27:21	pursuivant	kdeconnect-kde (master) v1.3.3-686-g8d939e13 * Simon Redman: smsapp/qml/ConversationDisplay.qml
+2019-07-21 10:27:21	pursuivant	## Summary: Add a spinning loading indicator while waiting to get messages from the phone
+2019-07-21 10:27:22	pursuivant	## Test Plan
+2019-07-21 10:27:23	pursuivant	- Open SMS conversation
+2019-07-21 10:27:23	pursuivant	- See nice spinner
+2019-07-21 10:27:24	pursuivant	https://invent.kde.org/kde/kdeconnect-kde/commit/8d939e130f6ff6dddadd28bc661d0de777aaad53
+2019-07-21 10:27:57	IrcsomeBot	<sredman> @MicroTransactionsMatterToo, The database is only loosely related to the data that actually comes from the content resolver. There is some mangler layer in between, so it isn't too useful to look at the actual database. It is likely that my code for checking the content URI and then disabling the `msg_box` column doesn't work in the Samsung case
+2019-07-21 10:39:14	pursuivant	kdeconnect-kde (apol/apple-icons) v1.3.3-683-gb51d0012 * Weixuan XIAO:  (2 files in 2 dirs)
+2019-07-21 10:39:14	pursuivant	Complete missing icons
+2019-07-21 10:39:15	pursuivant	https://invent.kde.org/kde/kdeconnect-kde/commit/b51d00123929dfe6123db44225e8b6788e67dffe
+2019-07-21 11:04:50	 <<< 	justanotheruser (justanothe@gateway/vpn/nordvpn/justanotheruser) has quit (Ping timeout: 248 seconds)
+2019-07-21 11:11:25	pursuivant	kdeconnect-kde (master) v1.3.3-687-g1f8ba004 * Albert Astals Cid: core (2 files)
+2019-07-21 11:11:26	pursuivant	Use default NetworkPacket copy constuctor and assignment operator
+2019-07-21 11:11:27	pursuivant	clazy was complaining that the class had copy constructor but no assignment operator, which is usually suspicious
+2019-07-21 11:11:28	pursuivant	This is a bit of behaviour change though, since now m_payloadTransferInfo is also copied, which before wasn't, not sure if this is actually a good or a bad thing
+2019-07-21 11:11:28	pursuivant	https://invent.kde.org/kde/kdeconnect-kde/commit/1f8ba004f80dfbd661296c667d33ec763692dfac
+2019-07-21 11:13:12	> 	him-cesjf (~cesjf@unaffiliated/himcesjf) has joined #kdeconnect
+2019-07-21 11:13:18	pursuivant	kdeconnect-kde (master) v1.3.3-688-g20f4ed3e * Aleix Pol: plasmoid/package/contents/ui/SMS.qml
+2019-07-21 11:13:19	pursuivant	sms: forgot to add the file
+2019-07-21 11:13:19	pursuivant	https://invent.kde.org/kde/kdeconnect-kde/commit/20f4ed3e9b5611b8df4349da96a44ef50db39e71
+2019-07-21 11:30:44	IrcsomeBot	neptronix was added by: neptronix
+2019-07-21 11:40:24	pursuivant	kdeconnect-kde (master) v1.3.3-689-g6c668949 * Nicolas Fella: app/qml/main.qml
+2019-07-21 11:40:24	pursuivant	[app] Rework sidebar header
+2019-07-21 11:40:25	pursuivant	https://invent.kde.org/kde/kdeconnect-kde/commit/6c6689491e540aa2a37ce673ff4954767388347b
+2019-07-21 11:43:11	IrcsomeBot	<albertvaka> to ease checking out MR from other people's clones of a gitlab repo, you can set up this git alias 👌 https://docs.gitlab.com/ee/user/project/merge_requests/#checkout-locally-by-adding-a-git-alias
+2019-07-21 11:46:11	> 	shutin (shutin@gateway/vpn/privateinternetaccess/shutin) has joined #kdeconnect
+2019-07-21 11:51:22	> 	justanotheruser (~justanoth@unaffiliated/justanotheruser) has joined #kdeconnect
+2019-07-21 11:57:03	pursuivant	kdeconnect-kde (master) v1.3.3-690-g2a687146 * Fabian Vogt: daemon/kdeconnectd.cpp
+2019-07-21 11:57:03	pursuivant	Add detectPlatform to always use wayland in a wayland session
+2019-07-21 11:57:04	pursuivant	Summary:
+2019-07-21 11:57:05	pursuivant	It's possible that Qt uses the xcb platform by default even in a Wayland
+2019-07-21 11:57:05	pursuivant	session, so detect such cases and switch to wayland instead to enable
+2019-07-21 11:57:06	pursuivant	https://invent.kde.org/kde/kdeconnect-kde/commit/2a687146ab8094037684f4d43313f64f0698750c
+2019-07-21 12:20:16	> 	huftis (~huftis@144.92-220-208.customer.lyse.net) has joined #kdeconnect
+2019-07-21 12:22:04	> 	Lord_of_Life_ (~Lord@unaffiliated/lord-of-life/x-0885362) has joined #kdeconnect
+2019-07-21 12:24:50	 <<< 	Lord_of_Life (~Lord@unaffiliated/lord-of-life/x-0885362) has quit (Ping timeout: 248 seconds)
+2019-07-21 12:24:57	 - 	Lord_of_Life_ is now known as Lord_of_Life
+2019-07-21 12:38:50	 <<< 	Lord_of_Life (~Lord@unaffiliated/lord-of-life/x-0885362) has quit (Quit: Laa shay'a waqi'un moutlaq bale kouloun moumkine)
+2019-07-21 12:40:07	> 	Lord_of_Life (~Lord@unaffiliated/lord-of-life/x-0885362) has joined #kdeconnect
+2019-07-21 12:44:27	> 	aneesahmedpro (~aneesahme@157.50.237.121) has joined #kdeconnect
+2019-07-21 12:44:50	aneesahmedpro	Hi
+2019-07-21 12:46:33	aneesahmedpro	Anybody here?
+2019-07-21 12:47:43	aneesahmedpro	Is this a place where I can request a feature?
+2019-07-21 12:48:29	 <<< 	aneesahmedpro (~aneesahme@157.50.237.121) has quit (Client Quit)
+2019-07-21 12:50:03	 <<< 	Lord_of_Life (~Lord@unaffiliated/lord-of-life/x-0885362) has quit (Ping timeout: 245 seconds)
+2019-07-21 12:50:30	pursuivant	kdeconnect-kde (master) v1.3.3-691-gaf1255ed * Albert Astals Cid: core/backends/lan/compositeuploadjob.cpp
+2019-07-21 12:50:31	pursuivant	Use "new" connect syntax
+2019-07-21 12:50:31	pursuivant	https://invent.kde.org/kde/kdeconnect-kde/commit/af1255ed990872712d34e92629855f413e556d70
+2019-07-21 12:52:27	> 	Lord_of_Life (~Lord@unaffiliated/lord-of-life/x-0885362) has joined #kdeconnect
+2019-07-21 12:57:41	IrcsomeBot	<CliabhachEs> aneesahmedpro: This is more of a development discussion channel. The best place for a feature request would be at https://bugs.kde.org/
+2019-07-21 13:00:39	 <<< 	Very_slow (~Very_slow@CPEc412f5da6ef1-CM84948c4b03d0.cpe.net.cable.rogers.com) has quit (Quit: Leaving)
+2019-07-21 13:03:38	> 	Very_slow (~Very_slow@172-97-238-211.cpe.distributel.net) has joined #kdeconnect
+2019-07-21 13:27:08	 <<< 	huftis (~huftis@144.92-220-208.customer.lyse.net) has quit
+2019-07-21 13:28:41	 <<< 	bitwinery (~bruno@c-71-59-192-149.hsd1.wa.comcast.net) has quit (Remote host closed the connection)
+2019-07-21 13:28:58	> 	bitwinery (~bruno@c-71-59-192-149.hsd1.wa.comcast.net) has joined #kdeconnect
+2019-07-21 13:29:24	IrcsomeBot	<AceHW> @nicofee, I love having portable reusable programs for more than one distro
+2019-07-21 13:34:59	IrcsomeBot	<Fuseteam> yes but the second point makes unfeasible
+2019-07-21 13:35:09	 <<< 	AlexP0s (~AlexP0s@213.226.141.171) has quit (Remote host closed the connection)
+2019-07-21 13:35:52	IrcsomeBot	<Fuseteam> i wonder if the snap could be revived, i seem to recall of there a being a snap version in the store
+2019-07-21 13:37:38	IrcsomeBot	<AceHW> I don't like using my desktop keyboard, and KDE Connect helps me avoid using it unless I have to do something before the distro fully boots into desktop
+2019-07-21 13:41:02	> 	xvello (~quassel@kajou.xvello.net) has joined #kdeconnect
+2019-07-21 13:42:37	 <<< 	justanotheruser (~justanoth@unaffiliated/justanotheruser) has quit (Read error: Connection reset by peer)
+2019-07-21 13:42:58	 <<< 	xvello (~quassel@kajou.xvello.net) has left #kdeconnect
+2019-07-21 13:50:10	 <<< 	shutin (shutin@gateway/vpn/privateinternetaccess/shutin) has quit (Ping timeout: 248 seconds)
+2019-07-21 13:51:31	> 	shutin (shutin@gateway/vpn/privateinternetaccess/shutin) has joined #kdeconnect
+2019-07-21 13:53:22	 <<< 	bitwinery (~bruno@c-71-59-192-149.hsd1.wa.comcast.net) has quit (Ping timeout: 248 seconds)
+2019-07-21 14:01:57	> 	justanotheruser (~justanoth@unaffiliated/justanotheruser) has joined #kdeconnect
+2019-07-21 14:10:52	 <<< 	justanotheruser (~justanoth@unaffiliated/justanotheruser) has quit (Ping timeout: 264 seconds)
+2019-07-21 14:12:30	> 	bitwinery (~bruno@c-71-59-192-149.hsd1.wa.comcast.net) has joined #kdeconnect
+2019-07-21 14:23:50	 <<< 	bitwinery (~bruno@c-71-59-192-149.hsd1.wa.comcast.net) has quit (Quit: Leaving)
+2019-07-21 14:24:47	> 	justanotheruser (justanothe@gateway/vpn/nordvpn/justanotheruser) has joined #kdeconnect
+2019-07-21 14:29:16	 <<< 	justanotheruser (justanothe@gateway/vpn/nordvpn/justanotheruser) has quit (Ping timeout: 244 seconds)
+2019-07-21 14:34:38	 <<< 	sredman (~sredman@195.135.221.19) has quit (Ping timeout: 245 seconds)
+2019-07-21 14:47:35	> 	justanotheruser (justanothe@gateway/vpn/nordvpn/justanotheruser) has joined #kdeconnect
+2019-07-21 14:48:24	IrcsomeBot	<MicroTransactionsMatterToo> @sredman Right.
+2019-07-21 14:49:09	 <<< 	Very_slow (~Very_slow@172-97-238-211.cpe.distributel.net) has quit (Quit: Leaving)
+2019-07-21 14:52:31	> 	Very_slow (~Very_slow@CPEc412f5da6ef1-CM84948c4b03d0.cpe.net.cable.rogers.com) has joined #kdeconnect
+2019-07-21 14:53:22	IrcsomeBot	<brute4s99> does the windows build use the craft blueprint under the hood?
+2019-07-21 14:53:32	IrcsomeBot	<brute4s99> (windows build on binary-factory)
+2019-07-21 15:23:06	> 	a17r (~andreas@213162073242.public.t-mobile.at) has joined #kdeconnect
+2019-07-21 15:24:02	 <<< 	asturm (~andreas@gentoo/developer/asturm) has quit (Ping timeout: 248 seconds)
+2019-07-21 15:41:23	> 	drnerdius (~drnerdius@95.104.95.79) has joined #kdeconnect
+2019-07-21 15:44:46	 <<< 	drnerdius (~drnerdius@95.104.95.79) has quit (Client Quit)
+2019-07-21 15:44:56	> 	drnerdius (~drnerdius@95.104.95.79) has joined #kdeconnect
+2019-07-21 15:49:17	pursuivant	kdeconnect-kde (master) v1.3.3-692-g273c2e93 * Weixuan Xiao:  (6 files in 2 dirs)
+2019-07-21 15:49:18	pursuivant	Just keep CMakeLists as it was
+2019-07-21 15:49:19	pursuivant	until Wayland supports macOS or Apple brings back X11
+2019-07-21 15:49:19	pursuivant	https://invent.kde.org/kde/kdeconnect-kde/commit/273c2e937a6e385aef20bf48b32eaf726c743f71
+2019-07-21 15:49:44	 <<< 	drnerdius (~drnerdius@95.104.95.79) has quit (Client Quit)
+2019-07-21 15:50:04	> 	drnerdius (~drnerdius@95.104.95.79) has joined #kdeconnect
+2019-07-21 15:50:37	IrcsomeBot	<IIInoki> Kind of strange, but it's this MR: macOS mousepad plugin
+2019-07-21 15:51:47	 <<< 	drnerdius (~drnerdius@95.104.95.79) has quit (Client Quit)
+2019-07-21 15:52:04	> 	drnerdius (~drnerdius@95.104.95.79) has joined #kdeconnect
+2019-07-21 15:52:48	 <<< 	shutin (shutin@gateway/vpn/privateinternetaccess/shutin) has quit (Ping timeout: 272 seconds)
+2019-07-21 15:53:10	> 	shut1n (shutin@gateway/vpn/privateinternetaccess/shutin) has joined #kdeconnect
+2019-07-21 15:53:31	IrcsomeBot	<brute4s99> SFTP plugin patch to kio-extras just got landed! \o/
+2019-07-21 15:53:41	IrcsomeBot	<CliabhachEs> !!
+2019-07-21 15:53:58	 <<< 	drnerdius (~drnerdius@95.104.95.79) has quit (Client Quit)
+2019-07-21 15:54:15	> 	drnerdius (~drnerdius@95.104.95.79) has joined #kdeconnect
+2019-07-21 15:56:11	 <<< 	drnerdius (~drnerdius@95.104.95.79) has quit (Client Quit)
+2019-07-21 15:56:28	> 	drnerdius (~ptfeh@95.104.95.79) has joined #kdeconnect
+2019-07-21 16:00:42	 <<< 	drnerdius (~ptfeh@95.104.95.79) has quit (Client Quit)
+2019-07-21 16:01:45	> 	ptfeh (~ptfeh@95.104.95.79) has joined #kdeconnect
+2019-07-21 16:02:57	 <<< 	ptfeh (~ptfeh@95.104.95.79) has quit (Client Quit)
+2019-07-21 16:03:53	> 	drnerdius (~drnerdius@95.104.95.79) has joined #kdeconnect
+2019-07-21 16:05:26	 - 	drnerdius is now known as ptfeh
+2019-07-21 16:05:36	 - 	ptfeh is now known as drnerdius
+2019-07-21 16:06:02	 <<< 	drnerdius (~drnerdius@95.104.95.79) has quit (Client Quit)
+2019-07-21 16:06:20	> 	drnerdius (~drnerdius@95.104.95.79) has joined #kdeconnect
+2019-07-21 16:06:26	 <<< 	drnerdius (~drnerdius@95.104.95.79) has quit (Client Quit)
+2019-07-21 16:07:19	> 	drnerdius (~drnerdius@95.104.95.79) has joined #kdeconnect
+2019-07-21 16:08:26	 <<< 	drnerdius (~drnerdius@95.104.95.79) has quit (Client Quit)
+2019-07-21 16:53:59	> 	bitwinery (~bruno@c-71-59-192-149.hsd1.wa.comcast.net) has joined #kdeconnect
+2019-07-21 16:54:22	 <<< 	bitwinery (~bruno@c-71-59-192-149.hsd1.wa.comcast.net) has quit (Remote host closed the connection)
+2019-07-21 16:54:54	> 	bitwinery (~bruno@c-71-59-192-149.hsd1.wa.comcast.net) has joined #kdeconnect
+2019-07-21 17:19:29	 <<< 	a17r (~andreas@213162073242.public.t-mobile.at) has quit (Quit: Konversation terminated!)
+2019-07-21 18:15:31	> 	pandaR (~panda@181.177.254.242) has joined #kdeconnect
+2019-07-21 18:19:59	 <<< 	pandaR (~panda@181.177.254.242) has quit (Client Quit)
+2019-07-21 18:21:01	> 	pandaR (~panda@181.177.254.242) has joined #kdeconnect
+2019-07-21 18:22:59	 <<< 	pandaR (~panda@181.177.254.242) has quit (Client Quit)
+2019-07-21 18:23:12	> 	pandaR (~panda@181.177.254.242) has joined #kdeconnect
+2019-07-21 18:31:06	 <<< 	pandaR (~panda@181.177.254.242) has quit (Quit: English is not my native language. suggestions are always welcome. if i said something strange, it was a translation oopsie)
+2019-07-21 20:15:22	> 	himcesjf_ (~cesjf@unaffiliated/himcesjf) has joined #kdeconnect
+2019-07-21 20:15:51	 <<< 	him-cesjf (~cesjf@unaffiliated/himcesjf) has quit (Ping timeout: 258 seconds)
+2019-07-21 20:17:41	 <<< 	shut1n (shutin@gateway/vpn/privateinternetaccess/shutin) has quit (Ping timeout: 268 seconds)
+2019-07-21 20:18:17	> 	shutin (shutin@gateway/vpn/privateinternetaccess/shutin) has joined #kdeconnect
+2019-07-21 20:38:47	 <<< 	shutin (shutin@gateway/vpn/privateinternetaccess/shutin) has quit (Ping timeout: 245 seconds)
+2019-07-21 23:22:55	IrcsomeBot	<brute4s99> does the windows build use the craft blueprint under the hood?
+2019-07-21 23:26:51	> 	kbroulik (~quassel@kde/broulik) has joined #kdeconnect
+2019-07-22 00:01:40	> 	sredman (~sredman@172.58.27.92) has joined #kdeconnect
+2019-07-22 00:15:32	> 	huftis (~huftis@144.92-220-208.customer.lyse.net) has joined #kdeconnect
+2019-07-22 00:20:28	IrcsomeBot	<sredman> @brute4s99, The log shows lots of craft-related calls, so presumably yes https://binary-factory.kde.org/job/kdeconnect-kde_Nightly_win64/lastBuild/console
+2019-07-22 00:34:26	 <<< 	sredman (~sredman@172.58.27.92) has quit (Ping timeout: 248 seconds)
+2019-07-22 00:51:08	 <<< 	Lord_of_Life (~Lord@unaffiliated/lord-of-life/x-0885362) has quit (Ping timeout: 272 seconds)
+2019-07-22 00:52:32	> 	Lord_of_Life (~Lord@unaffiliated/lord-of-life/x-0885362) has joined #kdeconnect
+2019-07-22 02:04:52	 <<< 	bitwinery (~bruno@c-71-59-192-149.hsd1.wa.comcast.net) has quit (Quit: Leaving)
+2019-07-22 03:33:49	IrcsomeBot	Colin Redman was added by: Colin Redman
+2019-07-22 04:42:29	pursuivant	kdeconnect-kde (master) v1.3.3-694-g2544d9b3 * Nicolas Fella: smsapp (2 files)
+2019-07-22 04:42:29	pursuivant	Include KPeople properly
+2019-07-22 04:42:30	pursuivant	https://invent.kde.org/kde/kdeconnect-kde/commit/2544d9b3b9567c71074a34ddb6fd52df751f5b3f
+2019-07-22 07:52:04	 <<< 	pursuivant (pursuivant@kde/bot/commit-notifications) has quit (Quit: transmission timeout)
+2019-07-22 08:19:46	 <<< 	kbroulik (~quassel@kde/broulik) has quit (Quit: http://quassel-irc.org - Chat comfortably. Anywhere.)
+2019-07-22 08:25:05	IrcsomeBot	<brute4s99> https://binary-factory.kde.org/job/kdeconnect-kde_Nightly_win64/ binary factory builds are back online, thanks to patch by @IIInoki ! :D
+2019-07-22 08:28:16	IrcsomeBot	<IIInoki> @brute4s99, You're welcome 🙂 Then have a try with kdeconnect app and sms app on Windows😋
+2019-07-22 08:28:39	brute4s99	checking out, brb
+2019-07-22 08:31:37	IrcsomeBot	<IIInoki> (Photo, 1280x706) https://irc-attachments.kde.org/Ftp6ZyHu/file_16665.jpg I'm improving private dbus, seems that qt maintainers choose to use the same logic as mine
+2019-07-22 08:31:41	IrcsomeBot	<IIInoki> 😂
+2019-07-22 09:00:01	IrcsomeBot	Ainslee was added by: Ainslee
+2019-07-22 09:04:18	 <<< 	huftis (~huftis@144.92-220-208.customer.lyse.net) has quit
+2019-07-22 10:09:38	IrcsomeBot	<AleixPol> https://www.omgubuntu.co.uk/2019/07/kde-connect-windows-port-android
+2019-07-22 10:25:02	 - 	himcesjf_ is now known as him-cesjf
+2019-07-22 10:42:52	> 	pursuivant (pursuivant@kde/bot/commit-notifications) has joined #kdeconnect
+2019-07-22 10:42:52	pursuivant	kdeconnect-kde (master) v1.3.3-695-gecbe1aca * Simon Redman: smsapp/main.cpp
+2019-07-22 10:42:53	pursuivant	Change license string in About
+2019-07-22 10:42:54	pursuivant	We are GPLv3 since we use some Kaiden components
+2019-07-22 10:42:54	pursuivant	https://invent.kde.org/kde/kdeconnect-kde/commit/ecbe1acabe39f09198c4d47f23e7ef8aaf31e96b
+2019-07-22 10:45:05	IrcsomeBot	theHari08 was added by: theHari08
+2019-07-22 11:27:47	> 	huftis (~huftis@144.92-220-208.customer.lyse.net) has joined #kdeconnect
+2019-07-22 11:59:32	 - 	irc: disconnected from server
+2019-07-22 11:59:58	> 	_Raijin (~gideon@2603:3023:708:9c00::fb07) has joined #kdeconnect
+2019-07-22 11:59:58	 - 	Topic for #kdeconnect is "KDE Connect Development"
+2019-07-22 11:59:58	 - 	Topic set by nicolasfella (~nico@wcvh021.rzhousing.uni-wuerzburg.de) on  
+2019-07-22 11:59:58	 - 	Channel #kdeconnect: 49 nicks (0 ops, 0 voices, 49 normals)
+2019-07-22 11:59:59	 - 	Channel created on  
+2019-07-22 12:20:46	 <<< 	Very_slow (~Very_slow@CPEc412f5da6ef1-CM84948c4b03d0.cpe.net.cable.rogers.com) has quit (Quit: Leaving)
+2019-07-22 12:33:15	pursuivant	kdeconnect-kde (master) v1.3.3-696-g607b9a65 * Nicolas Fella:  (7 files in 3 dirs)
+2019-07-22 12:33:16	pursuivant	Revert "Use ecm_qt_declare_logging_category"
+2019-07-22 12:33:17	pursuivant	It's missing stuff to work properly. Revert until I figured that out
+2019-07-22 12:33:18	pursuivant	This reverts commit 8a118a6fae5b83ed9ad66cc7c91d3de34e194a9f.
+2019-07-22 12:33:18	pursuivant	https://invent.kde.org/kde/kdeconnect-kde/commit/607b9a6566527eb49172311b08538ac5c757f1ae
+2019-07-22 12:50:28	 <<< 	Lord_of_Life (~Lord@unaffiliated/lord-of-life/x-0885362) has quit (Ping timeout: 245 seconds)
+2019-07-22 12:50:57	> 	Lord_of_Life (~Lord@unaffiliated/lord-of-life/x-0885362) has joined #kdeconnect
+2019-07-22 13:11:49	> 	Very_slow (~Very_slow@CPEc412f5da6ef1-CM84948c4b03d0.cpe.net.cable.rogers.com) has joined #kdeconnect
+2019-07-22 13:36:02	pursuivant	kdeconnect-android (master) v1.12.93-42-g7f283d89 * Matthijs Tijink:  (9 files in 6 dirs)
+2019-07-22 13:36:03	pursuivant	Tell the user that no Wi-Fi is connected and click to fix it
+2019-07-22 13:36:03	pursuivant	https://invent.kde.org/kde/kdeconnect-android/commit/7f283d8995f7d0247ad33143513ec43180bfbab8
+2019-07-22 13:36:11	 <<< 	huftis (~huftis@144.92-220-208.customer.lyse.net) has quit
+2019-07-22 13:48:31	pursuivant	kdeconnect-kde (master) v1.3.3-697-ge812a31c * Albert Vaca Cintora: declarativeplugin (3 files)
+2019-07-22 13:48:32	pursuivant	Remove the need to use qt5_wrap_cpp for moc generation
+2019-07-22 13:48:32	pursuivant	https://invent.kde.org/kde/kdeconnect-kde/commit/e812a31c4006b86f9fa72a768d49fa263e2440f8
+2019-07-22 14:18:07	TheOneRing	brute4s99: @IIInoki I just used dolphin on mac with sftp, thanks to you too we made quite some progress
+2019-07-22 14:18:42	TheOneRing	too=two
+2019-07-22 14:19:06	IrcsomeBot	<IIInoki> @brute4s99 Thanks your kio fix😎
+2019-07-22 14:19:12	IrcsomeBot	<IIInoki> @TheOneRing, Good news!
+2019-07-22 14:20:30	IrcsomeBot	<brute4s99> sweet! 😃
+2019-07-22 14:21:45	IrcsomeBot	<IIInoki> We have yet another file browser on macOS😂 But it's kind of big, so I may use an integrated one for sftp plugin
+2019-07-22 14:25:59	TheOneRing	Especially it's a useful file Browser
+2019-07-22 14:26:23	TheOneRing	The default one is soooo...
+2019-07-22 14:26:46	IrcsomeBot	<IIInoki> @TheOneRing, Yes, but how do you handle with dbus stuff in it?
+2019-07-22 14:27:09	TheOneRing	Gut question
+2019-07-22 14:27:13	TheOneRing	Good
+2019-07-22 14:27:31	TheOneRing	(Im on the phone)
+2019-07-22 14:28:26	TheOneRing	It worked but yes dbus. I guess its the same dbus as in my craft setup
+2019-07-22 14:28:36	IrcsomeBot	<IIInoki> @TheOneRing, If we can find a unified way, it will be nice for all KDE apps on macOS
+2019-07-22 14:29:12	TheOneRing	Or maybe similar to Windows kio without dbus
+2019-07-22 14:30:21	IrcsomeBot	<IIInoki> @TheOneRing, Dolphin doesn't work for me without an running and active session dbus
+2019-07-22 14:32:47	IrcsomeBot	<IIInoki> And I'm trying to find a way to optimize the dbus in KDE Connect.  … I'd like to use QDBusServer but it seems not to work. It can boot but doesn't accept any incoming connection. The incoming connections just get blocked. I doubt if such class has a complete and right implementation in Qt
+2019-07-22 14:42:39	TheOneRing	yes needs dbus
+2019-07-22 14:43:39	TheOneRing	https://gitlab.freedesktop.org/dbus/dbus/issues/246#note_131652
+2019-07-22 14:43:58	TheOneRing	they where not really open for our requirements
+2019-07-22 14:48:10	 <<< 	pursuivant (pursuivant@kde/bot/commit-notifications) has quit (Quit: transmission timeout)
+2019-07-22 14:56:58	 <<< 	Herby (~quassel@opensuse/member/hgraeber) has quit (Quit: http://quassel-irc.org - Chat comfortably. Anywhere.)
+2019-07-22 14:58:12	> 	Herby (~quassel@opensuse/member/hgraeber) has joined #kdeconnect
+2019-07-22 15:31:15	> 	bitwinery (~bruno@c-71-59-192-149.hsd1.wa.comcast.net) has joined #kdeconnect
+2019-07-22 15:35:27	IrcsomeBot	MichaelTunnell was added by: MichaelTunnell
+2019-07-22 15:35:58	IrcsomeBot	<MichaelTunnell> KDE Connect is one of the best things about being a Linux user :D … thanks to everyone who works on it!
+2019-07-22 15:44:36	IrcsomeBot	<AleixPol> (Sticker, 512x392) https://irc-attachments.kde.org/Zv6mZBRC/file_16682.webp
+2019-07-22 15:46:27	> 	pursuivant (pursuivant@kde/bot/commit-notifications) has joined #kdeconnect
+2019-07-22 15:46:28	pursuivant	kdeconnect-kde (master) v1.3.3-698-gdedb4b1e * Albert Vaca Cintora: CMakeLists.txt
+2019-07-22 15:46:28	pursuivant	KF5_MIN_VERSION was being defined *after* being used
+2019-07-22 15:46:28	pursuivant	https://invent.kde.org/kde/kdeconnect-kde/commit/dedb4b1ed216a22eaedb33c114f3a30fea67839d
+2019-07-22 15:46:33	pursuivant	kdeconnect-kde (master) v1.3.3-699-g27d5fd06 * Albert Vaca Cintora: declarativeplugin (3 files)
+2019-07-22 15:46:34	pursuivant	Bundle a QRC file instead of installing separate QML files
+2019-07-22 15:46:34	pursuivant	https://invent.kde.org/kde/kdeconnect-kde/commit/27d5fd0600cb832dae0f5661a99fac88df5f5b8a
+2019-07-22 15:46:39	pursuivant	kdeconnect-kde (master) v1.3.3-700-g22795c1a * Albert Vaca Cintora: declarativeplugin/CMakeLists.txt
+2019-07-22 15:46:40	pursuivant	Make qml apps run from build/bin
+2019-07-22 15:46:40	pursuivant	https://invent.kde.org/kde/kdeconnect-kde/commit/22795c1a14289c0966e5ab07e6e1e3dfb9e7656f
+2019-07-22 16:03:33	pursuivant	kdeconnect-kde (master) v1.3.3-701-g0254a0a1 * Albert Vaca Cintora: declarativeplugin/CMakeLists.txt
+2019-07-22 16:03:33	pursuivant	Try to fix windows build
+2019-07-22 16:03:34	pursuivant	https://invent.kde.org/kde/kdeconnect-kde/commit/0254a0a15a2278017a878710d385e85e00309a7e
+2019-07-22 16:48:28	IrcsomeBot	<k1nghat> are all of you guys running neon? or do  you run a rolling release distro?
+2019-07-22 16:51:46	 <<< 	Dragnslcr (~scott@2601:19c:4501:5455:7ca1:6dd4:b812:2673) has quit (Remote host closed the connection)
+2019-07-22 16:52:10	> 	Dragnslcr (~scott@2601:19c:4501:5455:5054:ff:fe28:6b10) has joined #kdeconnect
+2019-07-22 19:15:09	> 	himcesjf_ (~cesjf@unaffiliated/himcesjf) has joined #kdeconnect
+2019-07-22 19:15:50	 <<< 	him-cesjf (~cesjf@unaffiliated/himcesjf) has quit (Ping timeout: 258 seconds)
+2019-07-22 19:32:08	IrcsomeBot	cambrian_1872 was added by: cambrian_1872
+2019-07-22 19:41:22	> 	nexor (~nexor@177.81.21.192) has joined #kdeconnect
+2019-07-22 19:41:32	nexor	hi there
+2019-07-22 19:41:47	nexor	does anyone know how to config KDE connect with android and MPD?
+2019-07-22 19:42:12	IrcsomeBot	<CliabhachEs> nexor: What are you looking to do, exactly?
+2019-07-22 19:44:09	nexor	i want to use the media player control section
+2019-07-22 19:44:21	nexor	but on my phone I get "No players found"
+2019-07-22 19:44:29	nexor	how can mpd be found?
+2019-07-22 19:45:49	nexor	i'd also like to use the volume scroll but just having play/pause control would be great :)
+2019-07-22 19:48:00	IrcsomeBot	<CliabhachEs> Ah, I see. We use MPRIS ( https://specifications.freedesktop.org/mpris-spec/latest/ ) interfaces to communicate with players. Though I've never used it, there seems to be a tool called mpd-mpris ( https://github.com/natsukagami/mpd-mpris ) that might expose the right interface.
+2019-07-22 19:49:24	nexor	oh sweeet
+2019-07-22 19:49:33	nexor	ill try that out
+2019-07-22 19:49:35	nexor	thank you sir
+2019-07-22 19:50:40	 <<< 	nexor (~nexor@177.81.21.192) has left #kdeconnect
+2019-07-22 19:53:50	IrcsomeBot	<CliabhachEs> np!
+2019-07-22 20:07:35	Chaekyung	I realize that this may be slightly out of the scope of KDE Connect but now that I get notifications from my phone when V Live videos start since didn't remove KDE Connect for some reason I would like to be able to just click "view" on the notifications and get a pop-up window on my desktop.
+2019-07-22 20:07:52	Chaekyung	Video streaming from Android phone apps to desktop when?
+2019-07-22 20:26:27	 <<< 	bitwinery (~bruno@c-71-59-192-149.hsd1.wa.comcast.net) has quit (Quit: Leaving)
+2019-07-22 20:30:39	IrcsomeBot	<CliabhachEs> That seems like overkill for what you want, seeing as V Live streams its content from the internet. Wouldn't it be enough to just point a desktop browser at the right address?
+2019-07-22 20:32:49	IrcsomeBot	<CliabhachEs> If the app notification adds an "open" action with that url we'll support it. For anything outside of that you really ought to make a bug report on https://bugs.kde.org and we can discuss it there
+2019-07-22 20:51:43	 - 	himcesjf_ is now known as him-cesjf
+2019-07-22 20:51:53	IrcsomeBot	Emyle was added by: Emyle
+2019-07-22 22:10:26	 <<< 	him-cesjf (~cesjf@unaffiliated/himcesjf) has quit (Ping timeout: 248 seconds)
+2019-07-22 23:49:49	> 	kbroulik (~quassel@kde/broulik) has joined #kdeconnect
+2019-07-23 00:30:26	IrcsomeBot	<IIInoki> https://invent.kde.org/ is down?
+2019-07-23 00:45:07	IrcsomeBot	<brute4s99> @k1nghat, arch
+2019-07-23 00:46:43	IrcsomeBot	<brute4s99> @IIInoki, woah. yeah, doesn't work for me either
+2019-07-23 00:53:06	 <<< 	Lord_of_Life (~Lord@unaffiliated/lord-of-life/x-0885362) has quit (Ping timeout: 248 seconds)
+2019-07-23 00:57:01	> 	Lord_of_Life (~Lord@unaffiliated/lord-of-life/x-0885362) has joined #kdeconnect
+2019-07-23 01:07:45	> 	huftis (~huftis@144.92-220-208.customer.lyse.net) has joined #kdeconnect
+2019-07-23 01:09:39	IrcsomeBot	<brute4s99> i wonder how tough would it be for us to mirror android screen to desktop 🤔
+2019-07-23 01:33:35	IrcsomeBot	<brute4s99> I'll start the day with packaging kpeoplevcard. @IIInoki are you working on it yet?
+2019-07-23 01:38:26	IrcsomeBot	<IIInoki> @brute4s99, Already pushed
+2019-07-23 01:38:56	IrcsomeBot	<brute4s99> oki. So i guess the patch to the blueprint is done as well?
+2019-07-23 01:39:06	IrcsomeBot	<IIInoki> @brute4s99, Not yet, you can patch it
+2019-07-23 01:39:07	IrcsomeBot	<IIInoki> https://cgit.kde.org/craft-blueprints-kde.git/commit/?id=de2a10e8a55eada6c61275ae4af9cbf9bcba98af
+2019-07-23 01:39:15	IrcsomeBot	<brute4s99> oka
+2019-07-23 01:39:27	IrcsomeBot	<IIInoki> in kde/unreleased/kpeoplevcard
+2019-07-23 01:39:35	IrcsomeBot	<brute4s99> @IIInoki, gotcha
+2019-07-23 01:40:08	IrcsomeBot	<IIInoki> Hannah says it's not yet officially released, so we just use it here😂
+2019-07-23 01:40:51	IrcsomeBot	<IIInoki> (Document) https://irc-attachments.kde.org/SfffoSuA/file_16684.mp4
+2019-07-23 01:41:24	IrcsomeBot	<brute4s99> @IIInoki, nice!
+2019-07-23 02:01:57	IrcsomeBot	<IIInoki> (Photo, 1280x265) https://irc-attachments.kde.org/2LLAlvSr/file_16685.jpg Another interesting thing is that I wrote CMakeLists.txt for a pure objective-c project (NMSSH) and packed it into Craft, use it write a small ssh test program🤣
+2019-07-23 02:03:21	IrcsomeBot	<IIInoki> It's used by Soduto sftp browser, I'm having a look at whether we can integrate it into our project and directly reuse it😶
+2019-07-23 02:07:16	IrcsomeBot	<brute4s99> I've updated the KNotifications patch for Windows, so we can land it if there are no more issues left. I've resolved all of them.
+2019-07-23 02:35:00	 <<< 	pursuivant (pursuivant@kde/bot/commit-notifications) has quit (Quit: transmission timeout)
+2019-07-23 02:35:02	IrcsomeBot	<brute4s99> should've informed other projects about the change in KNotifications
+2019-07-23 02:35:04	IrcsomeBot	<brute4s99> (Sticker, 512x477) https://irc-attachments.kde.org/0vo0frz5/file_16686.webp
+2019-07-23 02:35:36	IrcsomeBot	<IIInoki> Maybe announce it in kdevel or somewhere?
+2019-07-23 02:38:21	IrcsomeBot	<nicofee> You can't just remove things
+2019-07-23 02:38:51	IrcsomeBot	<brute4s99> hmmm yes 😓
+2019-07-23 02:39:17	IrcsomeBot	<brute4s99> maybe something better would be to internally use QSystemTrayIcon for KStatusNotifierItem
+2019-07-23 02:39:24	IrcsomeBot	<brute4s99> (on Windows)
+2019-07-23 02:45:31	> 	Inokinoki (~inokinoki@195.135.221.19) has joined #kdeconnect
+2019-07-23 03:29:44	 <<< 	Inokinoki (~inokinoki@195.135.221.19) has quit (Remote host closed the connection)
+2019-07-23 03:37:05	> 	orange-vertex[m] (orange-ver@gateway/shell/matrix.org/x-psqshpydkazycnuu) has joined #kdeconnect
+2019-07-23 03:44:27	IrcsomeBot	pk was added by: pk
+2019-07-23 03:51:07	IrcsomeBot	<pk> dbus
+2019-07-23 03:57:27	IrcsomeBot	<pk> Trying KDE Connect on Mac (latest stable build) and i get "Cannot connect to DBus KDE Connect will quit". I did "brew install dbus" and then "brew services start dbus", still the same... Any ideas?
+2019-07-23 03:58:38	IrcsomeBot	<IIInoki> Latest building is broken. You can have a try with the build one week ago
+2019-07-23 03:59:41	IrcsomeBot	<pk> Thanks @IIInoki
+2019-07-23 04:01:39	> 	Inokinoki (~inokinoki@195.135.221.19) has joined #kdeconnect
+2019-07-23 04:04:08	IrcsomeBot	<pk> Don't know if this is useful but after I restart dbus and open the qdbusviewer.app (comes with Qt it seems?) then it says "Connected to D-Bus.". If I then close the app and try kdeconnect (#496), get the error above, close it and then open qdbusviewer.app again I get "Error: Cannot connect to D-Bus: Not enough memory"
+2019-07-23 04:07:02	 <<< 	Inokinoki (~inokinoki@195.135.221.19) has quit (Ping timeout: 272 seconds)
+2019-07-23 04:11:54	IrcsomeBot	<pk> Build #491 starts up, but does not pair
+2019-07-23 04:12:45	IrcsomeBot	<pk> ah paired
+2019-07-23 04:14:43	 <<< 	orange-vertex[m] (orange-ver@gateway/shell/matrix.org/x-psqshpydkazycnuu) has left #kdeconnect ("User left")
+2019-07-23 04:21:28	IrcsomeBot	<IIInoki> @pk, Nice! You can PM me if any other problems
+2019-07-23 04:27:04	> 	Inokinoki (~inokinoki@195.135.221.19) has joined #kdeconnect
+2019-07-23 04:35:53	IrcsomeBot	<albertvaka> I think the remaining "duplicate SMS notification" bugs are because we create a notification both for the SMS itself and the android notification about the SMS that gets propagated to the desktop
+2019-07-23 04:36:11	IrcsomeBot	<nicofee> No
+2019-07-23 04:36:35	IrcsomeBot	<nicofee> Well, we don't do that anymore in master
+2019-07-23 04:36:43	IrcsomeBot	<albertvaka> it seems to be the case on this bug: https://bugs.kde.org/show_bug.cgi?id=409025
+2019-07-23 04:36:43	sKreamer	KDE bug 409025 in kdeconnect (plasmoid) "Multiple notification" [normal,] https://bugs.kde.org/show_bug.cgi?id=409025
+2019-07-23 04:37:03	> 	him-cesjf (~cesjf@unaffiliated/himcesjf) has joined #kdeconnect
+2019-07-23 04:37:13	IrcsomeBot	<albertvaka> on the latest attachment
+2019-07-23 04:43:28	> 	pursuivant (pursuivant@kde/bot/commit-notifications) has joined #kdeconnect
+2019-07-23 04:43:28	pursuivant	kdeconnect-kde (master) v1.3.3-704-g88e0ffa0 * Simon Redman: smsapp/conversationmodel.cpp
+2019-07-23 04:43:29	pursuivant	Always show sender's name
+2019-07-23 04:43:29	pursuivant	https://invent.kde.org/kde/kdeconnect-kde/commit/88e0ffa01a7609a0ad44caaaea12094bfc7b4624
+2019-07-23 05:09:50	pursuivant	kdeconnect-kde (albertvaka/qml-plugin-macro) v1.3.3-702-g8542e631 * Albert Vaca: declarativeplugin/CMakeLists.txt
+2019-07-23 05:09:51	pursuivant	Added macro to install a declarative plugin
+2019-07-23 05:09:51	pursuivant	https://invent.kde.org/kde/kdeconnect-kde/commit/8542e6311c5da5c2e653cbb599d2043e66a1f95e
+2019-07-23 05:09:52	IrcsomeBot	<sredman> (Photo, 92x55) https://irc-attachments.kde.org/sLRJwzCO/file_16687.jpg
+2019-07-23 05:10:05	pursuivant	kdeconnect-kde (albertvaka/mdns) v1.3.3-670-gaaaa8e20 * Albert Vaca Cintora: core/backends/lan/mdnslinkprovider.cpp
+2019-07-23 05:10:06	pursuivant	Reorder
+2019-07-23 05:10:06	pursuivant	https://invent.kde.org/kde/kdeconnect-kde/commit/aaaa8e200a122798391f841f7d3449346f42eb0d
+2019-07-23 05:18:04	IrcsomeBot	<albertvaka> @sredman, 😏
+2019-07-23 05:18:39	IrcsomeBot	<albertvaka> I made a change yesterday that seems to break the windows CI, but it works on my Windows box
+2019-07-23 05:18:52	IrcsomeBot	<albertvaka> does it work for you @brute4s99 ?
+2019-07-23 05:59:05	pursuivant	kdeconnect-android (master) v1.12.93-44-g4be5800b * Albert Vaca: AndroidManifest.xml
+2019-07-23 05:59:05	pursuivant	Disable google backups of the app
+2019-07-23 05:59:06	pursuivant	This was causing problems when a restored app remembered the list of
+2019-07-23 05:59:07	pursuivant	storage locations it had access to, but it no longer could access them.
+2019-07-23 05:59:08	pursuivant	https://invent.kde.org/kde/kdeconnect-android/commit/4be5800b8be20d3612904373e7e840fb24eb6b27
+2019-07-23 06:02:12	 <<< 	him-cesjf (~cesjf@unaffiliated/himcesjf) has quit (Excess Flood)
+2019-07-23 06:03:07	> 	him-cesjf (~cesjf@unaffiliated/himcesjf) has joined #kdeconnect
+2019-07-23 06:03:29	 <<< 	him-cesjf (~cesjf@unaffiliated/himcesjf) has quit (Read error: Connection reset by peer)
+2019-07-23 06:07:00	 <<< 	Inokinoki (~inokinoki@195.135.221.19) has quit
+2019-07-23 07:22:15	pursuivant	kdeconnect-kde (master) v1.3.3-705-g77999733 * Colin Redman: plugins/clipboard (5 files)
+2019-07-23 07:22:16	pursuivant	Clipboard sync on new connection
+2019-07-23 07:22:17	pursuivant	Summary: Added a timestamp to track clipboard changes, so when a new device connects it will sync the most recently updated clipboard to both devices.
+2019-07-23 07:22:18	pursuivant	Reviewers: #kde_connect, albertvaka
+2019-07-23 07:22:18	pursuivant	https://invent.kde.org/kde/kdeconnect-kde/commit/779997337179e035a13b277784d40e67d4fe765e
+2019-07-23 07:22:26	pursuivant	kdeconnect-android (master) v1.12.93-45-g5dc65ee9 * Colin Redman: src/org/kde/kdeconnect/Plugins/ClibpoardPlugin (2 files)
+2019-07-23 07:22:26	pursuivant	Clipboard sync on new connections
+2019-07-23 07:22:27	pursuivant	Summary: Timestamp on changes to clipboards so that when a new device connects it can sync both clipboards to the most recent updated clipboard.
+2019-07-23 07:22:28	pursuivant	Reviewers: #kde_connect, albertvaka
+2019-07-23 07:22:29	pursuivant	https://invent.kde.org/kde/kdeconnect-android/commit/5dc65ee9094d12d06cbf2f96b68b4d71bebd9142
+2019-07-23 07:25:39	IrcsomeBot	<brute4s99> @albertvaka, yeah, builds for me. I'll add kpeoplevcard to the blueprint in a bit, maybe that's what's breaking the build
+2019-07-23 07:32:51	IrcsomeBot	<IIInoki> @brute4s99 And could you test this breaks anything on Windows? https://invent.kde.org/kde/kdeconnect-kde/merge_requests/145
+2019-07-23 07:33:46	IrcsomeBot	<brute4s99> @IIInoki, yep, I'd like to have this for Windows as well. Will check it out
+2019-07-23 07:35:03	IrcsomeBot	<IIInoki> You may already have it because Qt is really friendly to Windows😂
+2019-07-23 07:35:13	IrcsomeBot	<IIInoki> But not macOS😋
+2019-07-23 07:38:48	brute4s99	:P
+2019-07-23 07:46:06	IrcsomeBot	<brute4s99> (Photo, 421x133) https://irc-attachments.kde.org/wfJEl1mI/file_16690.jpg @IIInoki no worries, I'll have a look
+2019-07-23 07:47:10	IrcsomeBot	<IIInoki> @brute4s99, Thanks🤣
+2019-07-23 07:54:27	 <<< 	kbroulik (~quassel@kde/broulik) has quit (Quit: http://quassel-irc.org - Chat comfortably. Anywhere.)
+2019-07-23 07:58:49	IrcsomeBot	<brute4s99> (Photo, 419x105) https://irc-attachments.kde.org/dNcfFBqj/file_16691.jpg :D
+2019-07-23 08:11:47	IrcsomeBot	<IIInoki> @brute4s99, 👍
+2019-07-23 08:13:10	IrcsomeBot	<brute4s99> https://invent.kde.org/wxiao/kdeconnect-kde/merge_requests/1
+2019-07-23 08:57:08	IrcsomeBot	<IIInoki> (Photo, 746x336) https://irc-attachments.kde.org/ktrzxcKO/file_16692.jpg I map the buttons in knotification to a better form
+2019-07-23 08:59:04	IrcsomeBot	<IIInoki> I expect knotification can have quick response support ASAP😋
+2019-07-23 09:21:25	IrcsomeBot	<brute4s99> apparently windows CI hasn't picked up on the patch to the blueprint yet(kpeoplevcard patch)
+2019-07-23 09:22:06	IrcsomeBot	<brute4s99> hey, @IIInoki did you talk to sysadmin to add a MacOS CI to kdeconnect-kde? That would be cool!
+2019-07-23 09:22:28	IrcsomeBot	<nicofee> I asked Bhushan about that
+2019-07-23 09:22:46	IrcsomeBot	<nicofee> He said it should be possible eventually
+2019-07-23 09:23:21	IrcsomeBot	<brute4s99> sweet! can't wait to have all OSes in the CI ^-^
+2019-07-23 09:26:54	PureTryOut[m]	What about a Musl target like Alpine Linux? 😃
+2019-07-23 09:28:11	IrcsomeBot	<IIInoki> @brute4s99, I'm not sure if gitlab mac ci fas fill functionnalities🤣
+2019-07-23 09:43:14	IrcsomeBot	<nicofee> PureTryOut[m]: You're our musl CI
+2019-07-23 09:44:13	PureTryOut[m]	I feel honored I guess lol, still not as good 😛
+2019-07-23 10:13:16	 <<< 	achillion (~ach@unaffiliated/achillion) has quit (Quit: :wq)
+2019-07-23 10:17:14	> 	achillion (~ach@unaffiliated/achillion) has joined #kdeconnect
+2019-07-23 10:17:41	IrcsomeBot	<sredman> @brute4s99, kpeoplevcard is a runtime dependency so you shouldn't see any difference in the CI
+2019-07-23 10:18:21	IrcsomeBot	<sredman> @sredman, Unless you're reading the compile log and see that it's complaining, I guess
+2019-07-23 10:18:26	IrcsomeBot	<IIInoki> And it's optional asaiu
+2019-07-23 10:19:34	 <<< 	achillion (~ach@unaffiliated/achillion) has quit (Client Quit)
+2019-07-23 10:21:26	> 	achillion (ach@unaffiliated/achillion) has joined #kdeconnect
+2019-07-23 10:55:14	IrcsomeBot	<brute4s99> @sredman, it does say kpeoplevcard is a runtime dependency and it wasn't found
+2019-07-23 10:55:27	IrcsomeBot	<brute4s99> so, I guess that's what's causing the issue
+2019-07-23 11:23:47	 <<< 	IceCold2000 (~icecold20@cpc137966-brom13-2-0-cust296.16-1.cable.virginm.net) has quit (Ping timeout: 245 seconds)
+2019-07-23 11:56:45	 <<< 	janLo (~janLo@box.losinski.de) has quit (Quit: The Lounge - https://thelounge.github.io)
+2019-07-23 11:59:30	> 	janLo (~janLo@box.losinski.de) has joined #kdeconnect
+2019-07-23 12:16:42	IrcsomeBot	ukhamitov was added by: ukhamitov
+2019-07-23 12:29:12	> 	IceCold2000 (~icecold20@cpc137966-brom13-2-0-cust296.16-1.cable.virginm.net) has joined #kdeconnect
+2019-07-23 12:33:54	 <<< 	IceCold2000 (~icecold20@cpc137966-brom13-2-0-cust296.16-1.cable.virginm.net) has quit (Ping timeout: 248 seconds)
+2019-07-23 12:39:44	> 	IceCold2000 (~icecold20@cpc137966-brom13-2-0-cust296.16-1.cable.virginm.net) has joined #kdeconnect
+2019-07-23 12:51:11	> 	Lord_of_Life_ (~Lord@unaffiliated/lord-of-life/x-0885362) has joined #kdeconnect
+2019-07-23 12:54:08	 <<< 	Lord_of_Life (~Lord@unaffiliated/lord-of-life/x-0885362) has quit (Ping timeout: 268 seconds)
+2019-07-23 12:54:09	 - 	Lord_of_Life_ is now known as Lord_of_Life
+2019-07-23 13:35:26	 <<< 	huftis (~huftis@144.92-220-208.customer.lyse.net) has quit
+2019-07-23 13:48:37	pursuivant	kdeconnect-kde (master) v1.3.3-706-g43382ec7 * Albert Vaca: declarativeplugin/CMakeLists.txt
+2019-07-23 13:48:38	pursuivant	Trying again to fix windows build
+2019-07-23 13:48:38	pursuivant	https://invent.kde.org/kde/kdeconnect-kde/commit/43382ec7a750bac6be125ecedd2bdbb23afd2cba
+2019-07-23 13:53:57	IrcsomeBot	<brute4s99> @pursuivant, that seems to have fixed the build
+2019-07-23 15:12:51	IrcsomeBot	<MicroTransactionsMatterToo> @sredman Figured out what Samsung uses to identify threads. It's called recipient_ids
+2019-07-23 15:50:51	IrcsomeBot	<MicroTransactionsMatterToo> @sredman Looks like a lot of the structure of the Samsung conversation objects is different from the normal one. Not sure how to go about mapping Samsung messages to the normal objects to send back so it parses correctly
+2019-07-23 21:12:25	IrcsomeBot	fortime was added by: fortime
+2019-07-23 21:29:40	IrcsomeBot	<fortime> Is it possible to add an option to send those local only notifications of a specific app?
+2019-07-23 21:32:29	IrcsomeBot	<fortime> some app, like WeChat, all of their notifications are marked as local only. But I really want them show on my PC.
+2019-07-24 00:00:49	> 	kbroulik (~quassel@kde/broulik) has joined #kdeconnect
+2019-07-24 00:40:01	> 	huftis (~huftis@144.92-220-208.customer.lyse.net) has joined #kdeconnect
+2019-07-24 00:52:33	 <<< 	Lord_of_Life (~Lord@unaffiliated/lord-of-life/x-0885362) has quit (Ping timeout: 268 seconds)
+2019-07-24 00:55:03	> 	Lord_of_Life (~Lord@unaffiliated/lord-of-life/x-0885362) has joined #kdeconnect
+2019-07-24 01:51:53	IrcsomeBot	wazyah was added by: wazyah
+2019-07-24 01:55:41	IrcsomeBot	bellitti was added by: bellitti
+2019-07-24 02:19:50	IrcsomeBot	nioshanishaboriGx5 was added by: nioshanishaboriGx5
+2019-07-24 02:52:22	IrcsomeBot	<albertvaka> I fixed the windows build on the CI, but it's still not green because there are failing tests: … + testnotificationlistener … + testnotificationlistener … maybe you could give them a look @brute4s99
+2019-07-24 02:58:30	IrcsomeBot	<albertvaka> Btw, heads up to everybody: the binary output directory in the cmake build directory got changed from `<app_name>` to `bin` due to this change:  … https://invent.kde.org/kde/kdeconnect-kde/commit/dedb4b1ed216a22eaedb33c114f3a30fea67839d … Apparently, KDECMakeSettings configures a different binary output dir if you target KF5 greater than a given version, and before that fix we were passing empty string as the KF5 version, so
+2019-07-24 02:58:31	IrcsomeBot	this didn't trigger.
+2019-07-24 02:58:55	IrcsomeBot	<albertvaka> if you are rebuilding and don't see your changes in the build directory, this might explain it
+2019-07-24 03:00:34	IrcsomeBot	<bellitti> Hi everyone, I found this group while looking for info about Bluetooth support. Can someone update me on the status of that, please?
+2019-07-24 03:04:30	 <<< 	sudhirkhanger-M (sudhirkhan@gateway/shell/kde/matrix/x-hyzlsqddywmusnnk) has quit (Remote host closed the connection)
+2019-07-24 03:04:31	 <<< 	mtijink-M (mtijinkkde@gateway/shell/kde/matrix/x-pvmqfhxmvzbgoihr) has quit (Remote host closed the connection)
+2019-07-24 03:04:31	 <<< 	wks[m] (wksrandoms@gateway/shell/matrix.org/x-cfpscpdrvqetekqh) has quit (Read error: Connection reset by peer)
+2019-07-24 03:04:32	 <<< 	Noah[m] (noahstegma@gateway/shell/matrix.org/x-khqngmuxnzufdzvs) has quit (Read error: Connection reset by peer)
+2019-07-24 03:04:32	 <<< 	dried[m] (driedstrma@gateway/shell/matrix.org/x-oxfqmzxfqrkwllqq) has quit (Read error: Connection reset by peer)
+2019-07-24 03:04:34	 <<< 	bylaws (triplequan@gateway/shell/matrix.org/x-zbfszupxefatunyd) has quit (Read error: Connection reset by peer)
+2019-07-24 03:04:35	 <<< 	z3ntu (z3ntumatri@gateway/shell/matrix.org/x-fxjgqcxxuaynwwtd) has quit (Write error: Connection reset by peer)
+2019-07-24 03:04:37	 <<< 	PureTryOut[m] (bartfam-ri@gateway/shell/matrix.org/x-yfyplycxrikmtxbw) has quit (Read error: Connection reset by peer)
+2019-07-24 03:04:51	 <<< 	Joel[m]3 (joelnixser@gateway/shell/matrix.org/x-zfukaqamlcosyjal) has quit (Read error: Connection reset by peer)
+2019-07-24 03:07:59	 <<< 	Holm[m]1 (joakimholm@gateway/shell/matrix.org/x-zwwgeffcmcbehjqw) has quit (Ping timeout: 252 seconds)
+2019-07-24 03:08:03	 <<< 	hannahk[m] (hannahkkde@gateway/shell/matrix.org/x-kvfazmzxutigpvun) has quit (Ping timeout: 252 seconds)
+2019-07-24 03:08:04	 <<< 	PifyZ[m] (pifyzmatri@gateway/shell/matrix.org/x-uihejltszyqtpzpe) has quit (Ping timeout: 252 seconds)
+2019-07-24 03:08:20	 <<< 	liviugheorghe[m] (liviugheor@gateway/shell/matrix.org/x-xkhsdqakqkzvkblc) has quit (Ping timeout: 252 seconds)
+2019-07-24 03:08:27	 <<< 	JasonCHammons[m] (ehlojhammo@gateway/shell/matrix.org/x-zxpmnccyohixmlmn) has quit (Ping timeout: 250 seconds)
+2019-07-24 03:08:33	 <<< 	bitraas[m] (bitraasmat@gateway/shell/matrix.org/x-eedktyuggvuvpemz) has quit (Ping timeout: 265 seconds)
+2019-07-24 03:08:34	 <<< 	scde[m] (scdematrix@gateway/shell/matrix.org/x-clampmcdhlnzfdxg) has quit (Ping timeout: 265 seconds)
+2019-07-24 03:08:35	 <<< 	GB_2[m] (gb2matrixo@gateway/shell/matrix.org/x-kbrrscuzxvgqayrf) has quit (Ping timeout: 265 seconds)
+2019-07-24 03:08:51	 <<< 	Ringil[m] (ringilmatr@gateway/shell/matrix.org/x-onkrrpdwxisguiqr) has quit (Ping timeout: 276 seconds)
+2019-07-24 03:08:51	 <<< 	Ananace (acekittenf@gateway/shell/matrix.org/x-rwfumwmhfwadpemq) has quit (Ping timeout: 276 seconds)
+2019-07-24 03:08:53	 <<< 	Riddellll (jriddellkd@gateway/shell/matrix.org/x-bllnyneyxxthehzh) has quit (Ping timeout: 250 seconds)
+2019-07-24 03:08:53	 <<< 	keithzg[m] (keithzgrio@gateway/shell/matrix.org/x-hgwdiheskaefxbva) has quit (Ping timeout: 250 seconds)
+2019-07-24 03:09:04	 <<< 	andyholmes (andyholmes@gateway/shell/matrix.org/x-vvdxepwuuuyasizy) has quit (Ping timeout: 264 seconds)
+2019-07-24 03:18:52	IrcsomeBot	<sredman> @bellitti, The bluetooth backend kind-of works sometimes, and is currently disabled, but we are happy for more people to try it and work on it. You need to re-build the desktop side with a cmake flag and uncomment some things in the Android app
+2019-07-24 03:22:02	 <<< 	huftis (~huftis@144.92-220-208.customer.lyse.net) has quit
+2019-07-24 03:30:46	> 	sudhirkhanger-M (sudhirkhan@gateway/shell/kde/matrix/x-axrkgwifkcublzls) has joined #kdeconnect
+2019-07-24 03:31:54	> 	mtijink-M (mtijinkkde@gateway/shell/kde/matrix/x-ixmqxskoaibntpvd) has joined #kdeconnect
+2019-07-24 03:33:55	IrcsomeBot	<bellitti> @sredman, Thank you. Is this process documented somewhere? I'm okay with rebuilding the desktop side, but I wouldn't know what to do in the app
+2019-07-24 03:50:45	> 	PifyZ[m] (pifyzmatri@gateway/shell/matrix.org/x-ohudjjxaxbfsikww) has joined #kdeconnect
+2019-07-24 04:01:55	 <<< 	IceCold2000 (~icecold20@cpc137966-brom13-2-0-cust296.16-1.cable.virginm.net) has quit (Ping timeout: 246 seconds)
+2019-07-24 04:36:16	> 	Joel[m]1 (joelnixser@gateway/shell/matrix.org/x-antnhrawfwvgkaaq) has joined #kdeconnect
+2019-07-24 04:36:16	> 	z3ntu (z3ntumatri@gateway/shell/matrix.org/x-wbclyhleimxpzwwk) has joined #kdeconnect
+2019-07-24 04:36:17	> 	Ananace (acekittenf@gateway/shell/matrix.org/x-ldhmjkcgjjcaushu) has joined #kdeconnect
+2019-07-24 04:36:17	> 	bylaws (triplequan@gateway/shell/matrix.org/x-wpsfwbnsldrvyitm) has joined #kdeconnect
+2019-07-24 04:36:17	> 	scde[m] (scdematrix@gateway/shell/matrix.org/x-yoghqietprwnizuh) has joined #kdeconnect
+2019-07-24 04:36:17	> 	PureTryOut[m] (bartfam-ri@gateway/shell/matrix.org/x-edkqsrgpmvtjttry) has joined #kdeconnect
+2019-07-24 04:36:17	> 	JayCHammons[m] (ehlojhammo@gateway/shell/matrix.org/x-yhodsiihezpfmmdn) has joined #kdeconnect
+2019-07-24 04:36:17	> 	GB_2[m] (gb2matrixo@gateway/shell/matrix.org/x-zlxykouzgubxubwb) has joined #kdeconnect
+2019-07-24 04:36:17	> 	bitraas[m] (bitraasmat@gateway/shell/matrix.org/x-qmcznegasnrajyre) has joined #kdeconnect
+2019-07-24 04:36:18	> 	keithzg[m] (keithzgrio@gateway/shell/matrix.org/x-vxwvjibxfzkqzmmt) has joined #kdeconnect
+2019-07-24 04:36:24	> 	dried[m] (driedstrma@gateway/shell/matrix.org/x-zlroiouqffiwbbgq) has joined #kdeconnect
+2019-07-24 04:36:25	> 	liviugheorghe[m] (liviugheor@gateway/shell/matrix.org/x-pidbdamlthtedcty) has joined #kdeconnect
+2019-07-24 04:36:27	> 	andyholmes (andyholmes@gateway/shell/matrix.org/x-urkgsuiqpgpnymbc) has joined #kdeconnect
+2019-07-24 04:36:28	 - 	JayCHammons[m] is now known as JCHammons[m]
+2019-07-24 04:37:02	 - 	Joel[m]1 is now known as 59NAAQRW0
+2019-07-24 04:37:02	> 	14WAAAD5M (joakimholm@gateway/shell/matrix.org/session) has joined #kdeconnect
+2019-07-24 04:37:02	> 	wks[m] (wksrandoms@gateway/shell/matrix.org/session) has joined #kdeconnect
+2019-07-24 04:37:02	> 	Riddellll (jriddellkd@gateway/shell/matrix.org/x-iiwdagywliejwish) has joined #kdeconnect
+2019-07-24 04:37:02	> 	Noah[m] (noahstegma@gateway/shell/matrix.org/session) has joined #kdeconnect
+2019-07-24 04:37:26	 <<< 	Noah[m] (noahstegma@gateway/shell/matrix.org/session) has quit (Changing host)
+2019-07-24 04:37:26	> 	Noah[m] (noahstegma@gateway/shell/matrix.org/x-rhsfvagvycqfvgfy) has joined #kdeconnect
+2019-07-24 04:37:28	 <<< 	wks[m] (wksrandoms@gateway/shell/matrix.org/session) has quit (Changing host)
+2019-07-24 04:37:28	> 	wks[m] (wksrandoms@gateway/shell/matrix.org/x-tdygzpyhrzvxxcii) has joined #kdeconnect
+2019-07-24 04:37:28	 <<< 	14WAAAD5M (joakimholm@gateway/shell/matrix.org/session) has quit (Changing host)
+2019-07-24 04:37:28	> 	14WAAAD5M (joakimholm@gateway/shell/matrix.org/x-qqhbpowtckggbinu) has joined #kdeconnect
+2019-07-24 04:38:03	> 	Ringil[m] (ringilmatr@gateway/shell/matrix.org/x-opormlzhiibmdxrw) has joined #kdeconnect
+2019-07-24 04:38:03	> 	hannahk[m] (hannahkkde@gateway/shell/matrix.org/x-srdeyswjehnprrlg) has joined #kdeconnect
+2019-07-24 04:44:00	 - 	JCHammons[m] is now known as JasonCHammons[m]
+2019-07-24 05:29:22	TheOneRing	@Inokinoki dbus-daemon --config-file=Resources/dbus-1/session.conf   --address="unix:path=.dbus-dolphin"  &  dolphin
+2019-07-24 05:29:44	TheOneRing	that in a wrapper script should be enough to have a private dbus session in a dmg?
+2019-07-24 05:30:10	TheOneRing	would something like that work
+2019-07-24 05:37:24	IrcsomeBot	<IIInoki> @TheOneRing, It does launch a dbus daemon, and the address is set. But in KFramework, DBusConnection::session() is used for connection to the default session dbus rather than the one we launched. … Its action is querying to macOS launchd, get an env. And the value of the env is the dbus address.
+2019-07-24 05:38:43	IrcsomeBot	<IIInoki> @TheOneRing, It's not enough. In kdeconnect, I set the env here: https://invent.kde.org/kde/kdeconnect-kde/blob/master/core/dbushelper.cpp#L141
+2019-07-24 05:40:15	TheOneRing	hm could you boil down your findings to a few lines of doc? I recently got a mac and I'd like to experiment with a general lightweight solution
+2019-07-24 05:42:13	IrcsomeBot	<IIInoki> @TheOneRing, Sure, I'm also trying to find a better solution for all Kde apps rather than kdeconnect itself. … I'll send it to you, in #kde-mac probably?
+2019-07-24 05:42:35	TheOneRing	thx :)
+2019-07-24 05:43:58	IrcsomeBot	<IIInoki> @fortime, Nice to have one, I'm also a WeChat user so that looking forward to it ;) … So very welcome if you'd like to contribute one 😊
+2019-07-24 06:15:37	IrcsomeBot	<fortime> @IIInoki, haven't written any code for an Android app since 2011, but I will have a try
+2019-07-24 06:16:50	IrcsomeBot	<IIInoki> @fortime, Good luck! Any problems or questions, just post them here
+2019-07-24 08:03:10	 <<< 	kbroulik (~quassel@kde/broulik) has quit (Quit: http://quassel-irc.org - Chat comfortably. Anywhere.)
+2019-07-24 08:11:42	 <<< 	sknebel (~quassel@v22016013254630973.happysrv.de) has quit (Ping timeout: 245 seconds)
+2019-07-24 08:35:02	> 	him-cesjf (~cesjf@unaffiliated/himcesjf) has joined #kdeconnect
+2019-07-24 08:35:48	 <<< 	him-cesjf (~cesjf@unaffiliated/himcesjf) has quit (Client Quit)
+2019-07-24 09:07:50	Riddellll	you have a new binary /usr/bin/kdeconnect? what does that do?
+2019-07-24 09:09:32	IrcsomeBot	<mtijink> It's kcapp, but renamed
+2019-07-24 09:19:20	IrcsomeBot	<sredman> @bellitti, Not really, unfortunately... Have a look at these branches in my repository. In addition, I have disabled the (bluetooth) client side on the desktop and the (bluetooth) server side on the Android which makes the connecting much more reliable. … https://invent.kde.org/sredman/kdeconnect-kde/tree/bluetooth-hack … https://invent.kde.org/sredman/kdeconnect-android/tree/bluetooth-hack … As a starting point, it would be
+2019-07-24 09:19:21	IrcsomeBot	to figure out why we needed to disable the client or server parts of the various apps, then reenable those. You may want to chat with @mtijink Matthijs, since he has done most of the recent work
+2019-07-24 09:25:47	> 	Inokinoki (~inokinoki@115.134.22.93.rev.sfr.net) has joined #kdeconnect
+2019-07-24 09:30:19	 <<< 	Inokinoki (~inokinoki@115.134.22.93.rev.sfr.net) has quit (Remote host closed the connection)
+2019-07-24 09:47:05	> 	huftis (~huftis@144.92-220-208.customer.lyse.net) has joined #kdeconnect
+2019-07-24 10:09:26	> 	sknebel_ (~quassel@v22016013254630973.happysrv.de) has joined #kdeconnect
+2019-07-24 10:14:39	 - 	sknebel_ is now known as sknebel
+2019-07-24 10:35:01	Riddellll	mtijink: is kdeconnect-sms also part of the kirigami one?
+2019-07-24 10:35:46	Riddellll	or common to both?
+2019-07-24 10:38:40	IrcsomeBot	<sredman> Riddelll: kdeconnect-sms is a new (unannounced, but hopefully releasing soon) application for sending and receiving sms from the desktop. Try it out and let me know what you think!
+2019-07-24 11:04:37	IrcsomeBot	<k1nghat> so `kdeconnect-sms` wont be built into `kdeconnect`?
+2019-07-24 11:08:00	IrcsomeBot	<CliabhachEs> Not at the current time
+2019-07-24 11:13:42	IrcsomeBot	<mtijink> But it'll be installed by default in the next release, just as a separate application
+2019-07-24 11:23:09	> 	bitwinery (~bruno@c-71-59-192-149.hsd1.wa.comcast.net) has joined #kdeconnect
+2019-07-24 11:40:04	IrcsomeBot	<mtijink> (Photo, 444x382) https://irc-attachments.kde.org/bzYXklG7/file_16705.jpg Does anyone else have this error on their plasmoid?
+2019-07-24 11:44:26	IrcsomeBot	<sredman> @mtijink, Yes. I think I saw it yesterday. It's new since a couple of days ago but I can't remember exactly when I launched Plasma before then
+2019-07-24 11:44:47	IrcsomeBot	<mtijink> It looks like it might be related to Albert's qrc changes
+2019-07-24 11:45:21	IrcsomeBot	<sredman> @k1nghat, It is never going to be built in. It is in the same repository but is standalone and communicates over dbus
+2019-07-24 11:46:35	IrcsomeBot	<brute4s99> I think we can arrange a button for SMSes as well, in the plasmoid?
+2019-07-24 11:47:37	IrcsomeBot	<mtijink> @brute4s99, That's already there 😉
+2019-07-24 11:48:10	IrcsomeBot	<brute4s99> Oh!? I didn't notice, brb!
+2019-07-24 11:48:59	IrcsomeBot	gxyf106 was added by: gxyf106
+2019-07-24 11:52:29	IrcsomeBot	<brute4s99> I'm getting this-
+2019-07-24 11:52:39	IrcsomeBot	<brute4s99> (Document) https://irc-attachments.kde.org/2ua0VoKN/file_16706.png
+2019-07-24 12:07:46	IrcsomeBot	<mtijink> Fixed with https://invent.kde.org/kde/kdeconnect-kde/merge_requests/148
+2019-07-24 12:08:07	IrcsomeBot	<mtijink> Although I wouldn't be surprised if this breaks Windows again...
+2019-07-24 12:08:49	IrcsomeBot	<brute4s99> will take a look
+2019-07-24 12:20:38	IrcsomeBot	<brute4s99> (Photo, 800x88) https://irc-attachments.kde.org/COCOu8Ez/file_16707.jpg @mtijink :)
+2019-07-24 12:22:08	IrcsomeBot	<brute4s99> ooook this is on master
+2019-07-24 12:26:11	IrcsomeBot	<brute4s99> hah, local junk issues, nvm
+2019-07-24 12:40:56	IrcsomeBot	<brute4s99> @mtijink the build is fine, as far as I tested. what does this kdeclarativeplugin thingy do?
+2019-07-24 12:45:49	IrcsomeBot	<mtijink> It provides the API for the plasmoid to talk to the kdeconnectd daemon
+2019-07-24 12:46:29	IrcsomeBot	<brute4s99> Oh, yeah that makes sense
+2019-07-24 12:52:21	> 	Lord_of_Life_ (~Lord@unaffiliated/lord-of-life/x-0885362) has joined #kdeconnect
+2019-07-24 12:55:05	 <<< 	Lord_of_Life (~Lord@unaffiliated/lord-of-life/x-0885362) has quit (Ping timeout: 244 seconds)
+2019-07-24 12:55:05	 - 	Lord_of_Life_ is now known as Lord_of_Life
+2019-07-24 13:04:32	 <<< 	adnidor (~adnidor@p54AEC909.dip0.t-ipconnect.de) has quit (Ping timeout: 268 seconds)
+2019-07-24 13:18:05	> 	adnidor (~adnidor@p200300E597FF291C5824E22B1C0DDB95.dip0.t-ipconnect.de) has joined #kdeconnect
+2019-07-24 13:23:40	> 	Inokinoki (~inokinoki@115.134.22.93.rev.sfr.net) has joined #kdeconnect
+2019-07-24 13:24:19	 <<< 	Inokinoki (~inokinoki@115.134.22.93.rev.sfr.net) has quit (Remote host closed the connection)
+2019-07-24 13:24:35	> 	Inokinoki (~inokinoki@115.134.22.93.rev.sfr.net) has joined #kdeconnect
+2019-07-24 13:37:44	 <<< 	huftis (~huftis@144.92-220-208.customer.lyse.net) has quit
+2019-07-24 13:40:02	 <<< 	Inokinoki (~inokinoki@115.134.22.93.rev.sfr.net) has quit (Ping timeout: 245 seconds)
+2019-07-24 14:34:44	IrcsomeBot	<brute4s99> Today I made another patch and started bits of work at the sftp browser. I'm going to take inspiration from other execs in our project and trigger my own sftp browser execs when user clicks on Browse device.
+2019-07-24 14:37:25	IrcsomeBot	<brute4s99> The patch I made allows kio-sftp to be built by mingw on windows now. Earlier it used <experimental/filesystems> which was MSVC exclusive, I switched that with Qt, reducing code a little and I also removed some headers which were not getting used anymore (utime.h and qplatformdefs.h) … D22727
+2019-07-24 14:37:26	sKreamer	Diff 22727 "allow kio-extras to build with mingw on win32 and remove unnecessary includes" [Needs Review] https://phabricator.kde.org/D22727
+2019-07-24 15:31:47	 <<< 	bitwinery (~bruno@c-71-59-192-149.hsd1.wa.comcast.net) has quit (Quit: Leaving)
+2019-07-24 15:54:15	> 	bitwinery (~bruno@c-71-59-192-149.hsd1.wa.comcast.net) has joined #kdeconnect
+2019-07-24 16:06:56	> 	Skaterhaym (~bruno@38.104.105.178) has joined #kdeconnect
+2019-07-24 16:09:31	 <<< 	bitwinery (~bruno@c-71-59-192-149.hsd1.wa.comcast.net) has quit (Ping timeout: 258 seconds)
+2019-07-24 16:32:28	 <<< 	Skaterhaym (~bruno@38.104.105.178) has quit (Read error: Connection reset by peer)
+2019-07-24 16:33:56	> 	Skaterhaym (~bruno@c-71-59-192-149.hsd1.wa.comcast.net) has joined #kdeconnect
+2019-07-24 16:37:44	 <<< 	Skaterhaym (~bruno@c-71-59-192-149.hsd1.wa.comcast.net) has quit (Client Quit)
+2019-07-24 18:28:27	IrcsomeBot	<Fuseteam> welp kdeconnect for macos made the news
+2019-07-24 19:17:58	 <<< 	justanotheruser (justanothe@gateway/vpn/nordvpn/justanotheruser) has quit (Ping timeout: 272 seconds)
+2019-07-24 19:20:39	> 	justanotheruser (justanothe@gateway/vpn/nordvpn/justanotheruser) has joined #kdeconnect
+2019-07-24 20:38:48	IrcsomeBot	btdat2506 was added by: btdat2506
+2019-07-24 20:42:05	IrcsomeBot	<btdat2506> (Photo, 1280x690) https://irc-attachments.kde.org/06uwNhrl/file_16708.jpg
+2019-07-24 20:42:12	IrcsomeBot	<btdat2506> This is running on my Mac
+2019-07-24 20:42:46	IrcsomeBot	<btdat2506> It runs well at first attempt but on the second

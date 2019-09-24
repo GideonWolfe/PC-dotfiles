@@ -1,0 +1,307 @@
+2019-06-18 22:33:36	> 	_Raijin (~gideon@2603:3023:708:9c00::dca6) has joined #gnuplot
+2019-06-18 22:33:36	 - 	Topic for #gnuplot is "Discussion of Gnuplot - Latest Version 5.2 - http://www.gnuplot.info/ || Look at the demos for examples - http://gnuplot.sourceforge.net/demo/ || Did you try "help <command>"? || This channel is slow... have patience and you'll get an answer eventually. Or try http://tinyurl.com/gphelp || FAQs: 1/2 is zero; 1.0/2 or 1/2.0 or 1.0/2.0 is 0.5 || x^2 is x XOR 2; x**2 is x squared"
+2019-06-18 22:33:36	 - 	Topic set by jayne_by_a_name on  
+2019-06-18 22:33:36	 - 	Channel #gnuplot: 30 nicks (0 ops, 0 voices, 30 normals)
+2019-06-18 22:33:37	 - 	Channel created on  
+2019-06-18 22:37:23	_Raijin	Hello, is there a way I can use the gnuplot config file to set the default line style? I would like to set defined colors without having to explicitly call linestyle while plotting
+2019-06-18 23:26:43	 <<< 	dreamon__ (~dreamon@unaffiliated/dreamon) has quit (Ping timeout: 245 seconds)
+2019-06-18 23:37:28	> 	fred__tv_ (~fred__tv@mail.digitelsolutions.it) has joined #gnuplot
+2019-06-18 23:38:19	 <<< 	fred__tv (~fred__tv@mail.digitelsolutions.it) has quit (Ping timeout: 248 seconds)
+2019-06-18 23:47:08	jayne	_Raijin: sure. "help set style increment" has an example.
+2019-06-18 23:47:31	jayne	or I guess that's been replaced with "set linetype" now
+2019-06-19 00:46:56	_Raijin	jayne: https://github.com/GideonWolfe/Gnuplot-Pywal I am working on this. It should be fully working soon!
+2019-06-19 00:50:48	jayne	hmm. never heard of pywal before now.
+2019-06-19 01:06:31	xrogaan	_Raijin: I've read this recently http://www.gnuplotting.org/ease-your-plotting-with-config-snippets/
+2019-06-19 01:47:57	> 	dreamon__ (~dreamon@unaffiliated/dreamon) has joined #gnuplot
+2019-06-19 02:26:30	 <<< 	fred__tv_ (~fred__tv@mail.digitelsolutions.it) has quit (Read error: Connection reset by peer)
+2019-06-19 02:46:46	 <<< 	dreamon__ (~dreamon@unaffiliated/dreamon) has quit (Ping timeout: 272 seconds)
+2019-06-19 04:21:11	> 	dreamon (~dreamon@unaffiliated/dreamon) has joined #gnuplot
+2019-06-19 06:02:12	> 	fred__tv (~fred__tv@mail.digitelsolutions.it) has joined #gnuplot
+2019-06-19 09:08:23	> 	Nozzzle (~Nozzzle@unaffiliated/nozzzle) has joined #gnuplot
+2019-06-19 09:25:02	 <<< 	Nozzzle (~Nozzzle@unaffiliated/nozzzle) has quit (Quit: Leaving)
+2019-06-19 09:58:48	 <<< 	dreamon (~dreamon@unaffiliated/dreamon) has quit (Ping timeout: 245 seconds)
+2019-06-19 10:31:47	> 	dreamon (~dreamon@unaffiliated/dreamon) has joined #gnuplot
+2019-06-19 13:31:43	 <<< 	rumbler31 (~rumbler31@c-69-255-2-251.hsd1.md.comcast.net) has quit (Ping timeout: 246 seconds)
+2019-06-19 13:33:04	 <<< 	dreamon (~dreamon@unaffiliated/dreamon) has quit (Ping timeout: 248 seconds)
+2019-06-19 13:34:29	> 	dreamon (~dreamon@unaffiliated/dreamon) has joined #gnuplot
+2019-06-19 13:38:31	> 	bozi (bozi@p54A6F33B.dip0.t-ipconnect.de) has joined #gnuplot
+2019-06-19 14:14:37	> 	rumbler31 (~rumbler31@c-69-255-2-251.hsd1.md.comcast.net) has joined #gnuplot
+2019-06-19 14:52:00	 <<< 	dreamon (~dreamon@unaffiliated/dreamon) has quit (Ping timeout: 248 seconds)
+2019-06-19 15:12:10	> 	dreamon (~dreamon@unaffiliated/dreamon) has joined #gnuplot
+2019-06-19 15:39:18	 <<< 	bozi (bozi@p54A6F33B.dip0.t-ipconnect.de) has quit (Quit: bozi)
+2019-06-19 16:17:57	 <<< 	rumbler31 (~rumbler31@c-69-255-2-251.hsd1.md.comcast.net) has quit (Ping timeout: 245 seconds)
+2019-06-19 16:26:55	> 	rumbler31 (~rumbler31@c-69-255-2-251.hsd1.md.comcast.net) has joined #gnuplot
+2019-06-19 16:44:12	 <<< 	berndj (~berndj@azna.co.za) has quit (Ping timeout: 245 seconds)
+2019-06-19 16:45:45	> 	berndj (~berndj@197.242.93.82) has joined #gnuplot
+2019-06-19 17:01:46	 <<< 	rumbler31 (~rumbler31@c-69-255-2-251.hsd1.md.comcast.net) has quit (Ping timeout: 272 seconds)
+2019-06-19 17:14:57	> 	rumbler31 (~rumbler31@c-69-255-2-251.hsd1.md.comcast.net) has joined #gnuplot
+2019-06-19 17:23:43	> 	dreamon_ (~dreamon@unaffiliated/dreamon) has joined #gnuplot
+2019-06-19 17:27:45	 <<< 	dreamon (~dreamon@unaffiliated/dreamon) has quit (Ping timeout: 272 seconds)
+2019-06-19 18:03:22	 <<< 	rumbler31 (~rumbler31@c-69-255-2-251.hsd1.md.comcast.net) has quit (Ping timeout: 245 seconds)
+2019-06-19 18:04:02	> 	rumbler31 (~rumbler31@c-69-255-2-251.hsd1.md.comcast.net) has joined #gnuplot
+2019-06-19 18:08:47	 <<< 	rumbler31 (~rumbler31@c-69-255-2-251.hsd1.md.comcast.net) has quit (Ping timeout: 245 seconds)
+2019-06-19 18:21:27	> 	rumbler31 (~rumbler31@c-69-255-2-251.hsd1.md.comcast.net) has joined #gnuplot
+2019-06-19 21:08:47	 <<< 	dreamon_ (~dreamon@unaffiliated/dreamon) has quit (Ping timeout: 245 seconds)
+2019-06-19 21:09:45	> 	dreamon_ (~dreamon@unaffiliated/dreamon) has joined #gnuplot
+2019-06-19 22:34:32	 <<< 	dreamon_ (~dreamon@unaffiliated/dreamon) has quit (Remote host closed the connection)
+2019-06-20 00:33:44	 <<< 	leothrix (~leothrix@elastic/staff/leothrix) has quit (Remote host closed the connection)
+2019-06-20 00:34:37	> 	leothrix (~leothrix@elastic/staff/leothrix) has joined #gnuplot
+2019-06-20 00:57:00	> 	dreamon (~dreamon@unaffiliated/dreamon) has joined #gnuplot
+2019-06-20 02:15:52	 <<< 	rumbler31 (~rumbler31@c-69-255-2-251.hsd1.md.comcast.net) has quit (Ping timeout: 245 seconds)
+2019-06-20 02:36:33	> 	rumbler31 (~rumbler31@c-69-255-2-251.hsd1.md.comcast.net) has joined #gnuplot
+2019-06-20 04:12:58	 <<< 	rumbler31 (~rumbler31@c-69-255-2-251.hsd1.md.comcast.net) has quit (Ping timeout: 245 seconds)
+2019-06-20 04:19:19	> 	rumbler31 (~rumbler31@c-69-255-2-251.hsd1.md.comcast.net) has joined #gnuplot
+2019-06-20 05:09:03	 <<< 	fred__tv (~fred__tv@mail.digitelsolutions.it) has quit (Quit: Leaving)
+2019-06-20 05:35:18	> 	fred__tv (~fred__tv@mail.digitelsolutions.it) has joined #gnuplot
+2019-06-20 09:02:58	> 	krkini (~kini@unaffiliated/kini) has joined #gnuplot
+2019-06-20 09:03:12	 <<< 	kini (~kini@unaffiliated/kini) has quit (*.net *.split)
+2019-06-20 10:01:42	 <<< 	dreamon (~dreamon@unaffiliated/dreamon) has quit (Ping timeout: 245 seconds)
+2019-06-20 11:23:31	> 	dreamon (~dreamon@unaffiliated/dreamon) has joined #gnuplot
+2019-06-20 12:17:32	 <<< 	rumbler31 (~rumbler31@c-69-255-2-251.hsd1.md.comcast.net) has quit (Ping timeout: 245 seconds)
+2019-06-20 12:24:06	> 	rumbler31 (~rumbler31@c-69-255-2-251.hsd1.md.comcast.net) has joined #gnuplot
+2019-06-20 13:13:56	> 	Narrat (~Narrat@p2E5114CB.dip0.t-ipconnect.de) has joined #gnuplot
+2019-06-20 13:56:44	> 	bozi (bozi@p54A6F25E.dip0.t-ipconnect.de) has joined #gnuplot
+2019-06-20 16:09:10	> 	obiwan90 (~obiwan90@CPE688f2e0eadb3-CM688f2e0eadb0.cpe.net.cable.rogers.com) has joined #gnuplot
+2019-06-20 16:10:22	 <<< 	bozi (bozi@p54A6F25E.dip0.t-ipconnect.de) has quit (Quit: bozi)
+2019-06-20 16:10:27	 <<< 	a3f (~a3f@chimeria.ext.pengutronix.de) has quit (Ping timeout: 250 seconds)
+2019-06-20 16:22:13	> 	a3f (~a3f@chimeria.ext.pengutronix.de) has joined #gnuplot
+2019-06-20 16:59:11	 <<< 	Narrat (~Narrat@p2E5114CB.dip0.t-ipconnect.de) has quit (Quit: They say a little knowledge is a dangerous thing, but it's not one half so bad as a lot of ignorance.)
+2019-06-20 17:22:23	> 	dreamon_ (~dreamon@unaffiliated/dreamon) has joined #gnuplot
+2019-06-20 17:25:52	 <<< 	dreamon (~dreamon@unaffiliated/dreamon) has quit (Ping timeout: 245 seconds)
+2019-06-20 18:58:22	 <<< 	dreamon_ (~dreamon@unaffiliated/dreamon) has quit (Ping timeout: 245 seconds)
+2019-06-20 19:20:17	 <<< 	obiwan90 (~obiwan90@CPE688f2e0eadb3-CM688f2e0eadb0.cpe.net.cable.rogers.com) has quit (Ping timeout: 248 seconds)
+2019-06-20 21:39:04	> 	dreamon_ (~dreamon@unaffiliated/dreamon) has joined #gnuplot
+2019-06-20 23:07:43	 <<< 	dreamon_ (~dreamon@unaffiliated/dreamon) has quit (Ping timeout: 246 seconds)
+2019-06-21 00:06:52	 <<< 	fred__tv (~fred__tv@mail.digitelsolutions.it) has quit (Ping timeout: 246 seconds)
+2019-06-21 00:08:50	 <<< 	rumbler31 (~rumbler31@c-69-255-2-251.hsd1.md.comcast.net) has quit (Ping timeout: 272 seconds)
+2019-06-21 00:09:06	> 	fred__tv (~fred__tv@mail.digitelsolutions.it) has joined #gnuplot
+2019-06-21 00:11:53	> 	fred__tv_ (~fred__tv@mail.digitelsolutions.it) has joined #gnuplot
+2019-06-21 00:13:31	 <<< 	fred__tv (~fred__tv@mail.digitelsolutions.it) has quit (Ping timeout: 246 seconds)
+2019-06-21 00:20:47	> 	fred__tv (~fred__tv@mail.digitelsolutions.it) has joined #gnuplot
+2019-06-21 00:20:51	 <<< 	fred__tv_ (~fred__tv@mail.digitelsolutions.it) has quit (Ping timeout: 258 seconds)
+2019-06-21 00:29:09	> 	rumbler31 (~rumbler31@c-69-255-2-251.hsd1.md.comcast.net) has joined #gnuplot
+2019-06-21 00:32:35	> 	dreamon_ (~dreamon@unaffiliated/dreamon) has joined #gnuplot
+2019-06-21 00:49:55	 <<< 	fred__tv (~fred__tv@mail.digitelsolutions.it) has quit (Read error: Connection reset by peer)
+2019-06-21 00:50:00	> 	fred__tv_ (~fred__tv@mail.digitelsolutions.it) has joined #gnuplot
+2019-06-21 01:59:37	 <<< 	rumbler31 (~rumbler31@c-69-255-2-251.hsd1.md.comcast.net) has quit (Ping timeout: 245 seconds)
+2019-06-21 02:03:34	> 	rumbler31 (~rumbler31@c-69-255-2-251.hsd1.md.comcast.net) has joined #gnuplot
+2019-06-21 03:15:40	 <<< 	rumbler31 (~rumbler31@c-69-255-2-251.hsd1.md.comcast.net) has quit (Ping timeout: 272 seconds)
+2019-06-21 03:21:12	> 	rumbler31 (~rumbler31@c-69-255-2-251.hsd1.md.comcast.net) has joined #gnuplot
+2019-06-21 04:23:41	 <<< 	rumbler31 (~rumbler31@c-69-255-2-251.hsd1.md.comcast.net) has quit (Ping timeout: 244 seconds)
+2019-06-21 04:42:02	> 	rumbler31 (~rumbler31@c-69-255-2-251.hsd1.md.comcast.net) has joined #gnuplot
+2019-06-21 07:32:12	> 	fred__tv (~fred__tv@mail.digitelsolutions.it) has joined #gnuplot
+2019-06-21 07:33:05	 <<< 	fred__tv_ (~fred__tv@mail.digitelsolutions.it) has quit (Ping timeout: 248 seconds)
+2019-06-21 08:18:04	 <<< 	fred__tv (~fred__tv@mail.digitelsolutions.it) has quit (Read error: Connection reset by peer)
+2019-06-21 08:18:48	> 	fred__tv (~fred__tv@mail.digitelsolutions.it) has joined #gnuplot
+2019-06-21 09:03:43	 <<< 	dreamon_ (~dreamon@unaffiliated/dreamon) has quit (Ping timeout: 244 seconds)
+2019-06-21 10:49:46	 <<< 	rumbler31 (~rumbler31@c-69-255-2-251.hsd1.md.comcast.net) has quit (Ping timeout: 272 seconds)
+2019-06-21 11:04:23	> 	Narrat (~Narrat@p2E5114CB.dip0.t-ipconnect.de) has joined #gnuplot
+2019-06-21 11:08:28	> 	rumbler31 (~rumbler31@c-69-255-2-251.hsd1.md.comcast.net) has joined #gnuplot
+2019-06-21 12:04:22	> 	dreamon_ (~dreamon@unaffiliated/dreamon) has joined #gnuplot
+2019-06-21 12:35:43	 - 	irc: disconnected from server
+2019-06-21 12:36:07	> 	_Raijin (~gideon@2603:3023:708:9c00::dca6) has joined #gnuplot
+2019-06-21 12:36:07	 - 	Topic for #gnuplot is "Discussion of Gnuplot - Latest Version 5.2 - http://www.gnuplot.info/ || Look at the demos for examples - http://gnuplot.sourceforge.net/demo/ || Did you try "help <command>"? || This channel is slow... have patience and you'll get an answer eventually. Or try http://tinyurl.com/gphelp || FAQs: 1/2 is zero; 1.0/2 or 1/2.0 or 1.0/2.0 is 0.5 || x^2 is x XOR 2; x**2 is x squared"
+2019-06-21 12:36:07	 - 	Topic set by jayne_by_a_name on  
+2019-06-21 12:36:07	 - 	Channel #gnuplot: 31 nicks (0 ops, 0 voices, 31 normals)
+2019-06-21 12:36:07	 - 	Channel created on  
+2019-06-21 13:06:22	 <<< 	dreamon_ (~dreamon@unaffiliated/dreamon) has quit (Ping timeout: 258 seconds)
+2019-06-21 13:52:06	> 	bozi (bozi@p54A6F42A.dip0.t-ipconnect.de) has joined #gnuplot
+2019-06-21 14:45:51	> 	dreamon_ (~dreamon@unaffiliated/dreamon) has joined #gnuplot
+2019-06-21 16:41:17	 <<< 	bozi (bozi@p54A6F42A.dip0.t-ipconnect.de) has quit (Quit: bozi)
+2019-06-21 16:58:00	> 	obiwan90 (~obiwan90@CPE688f2e0eadb3-CM688f2e0eadb0.cpe.net.cable.rogers.com) has joined #gnuplot
+2019-06-21 17:20:29	 <<< 	Narrat (~Narrat@p2E5114CB.dip0.t-ipconnect.de) has quit (Quit: They say a little knowledge is a dangerous thing, but it's not one half so bad as a lot of ignorance.)
+2019-06-21 17:20:47	> 	dreamon__ (~dreamon@unaffiliated/dreamon) has joined #gnuplot
+2019-06-21 17:24:12	 <<< 	dreamon_ (~dreamon@unaffiliated/dreamon) has quit (Ping timeout: 245 seconds)
+2019-06-21 23:26:10	 <<< 	dreamon__ (~dreamon@unaffiliated/dreamon) has quit (Ping timeout: 246 seconds)
+2019-06-22 00:25:05	> 	dreamon__ (~dreamon@unaffiliated/dreamon) has joined #gnuplot
+2019-06-22 03:10:34	> 	bozi (bozi@p54A6FC2C.dip0.t-ipconnect.de) has joined #gnuplot
+2019-06-22 03:51:44	 <<< 	dreamon__ (~dreamon@unaffiliated/dreamon) has quit (Ping timeout: 248 seconds)
+2019-06-22 05:10:32	> 	dreamon__ (~dreamon@unaffiliated/dreamon) has joined #gnuplot
+2019-06-22 07:56:17	 <<< 	obiwan90 (~obiwan90@CPE688f2e0eadb3-CM688f2e0eadb0.cpe.net.cable.rogers.com) has quit (Ping timeout: 245 seconds)
+2019-06-22 08:50:21	> 	obiwan90 (~obiwan90@CPE688f2e0eadb3-CM688f2e0eadb0.cpe.net.cable.rogers.com) has joined #gnuplot
+2019-06-22 08:58:01	 <<< 	leothrix (~leothrix@elastic/staff/leothrix) has quit (Quit: ZNC 1.7.3 - https://znc.in)
+2019-06-22 08:58:25	> 	leothrix (~leothrix@elastic/staff/leothrix) has joined #gnuplot
+2019-06-22 10:05:05	 - 	irc: disconnected from server
+2019-06-22 10:05:33	> 	_Raijin (~gideon@2603:3023:708:9c00::7a8a) has joined #gnuplot
+2019-06-22 10:05:33	 - 	Topic for #gnuplot is "Discussion of Gnuplot - Latest Version 5.2 - http://www.gnuplot.info/ || Look at the demos for examples - http://gnuplot.sourceforge.net/demo/ || Did you try "help <command>"? || This channel is slow... have patience and you'll get an answer eventually. Or try http://tinyurl.com/gphelp || FAQs: 1/2 is zero; 1.0/2 or 1/2.0 or 1.0/2.0 is 0.5 || x^2 is x XOR 2; x**2 is x squared"
+2019-06-22 10:05:33	 - 	Topic set by jayne_by_a_name on  
+2019-06-22 10:05:33	 - 	Channel #gnuplot: 32 nicks (0 ops, 0 voices, 32 normals)
+2019-06-22 10:05:33	 - 	Channel created on  
+2019-06-22 11:52:46	 - 	dreamon__ is now known as dreamon
+2019-06-22 12:06:35	 <<< 	bozi (bozi@p54A6FC2C.dip0.t-ipconnect.de) has quit (Quit: bozi)
+2019-06-22 13:12:28	 <<< 	rumbler31 (~rumbler31@c-69-255-2-251.hsd1.md.comcast.net) has quit (Ping timeout: 272 seconds)
+2019-06-22 13:16:00	> 	rumbler31 (~rumbler31@c-69-255-2-251.hsd1.md.comcast.net) has joined #gnuplot
+2019-06-22 13:18:24	> 	bozi (bozi@p54A6FC2C.dip0.t-ipconnect.de) has joined #gnuplot
+2019-06-22 15:02:17	> 	Nozzzle (~Nozzzle@unaffiliated/nozzzle) has joined #gnuplot
+2019-06-22 17:07:26	 <<< 	bozi (bozi@p54A6FC2C.dip0.t-ipconnect.de) has quit (Quit: bozi)
+2019-06-22 17:19:29	> 	dreamon_ (~dreamon@unaffiliated/dreamon) has joined #gnuplot
+2019-06-22 17:21:09	 <<< 	Nozzzle (~Nozzzle@unaffiliated/nozzzle) has quit (Ping timeout: 257 seconds)
+2019-06-22 17:23:44	 <<< 	dreamon (~dreamon@unaffiliated/dreamon) has quit (Ping timeout: 268 seconds)
+2019-06-22 22:05:03	 <<< 	obiwan90 (~obiwan90@CPE688f2e0eadb3-CM688f2e0eadb0.cpe.net.cable.rogers.com) has quit (Ping timeout: 245 seconds)
+2019-06-23 02:26:26	> 	bozi (bozi@p5B3BBB96.dip0.t-ipconnect.de) has joined #gnuplot
+2019-06-23 02:32:07	> 	Nozzzle (~Nozzzle@unaffiliated/nozzzle) has joined #gnuplot
+2019-06-23 07:52:28	> 	obiwan90 (~obiwan90@CPE688f2e0eadb3-CM688f2e0eadb0.cpe.net.cable.rogers.com) has joined #gnuplot
+2019-06-23 07:56:43	 <<< 	obiwan90 (~obiwan90@CPE688f2e0eadb3-CM688f2e0eadb0.cpe.net.cable.rogers.com) has quit (Ping timeout: 246 seconds)
+2019-06-23 12:40:42	 - 	irc: disconnected from server
+2019-06-23 12:40:58	> 	_Raijin (~gideon@c-73-83-145-12.hsd1.wa.comcast.net) has joined #gnuplot
+2019-06-23 12:40:59	 - 	Topic for #gnuplot is "Discussion of Gnuplot - Latest Version 5.2 - http://www.gnuplot.info/ || Look at the demos for examples - http://gnuplot.sourceforge.net/demo/ || Did you try "help <command>"? || This channel is slow... have patience and you'll get an answer eventually. Or try http://tinyurl.com/gphelp || FAQs: 1/2 is zero; 1.0/2 or 1/2.0 or 1.0/2.0 is 0.5 || x^2 is x XOR 2; x**2 is x squared"
+2019-06-23 12:40:59	 - 	Topic set by jayne_by_a_name on  
+2019-06-23 12:40:59	 - 	Channel #gnuplot: 32 nicks (0 ops, 0 voices, 32 normals)
+2019-06-23 12:40:59	 - 	Channel created on  
+2019-06-23 13:54:49	 <<< 	bozi (bozi@p5B3BBB96.dip0.t-ipconnect.de) has quit (Quit: bozi)
+2019-06-23 14:36:34	 <<< 	Nozzzle (~Nozzzle@unaffiliated/nozzzle) has quit (Quit: Leaving)
+2019-06-23 17:18:04	> 	dreamon__ (~dreamon@unaffiliated/dreamon) has joined #gnuplot
+2019-06-23 17:21:40	 <<< 	dreamon_ (~dreamon@unaffiliated/dreamon) has quit (Ping timeout: 258 seconds)
+2019-06-23 22:30:19	 <<< 	dreamon__ (~dreamon@unaffiliated/dreamon) has quit (Ping timeout: 246 seconds)
+2019-06-23 22:34:27	> 	dreamon__ (~dreamon@unaffiliated/dreamon) has joined #gnuplot
+2019-06-23 22:44:56	 <<< 	dreamon__ (~dreamon@unaffiliated/dreamon) has quit (Ping timeout: 268 seconds)
+2019-06-23 23:07:37	> 	jayne_ (~jayne@unaffiliated/jayne) has joined #gnuplot
+2019-06-23 23:10:48	> 	comboy (~quassel@tesuji.pl) has joined #gnuplot
+2019-06-23 23:14:37	> 	graphite (~graphitem@unaffiliated/graphitemaster) has joined #gnuplot
+2019-06-23 23:15:55	 <<< 	comboy_ (~quassel@tesuji.pl) has quit (*.net *.split)
+2019-06-23 23:15:55	 <<< 	graphitemaster (~graphitem@unaffiliated/graphitemaster) has quit (*.net *.split)
+2019-06-23 23:15:56	 <<< 	jayne (~jayne@unaffiliated/jayne) has quit (*.net *.split)
+2019-06-23 23:15:58	 - 	graphite is now known as graphitemaster
+2019-06-24 00:39:42	> 	dreamon__ (~dreamon@unaffiliated/dreamon) has joined #gnuplot
+2019-06-24 07:10:09	> 	bozi (~bozi@p5B3BB18B.dip0.t-ipconnect.de) has joined #gnuplot
+2019-06-24 09:22:20	 <<< 	Stromeko (~Stromeko@unaffiliated/stromeko) has quit (Ping timeout: 272 seconds)
+2019-06-24 09:22:43	> 	Stromeko (~Stromeko@p54A0CF9C.dip0.t-ipconnect.de) has joined #gnuplot
+2019-06-24 09:22:44	 <<< 	Stromeko (~Stromeko@p54A0CF9C.dip0.t-ipconnect.de) has quit (Changing host)
+2019-06-24 09:22:44	> 	Stromeko (~Stromeko@unaffiliated/stromeko) has joined #gnuplot
+2019-06-24 09:44:38	 <<< 	dreamon__ (~dreamon@unaffiliated/dreamon) has quit (Ping timeout: 245 seconds)
+2019-06-24 12:01:44	 - 	jayne_ is now known as jayne
+2019-06-24 13:26:46	> 	dreamon (~dreamon@unaffiliated/dreamon) has joined #gnuplot
+2019-06-24 13:52:33	 <<< 	dreamon (~dreamon@unaffiliated/dreamon) has quit (Ping timeout: 245 seconds)
+2019-06-24 14:02:44	 <<< 	bozi (~bozi@p5B3BB18B.dip0.t-ipconnect.de) has quit (Quit: bozi)
+2019-06-25 06:25:44	> 	bozi (~bozi@p54A6F791.dip0.t-ipconnect.de) has joined #gnuplot
+2019-06-25 08:02:06	 <<< 	rumbler31 (~rumbler31@c-69-255-2-251.hsd1.md.comcast.net) has quit (Ping timeout: 272 seconds)
+2019-06-25 08:05:07	> 	rumbler31 (~rumbler31@c-69-255-2-251.hsd1.md.comcast.net) has joined #gnuplot
+2019-06-25 11:09:09	> 	dreamon (~dreamon@unaffiliated/dreamon) has joined #gnuplot
+2019-06-25 11:17:05	 <<< 	dreamon (~dreamon@unaffiliated/dreamon) has quit (Ping timeout: 258 seconds)
+2019-06-25 11:22:07	 <<< 	bozi (~bozi@p54A6F791.dip0.t-ipconnect.de) has quit (Ping timeout: 268 seconds)
+2019-06-25 12:00:23	> 	bozi (~bozi@p54A6F791.dip0.t-ipconnect.de) has joined #gnuplot
+2019-06-25 12:46:11	> 	rumbler3_ (~rumbler31@c-69-255-2-251.hsd1.md.comcast.net) has joined #gnuplot
+2019-06-25 12:46:18	 <<< 	rumbler31 (~rumbler31@c-69-255-2-251.hsd1.md.comcast.net) has quit (Ping timeout: 245 seconds)
+2019-06-25 13:22:04	> 	Narrat (~Narrat@p2E511511.dip0.t-ipconnect.de) has joined #gnuplot
+2019-06-25 15:16:06	 <<< 	bozi (~bozi@p54A6F791.dip0.t-ipconnect.de) has quit (Quit: bozi)
+2019-06-25 15:16:57	 <<< 	Narrat (~Narrat@p2E511511.dip0.t-ipconnect.de) has quit (Quit: They say a little knowledge is a dangerous thing, but it's not one half so bad as a lot of ignorance.)
+2019-06-25 23:02:02	> 	fred__tv_ (~fred__tv@88.147.24.248) has joined #gnuplot
+2019-06-25 23:05:21	 <<< 	fred__tv (~fred__tv@mail.digitelsolutions.it) has quit (Ping timeout: 248 seconds)
+2019-06-26 00:08:01	 - 	irc: disconnected from server
+2019-06-26 01:26:08	> 	_Raijin (~gideon@2603:3023:708:9c00::7a8a) has joined #gnuplot
+2019-06-26 01:26:08	 - 	Topic for #gnuplot is "Discussion of Gnuplot - Latest Version 5.2 - http://www.gnuplot.info/ || Look at the demos for examples - http://gnuplot.sourceforge.net/demo/ || Did you try "help <command>"? || This channel is slow... have patience and you'll get an answer eventually. Or try http://tinyurl.com/gphelp || FAQs: 1/2 is zero; 1.0/2 or 1/2.0 or 1.0/2.0 is 0.5 || x^2 is x XOR 2; x**2 is x squared"
+2019-06-26 01:26:08	 - 	Topic set by jayne_by_a_name on  
+2019-06-26 01:26:08	 - 	Channel #gnuplot: 29 nicks (0 ops, 0 voices, 29 normals)
+2019-06-26 01:26:08	 - 	Channel created on  
+2019-06-26 04:46:49	> 	odinsbane (~mbs@pat-pool-138.crick.ac.uk) has joined #gnuplot
+2019-06-26 04:48:34	odinsbane	Is there a prefered graphics terminal for osx?
+2019-06-26 05:38:46	> 	bozi (~bozi@p54A6F666.dip0.t-ipconnect.de) has joined #gnuplot
+2019-06-26 06:44:28	> 	elsewho (~elsewho@139.20.16.63) has joined #gnuplot
+2019-06-26 07:12:36	 <<< 	fred__tv__ (~fred__tv@mail.digitelsolutions.it) has quit (Quit: Leaving)
+2019-06-26 07:12:52	> 	fred__tv__ (~fred__tv@mail.digitelsolutions.it) has joined #gnuplot
+2019-06-26 10:49:44	 <<< 	Yamakaja (~yamakaja@vps.pub.yamakaja.me) has quit (Ping timeout: 258 seconds)
+2019-06-26 10:53:46	> 	Yamakaja_ (~yamakaja@vps.pub.yamakaja.me) has joined #gnuplot
+2019-06-26 11:43:17	bleb	so im making some bar graphs to embed in a groff ms document
+2019-06-26 11:43:27	bleb	so i did set terminal postscript
+2019-06-26 11:43:32	bleb	and set style fill pattern
+2019-06-26 11:44:18	bleb	now one set of bars are blank (not filled), and one set has a weird dashed line hash pattern
+2019-06-26 11:44:45	bleb	how would i specify a different selection of patterns?
+2019-06-26 12:04:46	jayne	bleb: probably want to look at "help set style fill"
+2019-06-26 12:28:03	> 	Narrat (~Narrat@p2E511511.dip0.t-ipconnect.de) has joined #gnuplot
+2019-06-26 16:21:48	 <<< 	bozi (~bozi@p54A6F666.dip0.t-ipconnect.de) has quit (Quit: bozi)
+2019-06-26 16:23:37	 <<< 	Narrat (~Narrat@p2E511511.dip0.t-ipconnect.de) has quit (Read error: Connection reset by peer)
+2019-06-26 16:25:46	> 	Narrat (~Narrat@p2E511511.dip0.t-ipconnect.de) has joined #gnuplot
+2019-06-26 16:52:08	 <<< 	Narrat (~Narrat@p2E511511.dip0.t-ipconnect.de) has quit (Read error: Connection reset by peer)
+2019-06-26 16:54:04	> 	Narrat (~Narrat@p2E511511.dip0.t-ipconnect.de) has joined #gnuplot
+2019-06-26 17:22:17	 <<< 	Narrat (~Narrat@p2E511511.dip0.t-ipconnect.de) has quit (Quit: They say a little knowledge is a dangerous thing, but it's not one half so bad as a lot of ignorance.)
+2019-06-26 17:50:38	 <<< 	ilmaisin (sid345824@gateway/web/irccloud.com/x-gqdltcwtvoseumqu) has quit (Ping timeout: 258 seconds)
+2019-06-26 17:54:01	> 	ilmaisin (sid345824@gateway/web/irccloud.com/x-xmugzufurxgnccxs) has joined #gnuplot
+2019-06-26 23:37:21	odinsbane	bleb: What are the options when you set the terminal?
+2019-06-27 05:53:26	 <<< 	Peppard (~quassel@2001:470:1f0b:751:ae1f:6bff:fe6b:6d5c) has quit (Ping timeout: 252 seconds)
+2019-06-27 05:55:38	> 	Peppard (~quassel@p54A66B60.dip0.t-ipconnect.de) has joined #gnuplot
+2019-06-27 05:59:26	 <<< 	odinsbane (~mbs@pat-pool-138.crick.ac.uk) has quit (Quit: Lost terminal)
+2019-06-27 08:34:27	> 	bozi (~bozi@p54A6F840.dip0.t-ipconnect.de) has joined #gnuplot
+2019-06-27 10:22:21	 <<< 	noonker (~noonker@ec2-54-189-192-149.us-west-2.compute.amazonaws.com) has quit (Quit: Peace)
+2019-06-27 11:43:15	> 	noonker (~noonker@ec2-54-189-192-149.us-west-2.compute.amazonaws.com) has joined #gnuplot
+2019-06-27 14:08:42	 <<< 	bozi (~bozi@p54A6F840.dip0.t-ipconnect.de) has quit (Quit: bozi)
+2019-06-27 14:27:48	> 	Nozzzle (~Nozzzle@unaffiliated/nozzzle) has joined #gnuplot
+2019-06-27 15:21:07	 <<< 	Nozzzle (~Nozzzle@unaffiliated/nozzzle) has quit (Quit: Leaving)
+2019-06-27 18:07:07	 <<< 	dustinm` (~dustinm@static.38.6.217.95.clients.your-server.de) has quit (Ping timeout: 245 seconds)
+2019-06-27 18:15:15	> 	dustinm`_ (~dustinm@static.38.6.217.95.clients.your-server.de) has joined #gnuplot
+2019-06-27 23:06:32	 <<< 	fred__tv__ (~fred__tv@mail.digitelsolutions.it) has quit (Read error: Connection reset by peer)
+2019-06-27 23:08:26	> 	fred__tv (~fred__tv@mail.digitelsolutions.it) has joined #gnuplot
+2019-06-27 23:10:09	 <<< 	fred__tv (~fred__tv@mail.digitelsolutions.it) has quit (Remote host closed the connection)
+2019-06-27 23:10:34	> 	fred__tv (~fred__tv@mail.digitelsolutions.it) has joined #gnuplot
+2019-06-28 00:21:28	> 	obiwan90 (~obiwan90@46-127-29-235.dynamic.hispeed.ch) has joined #gnuplot
+2019-06-28 02:50:07	 <<< 	Stromeko (~Stromeko@unaffiliated/stromeko) has quit (Ping timeout: 258 seconds)
+2019-06-28 02:51:00	> 	Stromeko (~Stromeko@p54A0CF9C.dip0.t-ipconnect.de) has joined #gnuplot
+2019-06-28 02:51:00	 <<< 	Stromeko (~Stromeko@p54A0CF9C.dip0.t-ipconnect.de) has quit (Changing host)
+2019-06-28 02:51:00	> 	Stromeko (~Stromeko@unaffiliated/stromeko) has joined #gnuplot
+2019-06-28 03:12:22	 <<< 	obiwan90 (~obiwan90@46-127-29-235.dynamic.hispeed.ch) has quit (Ping timeout: 252 seconds)
+2019-06-28 07:21:35	> 	fred__tv_ (~fred__tv@37.177.90.8) has joined #gnuplot
+2019-06-28 07:22:06	 <<< 	fred__tv (~fred__tv@mail.digitelsolutions.it) has quit (Ping timeout: 244 seconds)
+2019-06-28 07:36:18	> 	bozi (~bozi@p5B3BB1E4.dip0.t-ipconnect.de) has joined #gnuplot
+2019-06-28 07:37:28	> 	fred__tv__ (~fred__tv@mail.digitelsolutions.it) has joined #gnuplot
+2019-06-28 07:40:33	 <<< 	fred__tv_ (~fred__tv@37.177.90.8) has quit (Ping timeout: 248 seconds)
+2019-06-28 07:40:37	> 	fred__tv (~fred__tv@37.176.115.89) has joined #gnuplot
+2019-06-28 07:42:09	> 	fred__tv_ (~fred__tv@mob-109-112-36-27.net.vodafone.it) has joined #gnuplot
+2019-06-28 07:42:58	 <<< 	fred__tv__ (~fred__tv@mail.digitelsolutions.it) has quit (Ping timeout: 245 seconds)
+2019-06-28 07:44:28	> 	fred__tv__ (~fred__tv@93.68.190.126) has joined #gnuplot
+2019-06-28 07:45:21	 <<< 	fred__tv (~fred__tv@37.176.115.89) has quit (Ping timeout: 244 seconds)
+2019-06-28 07:46:42	 <<< 	fred__tv_ (~fred__tv@mob-109-112-36-27.net.vodafone.it) has quit (Ping timeout: 245 seconds)
+2019-06-28 07:49:34	 <<< 	fred__tv__ (~fred__tv@93.68.190.126) has quit (Ping timeout: 246 seconds)
+2019-06-28 07:49:53	> 	fred__tv (~fred__tv@37.177.74.196) has joined #gnuplot
+2019-06-28 07:52:52	> 	fred__tv_ (~fred__tv@mail.digitelsolutions.it) has joined #gnuplot
+2019-06-28 07:55:52	 <<< 	fred__tv (~fred__tv@37.177.74.196) has quit (Ping timeout: 245 seconds)
+2019-06-28 07:55:58	> 	fred__tv__ (~fred__tv@37.177.0.16) has joined #gnuplot
+2019-06-28 07:59:01	 <<< 	fred__tv_ (~fred__tv@mail.digitelsolutions.it) has quit (Ping timeout: 246 seconds)
+2019-06-28 07:59:39	> 	fred__tv (~fred__tv@mail.digitelsolutions.it) has joined #gnuplot
+2019-06-28 08:01:28	 <<< 	fred__tv__ (~fred__tv@37.177.0.16) has quit (Ping timeout: 246 seconds)
+2019-06-28 10:30:17	> 	dreamon (~dreamon@unaffiliated/dreamon) has joined #gnuplot
+2019-06-28 10:51:13	 <<< 	dreamon (~dreamon@unaffiliated/dreamon) has quit (Read error: Connection reset by peer)
+2019-06-28 10:53:31	> 	dreamon (~dreamon@unaffiliated/dreamon) has joined #gnuplot
+2019-06-28 14:41:56	> 	fred__tv_ (~fred__tv@mail.digitelsolutions.it) has joined #gnuplot
+2019-06-28 14:45:02	 <<< 	fred__tv (~fred__tv@mail.digitelsolutions.it) has quit (Ping timeout: 258 seconds)
+2019-06-28 15:05:58	 <<< 	fred__tv_ (~fred__tv@mail.digitelsolutions.it) has quit (Quit: Leaving)
+2019-06-28 16:28:37	 <<< 	dreamon (~dreamon@unaffiliated/dreamon) has quit (Ping timeout: 246 seconds)
+2019-06-28 16:41:45	 <<< 	bozi (~bozi@p5B3BB1E4.dip0.t-ipconnect.de) has quit (Quit: bozi)
+2019-06-28 16:43:28	> 	obiwan90 (~obiwan90@46-127-29-235.dynamic.hispeed.ch) has joined #gnuplot
+2019-06-28 16:43:29	> 	dreamon (~dreamon@unaffiliated/dreamon) has joined #gnuplot
+2019-06-28 16:56:36	 <<< 	obiwan90 (~obiwan90@46-127-29-235.dynamic.hispeed.ch) has quit (Ping timeout: 272 seconds)
+2019-06-28 17:58:11	> 	dreamon_ (~dreamon@unaffiliated/dreamon) has joined #gnuplot
+2019-06-28 18:01:43	 <<< 	dreamon (~dreamon@unaffiliated/dreamon) has quit (Ping timeout: 246 seconds)
+2019-06-28 23:14:16	 <<< 	dreamon_ (~dreamon@unaffiliated/dreamon) has quit (Ping timeout: 246 seconds)
+2019-06-29 02:59:56	> 	bozi (~bozi@p54A6F173.dip0.t-ipconnect.de) has joined #gnuplot
+2019-06-29 03:42:49	> 	dreamon_ (~dreamon@unaffiliated/dreamon) has joined #gnuplot
+2019-06-29 04:50:22	 <<< 	dreamon_ (~dreamon@unaffiliated/dreamon) has quit (Ping timeout: 272 seconds)
+2019-06-29 16:26:43	> 	obiwan90 (~obiwan90@46-127-29-235.dynamic.hispeed.ch) has joined #gnuplot
+2019-06-29 16:51:37	 <<< 	obiwan90 (~obiwan90@46-127-29-235.dynamic.hispeed.ch) has quit (Ping timeout: 246 seconds)
+2019-06-29 18:03:37	> 	bozi_ (~bozi@p5B0C4434.dip0.t-ipconnect.de) has joined #gnuplot
+2019-06-29 18:07:33	 <<< 	bozi (~bozi@p54A6F173.dip0.t-ipconnect.de) has quit (Ping timeout: 268 seconds)
+2019-06-29 18:21:37	 <<< 	bozi_ (~bozi@p5B0C4434.dip0.t-ipconnect.de) has quit (Ping timeout: 248 seconds)
+2019-06-30 01:18:49	> 	obiwan90 (~obiwan90@46-127-29-235.dynamic.hispeed.ch) has joined #gnuplot
+2019-06-30 01:18:51	 <<< 	obiwan90 (~obiwan90@46-127-29-235.dynamic.hispeed.ch) has quit (Client Quit)
+2019-06-30 01:43:11	 <<< 	Peppard (~quassel@p54A66B60.dip0.t-ipconnect.de) has quit (Quit: Peppard)
+2019-06-30 01:48:40	> 	bozi (~bozi@p5B0C4434.dip0.t-ipconnect.de) has joined #gnuplot
+2019-06-30 02:10:10	> 	Peppard (~quassel@2001:470:1f0b:751:d5e8:d07c:b857:34fb) has joined #gnuplot
+2019-06-30 02:16:42	> 	dreamon (~dreamon@unaffiliated/dreamon) has joined #gnuplot
+2019-06-30 04:19:02	 <<< 	Peppard (~quassel@2001:470:1f0b:751:d5e8:d07c:b857:34fb) has quit (Quit: Peppard)
+2019-06-30 04:23:18	> 	Peppard (~quassel@2001:470:1f0b:751:54b9:9fe:62b8:88e5) has joined #gnuplot
+2019-06-30 12:22:17	 <<< 	bozi (~bozi@p5B0C4434.dip0.t-ipconnect.de) has quit (Quit: bozi)
+2019-06-30 12:24:00	 <<< 	rumbler3_ (~rumbler31@c-69-255-2-251.hsd1.md.comcast.net) has quit (Ping timeout: 252 seconds)
+2019-06-30 12:36:19	> 	rumbler31 (~rumbler31@c-69-255-2-251.hsd1.md.comcast.net) has joined #gnuplot
+2019-06-30 15:46:57	 <<< 	dreamon (~dreamon@unaffiliated/dreamon) has quit (Ping timeout: 248 seconds)
+2019-06-30 21:14:26	> 	dreamon (~dreamon@unaffiliated/dreamon) has joined #gnuplot
+2019-06-30 22:49:37	 <<< 	dreamon (~dreamon@unaffiliated/dreamon) has quit (Ping timeout: 245 seconds)
+2019-07-01 00:10:49	> 	dreamon (~dreamon@unaffiliated/dreamon) has joined #gnuplot
+2019-07-01 02:06:17	 <<< 	dreamon (~dreamon@unaffiliated/dreamon) has quit (Ping timeout: 245 seconds)
+2019-07-01 02:22:00	> 	dreamon (~dreamon@unaffiliated/dreamon) has joined #gnuplot
+2019-07-01 07:14:12	 <<< 	dreamon (~dreamon@unaffiliated/dreamon) has quit (Ping timeout: 244 seconds)
+2019-07-01 08:24:19	> 	dreamon (~dreamon@unaffiliated/dreamon) has joined #gnuplot
+2019-07-01 09:02:26	> 	bozi (~bozi@p54A6FFE8.dip0.t-ipconnect.de) has joined #gnuplot
+2019-07-01 09:04:31	 <<< 	dreamon (~dreamon@unaffiliated/dreamon) has quit (Ping timeout: 246 seconds)
+2019-07-01 10:03:17	> 	dreamon (~dreamon@unaffiliated/dreamon) has joined #gnuplot
+2019-07-01 10:14:24	 <<< 	dreamon (~dreamon@unaffiliated/dreamon) has quit (Ping timeout: 268 seconds)
+2019-07-01 12:15:06	 <<< 	bozi (~bozi@p54A6FFE8.dip0.t-ipconnect.de) has quit (Quit: bozi)
+2019-07-01 12:45:47	 <<< 	_Raijin (~gideon@2603:3023:708:9c00::7a8a) has left #gnuplot ("WeeChat 2.5")
+2019-07-03 01:22:26	 - 	irc: disconnected from server

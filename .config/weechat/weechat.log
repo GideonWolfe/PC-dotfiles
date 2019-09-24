@@ -1,0 +1,23 @@
+[2019-09-23 23:44:41] WeeChat 2.6 (compiled on Sep 16 2019 01:07:53)
+[2019-09-23 23:44:41] Reading configuration file sec.conf
+[2019-09-23 23:44:41] Reading configuration file weechat.conf
+[2019-09-23 23:44:41] Reading configuration file plugins.conf
+[2019-09-23 23:44:41] Reading configuration file charset.conf
+[2019-09-23 23:44:41] Reading configuration file logger.conf
+[2019-09-23 23:44:41] Reading configuration file exec.conf
+[2019-09-23 23:44:41] Reading configuration file trigger.conf
+[2019-09-23 23:44:41] Reading configuration file spell.conf
+[2019-09-23 23:44:41] Reading configuration file alias.conf
+[2019-09-23 23:44:41] Reading configuration file buflist.conf
+[2019-09-23 23:44:41] Reading configuration file fifo.conf
+[2019-09-23 23:44:41] Reading configuration file xfer.conf
+[2019-09-23 23:44:41] Reading configuration file irc.conf
+[2019-09-23 23:44:41] Reading configuration file relay.conf
+[2019-09-23 23:44:41] Reading configuration file perl.conf
+[2019-09-23 23:44:41] Reading configuration file lua.conf
+[2019-09-23 23:44:41] Reading configuration file tcl.conf
+[2019-09-23 23:44:41] Reading configuration file python.conf
+[2019-09-23 23:44:41] Reading configuration file guile.conf
+[2019-09-23 23:44:41] Reading configuration file script.conf
+[2019-09-23 23:44:41] Reading configuration file fset.conf
+[2019-09-23 23:44:41] irc: connecting to server chat.freenode.net/6667...

@@ -1,0 +1,924 @@
+2019-07-01 12:45:52	> 	_Raijin (~gideon@2603:3023:708:9c00::7a8a) has joined #html
+2019-07-01 12:45:52	 - 	Topic for #html is "HyperText Markup Language | http://www.w3.org/TR/html5/ | #css for styling | No WYSIWYGs | Tables aren't for layout: http://xrl.us/kd35 , http://goo.gl/8yFKr | Validate first: http://validator.nu/ | HTML reference: say e.g. `html div | Paste links, not code: `paste"
+2019-07-01 12:45:52	 - 	Topic set by Visage on  
+2019-07-01 12:45:52	 - 	Channel #html: 161 nicks (0 ops, 0 voices, 161 normals)
+2019-07-01 12:45:52	 - 	URL for #html: http://diveintohtml5.info
+2019-07-01 12:45:54	 - 	Channel created on  
+2019-07-01 12:48:02	_Raijin	Apologies for the dumb question. I am making a dead simple startpage and using <hr> tags to separate unordered lists of links. However, when I try to add more <hr> separators in between my <ul>s to accomodate more rows, they disappear in the most illogical way. The line separator will vanish from somewhere where it had previously appeared, as if there can only be so many on the page at once. 
+2019-07-01 12:49:49	lilmonkey`	_Raijin, did you validate your code?
+2019-07-01 12:50:05	lilmonkey`	Also note that you're using <hr> wrong, semantically.
+2019-07-01 12:50:36	lilmonkey`	That doesn't explain your issue, but it does mean you should (re)learn the basics of modern, semantic HTML.
+2019-07-01 12:53:18	_Raijin	lilmonkey` you're right, I usually never touch html except for when updating my custom pages... 
+2019-07-01 12:54:20	_Raijin	I understand they are supposed to break up a page by semantic topic, but I was levereging their visual properties. I inherited the structure of the page from someone else.
+2019-07-01 12:55:41	lilmonkey`	Just as easy with some extremely simple CSS…
+2019-07-01 12:57:01	_Raijin	lilmonkey` I have a css file that declares colors and styles for the hr... but nothing that would explain the behavior I get.
+2019-07-01 12:57:08	_Raijin	https://gist.github.com/GideonWolfe/3ea103f00b7e2c6a2ee1f6f8b8385a03 if you want to take a peek
+2019-07-01 12:57:54	> 	Galaxies (~L-o-r-d@159.89.147.59) has joined #html
+2019-07-01 12:58:34	lilmonkey`	You have at least 15 errors in that tiny bit of code, the 15th being a fatal one so it might be more.
+2019-07-01 12:58:43	lilmonkey`	https://checker.html5.org
+2019-07-01 13:01:24	_Raijin	Thanks for the tip! No errors popped up in vim, classic mistake. Hopefully fixing those will mend my issue
+2019-07-01 13:04:55	_Raijin	lilmonkey` it seems that those errors just popped up when I sloppily edited the file for my gist. Running the whole file through the checker yeilds no errors...
+2019-07-01 13:05:03	 <<< 	Galaxies (~L-o-r-d@159.89.147.59) has quit (Quit: Join 👉 ##Truth 👈)
+2019-07-01 13:05:03	 <<< 	rivvles (~riven@pdpc/supporter/professional/riven) has quit (Read error: Connection reset by peer)
+2019-07-01 13:05:30	> 	rivvles (~riven@pdpc/supporter/professional/riven) has joined #html
+2019-07-01 13:05:39	> 	plexigras (plexigras@gateway/vpn/privateinternetaccess/plexigras) has joined #html
+2019-07-01 13:09:03	lilmonkey`	`live
+2019-07-01 13:09:03	rivvles	Always provide a link to a *live* page or pared-down testcase so we can see the problem in action. Looking at code alone usually isn't very effective. Also see `paste and `testcase.
+2019-07-01 13:09:07	lilmonkey`	`paste
+2019-07-01 13:09:08	rivvles	Live pastebins: http://codepen.io/pen/, http://www.jsfiddle.net/, http://tinkerbin.com/, http://jsbin.com
+2019-07-01 13:17:58	_Raijin	lilmonkey` Here is a live paste https://codepen.io/anon/pen/ewMyXv?editors=1100
+2019-07-01 13:19:00	lilmonkey`	I'm not seeing a problem.
+2019-07-01 13:19:21	_Raijin	lilmonkey` Interesting. I am not either when opening it in chrome... Just a firefox thing?
+2019-07-01 13:20:02	lilmonkey`	You mean the last one not showing?
+2019-07-01 13:20:53	_Raijin	yes. and trying to fix it will wack it up. Like it will show 2 lines if you add another <hr> but it won't show just the one
+2019-07-01 13:22:26	lilmonkey`	Oh this *is* weird. I can also get other ones to magically disppear, or even show up partially.
+2019-07-01 13:25:21	lilmonkey`	Looks like some sort of rendering issue.
+2019-07-01 13:25:59	lilmonkey`	Oh well, <hr> is best avoided anyway. The semantic use it's been given is extremely limited, unnecessary and forced.
+2019-07-01 13:26:17	lilmonkey`	Just remove them and set borders on the <ul>'s and done.
+2019-07-01 13:27:06	lilmonkey`	I mean, you're already using CSS border styles for the <hr>s, heh…
+2019-07-01 13:33:04	> 	valuemachine (~valuemach@216.15.114.90) has joined #html
+2019-07-01 13:34:40	 <<< 	ibispi (~quassel@188.246.35.178) has quit (Remote host closed the connection)
+2019-07-01 13:44:03	> 	renn0xtk9 (~max@2a02:810d:1540:6ba6:418b:26f1:7873:b547) has joined #html
+2019-07-01 13:58:20	> 	Cmaj6 (~Cmaj6@212-127-131-106.cable.dynamic.v4.ziggo.nl) has joined #html
+2019-07-01 14:01:49	_Raijin	lilmonkey` Ok, at least it isn't just me xD. I'll see if I can get the same look with the list borders
+2019-07-01 14:03:08	 <<< 	valuemachine (~valuemach@216.15.114.90) has quit (Read error: Connection reset by peer)
+2019-07-01 14:07:39	sgt_chuckles	how do I make a canvas responsive using HTML?
+2019-07-01 14:09:14	 <<< 	BoneTone (~BoneTone@unaffiliated/bonetone) has quit (Quit: What's this button do?)
+2019-07-01 14:12:22	> 	BoneTone (~BoneTone@unaffiliated/bonetone) has joined #html
+2019-07-01 14:14:17	 <<< 	tablerice (~tablerice@rrcs-71-41-50-122.se.biz.rr.com) has quit (Ping timeout: 268 seconds)
+2019-07-01 14:27:45	 <<< 	arij_ (uid225068@gateway/web/irccloud.com/x-sdiehgpwcuvkbvng) has quit (Quit: Connection closed for inactivity)
+2019-07-01 14:42:20	 <<< 	sgt_chuckles (~adempus@static-71-105-222-50.nycmny.fios.verizon.net) has quit (Quit: Leaving)
+2019-07-01 14:57:35	> 	valuemachine (~valuemach@216.15.114.90) has joined #html
+2019-07-01 15:14:39	 <<< 	renn0xtk9 (~max@2a02:810d:1540:6ba6:418b:26f1:7873:b547) has quit (Quit: Konversation terminated!)
+2019-07-01 15:19:18	> 	fission6 (~textual@static-71-190-247-20.nycmny.fios.verizon.net) has joined #html
+2019-07-01 15:27:18	 <<< 	valuemachine (~valuemach@216.15.114.90) has quit (Read error: Connection reset by peer)
+2019-07-01 15:27:54	 <<< 	plexigras (plexigras@gateway/vpn/privateinternetaccess/plexigras) has quit (Ping timeout: 272 seconds)
+2019-07-01 15:38:11	 <<< 	linarcx (~linarcx@151.241.43.244) has quit (Quit: WeeChat 2.5)
+2019-07-01 16:01:19	> 	OnkelTem (~onkeltem@unaffiliated/fantomas) has joined #html
+2019-07-01 16:06:50	 <<< 	prosta_vapse (~TR00@host-78-149-201-22.as13285.net) has quit (Ping timeout: 258 seconds)
+2019-07-01 16:13:41	 <<< 	Dominionionion (~Dominioni@97.101.6.58) has quit (Remote host closed the connection)
+2019-07-01 16:17:54	 <<< 	fission6 (~textual@static-71-190-247-20.nycmny.fios.verizon.net) has quit (Quit: My MacBook has gone to sleep. ZZZzzz…)
+2019-07-01 16:19:36	> 	valuemachine (~valuemach@216.15.114.90) has joined #html
+2019-07-01 16:25:03	> 	prosta_vapse (~TR00@host-79-78-80-87.static.as9105.net) has joined #html
+2019-07-01 16:28:41	> 	prosta_nikak (~TR00@host-79-78-80-149.static.as9105.net) has joined #html
+2019-07-01 16:29:58	 <<< 	prosta_vapse (~TR00@host-79-78-80-87.static.as9105.net) has quit (Ping timeout: 272 seconds)
+2019-07-01 16:52:02	 <<< 	gopar (~gopar@c-73-170-87-34.hsd1.ca.comcast.net) has quit (Remote host closed the connection)
+2019-07-01 16:59:54	> 	fission6 (~textual@cpe-67-244-119-185.nyc.res.rr.com) has joined #html
+2019-07-01 17:01:05	 <<< 	de-facto (~de-facto@gateway/tor-sasl/de-facto) has quit (Quit: See you around.)
+2019-07-01 17:01:22	> 	de-facto (~de-facto@gateway/tor-sasl/de-facto) has joined #html
+2019-07-01 17:24:31	> 	gopar (~gopar@2601:647:4700:fd6d:e110:94ec:c178:2370) has joined #html
+2019-07-01 17:28:23	> 	atomicb0mb (~textual@191.181.156.226) has joined #html
+2019-07-01 17:28:58	 <<< 	gopar (~gopar@2601:647:4700:fd6d:e110:94ec:c178:2370) has quit (Ping timeout: 252 seconds)
+2019-07-01 17:31:38	> 	Jantz (~IceChat9@118-93-135-76.dsl.dyn.ihug.co.nz) has joined #html
+2019-07-01 17:33:17	 <<< 	atomicb0mb (~textual@191.181.156.226) has quit (Quit: My Mac has gone to sleep. ZZZzzz…)
+2019-07-01 17:59:42	 <<< 	fission6 (~textual@cpe-67-244-119-185.nyc.res.rr.com) has quit (Quit: My MacBook has gone to sleep. ZZZzzz…)
+2019-07-01 18:00:07	 <<< 	Slartibart (~kvirc@c-5cd8d854.217486-0-69706f6e6c79.bbcust.telenor.se) has quit (Quit: KVIrc 5.0.0 Aria http://www.kvirc.net/)
+2019-07-01 18:00:49	> 	Dominionionion (~Dominioni@97.101.6.58) has joined #html
+2019-07-01 18:05:41	 <<< 	Cmaj6 (~Cmaj6@212-127-131-106.cable.dynamic.v4.ziggo.nl) has quit (Quit: Leaving)
+2019-07-01 18:08:27	> 	z|bandito (~willi@2601:1c0:4202:9758:58ca:1cd4:eaea:548) has joined #html
+2019-07-01 18:11:20	 <<< 	z|bandito (~willi@2601:1c0:4202:9758:58ca:1cd4:eaea:548) has quit (Remote host closed the connection)
+2019-07-01 18:32:25	> 	Slartibart (~kvirc@c-5cd8d854.217486-0-69706f6e6c79.bbcust.telenor.se) has joined #html
+2019-07-01 18:39:18	 <<< 	SporkWitch (~SporkWitc@unaffiliated/sporkwitch) has quit (Quit: ZNC - http://znc.in)
+2019-07-01 18:39:57	> 	SporkWitch (~SporkWitc@unaffiliated/sporkwitch) has joined #html
+2019-07-01 18:44:12	> 	a-ja (~aja@2600:1700:d050:2bb0:31ff:f8dd:be5b:8364) has joined #html
+2019-07-01 19:05:19	> 	syncrod (syncrod@181.188.126.215) has joined #html
+2019-07-01 19:07:05	 <<< 	Slartibart (~kvirc@c-5cd8d854.217486-0-69706f6e6c79.bbcust.telenor.se) has quit (Quit: KVIrc 5.0.0 Aria http://www.kvirc.net/)
+2019-07-01 19:09:09	 <<< 	SporkWitch (~SporkWitc@unaffiliated/sporkwitch) has quit (Quit: ZNC - http://znc.in)
+2019-07-01 19:19:04	> 	SporkWitch (~SporkWitc@unaffiliated/sporkwitch) has joined #html
+2019-07-01 19:26:01	 <<< 	prosta_nikak (~TR00@host-79-78-80-149.static.as9105.net) has quit (Quit: DAVAJ_UZE!!)
+2019-07-01 19:34:40	 <<< 	a-ja (~aja@2600:1700:d050:2bb0:31ff:f8dd:be5b:8364) has quit (Quit: Quitting ✌🏽☮️🕊️)
+2019-07-01 19:34:40	 <<< 	rivvles (~riven@pdpc/supporter/professional/riven) has quit (Read error: Connection reset by peer)
+2019-07-01 19:35:04	> 	rivvles (~riven@pdpc/supporter/professional/riven) has joined #html
+2019-07-01 19:36:29	> 	gopar (~gopar@2601:647:4700:fd6d:e110:94ec:c178:2370) has joined #html
+2019-07-01 19:39:29	 <<< 	syncrod (syncrod@181.188.126.215) has quit (Ping timeout: 248 seconds)
+2019-07-01 19:41:28	 <<< 	gopar (~gopar@2601:647:4700:fd6d:e110:94ec:c178:2370) has quit (Ping timeout: 264 seconds)
+2019-07-01 19:47:52	 <<< 	de-facto (~de-facto@gateway/tor-sasl/de-facto) has quit (Ping timeout: 260 seconds)
+2019-07-01 19:49:11	> 	de-facto (~de-facto@gateway/tor-sasl/de-facto) has joined #html
+2019-07-01 19:49:25	> 	Slartibart (~kvirc@c-5cd8d854.217486-0-69706f6e6c79.bbcust.telenor.se) has joined #html
+2019-07-01 19:53:57	> 	Sheilong (uid293653@gateway/web/irccloud.com/x-ffpxzcsblmxoqyhy) has joined #html
+2019-07-01 19:57:08	 <<< 	zampano (~zampano@unaffiliated/zampano) has quit (Ping timeout: 245 seconds)
+2019-07-01 20:33:30	> 	AbedB__ (~AbedBhuty@bzq-79-182-4-193.red.bezeqint.net) has joined #html
+2019-07-01 20:36:43	 <<< 	Jantz (~IceChat9@118-93-135-76.dsl.dyn.ihug.co.nz) has quit (Read error: Connection reset by peer)
+2019-07-01 20:36:58	 <<< 	AbedB_ (~AbedBhuty@bzq-109-66-85-37.red.bezeqint.net) has quit (Ping timeout: 272 seconds)
+2019-07-01 20:37:56	 <<< 	Slartibart (~kvirc@c-5cd8d854.217486-0-69706f6e6c79.bbcust.telenor.se) has quit (Quit: KVIrc 5.0.0 Aria http://www.kvirc.net/)
+2019-07-01 20:39:51	> 	Jantz (~IceChat9@118-93-135-76.dsl.dyn.ihug.co.nz) has joined #html
+2019-07-01 20:41:20	> 	AbedB_ (~AbedBhuty@bzq-79-183-89-141.red.bezeqint.net) has joined #html
+2019-07-01 20:44:38	 <<< 	AbedB__ (~AbedBhuty@bzq-79-182-4-193.red.bezeqint.net) has quit (Ping timeout: 268 seconds)
+2019-07-01 20:50:38	 <<< 	usney (~usney@2600:1700:b4d1:a8a0:1172:1186:e50c:3c2e) has quit (Ping timeout: 252 seconds)
+2019-07-01 20:51:24	> 	z|bandito (~willi@2601:1c0:4202:9758:181f:143b:5b2b:4567) has joined #html
+2019-07-01 21:05:27	 <<< 	Jantz (~IceChat9@118-93-135-76.dsl.dyn.ihug.co.nz) has quit (Ping timeout: 245 seconds)
+2019-07-01 21:31:08	 <<< 	valuemachine (~valuemach@216.15.114.90) has quit (Remote host closed the connection)
+2019-07-01 21:32:30	> 	valuemachine (~valuemach@216.15.114.90) has joined #html
+2019-07-01 21:33:37	 <<< 	z|bandito (~willi@2601:1c0:4202:9758:181f:143b:5b2b:4567) has quit (Read error: Connection reset by peer)
+2019-07-01 21:37:21	 <<< 	valuemachine (~valuemach@216.15.114.90) has quit (Ping timeout: 248 seconds)
+2019-07-01 21:42:46	> 	gopar (~gopar@2601:647:4700:fd6d:2997:651b:2173:e0a8) has joined #html
+2019-07-01 21:48:01	 <<< 	gopar (~gopar@2601:647:4700:fd6d:2997:651b:2173:e0a8) has quit (Ping timeout: 276 seconds)
+2019-07-01 21:48:52	 <<< 	spossiba (~spossiba@unaffiliated/stryx/x-3871776) has quit (Remote host closed the connection)
+2019-07-01 21:51:08	> 	z|bandito (~willi@2601:1c0:4202:9758:6403:4da5:991f:d663) has joined #html
+2019-07-01 21:52:18	> 	spossiba (~spossiba@unaffiliated/stryx/x-3871776) has joined #html
+2019-07-01 22:04:21	> 	z8z (~x@sp49-97-111-53.msc.spmode.ne.jp) has joined #html
+2019-07-01 22:04:56	 <<< 	z|bandito (~willi@2601:1c0:4202:9758:6403:4da5:991f:d663) has quit (Remote host closed the connection)
+2019-07-01 22:11:03	> 	valuemachine (~valuemach@216.15.114.90) has joined #html
+2019-07-01 22:13:37	> 	gopar (~gopar@2601:647:4700:fd6d:2997:651b:2173:e0a8) has joined #html
+2019-07-01 22:15:47	 <<< 	z8z (~x@sp49-97-111-53.msc.spmode.ne.jp) has quit (Quit: Quitting)
+2019-07-01 22:18:04	 <<< 	gopar (~gopar@2601:647:4700:fd6d:2997:651b:2173:e0a8) has quit (Ping timeout: 264 seconds)
+2019-07-01 22:42:05	 <<< 	valuemachine (~valuemach@216.15.114.90) has quit (Read error: Connection reset by peer)
+2019-07-01 23:07:30	> 	donotturnoff (~isaac@cpc126416-mapp13-2-0-cust85.12-4.cable.virginm.net) has joined #html
+2019-07-01 23:07:32	> 	Deusdeorum (~Deusdeoru@unaffiliated/deusdeorum) has joined #html
+2019-07-01 23:26:12	 <<< 	donotturnoff (~isaac@cpc126416-mapp13-2-0-cust85.12-4.cable.virginm.net) has quit (Ping timeout: 268 seconds)
+2019-07-01 23:32:16	 <<< 	Dave_Elec (~Dave@196.188.72.247) has quit (Ping timeout: 258 seconds)
+2019-07-01 23:35:57	> 	valuemachine (~valuemach@216.15.114.90) has joined #html
+2019-07-01 23:48:42	> 	donotturnoff (~isaac@cpc126416-mapp13-2-0-cust85.12-4.cable.virginm.net) has joined #html
+2019-07-01 23:56:49	 <<< 	donotturnoff (~isaac@cpc126416-mapp13-2-0-cust85.12-4.cable.virginm.net) has quit (Remote host closed the connection)
+2019-07-02 00:01:26	> 	linarcx (~linarcx@151.241.43.244) has joined #html
+2019-07-02 00:05:16	> 	Jantz (~IceChat9@118-93-135-76.dsl.dyn.ihug.co.nz) has joined #html
+2019-07-02 00:05:20	 <<< 	valuemachine (~valuemach@216.15.114.90) has quit (Read error: Connection reset by peer)
+2019-07-02 00:11:09	> 	Dave_Elec (~Dave@196.188.72.247) has joined #html
+2019-07-02 00:14:35	> 	gopar (~gopar@2601:647:4700:fd6d:8d04:d4ff:e580:b334) has joined #html
+2019-07-02 00:16:17	 <<< 	Dave_Elec (~Dave@196.188.72.247) has quit (Ping timeout: 245 seconds)
+2019-07-02 00:18:09	> 	Dave_Elec (~Dave@196.188.72.247) has joined #html
+2019-07-02 00:19:28	 <<< 	gopar (~gopar@2601:647:4700:fd6d:8d04:d4ff:e580:b334) has quit (Ping timeout: 276 seconds)
+2019-07-02 00:28:34	> 	Chuguniy (~Chuguniy@80.232.218.96) has joined #html
+2019-07-02 00:48:22	> 	jomofcw (~just@unaffiliated/jomofcw) has joined #html
+2019-07-02 00:59:25	> 	valuemachine (~valuemach@216.15.114.90) has joined #html
+2019-07-02 01:10:28	> 	syncrod (~syncrod@181.188.126.215) has joined #html
+2019-07-02 01:10:34	 <<< 	syncrod (~syncrod@181.188.126.215) has quit (Remote host closed the connection)
+2019-07-02 01:15:24	 <<< 	highhopes (ident1@2610:150:8015:2586::1a) has quit (Ping timeout: 252 seconds)
+2019-07-02 01:17:52	> 	ibispi (~quassel@188.246.35.178) has joined #html
+2019-07-02 01:21:26	> 	highhopes (ident1@2610:150:8015:2586::1a) has joined #html
+2019-07-02 01:28:47	 <<< 	Dave_Elec (~Dave@196.188.72.247) has quit (Ping timeout: 245 seconds)
+2019-07-02 01:29:38	 <<< 	valuemachine (~valuemach@216.15.114.90) has quit (Read error: Connection reset by peer)
+2019-07-02 01:31:47	> 	z|bandito (~willi@2601:1c0:4202:9758:412f:9c8e:ee43:d8a5) has joined #html
+2019-07-02 01:32:37	> 	Dave_Elec (~Dave@196.188.72.247) has joined #html
+2019-07-02 01:55:03	 <<< 	Sheilong (uid293653@gateway/web/irccloud.com/x-ffpxzcsblmxoqyhy) has quit
+2019-07-02 02:04:22	 <<< 	z|bandito (~willi@2601:1c0:4202:9758:412f:9c8e:ee43:d8a5) has quit (Remote host closed the connection)
+2019-07-02 02:11:44	 <<< 	supercool (bigode@2600:3c01::f03c:91ff:fee5:c75e) has quit (Quit: WeeChat 1.9.1)
+2019-07-02 02:18:52	> 	stennowork (~stenno@unaffiliated/chao) has joined #html
+2019-07-02 02:21:21	> 	AbedB__ (~AbedBhuty@bzq-79-182-106-179.red.bezeqint.net) has joined #html
+2019-07-02 02:22:03	> 	Anticom (~Anticom@87.190.49.75) has joined #html
+2019-07-02 02:23:48	 <<< 	Jantz (~IceChat9@118-93-135-76.dsl.dyn.ihug.co.nz) has quit (Ping timeout: 268 seconds)
+2019-07-02 02:23:54	> 	valuemachine (~valuemach@216.15.114.90) has joined #html
+2019-07-02 02:24:01	 <<< 	AbedB_ (~AbedBhuty@bzq-79-183-89-141.red.bezeqint.net) has quit (Ping timeout: 258 seconds)
+2019-07-02 02:28:35	 <<< 	^Cheeky (uid271104@gateway/web/irccloud.com/x-oijpnrmaljhgfbkq) has quit (Quit: Connection closed for inactivity)
+2019-07-02 02:49:54	stennowork	Which HTMLElement classes am i allowed to derive from when i create custom elements?
+2019-07-02 02:50:37	stennowork	for example, deriving an element from HTMLElement or from HTMLSpanElement works fine - if i try to derive from HTMLInputElement, i get 'illegal invocation' on the createdCallback
+2019-07-02 02:52:47	stennowork	uh wait
+2019-07-02 02:53:09	stennowork	never mind
+2019-07-02 02:53:57	 <<< 	valuemachine (~valuemach@216.15.114.90) has quit (Read error: Connection reset by peer)
+2019-07-02 02:55:06	> 	forgotmynick (uid24625@gateway/web/irccloud.com/x-kkigdsffvfvpfixj) has joined #html
+2019-07-02 03:06:43	 <<< 	Anticom (~Anticom@87.190.49.75) has quit (Quit: Leaving)
+2019-07-02 03:09:08	> 	zampano (~zampano@unaffiliated/zampano) has joined #html
+2019-07-02 03:21:08	stennowork	well, that was an interesting venture into custom HTML elements
+2019-07-02 03:21:23	stennowork	now back to my actual work
+2019-07-02 03:23:14	lilltiger	did it end up in neat html? :D or was it not worth it
+2019-07-02 03:23:37	stennowork	nope
+2019-07-02 03:23:40	stennowork	er
+2019-07-02 03:23:46	stennowork	it failed
+2019-07-02 03:24:18	stennowork	tried to create a 'custom' html input element of type file and somehow trigger the open file dialog
+2019-07-02 03:25:29	stennowork	lilltiger, my poor attempt https://jsfiddle.net/mrpowy48/1/
+2019-07-02 03:25:38	stennowork	the click thing does _not_ work
+2019-07-02 03:26:56	stennowork	it makes sense that it doesn't work but its also saddening
+2019-07-02 03:27:18	stennowork	if i understood the specs correctly, the open file dialog must only be opened from a users click interaction
+2019-07-02 03:30:49	Pilum	Yeah, they're rather strict with that particular element.
+2019-07-02 03:30:59	stennowork	makes sense ;)
+2019-07-02 03:31:14	Pilum	Indeed. There were some… incidents. :-P
+2019-07-02 03:31:17	stennowork	wouldn't want my browser to upload random files to the server without it being transparent to me
+2019-07-02 03:31:18	stennowork	oof
+2019-07-02 03:31:28	 <<< 	Dave_Elec (~Dave@196.188.72.247) has quit (Ping timeout: 258 seconds)
+2019-07-02 03:32:51	lilltiger	How could it ever be exploited! :p
+2019-07-02 03:35:04	stennowork	i knew that you couldn't set fileList programmatically, however there seem to be even more restrictions as you said
+2019-07-02 03:37:23	> 	AbedB_ (~AbedBhuty@bzq-109-65-40-169.red.bezeqint.net) has joined #html
+2019-07-02 03:38:50	stennowork	i think i will have to spend a weekend to read into custom elements some more, i really have some knowledge deficits regarding that
+2019-07-02 03:40:40	 <<< 	AbedB__ (~AbedBhuty@bzq-79-182-106-179.red.bezeqint.net) has quit (Ping timeout: 258 seconds)
+2019-07-02 03:40:44	lilltiger	the question is, do you need that knowledge?
+2019-07-02 03:41:07	stennowork	i think so!
+2019-07-02 03:41:28	stennowork	web components are the future
+2019-07-02 03:41:54	stennowork	i want to investigate if i even can replace frameworks like react with it
+2019-07-02 03:42:59	stennowork	but i guess their virtualDOM does some magicks
+2019-07-02 03:44:52	> 	usney (~usney@2600:1700:b4d1:a8a0:8d1a:633b:e8c2:64e0) has joined #html
+2019-07-02 03:45:31	lilltiger	web components are probly not the future
+2019-07-02 03:45:35	stennowork	:<
+2019-07-02 03:45:46	stennowork	well it looks very promising
+2019-07-02 03:45:50	lilltiger	but might be a step along the right way
+2019-07-02 03:45:52	stennowork	and native components seem like a good idea
+2019-07-02 03:46:22	stennowork	i think component-based design is... good...
+2019-07-02 03:46:28	lilltiger	One thought that about Flash as well. when it came and replaced the horrible Java applets =D
+2019-07-02 03:46:28	stennowork	lol
+2019-07-02 03:47:28	> 	valuemachine (~valuemach@216.15.114.90) has joined #html
+2019-07-02 03:49:30	> 	Dave_Elec (~Dave@196.188.72.247) has joined #html
+2019-07-02 03:50:57	stennowork	well, regardless of all that, i still have to look into it to figure out if its cool or not :D
+2019-07-02 03:54:10	lilltiger	=D
+2019-07-02 03:56:00	 <<< 	NwS (~NwS@unaffiliated/nws) has quit (Ping timeout: 252 seconds)
+2019-07-02 04:03:23	 <<< 	linarcx (~linarcx@151.241.43.244) has quit (Quit: WeeChat 2.5)
+2019-07-02 04:17:27	 <<< 	valuemachine (~valuemach@216.15.114.90) has quit (Read error: Connection reset by peer)
+2019-07-02 04:32:59	> 	HarveyPwca (~HarveyPwc@99-89-221-139.lightspeed.cicril.sbcglobal.net) has joined #html
+2019-07-02 04:47:31	> 	Slartibart (~kvirc@c-5cd8d854.217486-0-69706f6e6c79.bbcust.telenor.se) has joined #html
+2019-07-02 05:00:26	 <<< 	Lord-Kamina (~Lord-Kami@pc-250-87-104-200.cm.vtr.net) has quit (Ping timeout: 268 seconds)
+2019-07-02 05:01:19	 <<< 	forgotmynick (uid24625@gateway/web/irccloud.com/x-kkigdsffvfvpfixj) has quit (Quit: Connection closed for inactivity)
+2019-07-02 05:01:49	> 	Lord-Kam_ (~Lord-Kami@pc-250-87-104-200.cm.vtr.net) has joined #html
+2019-07-02 05:01:57	 <<< 	Dave_Elec (~Dave@196.188.72.247) has quit (Ping timeout: 258 seconds)
+2019-07-02 05:03:11	> 	Dave_Elec (~Dave@196.188.72.247) has joined #html
+2019-07-02 05:11:56	> 	valuemachine (~valuemach@216.15.114.90) has joined #html
+2019-07-02 05:38:35	 <<< 	valuemachine (~valuemach@216.15.114.90) has quit (Remote host closed the connection)
+2019-07-02 05:39:05	> 	valuemachine (~valuemach@216.15.114.90) has joined #html
+2019-07-02 05:44:13	 <<< 	valuemachine (~valuemach@216.15.114.90) has quit (Ping timeout: 268 seconds)
+2019-07-02 05:49:52	 <<< 	Dave_Elec (~Dave@196.188.72.247) has quit (Ping timeout: 272 seconds)
+2019-07-02 05:50:44	> 	Dave_Elec (~Dave@196.188.72.247) has joined #html
+2019-07-02 05:56:46	 <<< 	Doffi (~doffi@91-158-108-34.elisa-laajakaista.fi) has quit (Ping timeout: 258 seconds)
+2019-07-02 05:58:34	> 	Doffi (~doffi@91-158-108-34.elisa-laajakaista.fi) has joined #html
+2019-07-02 06:07:54	> 	valuemachine (~valuemach@216.15.114.90) has joined #html
+2019-07-02 06:12:33	 <<< 	valuemachine (~valuemach@216.15.114.90) has quit (Ping timeout: 248 seconds)
+2019-07-02 06:18:49	 <<< 	qwedfg (~qwedfg@194.177.28.158) has quit (Quit: ZNC - https://znc.in)
+2019-07-02 06:20:38	> 	qwedfg (~qwedfg@194.177.28.158) has joined #html
+2019-07-02 06:24:07	 <<< 	HarveyPwca (~HarveyPwc@99-89-221-139.lightspeed.cicril.sbcglobal.net) has quit (Quit: Leaving)
+2019-07-02 06:43:13	> 	valuemachine (~valuemach@216.15.114.90) has joined #html
+2019-07-02 06:51:00	> 	czart (~czart@acct185.neoplus.adsl.tpnet.pl) has joined #html
+2019-07-02 06:53:27	> 	sgt_chuckles (~adempus@static-71-105-222-50.nycmny.fios.verizon.net) has joined #html
+2019-07-02 07:02:22	> 	Sheilong (uid293653@gateway/web/irccloud.com/x-vxqjmsvwwfmormii) has joined #html
+2019-07-02 07:02:57	 <<< 	Dave_Elec (~Dave@196.188.72.247) has quit (Ping timeout: 245 seconds)
+2019-07-02 07:03:44	> 	Dave_Elec (~Dave@196.188.72.247) has joined #html
+2019-07-02 07:13:43	 <<< 	valuemachine (~valuemach@216.15.114.90) has quit (Read error: Connection reset by peer)
+2019-07-02 07:16:57	 <<< 	OnkelTem (~onkeltem@unaffiliated/fantomas) has quit (Quit: WeeChat 1.9.1)
+2019-07-02 07:19:43	> 	HarveyPwca (~HarveyPwc@70-89-216-161-il.hfc.comcastbusiness.net) has joined #html
+2019-07-02 07:26:10	sgt_chuckles	How can I make a canvas take up the entire height/width of the screen?
+2019-07-02 07:26:40	sgt_chuckles	I tried setting height and width CSS property of the canvas' ID to 100%, but didn't work.
+2019-07-02 07:26:49	stennowork	canvas { width: 100vw; height: 100vh }
+2019-07-02 07:27:22	> 	int3rested (~int3reste@unaffiliated/int3rested) has joined #html
+2019-07-02 07:30:28	sgt_chuckles	didn't work :(
+2019-07-02 07:34:27	> 	prosta_vapse (~TR00@85.210.129.156) has joined #html
+2019-07-02 07:35:33	 <<< 	AbedB_ (~AbedBhuty@bzq-109-65-40-169.red.bezeqint.net) has quit (Read error: Connection reset by peer)
+2019-07-02 07:35:58	> 	tablerice (~tablerice@rrcs-71-41-50-122.se.biz.rr.com) has joined #html
+2019-07-02 07:36:41	sgt_chuckles	strange, it works in a clean project. I think Bootstrap div tags have something to do with it.
+2019-07-02 07:36:57	stennowork	"didn't work"
+2019-07-02 07:37:02	stennowork	well then join #css
+2019-07-02 07:37:21	 <<< 	Deusdeorum (~Deusdeoru@unaffiliated/deusdeorum) has quit (Quit: Textual IRC Client: www.textualapp.com)
+2019-07-02 07:45:40	 <<< 	tablerice (~tablerice@rrcs-71-41-50-122.se.biz.rr.com) has quit (Quit: Leaving)
+2019-07-02 08:00:10	 <<< 	UFC (~danawhite@ufc.powered.by.lunarbnc.net) has quit (Quit: K Cya)
+2019-07-02 08:07:37	> 	UFC (~danawhite@ufc.powered.by.lunarbnc.net) has joined #html
+2019-07-02 08:08:07	> 	valuemachine (~valuemach@216.15.114.90) has joined #html
+2019-07-02 08:24:37	 <<< 	prosta_vapse (~TR00@85.210.129.156) has quit (Ping timeout: 245 seconds)
+2019-07-02 08:37:56	 <<< 	valuemachine (~valuemach@216.15.114.90) has quit (Read error: Connection reset by peer)
+2019-07-02 08:38:44	 <<< 	int3rested (~int3reste@unaffiliated/int3rested) has quit (Quit: Leaving...)
+2019-07-02 08:44:19	> 	fission6 (~textual@static-71-190-247-20.nycmny.fios.verizon.net) has joined #html
+2019-07-02 08:58:36	 <<< 	Chuguniy (~Chuguniy@80.232.218.96) has quit (Ping timeout: 272 seconds)
+2019-07-02 09:07:28	> 	renn0xtk9 (~max@2a02:810d:1540:6ba6:b559:9ef5:70d8:1033) has joined #html
+2019-07-02 09:10:09	 <<< 	Dave_Elec (~Dave@196.188.72.247) has quit (Ping timeout: 248 seconds)
+2019-07-02 09:18:44	> 	Dave_Elec (~Dave@196.188.72.247) has joined #html
+2019-07-02 09:31:45	> 	valuemachine (~valuemach@216.15.114.90) has joined #html
+2019-07-02 09:36:30	> 	gopar (~gopar@2601:647:4700:fd6d:6958:5357:696d:e5e8) has joined #html
+2019-07-02 09:37:14	 <<< 	Dave_Elec (~Dave@196.188.72.247) has quit (Ping timeout: 272 seconds)
+2019-07-02 09:38:02	 <<< 	gopar (~gopar@2601:647:4700:fd6d:6958:5357:696d:e5e8) has quit (Client Quit)
+2019-07-02 09:38:12	> 	czart_ (~czart@acct185.neoplus.adsl.tpnet.pl) has joined #html
+2019-07-02 09:39:53	> 	czart__ (~czart@aaxb125.neoplus.adsl.tpnet.pl) has joined #html
+2019-07-02 09:41:24	 <<< 	czart (~czart@acct185.neoplus.adsl.tpnet.pl) has quit (Ping timeout: 244 seconds)
+2019-07-02 09:42:58	 <<< 	czart_ (~czart@acct185.neoplus.adsl.tpnet.pl) has quit (Ping timeout: 245 seconds)
+2019-07-02 09:43:27	 <<< 	renn0xtk9 (~max@2a02:810d:1540:6ba6:b559:9ef5:70d8:1033) has quit (Quit: Konversation terminated!)
+2019-07-02 09:43:34	> 	Dave_Elec (~Dave@196.188.72.247) has joined #html
+2019-07-02 09:44:02	 <<< 	jomofcw (~just@unaffiliated/jomofcw) has quit
+2019-07-02 09:49:39	 <<< 	Dave_Elec (~Dave@196.188.72.247) has quit (Ping timeout: 268 seconds)
+2019-07-02 09:57:46	 <<< 	HarveyPwca (~HarveyPwc@70-89-216-161-il.hfc.comcastbusiness.net) has quit (Quit: Leaving)
+2019-07-02 09:57:56	> 	a-ja (~aja@99-165-110-64.lightspeed.stlsmo.sbcglobal.net) has joined #html
+2019-07-02 10:02:21	 <<< 	valuemachine (~valuemach@216.15.114.90) has quit (Read error: Connection reset by peer)
+2019-07-02 10:10:04	 <<< 	stennowork (~stenno@unaffiliated/chao) has quit (Quit: Leaving)
+2019-07-02 10:16:02	 <<< 	fission6 (~textual@static-71-190-247-20.nycmny.fios.verizon.net) has quit (Quit: My MacBook has gone to sleep. ZZZzzz…)
+2019-07-02 10:27:04	 <<< 	wagle (~wagle@quassel.wagle.io) has quit (Quit: http://quassel-irc.org - Chat comfortably. Anywhere.)
+2019-07-02 10:27:32	> 	wagle (~wagle@quassel.wagle.io) has joined #html
+2019-07-02 10:36:21	> 	fission6 (~textual@static-71-190-247-20.nycmny.fios.verizon.net) has joined #html
+2019-07-02 10:43:24	 <<< 	de-facto (~de-facto@gateway/tor-sasl/de-facto) has quit (Ping timeout: 260 seconds)
+2019-07-02 10:46:51	> 	de-facto (~de-facto@gateway/tor-sasl/de-facto) has joined #html
+2019-07-02 10:53:01	> 	NwS (~NwS@unaffiliated/nws) has joined #html
+2019-07-02 10:56:12	> 	valuemachine (~valuemach@216.15.114.90) has joined #html
+2019-07-02 11:06:07	 <<< 	Lord-Kam_ (~Lord-Kami@pc-250-87-104-200.cm.vtr.net) has quit (Ping timeout: 268 seconds)
+2019-07-02 11:11:08	> 	Lord-Kamina (~Lord-Kami@pc-250-87-104-200.cm.vtr.net) has joined #html
+2019-07-02 11:25:46	 <<< 	valuemachine (~valuemach@216.15.114.90) has quit (Read error: Connection reset by peer)
+2019-07-02 11:26:57	> 	renn0xtk9 (~max@2a02:810d:1540:6ba6:a133:88cc:6143:4658) has joined #html
+2019-07-02 11:32:33	 <<< 	D-melanogaster (~D-melanog@212.90.58.216) has quit (Ping timeout: 248 seconds)
+2019-07-02 11:50:10	 <<< 	sgt_chuckles (~adempus@static-71-105-222-50.nycmny.fios.verizon.net) has quit (Remote host closed the connection)
+2019-07-02 11:50:28	> 	sgt_chuckles (~adempus@static-71-105-222-50.nycmny.fios.verizon.net) has joined #html
+2019-07-02 12:05:25	 <<< 	fission6 (~textual@static-71-190-247-20.nycmny.fios.verizon.net) has quit (Quit: My MacBook has gone to sleep. ZZZzzz…)
+2019-07-02 12:06:46	> 	fission6 (~textual@static-71-190-247-20.nycmny.fios.verizon.net) has joined #html
+2019-07-02 12:12:32	> 	gopar (~gopar@c-73-170-87-34.hsd1.ca.comcast.net) has joined #html
+2019-07-02 12:16:41	 <<< 	czart__ (~czart@aaxb125.neoplus.adsl.tpnet.pl) has quit (Read error: Connection reset by peer)
+2019-07-02 12:16:55	 <<< 	ikonia (~irc@unaffiliated/ikonia) has quit (Ping timeout: 244 seconds)
+2019-07-02 12:17:10	> 	ikonia (~irc@unaffiliated/ikonia) has joined #html
+2019-07-02 12:17:19	> 	Jantz (~IceChat9@118-93-135-76.dsl.dyn.ihug.co.nz) has joined #html
+2019-07-02 12:17:55	 <<< 	fission6 (~textual@static-71-190-247-20.nycmny.fios.verizon.net) has quit (Quit: My MacBook has gone to sleep. ZZZzzz…)
+2019-07-02 12:19:33	> 	valuemachine (~valuemach@216.15.114.90) has joined #html
+2019-07-02 12:21:10	> 	D-melanogaster (~D-melanog@212.90.58.216) has joined #html
+2019-07-02 12:30:15	> 	fission6 (~textual@static-71-190-247-20.nycmny.fios.verizon.net) has joined #html
+2019-07-02 12:34:45	 <<< 	ibispi (~quassel@188.246.35.178) has quit (Remote host closed the connection)
+2019-07-02 12:38:47	 <<< 	renn0xtk9 (~max@2a02:810d:1540:6ba6:a133:88cc:6143:4658) has quit (Quit: Konversation terminated!)
+2019-07-02 12:47:37	 <<< 	DieguezZ (~DieguezZ@unaffiliated/dieguezz) has left #html ("Textual IRC Client: www.textualapp.com")
+2019-07-02 13:04:27	> 	plexigras (plexigras@gateway/vpn/privateinternetaccess/plexigras) has joined #html
+2019-07-02 13:05:36	 <<< 	innovati (~innovati@209-195-86-2.cpe.distributel.net) has quit (Quit: My MacBook has gone to sleep. ZZZzzz…)
+2019-07-02 13:08:45	> 	karoshi (~karoshi@li666-14.members.linode.com) has joined #html
+2019-07-02 13:09:16	> 	AbedB (~AbedBhuty@bzq-109-65-40-169.red.bezeqint.net) has joined #html
+2019-07-02 13:12:58	 <<< 	Slartibart (~kvirc@c-5cd8d854.217486-0-69706f6e6c79.bbcust.telenor.se) has quit (Ping timeout: 245 seconds)
+2019-07-02 13:17:15	> 	innovati (~innovati@CPEac8674d7e0e3-CMac202ebf4bf0.cpe.net.cable.rogers.com) has joined #html
+2019-07-02 13:20:55	> 	plongshot (~shine@cpe-76-178-144-227.natnow.res.rr.com) has joined #html
+2019-07-02 13:21:31	> 	^Cheeky (uid271104@gateway/web/irccloud.com/x-ofdciectthkoxduy) has joined #html
+2019-07-02 13:27:46	 <<< 	sgt_chuckles (~adempus@static-71-105-222-50.nycmny.fios.verizon.net) has quit (Ping timeout: 272 seconds)
+2019-07-02 13:45:24	 <<< 	valuemachine (~valuemach@216.15.114.90) has quit (Read error: Connection reset by peer)
+2019-07-02 13:47:32	> 	innovati_ (~innovati@CPEac8674d7e0e3-CMac202ebf4bf0.cpe.net.cable.rogers.com) has joined #html
+2019-07-02 13:49:24	 <<< 	innovati (~innovati@CPEac8674d7e0e3-CMac202ebf4bf0.cpe.net.cable.rogers.com) has quit (Ping timeout: 244 seconds)
+2019-07-02 13:51:48	 <<< 	usney (~usney@2600:1700:b4d1:a8a0:8d1a:633b:e8c2:64e0) has quit (Ping timeout: 252 seconds)
+2019-07-02 13:55:03	 <<< 	a-ja (~aja@99-165-110-64.lightspeed.stlsmo.sbcglobal.net) has quit (Ping timeout: 245 seconds)
+2019-07-02 13:58:01	> 	sgt_chuckles (~adempus@static-71-105-222-50.nycmny.fios.verizon.net) has joined #html
+2019-07-02 13:58:40	> 	Jantz_ (~IceChat9@118-93-135-76.dsl.dyn.ihug.co.nz) has joined #html
+2019-07-02 13:59:46	> 	a-ja (~aja@99-165-110-64.lightspeed.stlsmo.sbcglobal.net) has joined #html
+2019-07-02 14:01:15	 <<< 	Jantz (~IceChat9@118-93-135-76.dsl.dyn.ihug.co.nz) has quit (Ping timeout: 268 seconds)
+2019-07-02 14:16:29	 <<< 	plongshot (~shine@cpe-76-178-144-227.natnow.res.rr.com) has quit (Quit: Konversation terminated!)
+2019-07-02 14:16:39	> 	plongshot (~shine@cpe-76-178-144-227.natnow.res.rr.com) has joined #html
+2019-07-02 14:16:46	> 	valuemachine (~valuemach@216.15.114.90) has joined #html
+2019-07-02 14:21:48	> 	prosta_vapse (~TR00@85.210.129.156) has joined #html
+2019-07-02 14:24:37	 <<< 	opsec (~opsec@opsec/opsec) has quit (Ping timeout: 245 seconds)
+2019-07-02 14:25:24	 <<< 	plongshot (~shine@cpe-76-178-144-227.natnow.res.rr.com) has quit (Ping timeout: 272 seconds)
+2019-07-02 14:27:17	> 	opsec (~opsec@opsec/opsec) has joined #html
+2019-07-02 14:28:08	> 	renn0xtk9 (~max@2a02:810d:1540:6ba6:a569:5eab:29d2:ff06) has joined #html
+2019-07-02 14:35:53	 <<< 	innovati_ (~innovati@CPEac8674d7e0e3-CMac202ebf4bf0.cpe.net.cable.rogers.com) has quit (Ping timeout: 245 seconds)
+2019-07-02 14:38:06	> 	plongshot (~shine@cpe-76-178-144-227.natnow.res.rr.com) has joined #html
+2019-07-02 14:38:32	> 	innovati (~innovati@CPEac8674d7e0e3-CMac202ebf4bf0.cpe.net.cable.rogers.com) has joined #html
+2019-07-02 14:40:52	 <<< 	Jantz_ (~IceChat9@118-93-135-76.dsl.dyn.ihug.co.nz) has quit (Ping timeout: 245 seconds)
+2019-07-02 14:40:59	> 	Jantz (~IceChat9@118-93-135-76.dsl.dyn.ihug.co.nz) has joined #html
+2019-07-02 14:45:17	 <<< 	fission6 (~textual@static-71-190-247-20.nycmny.fios.verizon.net) has quit (Quit: My MacBook has gone to sleep. ZZZzzz…)
+2019-07-02 14:46:20	 <<< 	valuemachine (~valuemach@216.15.114.90) has quit (Read error: Connection reset by peer)
+2019-07-02 14:51:45	 <<< 	gopar (~gopar@c-73-170-87-34.hsd1.ca.comcast.net) has quit (Read error: Connection reset by peer)
+2019-07-02 14:52:08	> 	gopar (~gopar@184-23-219-98.dedicated.static.sonic.net) has joined #html
+2019-07-02 14:57:19	 <<< 	innovati (~innovati@CPEac8674d7e0e3-CMac202ebf4bf0.cpe.net.cable.rogers.com) has quit (Quit: My MacBook has gone to sleep. ZZZzzz…)
+2019-07-02 15:11:53	> 	Lord-Kam_ (~Lord-Kami@pc-250-87-104-200.cm.vtr.net) has joined #html
+2019-07-02 15:12:33	 <<< 	sgt_chuckles (~adempus@static-71-105-222-50.nycmny.fios.verizon.net) has quit (Remote host closed the connection)
+2019-07-02 15:13:24	 <<< 	Lord-Kamina (~Lord-Kami@pc-250-87-104-200.cm.vtr.net) has quit (Ping timeout: 268 seconds)
+2019-07-02 15:14:17	> 	innovati (~innovati@209-195-86-2.cpe.distributel.net) has joined #html
+2019-07-02 15:16:13	 <<< 	renn0xtk9 (~max@2a02:810d:1540:6ba6:a569:5eab:29d2:ff06) has quit (Quit: Konversation terminated!)
+2019-07-02 15:16:22	 <<< 	innovati (~innovati@209-195-86-2.cpe.distributel.net) has quit (Client Quit)
+2019-07-02 15:16:32	> 	NeXTSUN (~textual@185.217.69.169) has joined #html
+2019-07-02 15:17:29	> 	renn0xtk9 (~max@2a02:810d:1540:6ba6:c014:dd8c:b3b:eead) has joined #html
+2019-07-02 15:17:53	 <<< 	renn0xtk9 (~max@2a02:810d:1540:6ba6:c014:dd8c:b3b:eead) has quit (Client Quit)
+2019-07-02 15:20:34	> 	innovati (~innovati@209-195-86-2.cpe.distributel.net) has joined #html
+2019-07-02 15:20:57	> 	fission6 (~textual@static-71-190-247-20.nycmny.fios.verizon.net) has joined #html
+2019-07-02 15:31:05	 <<< 	NeXTSUN (~textual@185.217.69.169) has quit (Quit: My MacBook has gone to sleep. ZZZzzz…)
+2019-07-02 15:32:08	 <<< 	plexigras (plexigras@gateway/vpn/privateinternetaccess/plexigras) has quit (Ping timeout: 245 seconds)
+2019-07-02 15:40:07	> 	valuemachine (~valuemach@216.15.114.90) has joined #html
+2019-07-02 15:50:57	> 	atomicb0mb (~textual@191.181.156.226) has joined #html
+2019-07-02 16:02:23	 <<< 	fission6 (~textual@static-71-190-247-20.nycmny.fios.verizon.net) has quit (Quit: My MacBook has gone to sleep. ZZZzzz…)
+2019-07-02 16:02:32	 <<< 	de-facto (~de-facto@gateway/tor-sasl/de-facto) has quit (Remote host closed the connection)
+2019-07-02 16:05:39	> 	de-facto (~de-facto@gateway/tor-sasl/de-facto) has joined #html
+2019-07-02 16:10:34	 <<< 	valuemachine (~valuemach@216.15.114.90) has quit (Read error: Connection reset by peer)
+2019-07-02 16:16:51	> 	NeXTSUN (~textual@185.217.69.169) has joined #html
+2019-07-02 16:18:12	> 	Jantz_ (~IceChat9@118-93-135-76.dsl.dyn.ihug.co.nz) has joined #html
+2019-07-02 16:18:31	 <<< 	Jantz (~IceChat9@118-93-135-76.dsl.dyn.ihug.co.nz) has quit (Ping timeout: 258 seconds)
+2019-07-02 16:18:43	 <<< 	atomicb0mb (~textual@191.181.156.226) has quit (Quit: My Mac has gone to sleep. ZZZzzz…)
+2019-07-02 16:21:30	 <<< 	NeXTSUN (~textual@185.217.69.169) has quit (Quit: My MacBook has gone to sleep. ZZZzzz…)
+2019-07-02 16:36:17	 <<< 	a-ja (~aja@99-165-110-64.lightspeed.stlsmo.sbcglobal.net) has quit (Quit: Quitting ✌🏽☮️🕊️)
+2019-07-02 16:36:18	 <<< 	rivvles (~riven@pdpc/supporter/professional/riven) has quit (Read error: Connection reset by peer)
+2019-07-02 16:36:58	> 	rivvles (~riven@pdpc/supporter/professional/riven) has joined #html
+2019-07-02 16:39:05	> 	s3nd1v0g1us (~patr0clus@unaffiliated/patr0clus) has joined #html
+2019-07-02 16:40:42	> 	valuemachine (~valuemach@216.15.114.90) has joined #html
+2019-07-02 16:47:37	> 	OnkelTem (~onkeltem@unaffiliated/fantomas) has joined #html
+2019-07-02 17:01:07	 <<< 	de-facto (~de-facto@gateway/tor-sasl/de-facto) has quit (Quit: See you around.)
+2019-07-02 17:01:22	> 	de-facto (~de-facto@gateway/tor-sasl/de-facto) has joined #html
+2019-07-02 17:15:56	 <<< 	prosta_vapse (~TR00@85.210.129.156) has quit (Quit: DAVAJ_UZE!!)
+2019-07-02 17:45:30	> 	usney (~usney@2600:1700:b4d1:a8a0:8d1a:633b:e8c2:64e0) has joined #html
+2019-07-02 17:53:48	 <<< 	plongshot (~shine@cpe-76-178-144-227.natnow.res.rr.com) has quit (Ping timeout: 245 seconds)
+2019-07-02 17:56:11	> 	plongshot (~shine@cpe-76-178-144-227.natnow.res.rr.com) has joined #html
+2019-07-02 18:05:03	 <<< 	plongshot (~shine@cpe-76-178-144-227.natnow.res.rr.com) has quit (Ping timeout: 245 seconds)
+2019-07-02 18:09:12	 <<< 	Haxxa (~Harrison@180-150-30-18.b4961e.mel.nbn.aussiebb.net) has quit (Ping timeout: 252 seconds)
+2019-07-02 18:17:07	> 	Haxxa (~Harrison@180-150-30-18.b4961e.mel.nbn.aussiebb.net) has joined #html
+2019-07-02 18:23:58	 <<< 	gopar (~gopar@184-23-219-98.dedicated.static.sonic.net) has quit (Remote host closed the connection)
+2019-07-02 18:26:26	 <<< 	usney (~usney@2600:1700:b4d1:a8a0:8d1a:633b:e8c2:64e0) has quit (Ping timeout: 252 seconds)
+2019-07-02 18:30:46	> 	gopar (~gopar@184-23-219-98.dedicated.static.sonic.net) has joined #html
+2019-07-02 18:31:47	> 	plongshot (~shine@cpe-76-178-144-227.natnow.res.rr.com) has joined #html
+2019-07-02 18:31:49	 <<< 	Jantz_ (~IceChat9@118-93-135-76.dsl.dyn.ihug.co.nz) has quit (Quit: If you can't laugh at yourself, make fun of other people.)
+2019-07-02 18:32:14	> 	Jantz (~IceChat9@118-93-135-76.dsl.dyn.ihug.co.nz) has joined #html
+2019-07-02 18:35:34	 <<< 	gopar (~gopar@184-23-219-98.dedicated.static.sonic.net) has quit (Ping timeout: 272 seconds)
+2019-07-02 18:42:16	 <<< 	Haxxa (~Harrison@180-150-30-18.b4961e.mel.nbn.aussiebb.net) has quit (Ping timeout: 246 seconds)
+2019-07-02 18:42:25	> 	Cheaplogic (~Cheaplogi@gateway/tor-sasl/cheaplogic) has joined #html
+2019-07-02 18:46:10	> 	NeXTSUN (~textual@185.217.69.169) has joined #html
+2019-07-02 18:47:16	> 	Haxxa (~Harrison@180-150-30-18.b4961e.mel.nbn.aussiebb.net) has joined #html
+2019-07-02 18:53:14	 <<< 	NeXTSUN (~textual@185.217.69.169) has quit (Quit: My MacBook has gone to sleep. ZZZzzz…)
+2019-07-02 18:59:31	> 	gopar (~gopar@2601:647:4700:fd6d:b084:7131:1e51:c870) has joined #html
+2019-07-02 19:01:49	 <<< 	Haxxa (~Harrison@180-150-30-18.b4961e.mel.nbn.aussiebb.net) has quit (Ping timeout: 258 seconds)
+2019-07-02 19:04:12	 <<< 	gopar (~gopar@2601:647:4700:fd6d:b084:7131:1e51:c870) has quit (Ping timeout: 252 seconds)
+2019-07-02 19:05:55	> 	ivanf (~ivan@pool-98-116-228-141.nycmny.fios.verizon.net) has joined #html
+2019-07-02 19:06:49	 <<< 	ivanf (~ivan@pool-98-116-228-141.nycmny.fios.verizon.net) has quit (Changing host)
+2019-07-02 19:06:49	> 	ivanf (~ivan@unaffiliated/kferdous) has joined #html
+2019-07-02 19:07:04	> 	Haxxa (~Harrison@180-150-30-18.b4961e.mel.nbn.aussiebb.net) has joined #html
+2019-07-02 19:10:01	 <<< 	valuemachine (~valuemach@216.15.114.90) has quit (Remote host closed the connection)
+2019-07-02 19:13:59	> 	WishBoy (~WishBoy@unaffiliated/wishboy) has joined #html
+2019-07-02 19:35:47	 <<< 	bray90820 (~bray90820@50-83-216-195.client.mchsi.com) has quit
+2019-07-02 19:45:05	> 	atomicb0mb (~textual@191.181.156.226) has joined #html
+2019-07-02 19:45:41	 <<< 	Sheilong (uid293653@gateway/web/irccloud.com/x-vxqjmsvwwfmormii) has quit (Quit: Connection closed for inactivity)
+2019-07-02 19:46:59	> 	Cheaplogic2 (~Cheaplogi@gateway/tor-sasl/cheaplogic) has joined #html
+2019-07-02 19:47:32	 <<< 	de-facto (~de-facto@gateway/tor-sasl/de-facto) has quit (Ping timeout: 260 seconds)
+2019-07-02 19:47:54	 <<< 	Cheaplogic (~Cheaplogi@gateway/tor-sasl/cheaplogic) has quit (Remote host closed the connection)
+2019-07-02 19:49:20	> 	de-facto (~de-facto@gateway/tor-sasl/de-facto) has joined #html
+2019-07-02 19:53:26	> 	valuemachine (~valuemach@216.15.114.90) has joined #html
+2019-07-02 20:01:34	 <<< 	azrail (~mailbox@92.255.253.8) has quit
+2019-07-02 20:02:24	> 	AugustusCaesar24 (~AugustusC@rrcs-67-52-123-154.west.biz.rr.com) has joined #html
+2019-07-02 20:09:51	 <<< 	WishBoy (~WishBoy@unaffiliated/wishboy) has quit
+2019-07-02 20:10:01	 <<< 	atomicb0mb (~textual@191.181.156.226) has quit (Quit: My Mac has gone to sleep. ZZZzzz…)
+2019-07-02 20:15:20	 <<< 	^Cheeky (uid271104@gateway/web/irccloud.com/x-ofdciectthkoxduy) has quit (Quit: Connection closed for inactivity)
+2019-07-02 20:20:44	 <<< 	xelra (~xelra@unaffiliated/xelra) has quit (Remote host closed the connection)
+2019-07-02 20:20:55	 <<< 	valuemachine (~valuemach@216.15.114.90) has quit (Read error: Connection reset by peer)
+2019-07-02 20:21:45	> 	xelra (~xelra@unaffiliated/xelra) has joined #html
+2019-07-02 20:25:15	> 	prad (ca07d085@202-7-208-133.tpgi.com.au) has joined #html
+2019-07-02 20:25:32	 <<< 	prad (ca07d085@202-7-208-133.tpgi.com.au) has left #html
+2019-07-02 20:27:19	> 	valuemachine (~valuemach@216.15.114.90) has joined #html
+2019-07-02 20:31:03	> 	AbedB_ (~AbedBhuty@bzq-79-178-4-134.red.bezeqint.net) has joined #html
+2019-07-02 20:33:49	 <<< 	AbedB (~AbedBhuty@bzq-109-65-40-169.red.bezeqint.net) has quit (Ping timeout: 258 seconds)
+2019-07-02 20:43:25	 <<< 	valuemachine (~valuemach@216.15.114.90) has quit (Remote host closed the connection)
+2019-07-02 20:45:37	> 	valuemachine (~valuemach@216.15.114.90) has joined #html
+2019-07-02 20:46:01	 <<< 	AugustusCaesar24 (~AugustusC@rrcs-67-52-123-154.west.biz.rr.com) has quit (Quit: Going offline, see ya! (www.adiirc.com))
+2019-07-02 20:50:27	 <<< 	valuemachine (~valuemach@216.15.114.90) has quit (Ping timeout: 245 seconds)
+2019-07-02 20:52:23	> 	valuemachine (~valuemach@216.15.114.90) has joined #html
+2019-07-02 21:00:34	> 	gopar (~gopar@2601:647:4700:fd6d:8df8:51df:d7da:b130) has joined #html
+2019-07-02 21:04:49	 <<< 	s3nd1v0g1us (~patr0clus@unaffiliated/patr0clus) has quit (Ping timeout: 248 seconds)
+2019-07-02 21:05:12	 <<< 	gopar (~gopar@2601:647:4700:fd6d:8df8:51df:d7da:b130) has quit (Ping timeout: 252 seconds)
+2019-07-02 21:10:10	 <<< 	valuemachine (~valuemach@216.15.114.90) has quit (Remote host closed the connection)
+2019-07-02 21:10:40	> 	valuemachine (~valuemach@216.15.114.90) has joined #html
+2019-07-02 21:16:00	 <<< 	valuemachine (~valuemach@216.15.114.90) has quit (Ping timeout: 268 seconds)
+2019-07-02 21:22:07	> 	^Cheeky (uid271104@gateway/web/irccloud.com/x-ndzqlpwuathnxxys) has joined #html
+2019-07-02 21:26:32	> 	z8z (~x@ac230029.ppp.asahi-net.or.jp) has joined #html
+2019-07-02 21:30:00	 <<< 	z8z (~x@ac230029.ppp.asahi-net.or.jp) has quit (Client Quit)
+2019-07-02 21:30:12	> 	z8z (~x@ac230029.ppp.asahi-net.or.jp) has joined #html
+2019-07-02 21:33:16	 <<< 	Jantz (~IceChat9@118-93-135-76.dsl.dyn.ihug.co.nz) has quit (Ping timeout: 268 seconds)
+2019-07-02 21:40:24	> 	Jantz (~IceChat9@2407:7000:8d04:100:3d4e:3a6:c522:18f9) has joined #html
+2019-07-02 21:46:13	> 	valuemachine (~valuemach@216.15.114.90) has joined #html
+2019-07-02 21:52:36	 <<< 	Cheaplogic2 (~Cheaplogi@gateway/tor-sasl/cheaplogic) has quit (Remote host closed the connection)
+2019-07-02 22:16:36	 <<< 	plongshot (~shine@cpe-76-178-144-227.natnow.res.rr.com) has quit (Ping timeout: 272 seconds)
+2019-07-02 22:17:04	 <<< 	valuemachine (~valuemach@216.15.114.90) has quit (Read error: Connection reset by peer)
+2019-07-02 22:19:21	> 	plongshot (~shine@cpe-76-178-144-227.natnow.res.rr.com) has joined #html
+2019-07-02 22:22:37	> 	Chuguniy (~Chuguniy@80.232.218.96) has joined #html
+2019-07-02 22:23:52	> 	Jantz_ (~IceChat9@118-93-135-76.dsl.dyn.ihug.co.nz) has joined #html
+2019-07-02 22:25:47	 <<< 	Jantz_ (~IceChat9@118-93-135-76.dsl.dyn.ihug.co.nz) has quit (Client Quit)
+2019-07-02 22:25:52	 <<< 	Jantz (~IceChat9@2407:7000:8d04:100:3d4e:3a6:c522:18f9) has quit (Ping timeout: 264 seconds)
+2019-07-02 22:26:16	> 	Jantz (~IceChat9@118-93-135-76.dsl.dyn.ihug.co.nz) has joined #html
+2019-07-02 22:36:17	> 	AbedB__ (~AbedBhuty@bzq-79-180-26-149.red.bezeqint.net) has joined #html
+2019-07-02 22:37:12	> 	bray90820 (~bray90820@50-83-216-195.client.mchsi.com) has joined #html
+2019-07-02 22:38:41	 <<< 	AbedB_ (~AbedBhuty@bzq-79-178-4-134.red.bezeqint.net) has quit (Ping timeout: 248 seconds)
+2019-07-02 22:40:23	 <<< 	plongshot (~shine@cpe-76-178-144-227.natnow.res.rr.com) has quit (Read error: Connection reset by peer)
+2019-07-02 23:00:36	> 	WishBoy (~WishBoy@unaffiliated/wishboy) has joined #html
+2019-07-02 23:01:21	> 	gopar (~gopar@2601:647:4700:fd6d:8df8:51df:d7da:b130) has joined #html
+2019-07-02 23:04:32	> 	Deusdeorum (~Deusdeoru@unaffiliated/deusdeorum) has joined #html
+2019-07-02 23:05:37	 <<< 	gopar (~gopar@2601:647:4700:fd6d:8df8:51df:d7da:b130) has quit (Ping timeout: 250 seconds)
+2019-07-02 23:10:41	> 	valuemachine (~valuemach@216.15.114.90) has joined #html
+2019-07-02 23:12:04	 <<< 	patriick (patrick@gateway/shell/blinkenshell.org/x-ckwcbxjntflfwmkv) has quit (Ping timeout: 252 seconds)
+2019-07-02 23:16:17	 <<< 	z8z (~x@ac230029.ppp.asahi-net.or.jp) has quit (Ping timeout: 245 seconds)
+2019-07-02 23:36:23	 <<< 	cranq (~crank@107.161.164.124) has quit (Remote host closed the connection)
+2019-07-02 23:36:43	> 	cranq (~crank@107.161.164.124) has joined #html
+2019-07-02 23:41:29	 <<< 	valuemachine (~valuemach@216.15.114.90) has quit (Read error: Connection reset by peer)
+2019-07-02 23:42:50	 <<< 	WishBoy (~WishBoy@unaffiliated/wishboy) has quit
+2019-07-02 23:56:12	> 	z8z (~x@sp49-97-111-53.msc.spmode.ne.jp) has joined #html
+2019-07-03 00:15:53	> 	DieguezZ (~DieguezZ@unaffiliated/dieguezz) has joined #html
+2019-07-03 00:31:09	> 	jomofcw (~just@unaffiliated/jomofcw) has joined #html
+2019-07-03 00:33:56	> 	valuemachine (~valuemach@216.15.114.90) has joined #html
+2019-07-03 00:59:26	 <<< 	spossiba (~spossiba@unaffiliated/stryx/x-3871776) has quit (Read error: Connection reset by peer)
+2019-07-03 01:00:20	> 	spossiba (~spossiba@unaffiliated/stryx/x-3871776) has joined #html
+2019-07-03 01:04:35	 <<< 	valuemachine (~valuemach@216.15.114.90) has quit (Read error: Connection reset by peer)
+2019-07-03 01:05:20	 <<< 	^Cheeky (uid271104@gateway/web/irccloud.com/x-ndzqlpwuathnxxys) has quit (Quit: Connection closed for inactivity)
+2019-07-03 01:22:26	 - 	irc: disconnected from server
+2019-07-03 01:22:52	> 	_Raijin (~gideon@2603:3023:708:9c00::fb07) has joined #html
+2019-07-03 01:22:52	 - 	Topic for #html is "HyperText Markup Language | http://www.w3.org/TR/html5/ | #css for styling | No WYSIWYGs | Tables aren't for layout: http://xrl.us/kd35 , http://goo.gl/8yFKr | Validate first: http://validator.nu/ | HTML reference: say e.g. `html div | Paste links, not code: `paste"
+2019-07-03 01:22:52	 - 	Topic set by Visage on  
+2019-07-03 01:22:52	 - 	Channel #html: 156 nicks (0 ops, 0 voices, 156 normals)
+2019-07-03 01:22:52	 - 	URL for #html: http://diveintohtml5.info
+2019-07-03 01:22:52	 - 	Channel created on  
+2019-07-03 01:30:57	 <<< 	z8z (~x@sp49-97-111-53.msc.spmode.ne.jp) has quit (Ping timeout: 248 seconds)
+2019-07-03 01:58:18	> 	valuemachine (~valuemach@216.15.114.90) has joined #html
+2019-07-03 02:04:45	 <<< 	AbedB__ (~AbedBhuty@bzq-79-180-26-149.red.bezeqint.net) has quit (Read error: Connection reset by peer)
+2019-07-03 02:29:15	 <<< 	valuemachine (~valuemach@216.15.114.90) has quit (Read error: Connection reset by peer)
+2019-07-03 03:22:54	> 	valuemachine (~valuemach@216.15.114.90) has joined #html
+2019-07-03 03:46:02	> 	howdoi (uid224@gateway/web/irccloud.com/x-pakuhdckyptrkzgz) has joined #html
+2019-07-03 03:52:40	 <<< 	valuemachine (~valuemach@216.15.114.90) has quit (Read error: Connection reset by peer)
+2019-07-03 04:03:05	> 	atomicb0mb (~textual@191.181.156.226) has joined #html
+2019-07-03 04:08:12	 <<< 	atomicb0mb (~textual@191.181.156.226) has quit (Quit: My Mac has gone to sleep. ZZZzzz…)
+2019-07-03 04:18:22	> 	Jantz_ (~IceChat9@118-93-135-76.dsl.dyn.ihug.co.nz) has joined #html
+2019-07-03 04:19:51	> 	linarcx (~linarcx@151.242.164.153) has joined #html
+2019-07-03 04:21:24	 <<< 	Jantz (~IceChat9@118-93-135-76.dsl.dyn.ihug.co.nz) has quit (Ping timeout: 272 seconds)
+2019-07-03 04:25:25	> 	HarveyPwca (~HarveyPwc@99-89-221-139.lightspeed.cicril.sbcglobal.net) has joined #html
+2019-07-03 04:31:17	> 	atomicb0mb (~textual@191.181.156.226) has joined #html
+2019-07-03 04:35:19	 <<< 	linarcx (~linarcx@151.242.164.153) has quit (Quit: WeeChat 2.5)
+2019-07-03 04:37:50	 <<< 	atomicb0mb (~textual@191.181.156.226) has quit (Quit: My Mac has gone to sleep. ZZZzzz…)
+2019-07-03 04:46:33	> 	valuemachine (~valuemach@216.15.114.90) has joined #html
+2019-07-03 04:53:47	> 	ibispi (~quassel@188.246.35.178) has joined #html
+2019-07-03 05:00:29	> 	atomicb0mb (~textual@191.181.156.226) has joined #html
+2019-07-03 05:11:01	 <<< 	atomicb0mb (~textual@191.181.156.226) has quit (Quit: My Mac has gone to sleep. ZZZzzz…)
+2019-07-03 05:16:41	> 	atomicb0mb (~textual@191.181.156.226) has joined #html
+2019-07-03 05:16:56	> 	fission6 (~textual@static-71-190-247-20.nycmny.fios.verizon.net) has joined #html
+2019-07-03 05:16:58	 <<< 	valuemachine (~valuemach@216.15.114.90) has quit (Read error: Connection reset by peer)
+2019-07-03 05:18:06	 <<< 	atomicb0mb (~textual@191.181.156.226) has quit (Client Quit)
+2019-07-03 06:06:25	 <<< 	HarveyPwca (~HarveyPwc@99-89-221-139.lightspeed.cicril.sbcglobal.net) has quit (Quit: Leaving)
+2019-07-03 06:11:03	> 	valuemachine (~valuemach@216.15.114.90) has joined #html
+2019-07-03 06:41:28	 <<< 	valuemachine (~valuemach@216.15.114.90) has quit (Read error: Connection reset by peer)
+2019-07-03 07:00:39	> 	valuemachine (~valuemach@216.15.114.90) has joined #html
+2019-07-03 07:03:20	> 	jamiejackson (c7df1efe@gateway/web/cgi-irc/kiwiirc.com/ip.199.223.30.254) has joined #html
+2019-07-03 07:05:19	 <<< 	Chuguniy (~Chuguniy@80.232.218.96) has quit (Ping timeout: 244 seconds)
+2019-07-03 07:09:33	> 	HarveyPwca (~HarveyPwc@70-89-216-161-il.hfc.comcastbusiness.net) has joined #html
+2019-07-03 07:13:59	> 	Blue_Hat (~TwinKam20@72.27.195.29) has joined #html
+2019-07-03 07:32:21	> 	tradar (~tradar@gateway/tor-sasl/tradar) has joined #html
+2019-07-03 07:34:36	 <<< 	Deusdeorum (~Deusdeoru@unaffiliated/deusdeorum) has quit (Quit: Textual IRC Client: www.textualapp.com)
+2019-07-03 07:36:10	 <<< 	gde33 (~gde33@84-106-24-118.cable.dynamic.v4.ziggo.nl) has quit (Read error: Connection reset by peer)
+2019-07-03 07:37:22	> 	gde33 (~gde33@84-106-24-118.cable.dynamic.v4.ziggo.nl) has joined #html
+2019-07-03 07:42:04	> 	Chuguniy (~Chuguniy@81.198.119.169) has joined #html
+2019-07-03 07:46:40	> 	AbedB (~AbedBhuty@bzq-79-181-49-240.red.bezeqint.net) has joined #html
+2019-07-03 08:01:07	 <<< 	valuemachine (~valuemach@216.15.114.90) has quit (Read error: Connection reset by peer)
+2019-07-03 08:04:58	 <<< 	jamiejackson (c7df1efe@gateway/web/cgi-irc/kiwiirc.com/ip.199.223.30.254) has quit (Ping timeout: 272 seconds)
+2019-07-03 08:21:10	> 	czart (~czart@abzx186.neoplus.adsl.tpnet.pl) has joined #html
+2019-07-03 08:23:58	 <<< 	Chuguniy (~Chuguniy@81.198.119.169) has quit (Ping timeout: 272 seconds)
+2019-07-03 08:36:52	> 	valuemachine (~valuemach@216.15.114.90) has joined #html
+2019-07-03 08:41:00	 <<< 	fission6 (~textual@static-71-190-247-20.nycmny.fios.verizon.net) has quit (Quit: Textual IRC Client: www.textualapp.com)
+2019-07-03 08:55:00	> 	U4IC (~U4IC@110.92-220-209.customer.lyse.net) has joined #html
+2019-07-03 09:03:40	 <<< 	tradar (~tradar@gateway/tor-sasl/tradar) has quit (Quit: tradar)
+2019-07-03 09:06:35	 <<< 	valuemachine (~valuemach@216.15.114.90) has quit (Read error: Connection reset by peer)
+2019-07-03 09:20:06	 <<< 	AbedB (~AbedBhuty@bzq-79-181-49-240.red.bezeqint.net) has quit (Read error: Connection reset by peer)
+2019-07-03 09:21:28	 <<< 	jomofcw (~just@unaffiliated/jomofcw) has quit
+2019-07-03 09:22:58	 - 	Gokturk-Away is now known as justme23
+2019-07-03 09:23:17	 - 	justme23 is now known as Gokturk-Away
+2019-07-03 09:33:21	 <<< 	ivanf (~ivan@unaffiliated/kferdous) has quit (Quit: My MacBook has gone to sleep. ZZZzzz…)
+2019-07-03 09:43:10	 <<< 	Spr0cket (sprocket@gateway/shell/xzibition.com/x-honzdmivxtmsoztg) has quit (Read error: Connection reset by peer)
+2019-07-03 09:43:31	> 	prosta_vapse (~TR00@85.210.129.156) has joined #html
+2019-07-03 09:43:46	> 	Spr0cket (sprocket@gateway/shell/xzibition.com/x-cyorpifrhlgxdyth) has joined #html
+2019-07-03 09:43:46	 <<< 	Spr0cket (sprocket@gateway/shell/xzibition.com/x-cyorpifrhlgxdyth) has quit (Changing host)
+2019-07-03 09:43:46	> 	Spr0cket (sprocket@unaffiliated/spr0cket) has joined #html
+2019-07-03 09:43:46	 <<< 	Spr0cket (sprocket@unaffiliated/spr0cket) has quit (Changing host)
+2019-07-03 09:43:46	> 	Spr0cket (sprocket@gateway/shell/xzibition.com/x-cyorpifrhlgxdyth) has joined #html
+2019-07-03 09:45:15	 <<< 	howdoi (uid224@gateway/web/irccloud.com/x-pakuhdckyptrkzgz) has quit (Quit: Connection closed for inactivity)
+2019-07-03 09:46:46	 <<< 	Spr0cket (sprocket@gateway/shell/xzibition.com/x-cyorpifrhlgxdyth) has quit (Client Quit)
+2019-07-03 09:50:11	> 	Spr0cket (sprocket@gateway/shell/xzibition.com/x-nwxewexfsosdbiuy) has joined #html
+2019-07-03 09:50:11	 <<< 	Spr0cket (sprocket@gateway/shell/xzibition.com/x-nwxewexfsosdbiuy) has quit (Changing host)
+2019-07-03 09:50:11	> 	Spr0cket (sprocket@unaffiliated/spr0cket) has joined #html
+2019-07-03 09:50:11	 <<< 	Spr0cket (sprocket@unaffiliated/spr0cket) has quit (Changing host)
+2019-07-03 09:50:11	> 	Spr0cket (sprocket@gateway/shell/xzibition.com/x-nwxewexfsosdbiuy) has joined #html
+2019-07-03 10:01:28	 <<< 	HarveyPwca (~HarveyPwc@70-89-216-161-il.hfc.comcastbusiness.net) has quit (Quit: Leaving)
+2019-07-03 10:01:33	> 	valuemachine (~valuemach@216.15.114.90) has joined #html
+2019-07-03 10:08:40	> 	fission6 (~textual@static-71-190-247-20.nycmny.fios.verizon.net) has joined #html
+2019-07-03 10:13:14	> 	s3nd1v0g1us (~patr0clus@unaffiliated/patr0clus) has joined #html
+2019-07-03 10:20:51	> 	Dave_Elec (~Dave@196.188.72.247) has joined #html
+2019-07-03 10:30:49	 <<< 	valuemachine (~valuemach@216.15.114.90) has quit (Read error: Connection reset by peer)
+2019-07-03 10:40:21	> 	valuemachine (~valuemach@216.15.114.90) has joined #html
+2019-07-03 10:41:24	 <<< 	TViernion (~TViernion@wsip-207-162-134-107.tu.ok.cox.net) has quit (Quit: So long and thanks for all the fish!)
+2019-07-03 10:41:59	> 	renn0xtk9 (~max@2a02:810d:1540:6ba6:8556:646f:db2d:1d0b) has joined #html
+2019-07-03 10:43:41	> 	AbedB (~AbedBhuty@bzq-79-181-49-240.red.bezeqint.net) has joined #html
+2019-07-03 10:44:17	> 	TViernion (~TViernion@wsip-207-162-134-107.tu.ok.cox.net) has joined #html
+2019-07-03 10:58:39	> 	gopar (~gopar@184-23-219-98.dedicated.static.sonic.net) has joined #html
+2019-07-03 10:59:05	 <<< 	s3nd1v0g1us (~patr0clus@unaffiliated/patr0clus) has quit (Quit: WeeChat 2.4)
+2019-07-03 10:59:35	 <<< 	fission6 (~textual@static-71-190-247-20.nycmny.fios.verizon.net) has quit (Quit: My MacBook has gone to sleep. ZZZzzz…)
+2019-07-03 11:00:53	> 	fission6 (~textual@static-71-190-247-20.nycmny.fios.verizon.net) has joined #html
+2019-07-03 11:29:22	> 	plexigras (plexigras@gateway/vpn/privateinternetaccess/plexigras) has joined #html
+2019-07-03 11:38:50	 <<< 	AbedB (~AbedBhuty@bzq-79-181-49-240.red.bezeqint.net) has quit (Read error: Connection reset by peer)
+2019-07-03 11:43:23	 <<< 	Blue_Hat (~TwinKam20@72.27.195.29) has quit (Ping timeout: 245 seconds)
+2019-07-03 11:49:13	> 	usney (~usney@2600:1700:b4d1:a8a0:8d1a:633b:e8c2:64e0) has joined #html
+2019-07-03 11:52:14	 <<< 	fission6 (~textual@static-71-190-247-20.nycmny.fios.verizon.net) has quit (Quit: My MacBook has gone to sleep. ZZZzzz…)
+2019-07-03 11:53:43	> 	fission6 (~textual@static-71-190-247-20.nycmny.fios.verizon.net) has joined #html
+2019-07-03 12:04:37	 <<< 	fission6 (~textual@static-71-190-247-20.nycmny.fios.verizon.net) has quit (Quit: My MacBook has gone to sleep. ZZZzzz…)
+2019-07-03 12:10:10	> 	fission6 (~textual@static-71-190-247-20.nycmny.fios.verizon.net) has joined #html
+2019-07-03 12:20:49	 <<< 	usney (~usney@2600:1700:b4d1:a8a0:8d1a:633b:e8c2:64e0) has quit (Remote host closed the connection)
+2019-07-03 12:23:00	> 	AbedB (~AbedBhuty@bzq-79-181-49-240.red.bezeqint.net) has joined #html
+2019-07-03 12:23:27	 <<< 	czart (~czart@abzx186.neoplus.adsl.tpnet.pl) has quit (Read error: Connection reset by peer)
+2019-07-03 12:40:27	 <<< 	fission6 (~textual@static-71-190-247-20.nycmny.fios.verizon.net) has quit (Quit: My MacBook has gone to sleep. ZZZzzz…)
+2019-07-03 13:06:54	> 	fission6 (~textual@static-71-190-247-20.nycmny.fios.verizon.net) has joined #html
+2019-07-03 13:15:06	 <<< 	gde33 (~gde33@84-106-24-118.cable.dynamic.v4.ziggo.nl) has quit (Ping timeout: 258 seconds)
+2019-07-03 13:15:36	> 	gde33 (~gde33@84-106-24-118.cable.dynamic.v4.ziggo.nl) has joined #html
+2019-07-03 13:30:10	 <<< 	fission6 (~textual@static-71-190-247-20.nycmny.fios.verizon.net) has quit (Quit: My MacBook has gone to sleep. ZZZzzz…)
+2019-07-03 13:32:56	 <<< 	U4IC (~U4IC@110.92-220-209.customer.lyse.net) has quit (Quit: www.majorfuckface.com <- Yo let's GO)
+2019-07-03 13:34:42	 <<< 	ibispi (~quassel@188.246.35.178) has quit (Read error: Connection reset by peer)
+2019-07-03 13:44:16	> 	Slartibart (~kvirc@c-dafdd954.217486-0-69706f6e6c79.bbcust.telenor.se) has joined #html
+2019-07-03 13:55:12	> 	atomicb0mb (~textual@191.181.156.226) has joined #html
+2019-07-03 13:57:01	 <<< 	atomicb0mb (~textual@191.181.156.226) has quit (Read error: Connection reset by peer)
+2019-07-03 14:24:40	 <<< 	Slartibart (~kvirc@c-dafdd954.217486-0-69706f6e6c79.bbcust.telenor.se) has quit (Quit: KVIrc 5.0.0 Aria http://www.kvirc.net/)
+2019-07-03 14:43:56	> 	sgt_chuckles (~adempus@static-71-105-222-50.nycmny.fios.verizon.net) has joined #html
+2019-07-03 14:45:15	sgt_chuckles	How do I make HTML canvas responsive to different screen sizes?
+2019-07-03 14:46:19	bin_bash	092520 <stennowork> canvas { width: 100vw; height: 100vh }
+2019-07-03 14:49:50	bin_bash	sgt_chuckles: what makes you think the answer now wouldbe different than before
+2019-07-03 15:14:49	> 	z8z (~x@ac230029.ppp.asahi-net.or.jp) has joined #html
+2019-07-03 15:18:09	 <<< 	sgt_chuckles (~adempus@static-71-105-222-50.nycmny.fios.verizon.net) has quit (Remote host closed the connection)
+2019-07-03 15:36:35	 <<< 	renn0xtk9 (~max@2a02:810d:1540:6ba6:8556:646f:db2d:1d0b) has quit (Quit: Konversation terminated!)
+2019-07-03 15:42:18	 <<< 	plexigras (plexigras@gateway/vpn/privateinternetaccess/plexigras) has quit (Ping timeout: 258 seconds)
+2019-07-03 16:01:47	> 	Suchorski (~regex@unaffiliated/suchorski) has joined #html
+2019-07-03 16:02:50	 <<< 	Suchorski (~regex@unaffiliated/suchorski) has quit (Client Quit)
+2019-07-03 16:10:55	 <<< 	eblip (~eblip@unaffiliated/eblip) has quit (Ping timeout: 244 seconds)
+2019-07-03 16:28:54	> 	eblip (~eblip@unaffiliated/eblip) has joined #html
+2019-07-03 16:39:43	 <<< 	z8z (~x@ac230029.ppp.asahi-net.or.jp) has quit (Quit: Quitting)
+2019-07-03 16:53:36	 <<< 	Jantz_ (~IceChat9@118-93-135-76.dsl.dyn.ihug.co.nz) has quit (Ping timeout: 258 seconds)
+2019-07-03 17:01:06	 <<< 	de-facto (~de-facto@gateway/tor-sasl/de-facto) has quit (Quit: See you around.)
+2019-07-03 17:01:19	> 	de-facto (~de-facto@gateway/tor-sasl/de-facto) has joined #html
+2019-07-03 17:25:57	> 	z8z (~x@ac230029.ppp.asahi-net.or.jp) has joined #html
+2019-07-03 17:49:59	 <<< 	gopar (~gopar@184-23-219-98.dedicated.static.sonic.net) has quit (Remote host closed the connection)
+2019-07-03 18:00:01	> 	Galaxies (~L-o-r-d@159.65.72.204) has joined #html
+2019-07-03 18:02:54	 <<< 	Galaxies (~L-o-r-d@159.65.72.204) has quit (Remote host closed the connection)
+2019-07-03 18:15:03	 <<< 	NwS (~NwS@unaffiliated/nws) has quit (Read error: Connection reset by peer)
+2019-07-03 18:15:33	> 	NwS (~NwS@unaffiliated/nws) has joined #html
+2019-07-03 18:17:13	 <<< 	gde33 (~gde33@84-106-24-118.cable.dynamic.v4.ziggo.nl) has quit (Read error: Connection reset by peer)
+2019-07-03 18:25:01	> 	gopar (~gopar@2601:647:4700:fd6d:c80a:7b0d:a6d5:65de) has joined #html
+2019-07-03 18:29:38	 <<< 	gopar (~gopar@2601:647:4700:fd6d:c80a:7b0d:a6d5:65de) has quit (Ping timeout: 252 seconds)
+2019-07-03 18:34:31	 <<< 	prosta_vapse (~TR00@85.210.129.156) has quit (Quit: DAVAJ_UZE!!)
+2019-07-03 18:35:10	> 	Jantz (~IceChat9@2407:7000:8d04:100:33:eb1c:d84b:ac61) has joined #html
+2019-07-03 18:36:12	> 	gde33 (~gde33@84-106-24-118.cable.dynamic.v4.ziggo.nl) has joined #html
+2019-07-03 18:36:44	 <<< 	valuemachine (~valuemach@216.15.114.90) has quit (Remote host closed the connection)
+2019-07-03 18:37:12	> 	valuemachine (~valuemach@216.15.114.90) has joined #html
+2019-07-03 19:38:02	 <<< 	valuemachine (~valuemach@216.15.114.90) has quit (Read error: Connection reset by peer)
+2019-07-03 19:38:36	> 	valuemachine (~valuemach@216.15.114.90) has joined #html
+2019-07-03 19:44:52	 <<< 	valuemachine (~valuemach@216.15.114.90) has quit (Remote host closed the connection)
+2019-07-03 19:46:38	> 	valuemachine (~valuemach@216.15.114.90) has joined #html
+2019-07-03 19:47:40	 <<< 	de-facto (~de-facto@gateway/tor-sasl/de-facto) has quit (Ping timeout: 260 seconds)
+2019-07-03 19:49:37	> 	de-facto (~de-facto@gateway/tor-sasl/de-facto) has joined #html
+2019-07-03 20:00:01	> 	^Cheeky (uid271104@gateway/web/irccloud.com/x-rulzbzvnvkjwtvzy) has joined #html
+2019-07-03 20:09:06	 <<< 	eblip (~eblip@unaffiliated/eblip) has quit (Quit: WeeChat 1.6)
+2019-07-03 20:16:59	> 	eblip (~eblip@unaffiliated/eblip) has joined #html
+2019-07-03 20:24:04	 <<< 	valuemachine (~valuemach@216.15.114.90) has quit (Remote host closed the connection)
+2019-07-03 20:31:02	> 	valuemachine (~valuemach@216.15.114.90) has joined #html
+2019-07-03 20:42:57	 <<< 	valuemachine (~valuemach@216.15.114.90) has quit (Remote host closed the connection)
+2019-07-03 20:47:13	> 	valuemachine (~valuemach@216.15.114.90) has joined #html
+2019-07-03 20:52:29	 <<< 	valuemachine (~valuemach@216.15.114.90) has quit (Ping timeout: 268 seconds)
+2019-07-03 21:04:13	 <<< 	z8z (~x@ac230029.ppp.asahi-net.or.jp) has quit (Quit: Quitting)
+2019-07-03 21:15:39	> 	gopar (~gopar@2601:647:4700:fd6d:c80a:7b0d:a6d5:65de) has joined #html
+2019-07-03 21:16:54	 <<< 	BoneTone (~BoneTone@unaffiliated/bonetone) has quit (Quit: What's this button do?)
+2019-07-03 21:20:52	 <<< 	gopar (~gopar@2601:647:4700:fd6d:c80a:7b0d:a6d5:65de) has quit (Ping timeout: 276 seconds)
+2019-07-03 21:26:05	> 	valuemachine (~valuemach@216.15.114.90) has joined #html
+2019-07-03 22:00:20	> 	BoneTone (~BoneTone@unaffiliated/bonetone) has joined #html
+2019-07-03 22:09:50	 <<< 	Dave_Elec (~Dave@196.188.72.247) has quit (Ping timeout: 272 seconds)
+2019-07-03 22:29:57	> 	Dave_Elec (~Dave@196.188.72.247) has joined #html
+2019-07-03 22:31:18	 <<< 	Jantz (~IceChat9@2407:7000:8d04:100:33:eb1c:d84b:ac61) has quit (Ping timeout: 252 seconds)
+2019-07-03 22:38:43	 <<< 	valuemachine (~valuemach@216.15.114.90) has quit (Remote host closed the connection)
+2019-07-03 22:42:48	> 	valuemachine (~valuemach@216.15.114.90) has joined #html
+2019-07-03 22:45:52	> 	howdoi (uid224@gateway/web/irccloud.com/x-uejwlrfnmbvwqcga) has joined #html
+2019-07-03 22:47:48	 <<< 	valuemachine (~valuemach@216.15.114.90) has quit (Ping timeout: 268 seconds)
+2019-07-03 23:22:00	> 	valuemachine (~valuemach@216.15.114.90) has joined #html
+2019-07-03 23:25:02	 <<< 	zampano (~zampano@unaffiliated/zampano) has quit (Ping timeout: 245 seconds)
+2019-07-03 23:36:50	> 	Deusdeorum (~Deusdeoru@unaffiliated/deusdeorum) has joined #html
+2019-07-03 23:39:26	 <<< 	^Cheeky (uid271104@gateway/web/irccloud.com/x-rulzbzvnvkjwtvzy) has quit (Quit: Connection closed for inactivity)
+2019-07-03 23:52:19	 <<< 	valuemachine (~valuemach@216.15.114.90) has quit (Read error: Connection reset by peer)
+2019-07-04 00:04:52	 <<< 	rivvles (~riven@pdpc/supporter/professional/riven) has quit (Ping timeout: 246 seconds)
+2019-07-04 00:05:53	 <<< 	lilmonkey` (~lilmonkey@pdpc/supporter/professional/riven) has quit (Ping timeout: 245 seconds)
+2019-07-04 00:06:53	> 	Chuguniy (~Chuguniy@80.232.218.96) has joined #html
+2019-07-04 00:09:51	> 	lilmonkey` (~lilmonkey@pdpc/supporter/professional/riven) has joined #html
+2019-07-04 00:10:03	> 	jomofcw (~just@unaffiliated/jomofcw) has joined #html
+2019-07-04 00:12:34	 <<< 	Dave_Elec (~Dave@196.188.72.247) has quit (Ping timeout: 246 seconds)
+2019-07-04 00:16:26	> 	lilmonkey`` (~lilmonkey@pdpc/supporter/professional/riven) has joined #html
+2019-07-04 00:20:56	 <<< 	lilmonkey` (~lilmonkey@pdpc/supporter/professional/riven) has quit (Ping timeout: 272 seconds)
+2019-07-04 00:37:49	> 	Dave_Elec (~Dave@196.188.72.247) has joined #html
+2019-07-04 00:46:14	> 	valuemachine (~valuemach@216.15.114.90) has joined #html
+2019-07-04 00:54:38	 <<< 	Dave_Elec (~Dave@196.188.72.247) has quit (Ping timeout: 245 seconds)
+2019-07-04 00:58:38	> 	Dave_Elec (~Dave@196.188.72.247) has joined #html
+2019-07-04 01:02:55	> 	systemovich (~geoffrey@105.27.199.166) has joined #html
+2019-07-04 01:16:13	 <<< 	valuemachine (~valuemach@216.15.114.90) has quit (Read error: Connection reset by peer)
+2019-07-04 01:17:33	 <<< 	gde33 (~gde33@84-106-24-118.cable.dynamic.v4.ziggo.nl) has quit (Ping timeout: 244 seconds)
+2019-07-04 01:17:50	> 	asamoshkin (~asamoshki@109.86.193.75) has joined #html
+2019-07-04 01:17:54	 <<< 	asamoshkin (~asamoshki@109.86.193.75) has quit (Remote host closed the connection)
+2019-07-04 01:19:41	> 	gde33 (~gde33@84-106-24-118.cable.dynamic.v4.ziggo.nl) has joined #html
+2019-07-04 01:50:56	> 	ibispi (~quassel@188.246.35.178) has joined #html
+2019-07-04 02:05:15	 <<< 	howdoi (uid224@gateway/web/irccloud.com/x-uejwlrfnmbvwqcga) has quit (Quit: Connection closed for inactivity)
+2019-07-04 02:10:41	> 	valuemachine (~valuemach@216.15.114.90) has joined #html
+2019-07-04 02:23:01	 <<< 	Dave_Elec (~Dave@196.188.72.247) has quit (Ping timeout: 268 seconds)
+2019-07-04 02:35:48	> 	Dave_Elec (~Dave@196.188.72.247) has joined #html
+2019-07-04 02:38:24	> 	stennowork (~stenno@unaffiliated/chao) has joined #html
+2019-07-04 02:40:15	 <<< 	valuemachine (~valuemach@216.15.114.90) has quit (Read error: Connection reset by peer)
+2019-07-04 02:51:13	> 	linarcx (~linarcx@151.242.164.153) has joined #html
+2019-07-04 02:57:30	 <<< 	BoneTone (~BoneTone@unaffiliated/bonetone) has quit (Quit: What's this button do?)
+2019-07-04 03:34:00	> 	valuemachine (~valuemach@216.15.114.90) has joined #html
+2019-07-04 03:53:48	 <<< 	Secret-Fire (~Secret-Fi@71-34-100-101.ptld.qwest.net) has quit (Read error: Connection reset by peer)
+2019-07-04 03:54:10	> 	Secret-Fire (~Secret-Fi@71-34-100-101.ptld.qwest.net) has joined #html
+2019-07-04 04:04:16	 <<< 	valuemachine (~valuemach@216.15.114.90) has quit (Read error: Connection reset by peer)
+2019-07-04 04:46:58	 <<< 	AbedB (~AbedBhuty@bzq-79-181-49-240.red.bezeqint.net) has quit (Read error: Connection reset by peer)
+2019-07-04 04:58:23	> 	valuemachine (~valuemach@216.15.114.90) has joined #html
+2019-07-04 05:07:02	> 	BoneTone (~BoneTone@unaffiliated/bonetone) has joined #html
+2019-07-04 05:28:42	 <<< 	valuemachine (~valuemach@216.15.114.90) has quit (Read error: Connection reset by peer)
+2019-07-04 06:03:22	 <<< 	Dave_Elec (~Dave@196.188.72.247) has quit (Ping timeout: 245 seconds)
+2019-07-04 06:11:52	> 	Dave_Elec (~Dave@196.188.72.247) has joined #html
+2019-07-04 06:12:40	 <<< 	Dominionionion (~Dominioni@97.101.6.58) has quit (Remote host closed the connection)
+2019-07-04 06:23:14	> 	valuemachine (~valuemach@216.15.114.90) has joined #html
+2019-07-04 06:29:37	 <<< 	Dave_Elec (~Dave@196.188.72.247) has quit (Ping timeout: 245 seconds)
+2019-07-04 06:38:19	> 	Dave_Elec (~Dave@196.188.72.247) has joined #html
+2019-07-04 06:52:53	 <<< 	valuemachine (~valuemach@216.15.114.90) has quit (Read error: Connection reset by peer)
+2019-07-04 07:01:22	> 	valuemachine (~valuemach@216.15.114.90) has joined #html
+2019-07-04 07:03:04	> 	zampano (~zampano@unaffiliated/zampano) has joined #html
+2019-07-04 07:13:22	 <<< 	opsec (~opsec@opsec/opsec) has quit (Ping timeout: 245 seconds)
+2019-07-04 07:19:38	 <<< 	systemovich (~geoffrey@105.27.199.166) has quit (Ping timeout: 268 seconds)
+2019-07-04 07:25:53	 <<< 	Dave_Elec (~Dave@196.188.72.247) has quit (Ping timeout: 245 seconds)
+2019-07-04 07:26:52	> 	opsec (~opsec@opsec/opsec) has joined #html
+2019-07-04 07:27:48	> 	Dave_Elec (~Dave@196.188.72.247) has joined #html
+2019-07-04 07:44:41	> 	gareppa (~gareppa@unaffiliated/gareppa) has joined #html
+2019-07-04 07:46:21	 <<< 	gareppa (~gareppa@unaffiliated/gareppa) has quit (Remote host closed the connection)
+2019-07-04 07:47:55	 <<< 	Deusdeorum (~Deusdeoru@unaffiliated/deusdeorum) has quit (Quit: Textual IRC Client: www.textualapp.com)
+2019-07-04 07:54:07	> 	WishBoy (~WishBoy@unaffiliated/wishboy) has joined #html
+2019-07-04 08:00:57	 <<< 	valuemachine (~valuemach@216.15.114.90) has quit (Read error: Connection reset by peer)
+2019-07-04 08:09:58	> 	systemovich (~geoffrey@105.27.199.166) has joined #html
+2019-07-04 08:15:52	> 	Blue_Hat (~TwinKam20@216.10.217.203) has joined #html
+2019-07-04 08:24:26	 <<< 	Dave_Elec (~Dave@196.188.72.247) has quit (Remote host closed the connection)
+2019-07-04 08:37:32	 <<< 	linarcx (~linarcx@151.242.164.153) has quit (Quit: WeeChat 2.5)
+2019-07-04 08:41:21	> 	gareppa (~gareppa@unaffiliated/gareppa) has joined #html
+2019-07-04 08:45:35	> 	def_jam (~eblip@unaffiliated/eblip) has joined #html
+2019-07-04 08:46:09	 <<< 	eblip (~eblip@unaffiliated/eblip) has quit (Ping timeout: 248 seconds)
+2019-07-04 08:46:17	 <<< 	eb0t (~eblip@unaffiliated/eblip) has quit (Ping timeout: 245 seconds)
+2019-07-04 08:46:21	> 	eb0t_ (~eblip@unaffiliated/eblip) has joined #html
+2019-07-04 08:46:57	> 	valuemachine (~valuemach@216.15.114.90) has joined #html
+2019-07-04 08:50:25	 <<< 	systemovich (~geoffrey@105.27.199.166) has quit (Ping timeout: 248 seconds)
+2019-07-04 08:53:12	 <<< 	D-melanogaster (~D-melanog@212.90.58.216) has quit (Remote host closed the connection)
+2019-07-04 08:53:29	> 	D-melanogaster (~D-melanog@212.90.58.216) has joined #html
+2019-07-04 08:54:15	> 	Dave_Elec (~Dave@196.188.72.247) has joined #html
+2019-07-04 08:55:21	 <<< 	gareppa (~gareppa@unaffiliated/gareppa) has quit (Quit: Leaving)
+2019-07-04 09:02:28	 <<< 	Chuguniy (~Chuguniy@80.232.218.96) has quit (Ping timeout: 246 seconds)
+2019-07-04 09:16:31	> 	AbedB (~AbedBhuty@bzq-79-181-49-240.red.bezeqint.net) has joined #html
+2019-07-04 09:17:11	 <<< 	AbedB (~AbedBhuty@bzq-79-181-49-240.red.bezeqint.net) has quit (Read error: Connection reset by peer)
+2019-07-04 09:17:20	 <<< 	valuemachine (~valuemach@216.15.114.90) has quit (Read error: Connection reset by peer)
+2019-07-04 09:18:52	> 	czart (~czart@accb252.neoplus.adsl.tpnet.pl) has joined #html
+2019-07-04 09:23:58	 <<< 	jomofcw (~just@unaffiliated/jomofcw) has quit
+2019-07-04 09:31:05	 <<< 	Blue_Hat (~TwinKam20@216.10.217.203) has quit (Remote host closed the connection)
+2019-07-04 09:33:25	> 	tradar (~tradar@gateway/tor-sasl/tradar) has joined #html
+2019-07-04 09:45:42	 <<< 	stennowork (~stenno@unaffiliated/chao) has quit (Quit: Leaving)
+2019-07-04 09:52:53	> 	systemovich (~geoffrey@197.89.181.193) has joined #html
+2019-07-04 10:18:03	 <<< 	tradar (~tradar@gateway/tor-sasl/tradar) has quit (Quit: tradar)
+2019-07-04 10:23:42	> 	renn0xtk9 (~max@2a02:810d:1540:6ba6:7967:e181:78b7:3ae3) has joined #html
+2019-07-04 10:32:01	> 	prosta_vapse (~TR00@host-78-149-192-164.as13285.net) has joined #html
+2019-07-04 10:34:32	> 	plexigras (plexigras@gateway/vpn/privateinternetaccess/plexigras) has joined #html
+2019-07-04 10:35:02	> 	imposter__ (uid57046@gateway/web/irccloud.com/x-ajkjlgsvwlgfgwsp) has joined #html
+2019-07-04 10:45:58	> 	linarcx (~linarcx@151.242.164.153) has joined #html
+2019-07-04 12:00:51	> 	gopar (~gopar@2601:647:4700:fd6d:b003:b486:bebb:f5b4) has joined #html
+2019-07-04 12:04:52	 <<< 	de-facto (~de-facto@gateway/tor-sasl/de-facto) has quit (Ping timeout: 260 seconds)
+2019-07-04 12:06:01	> 	NeXTSUN (~textual@185.244.215.156) has joined #html
+2019-07-04 12:06:23	 <<< 	gopar (~gopar@2601:647:4700:fd6d:b003:b486:bebb:f5b4) has quit
+2019-07-04 12:07:25	> 	z|bandito (~willi@2601:1c0:4202:9758:82b:7427:f0cc:6cd2) has joined #html
+2019-07-04 12:08:32	 <<< 	z|bandito (~willi@2601:1c0:4202:9758:82b:7427:f0cc:6cd2) has quit (Remote host closed the connection)
+2019-07-04 12:12:28	> 	de-facto (~de-facto@gateway/tor-sasl/de-facto) has joined #html
+2019-07-04 12:20:58	> 	melanogaster-lar (~D-melanog@212.90.58.216) has joined #html
+2019-07-04 12:23:22	 <<< 	D-melanogaster (~D-melanog@212.90.58.216) has quit (Ping timeout: 245 seconds)
+2019-07-04 12:26:00	 <<< 	czart (~czart@accb252.neoplus.adsl.tpnet.pl) has quit (Read error: Connection reset by peer)
+2019-07-04 12:36:28	> 	z|bandito (~willi@2601:1c0:4202:9758:82b:7427:f0cc:6cd2) has joined #html
+2019-07-04 12:42:36	> 	valuemachine (~valuemach@047-014-026-151.res.spectrum.com) has joined #html
+2019-07-04 12:44:43	 - 	eb0t_ is now known as eb0t
+2019-07-04 12:48:54	> 	a-ja (~aja@99-165-110-64.lightspeed.stlsmo.sbcglobal.net) has joined #html
+2019-07-04 12:52:58	 - 	def_jam is now known as eblip
+2019-07-04 13:00:55	> 	AbedB (~AbedBhuty@bzq-79-181-49-240.red.bezeqint.net) has joined #html
+2019-07-04 13:06:07	> 	oxguy3 (~oxguy3@wikimedia/IagoQnsi) has joined #html
+2019-07-04 13:07:21	> 	U4IC (~U4IC@110.92-220-209.customer.lyse.net) has joined #html
+2019-07-04 13:07:33	 <<< 	oxguy3 (~oxguy3@wikimedia/IagoQnsi) has quit (Client Quit)
+2019-07-04 13:08:40	> 	oxguy3 (~oxguy3@wikimedia/IagoQnsi) has joined #html
+2019-07-04 13:12:31	 <<< 	oxguy3 (~oxguy3@wikimedia/IagoQnsi) has quit (Client Quit)
+2019-07-04 13:21:43	 <<< 	gde33 (~gde33@84-106-24-118.cable.dynamic.v4.ziggo.nl) has quit (Ping timeout: 245 seconds)
+2019-07-04 13:22:50	> 	gde33 (~gde33@84-106-24-118.cable.dynamic.v4.ziggo.nl) has joined #html
+2019-07-04 13:29:45	 <<< 	U4IC (~U4IC@110.92-220-209.customer.lyse.net) has quit (Quit: www.majorfuckface.com <- Yo let's GO)
+2019-07-04 13:35:01	 <<< 	bokchoy (~quassel@n0r.co) has quit (Quit: http://quassel-irc.org - Chat comfortably. Anywhere.)
+2019-07-04 13:35:16	 <<< 	AbedB (~AbedBhuty@bzq-79-181-49-240.red.bezeqint.net) has quit (Read error: Connection reset by peer)
+2019-07-04 13:35:19	> 	bokchoy (~quassel@n0r.co) has joined #html
+2019-07-04 13:36:08	 <<< 	valuemachine (~valuemach@047-014-026-151.res.spectrum.com) has quit (Remote host closed the connection)
+2019-07-04 13:36:44	> 	valuemachine (~valuemach@047-014-026-151.res.spectrum.com) has joined #html
+2019-07-04 13:37:47	 <<< 	valuemachine (~valuemach@047-014-026-151.res.spectrum.com) has quit (Remote host closed the connection)
+2019-07-04 13:38:21	> 	valuemachine (~valuemach@047-014-026-151.res.spectrum.com) has joined #html
+2019-07-04 13:42:35	 <<< 	valuemachine (~valuemach@047-014-026-151.res.spectrum.com) has quit (Ping timeout: 244 seconds)
+2019-07-04 13:46:10	> 	TheFuzzball (~TheFuzzba@62.208.39.95) has joined #html
+2019-07-04 13:53:57	 <<< 	imposter__ (uid57046@gateway/web/irccloud.com/x-ajkjlgsvwlgfgwsp) has quit (Quit: Connection closed for inactivity)
+2019-07-04 14:08:19	> 	valuemachine (~valuemach@047-014-026-151.res.spectrum.com) has joined #html
+2019-07-04 14:11:07	 <<< 	linarcx (~linarcx@151.242.164.153) has quit (Quit: WeeChat 2.5)
+2019-07-04 14:17:09	 <<< 	melanogaster-lar (~D-melanog@212.90.58.216) has quit (Remote host closed the connection)
+2019-07-04 14:17:27	> 	melanogaster-lar (~D-melanog@212.90.58.216) has joined #html
+2019-07-04 14:26:57	 <<< 	valuemachine (~valuemach@047-014-026-151.res.spectrum.com) has quit (Remote host closed the connection)
+2019-07-04 14:30:45	 <<< 	NeXTSUN (~textual@185.244.215.156) has quit (Quit: Textual IRC Client: www.textualapp.com)
+2019-07-04 14:43:07	 <<< 	ibispi (~quassel@188.246.35.178) has quit (Remote host closed the connection)
+2019-07-04 14:53:59	 <<< 	TheFuzzball (~TheFuzzba@62.208.39.95) has quit (Quit: My MacBook has gone to sleep. ZZZzzz…)
+2019-07-04 14:54:56	 <<< 	plexigras (plexigras@gateway/vpn/privateinternetaccess/plexigras) has quit (Ping timeout: 272 seconds)
+2019-07-04 15:16:51	 <<< 	coffee (~coffee@coffeetales.net) has quit (Quit: WeeChat 2.2)
+2019-07-04 15:18:28	> 	coffee (~coffee@coffeetales.net) has joined #html
+2019-07-04 15:27:56	 <<< 	renn0xtk9 (~max@2a02:810d:1540:6ba6:7967:e181:78b7:3ae3) has quit (Quit: Konversation terminated!)
+2019-07-04 15:42:48	> 	basteh (~basteh@unaffiliated/basteh) has joined #html
+2019-07-04 15:50:30	> 	valuemachine (~valuemach@047-014-026-151.res.spectrum.com) has joined #html
+2019-07-04 16:10:03	 <<< 	a-ja (~aja@99-165-110-64.lightspeed.stlsmo.sbcglobal.net) has quit (Ping timeout: 245 seconds)
+2019-07-04 16:11:30	 <<< 	valuemachine (~valuemach@047-014-026-151.res.spectrum.com) has quit (Remote host closed the connection)
+2019-07-04 16:15:00	> 	valuemachine (~valuemach@047-014-026-151.res.spectrum.com) has joined #html
+2019-07-04 16:22:14	 <<< 	basteh (~basteh@unaffiliated/basteh) has quit (Read error: Connection reset by peer)
+2019-07-04 16:25:12	 <<< 	valuemachine (~valuemach@047-014-026-151.res.spectrum.com) has quit (Remote host closed the connection)
+2019-07-04 16:45:38	> 	a-ja (~aja@99-165-110-64.lightspeed.stlsmo.sbcglobal.net) has joined #html
+2019-07-04 17:00:20	 <<< 	k-man (~jason@unaffiliated/k-man) has quit (Ping timeout: 272 seconds)
+2019-07-04 17:01:06	 <<< 	de-facto (~de-facto@gateway/tor-sasl/de-facto) has quit (Quit: See you around.)
+2019-07-04 17:01:20	> 	de-facto (~de-facto@gateway/tor-sasl/de-facto) has joined #html
+2019-07-04 17:12:15	 <<< 	a-ja (~aja@99-165-110-64.lightspeed.stlsmo.sbcglobal.net) has quit (Ping timeout: 268 seconds)
+2019-07-04 17:28:06	> 	valuemachine (~valuemach@216.15.114.90) has joined #html
+2019-07-04 18:48:08	> 	rivvles (~riven@pdpc/supporter/professional/riven) has joined #html
+2019-07-04 18:56:01	> 	AbedB (~AbedBhuty@bzq-79-181-49-240.red.bezeqint.net) has joined #html
+2019-07-04 19:23:03	> 	^Cheeky (uid271104@gateway/web/irccloud.com/x-kmzxqdsivvieanpc) has joined #html
+2019-07-04 19:26:38	 <<< 	commanderkeen (~commander@75-108-123-5.bcstcmta01.com.dyn.suddenlink.net) has quit (Ping timeout: 272 seconds)
+2019-07-04 19:26:45	> 	commanderkeen_ (~commander@75-108-123-5.bcstcmta01.com.dyn.suddenlink.net) has joined #html
+2019-07-04 19:33:14	> 	NeXTSUN (~textual@172.98.93.182) has joined #html
+2019-07-04 19:35:33	 <<< 	prosta_vapse (~TR00@host-78-149-192-164.as13285.net) has quit (Ping timeout: 258 seconds)
+2019-07-04 19:38:05	 <<< 	WishBoy (~WishBoy@unaffiliated/wishboy) has quit
+2019-07-04 19:41:22	> 	prosta_vapse (~TR00@host-92-5-27-146.as43234.net) has joined #html
+2019-07-04 19:47:48	 <<< 	de-facto (~de-facto@gateway/tor-sasl/de-facto) has quit (Ping timeout: 260 seconds)
+2019-07-04 19:50:17	> 	de-facto (~de-facto@gateway/tor-sasl/de-facto) has joined #html
+2019-07-04 21:02:31	> 	vicar (~vicar@c-73-2-53-158.hsd1.ca.comcast.net) has joined #html
+2019-07-04 21:02:45	 <<< 	vicar (~vicar@c-73-2-53-158.hsd1.ca.comcast.net) has quit (Client Quit)
+2019-07-04 21:23:42	 <<< 	valuemachine (~valuemach@216.15.114.90) has quit (Remote host closed the connection)
+2019-07-04 21:25:38	> 	valuemachine (~valuemach@216.15.114.90) has joined #html
+2019-07-04 21:52:26	> 	gareppa (~gareppa@unaffiliated/gareppa) has joined #html
+2019-07-04 22:22:10	 <<< 	valuemachine (~valuemach@216.15.114.90) has quit (Remote host closed the connection)
+2019-07-04 22:24:54	> 	valuemachine (~valuemach@216.15.114.90) has joined #html
+2019-07-04 22:29:37	 <<< 	valuemachine (~valuemach@216.15.114.90) has quit (Ping timeout: 245 seconds)
+2019-07-04 22:33:29	 <<< 	neteffect (Elite21294@gateway/shell/elitebnc/x-jxymsycklpllevry) has quit (Ping timeout: 250 seconds)
+2019-07-04 22:44:16	> 	valuemachine (~valuemach@216.15.114.90) has joined #html
+2019-07-04 22:49:50	 <<< 	valuemachine (~valuemach@216.15.114.90) has quit (Remote host closed the connection)
+2019-07-04 22:50:27	> 	valuemachine (~valuemach@216.15.114.90) has joined #html
+2019-07-04 22:55:13	 <<< 	valuemachine (~valuemach@216.15.114.90) has quit (Ping timeout: 248 seconds)
+2019-07-04 23:06:42	 <<< 	systemovich (~geoffrey@197.89.181.193) has quit (Ping timeout: 245 seconds)
+2019-07-04 23:16:03	> 	Deusdeorum (~Deusdeoru@unaffiliated/deusdeorum) has joined #html
+2019-07-04 23:19:06	> 	Jantz (~IceChat9@2407:7000:8d04:100:3d75:9add:a68d:63bf) has joined #html
+2019-07-04 23:22:21	> 	valuemachine (~valuemach@216.15.114.90) has joined #html
+2019-07-04 23:22:52	 <<< 	Dave_Elec (~Dave@196.188.72.247) has quit (Ping timeout: 258 seconds)
+2019-07-04 23:34:53	 <<< 	gareppa (~gareppa@unaffiliated/gareppa) has quit (Quit: Leaving)
+2019-07-04 23:39:51	> 	k-man (~jason@unaffiliated/k-man) has joined #html
+2019-07-04 23:41:49	> 	Dave_Elec (~Dave@196.188.72.247) has joined #html
+2019-07-04 23:52:52	 <<< 	valuemachine (~valuemach@216.15.114.90) has quit (Read error: Connection reset by peer)
+2019-07-04 23:57:38	> 	systemovich (~geoffrey@105.27.199.166) has joined #html
+2019-07-05 00:12:23	 <<< 	systemovich (~geoffrey@105.27.199.166) has quit (Quit: Konversation terminated!)
+2019-07-05 00:15:01	> 	jomofcw (~just@unaffiliated/jomofcw) has joined #html
+2019-07-05 00:28:30	> 	ibispi (~quassel@188.246.35.178) has joined #html
+2019-07-05 00:31:16	 <<< 	Dave_Elec (~Dave@196.188.72.247) has quit (Ping timeout: 272 seconds)
+2019-07-05 00:31:50	> 	systemovich (~geoffrey@105.27.199.166) has joined #html
+2019-07-05 00:46:21	> 	Dave_Elec (~Dave@196.188.72.247) has joined #html
+2019-07-05 00:46:40	> 	Chuguniy (~Chuguniy@80.232.218.96) has joined #html
+2019-07-05 00:46:51	> 	valuemachine (~valuemach@216.15.114.90) has joined #html
+2019-07-05 00:59:32	> 	LouCypher (~lou@unaffiliated/loucypher) has joined #html
+2019-07-05 01:07:20	> 	donotturnoff (~isaac@cpc126416-mapp13-2-0-cust85.12-4.cable.virginm.net) has joined #html
+2019-07-05 01:08:00	 <<< 	Secret-Fire (~Secret-Fi@71-34-100-101.ptld.qwest.net) has quit (Read error: Connection reset by peer)
+2019-07-05 01:08:14	 <<< 	^Cheeky (uid271104@gateway/web/irccloud.com/x-kmzxqdsivvieanpc) has quit (Quit: Connection closed for inactivity)
+2019-07-05 01:19:01	 <<< 	valuemachine (~valuemach@216.15.114.90) has quit (Read error: Connection reset by peer)
+2019-07-05 01:22:43	> 	hendry1 (~hendry@210.23.22.2) has joined #html
+2019-07-05 01:24:12	 <<< 	hendry (~hendry@210.23.12.68) has quit (Ping timeout: 245 seconds)
+2019-07-05 01:24:33	 <<< 	gde33 (~gde33@84-106-24-118.cable.dynamic.v4.ziggo.nl) has quit (Ping timeout: 248 seconds)
+2019-07-05 01:25:33	> 	gde33 (~gde33@84-106-24-118.cable.dynamic.v4.ziggo.nl) has joined #html
+2019-07-05 01:28:59	 <<< 	NeXTSUN (~textual@172.98.93.182) has quit (Quit: My MacBook has gone to sleep. ZZZzzz…)
+2019-07-05 01:39:37	 <<< 	commanderkeen_ (~commander@75-108-123-5.bcstcmta01.com.dyn.suddenlink.net) has quit (Ping timeout: 245 seconds)
+2019-07-05 01:40:42	> 	commanderkeen (~commander@75-108-123-5.bcstcmta01.com.dyn.suddenlink.net) has joined #html
+2019-07-05 01:47:00	 <<< 	AbedB (~AbedBhuty@bzq-79-181-49-240.red.bezeqint.net) has quit (Read error: Connection reset by peer)
+2019-07-05 01:52:58	> 	Joufflu (~Alex@108-201-159-223.lightspeed.irvnca.sbcglobal.net) has joined #html
+2019-07-05 01:57:58	> 	orbitex (~orbitex@2a02:587:b0b:8200:79ec:60b4:86ce:350) has joined #html
+2019-07-05 02:11:22	> 	valuemachine (~valuemach@216.15.114.90) has joined #html
+2019-07-05 02:18:07	 <<< 	mosh (~chaos@consolegfx.org) has quit (Ping timeout: 246 seconds)
+2019-07-05 02:18:47	 <<< 	opsec (~opsec@opsec/opsec) has quit (Ping timeout: 245 seconds)
+2019-07-05 02:19:50	> 	mosh (~chaos@consolegfx.org) has joined #html
+2019-07-05 02:25:28	 <<< 	Dave_Elec (~Dave@196.188.72.247) has quit (Ping timeout: 246 seconds)
+2019-07-05 02:31:12	> 	opsec (~opsec@opsec/opsec) has joined #html
+2019-07-05 02:33:11	 <<< 	prosta_vapse (~TR00@host-92-5-27-146.as43234.net) has quit (Quit: DAVAJ_UZE!!)
+2019-07-05 02:41:43	 <<< 	valuemachine (~valuemach@216.15.114.90) has quit (Read error: Connection reset by peer)
+2019-07-05 02:43:53	> 	Dave_Elec (~Dave@196.188.72.247) has joined #html
+2019-07-05 02:56:51	 <<< 	Joufflu (~Alex@108-201-159-223.lightspeed.irvnca.sbcglobal.net) has quit (Ping timeout: 268 seconds)
+2019-07-05 03:08:11	> 	imposter__ (uid57046@gateway/web/irccloud.com/x-vfzdjxbrwpglsnez) has joined #html
+2019-07-05 03:12:49	 <<< 	Dave_Elec (~Dave@196.188.72.247) has quit (Ping timeout: 248 seconds)
+2019-07-05 03:17:02	> 	aruns (~aruns@126.119-30-62.static.virginmediabusiness.co.uk) has joined #html
+2019-07-05 03:17:05	aruns	Hey guys, I am working on a site where it is using the SangBleu Kingdom Bold font for this text - https://res.cloudinary.com/dqck9npmf/image/upload/v1562321628/a-and-l-do-not-line-up_fnnqii.png - the trouble is that there is a slight gap between the 'A' and the 'L' - the left tip of the L is not the same height as the right tip of the A.
+2019-07-05 03:17:10	aruns	Does anyone have any ideas as to how I can remove this gap? I have tried various font smoothing techniques, but they don't seem to be working. I presume it is just a limitation of the webfont.
+2019-07-05 03:24:17	> 	Dave_Elec (~Dave@196.188.72.247) has joined #html
+2019-07-05 03:28:01	 <<< 	Jantz (~IceChat9@2407:7000:8d04:100:3d75:9add:a68d:63bf) has quit (Read error: Connection reset by peer)
+2019-07-05 03:28:19	> 	AlphaKennyWun (~lou@unaffiliated/loucypher) has joined #html
+2019-07-05 03:31:30	 <<< 	AlphaKennyWun (~lou@unaffiliated/loucypher) has quit (Client Quit)
+2019-07-05 03:32:18	> 	Jantz (~IceChat9@118-93-135-76.dsl.dyn.ihug.co.nz) has joined #html
+2019-07-05 03:32:37	 <<< 	LouCypher (~lou@unaffiliated/loucypher) has quit (Ping timeout: 268 seconds)
+2019-07-05 03:34:58	> 	valuemachine (~valuemach@216.15.114.90) has joined #html
+2019-07-05 04:02:18	> 	HarveyPwca (~HarveyPwc@99-89-221-139.lightspeed.cicril.sbcglobal.net) has joined #html
+2019-07-05 04:05:42	 <<< 	valuemachine (~valuemach@216.15.114.90) has quit (Read error: Connection reset by peer)
+2019-07-05 04:34:41	> 	lilmonkey`work (~lilmonkey@pdpc/supporter/professional/riven) has joined #html
+2019-07-05 04:35:02	> 	valuemachine (~valuemach@216.15.114.90) has joined #html
+2019-07-05 04:57:58	 <<< 	donotturnoff (~isaac@cpc126416-mapp13-2-0-cust85.12-4.cable.virginm.net) has quit (Ping timeout: 245 seconds)
+2019-07-05 05:05:12	 <<< 	valuemachine (~valuemach@216.15.114.90) has quit (Read error: Connection reset by peer)
+2019-07-05 05:10:24	> 	AbedB (~AbedBhuty@bzq-79-181-49-240.red.bezeqint.net) has joined #html
+2019-07-05 05:12:04	 <<< 	HarveyPwca (~HarveyPwc@99-89-221-139.lightspeed.cicril.sbcglobal.net) has quit (Read error: Connection reset by peer)
+2019-07-05 05:12:31	> 	HarveyPwca (~HarveyPwc@99-89-221-139.lightspeed.cicril.sbcglobal.net) has joined #html
+2019-07-05 05:17:39	 <<< 	HarveyPwca (~HarveyPwc@99-89-221-139.lightspeed.cicril.sbcglobal.net) has quit (Read error: Connection reset by peer)
+2019-07-05 05:18:00	> 	HarveyPwca (~HarveyPwc@99-89-221-139.lightspeed.cicril.sbcglobal.net) has joined #html
+2019-07-05 05:37:48	 <<< 	Dave_Elec (~Dave@196.188.72.247) has quit (Ping timeout: 272 seconds)
+2019-07-05 05:38:42	> 	Dave_Elec (~Dave@196.188.72.247) has joined #html
+2019-07-05 05:47:10	 <<< 	orbitex (~orbitex@2a02:587:b0b:8200:79ec:60b4:86ce:350) has quit (Ping timeout: 252 seconds)
+2019-07-05 06:19:48	 <<< 	HarveyPwca (~HarveyPwc@99-89-221-139.lightspeed.cicril.sbcglobal.net) has quit (Quit: Leaving)
+2019-07-05 06:32:15	 <<< 	systemovich (~geoffrey@105.27.199.166) has quit (Quit: Konversation terminated!)
+2019-07-05 06:45:24	 <<< 	AbedB (~AbedBhuty@bzq-79-181-49-240.red.bezeqint.net) has quit (Read error: Connection reset by peer)
+2019-07-05 06:51:05	> 	forgotmynick (uid24625@gateway/web/irccloud.com/x-lciscnvzocfsdjvn) has joined #html
+2019-07-05 07:00:29	> 	systemovich (~geoffrey@105.27.199.166) has joined #html
+2019-07-05 07:06:19	 <<< 	Doffi (~doffi@91-158-108-34.elisa-laajakaista.fi) has quit (Ping timeout: 258 seconds)
+2019-07-05 07:08:01	> 	Doffi (~doffi@91-158-108-34.elisa-laajakaista.fi) has joined #html
+2019-07-05 07:13:14	 <<< 	Deusdeorum (~Deusdeoru@unaffiliated/deusdeorum) has quit (Quit: Textual IRC Client: www.textualapp.com)
+2019-07-05 07:15:48	> 	atomicb0mb (~textual@191.181.156.226) has joined #html
+2019-07-05 07:17:14	> 	HarveyPwca (~HarveyPwc@70-89-216-161-il.hfc.comcastbusiness.net) has joined #html
+2019-07-05 07:35:26	> 	orbitex (~orbitex@2a02:587:b0b:8200:79ec:60b4:86ce:350) has joined #html
+2019-07-05 07:38:48	 <<< 	orbitex (~orbitex@2a02:587:b0b:8200:79ec:60b4:86ce:350) has quit (Client Quit)
+2019-07-05 08:01:24	 <<< 	UFC (~danawhite@ufc.powered.by.lunarbnc.net) has quit (Quit: K Cya)
+2019-07-05 08:05:43	 <<< 	imposter__ (uid57046@gateway/web/irccloud.com/x-vfzdjxbrwpglsnez) has quit (Quit: Connection closed for inactivity)
+2019-07-05 08:08:11	> 	UFC (~danawhite@ufc.powered.by.lunarbnc.net) has joined #html
+2019-07-05 08:11:33	> 	donotturnoff (~isaac@cpc126416-mapp13-2-0-cust85.12-4.cable.virginm.net) has joined #html
+2019-07-05 08:17:12	> 	tradar (~tradar@gateway/tor-sasl/tradar) has joined #html
+2019-07-05 08:17:16	> 	czart (~czart@acda167.neoplus.adsl.tpnet.pl) has joined #html
+2019-07-05 08:22:55	 <<< 	systemovich (~geoffrey@105.27.199.166) has quit (Quit: Konversation terminated!)
+2019-07-05 08:28:01	 <<< 	Dave_Elec (~Dave@196.188.72.247) has quit (Ping timeout: 248 seconds)
+2019-07-05 08:30:18	 <<< 	atomicb0mb (~textual@191.181.156.226) has quit (Quit: My Mac has gone to sleep. ZZZzzz…)
+2019-07-05 08:32:04	> 	Dave_Elec (~Dave@196.188.72.247) has joined #html
+2019-07-05 08:37:41	> 	atomicb0mb (~textual@191.181.156.226) has joined #html
+2019-07-05 08:39:11	 <<< 	atomicb0mb (~textual@191.181.156.226) has quit (Client Quit)
+2019-07-05 08:46:05	> 	atomicb0mb (~textual@191.181.156.226) has joined #html
+2019-07-05 08:50:57	 <<< 	atomicb0mb (~textual@191.181.156.226) has quit (Client Quit)
+2019-07-05 08:53:54	> 	linarcx (~linarcx@151.242.164.153) has joined #html
+2019-07-05 08:54:25	 <<< 	Chuguniy (~Chuguniy@80.232.218.96) has quit (Ping timeout: 258 seconds)
+2019-07-05 08:55:03	 <<< 	Jantz (~IceChat9@118-93-135-76.dsl.dyn.ihug.co.nz) has quit (Ping timeout: 245 seconds)
+2019-07-05 08:57:16	> 	Jantz (~IceChat9@118-93-135-76.dsl.dyn.ihug.co.nz) has joined #html
+2019-07-05 09:00:37	 <<< 	forgotmynick (uid24625@gateway/web/irccloud.com/x-lciscnvzocfsdjvn) has quit (Quit: Connection closed for inactivity)
+2019-07-05 09:06:45	 <<< 	jomofcw (~just@unaffiliated/jomofcw) has quit
+2019-07-05 09:17:20	 <<< 	lilmonkey`work (~lilmonkey@pdpc/supporter/professional/riven) has quit (Ping timeout: 268 seconds)
+2019-07-05 09:19:20	 <<< 	tradar (~tradar@gateway/tor-sasl/tradar) has quit (Ping timeout: 260 seconds)
+2019-07-05 09:27:48	> 	lilmonkey`work (~lilmonkey@pdpc/supporter/professional/riven) has joined #html
+2019-07-05 09:36:49	 <<< 	lilmonkey`work (~lilmonkey@pdpc/supporter/professional/riven) has quit (Ping timeout: 248 seconds)
+2019-07-05 09:42:17	 <<< 	_Raijin (~gideon@2603:3023:708:9c00::fb07) has left #html ("WeeChat 2.5")

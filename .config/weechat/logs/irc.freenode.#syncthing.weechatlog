@@ -1,0 +1,702 @@
+2019-08-21 11:25:13	> 	_Raijin (~gideon@2603:3023:708:9c00::d400) has joined #syncthing
+2019-08-21 11:25:13	 - 	Topic for #syncthing is "Register with services to talk || FAQ: https://docs.syncthing.net/users/faq.html || Services: http://status.syncthing.net"
+2019-08-21 11:25:13	 - 	Topic set by calmh (~jb@syncthing/maintainer/calmh) on  
+2019-08-21 11:25:13	 - 	Channel #syncthing: 146 nicks (0 ops, 2 voices, 144 normals)
+2019-08-21 11:25:13	 - 	URL for #syncthing: https://syncthing.net/
+2019-08-21 11:25:16	 - 	Channel created on  
+2019-08-21 11:26:54	> 	SanskritFritz (~quassel@BC2434C7.catv.pool.telekom.hu) has joined #syncthing
+2019-08-21 11:30:48	_Raijin	Hey, I am trying to setup a synchronized folder across my LAN. I want to keep my media server up to date with the Music on my main PC. On my main PC, I have syncthing running with my Music folder added and scanned. On my media server, I have syncthing running in a docker container. The desired folder is present here already, so I do not want to *transfer* it from my main PC. I also set it up so my server
+2019-08-21 11:30:48	_Raijin	would ignore deletions (in case something happened to my PC). My issue is this: How do I sync the folders without copying all the files over? Also the two clients are constantly in the "Disconnected" state after a few mins after adding it. Various messages like "connection refused", not sure why they won't talk to each other
+2019-08-21 11:36:08	> 	gareppa (~gareppa@unaffiliated/gareppa) has joined #syncthing
+2019-08-21 11:40:24	> 	Zykino (~Thunderbi@2a01:e0a:28e:9d00:ed89:8356:ecc4:d08b) has joined #syncthing
+2019-08-21 11:52:46	 <<< 	SanskritFritz (~quassel@BC2434C7.catv.pool.telekom.hu) has quit (Quit: leaving...)
+2019-08-21 11:55:23	 <<< 	Mattiaslndstrm (~Mattiasln@c-334672d5.018-449-6e6b701.bbcust.telenor.se) has quit (Quit: My MacBook has gone to sleep. ZZZzzz…)
+2019-08-21 11:55:55	> 	Mattiaslndstrm (~Mattiasln@c-334672d5.018-449-6e6b701.bbcust.telenor.se) has joined #syncthing
+2019-08-21 12:02:32	 <<< 	Darkmatter66 (~Darkmatte@37.237.212.37) has quit (Ping timeout: 244 seconds)
+2019-08-21 12:10:26	> 	imsodin (~Thunderbi@46-126-191-69.dynamic.hispeed.ch) has joined #syncthing
+2019-08-21 12:11:51	> 	Darkmatter66 (~Darkmatte@37.237.215.10) has joined #syncthing
+2019-08-21 12:14:12	 <<< 	Mattiaslndstrm (~Mattiasln@c-334672d5.018-449-6e6b701.bbcust.telenor.se) has quit (Quit: My MacBook has gone to sleep. ZZZzzz…)
+2019-08-21 12:30:25	> 	him-cesjf (~cesjf@unaffiliated/himcesjf) has joined #syncthing
+2019-08-21 12:58:07	 <<< 	lilmike (~server@mtserver.mwtd.net) has quit (Quit: ZNC 1.7.4 - https://znc.in)
+2019-08-21 12:59:06	> 	lilmike (~server@mtserver.mwtd.net) has joined #syncthing
+2019-08-21 13:16:43	 <<< 	Darkmatter66 (~Darkmatte@37.237.215.10) has quit (Ping timeout: 276 seconds)
+2019-08-21 13:18:02	> 	Darkmatter66 (~Darkmatte@37.237.215.10) has joined #syncthing
+2019-08-21 13:23:55	> 	terminalator (~terminala@unaffiliated/terminalator) has joined #syncthing
+2019-08-21 13:30:59	 <<< 	muelli (~muelli@dslb-002-203-255-194.002.203.pools.vodafone-ip.de) has quit (Ping timeout: 258 seconds)
+2019-08-21 13:32:57	 <<< 	Darkmatter66 (~Darkmatte@37.237.215.10) has quit (Ping timeout: 245 seconds)
+2019-08-21 13:34:02	> 	Darkmatter66 (~Darkmatte@37.237.215.10) has joined #syncthing
+2019-08-21 13:48:51	_aD	_Raijin: Step 0, ensure you have a backup of all of your music
+2019-08-21 13:49:27	_aD	Do both computers have all of the music already?
+2019-08-21 14:02:01	 <<< 	diplo (~andy@unaffiliated/diplo) has quit (Remote host closed the connection)
+2019-08-21 14:05:02	 <<< 	him-cesjf (~cesjf@unaffiliated/himcesjf) has quit (Remote host closed the connection)
+2019-08-21 14:06:26	> 	him-cesjf (~cesjf@unaffiliated/himcesjf) has joined #syncthing
+2019-08-21 14:07:29	 <<< 	jobroe (~hannes@p579EB78F.dip0.t-ipconnect.de) has quit (Quit: Konversation terminated!)
+2019-08-21 14:10:28	 <<< 	him-cesjf (~cesjf@unaffiliated/himcesjf) has quit (Remote host closed the connection)
+2019-08-21 14:11:40	> 	him-cesjf (~cesjf@1.6.186.159) has joined #syncthing
+2019-08-21 14:11:45	 <<< 	him-cesjf (~cesjf@1.6.186.159) has quit (Changing host)
+2019-08-21 14:11:45	> 	him-cesjf (~cesjf@unaffiliated/himcesjf) has joined #syncthing
+2019-08-21 14:13:33	 <<< 	gareppa (~gareppa@unaffiliated/gareppa) has quit (Quit: Leaving)
+2019-08-21 14:14:51	> 	SanskritFritz (~quassel@BC2434C7.catv.pool.telekom.hu) has joined #syncthing
+2019-08-21 14:20:59	> 	diplo (~andy@unaffiliated/diplo) has joined #syncthing
+2019-08-21 14:34:09	_Raijin	_aD Yes I have a backup on an external HDD. Both systems have all the music
+2019-08-21 14:42:38	_aD	Great. What'll happen is that on both devices, Syncthing will need to read and hash all of the data on the first run, which will be time-consuming.
+2019-08-21 14:42:56	_aD	They'll then need to exchange indexes between each other, during which time the GUI will say they're Syncing but it won't seem like much is going on.
+2019-08-21 14:43:11	_aD	For both of these stages you may need to be patient and let Syncthing do its thing
+2019-08-21 14:43:32	_aD	Once that's been done, any changes will be exchanged (deletions excluded, where set) and that'll be that.
+2019-08-21 14:43:38	_aD	Ref: the Disconnections, is that still a problem?
+2019-08-21 14:46:32	 <<< 	him-cesjf (~cesjf@unaffiliated/himcesjf) has quit (Remote host closed the connection)
+2019-08-21 14:47:18	> 	him-cesjf (~cesjf@unaffiliated/himcesjf) has joined #syncthing
+2019-08-21 14:51:19	 <<< 	him-cesjf (~cesjf@unaffiliated/himcesjf) has quit (Remote host closed the connection)
+2019-08-21 14:52:23	> 	him-cesjf (~cesjf@unaffiliated/himcesjf) has joined #syncthing
+2019-08-21 15:11:55	_Raijin	_aD I'm resyncing on the server, connections look good so far. When I share the folder, will my main system recognize the server already has the data and not try to send it?
+2019-08-21 15:12:48	_aD	As I mentioned above, as long as all of the data is present on both sides, no.
+2019-08-21 15:43:26	 <<< 	Zykino (~Thunderbi@2a01:e0a:28e:9d00:ed89:8356:ecc4:d08b) has quit (Quit: Zykino)
+2019-08-21 15:55:40	> 	Snuupy (~Snuupy@unaffiliated/snuupy) has joined #syncthing
+2019-08-21 16:21:24	> 	Soo_Slow (Soo_Slow@gateway/vpn/privateinternetaccess/sooslow/x-31376162) has joined #syncthing
+2019-08-21 16:25:03	 <<< 	him-cesjf (~cesjf@unaffiliated/himcesjf) has quit (Remote host closed the connection)
+2019-08-21 16:27:27	> 	him-cesjf (~cesjf@unaffiliated/himcesjf) has joined #syncthing
+2019-08-21 16:36:36	_Raijin	_aD So I am still experiencing disconnecting issues. Also, When I try to share the folder which exists on both machines, it does indeed add a duplicate and unnecessary folder entry
+2019-08-21 16:37:50	_aD	What do you mean by a "folder entry"?
+2019-08-21 16:39:16	_Raijin	A new folder in the left half of the screen with the exact same name pops up.
+2019-08-21 16:39:41	_aD	Aha, so there are two ways to add a folder in the GUI.
+2019-08-21 16:39:54	_aD	When you click "Add Folder", it generates a new, random folder ID.
+2019-08-21 16:40:19	_aD	Unless you edit that folder ID to match the one on the other side, you've then got two separate shared folders.
+2019-08-21 16:40:39	_aD	If you accept the "Would you like to share folder X?" prompt, then it uses the same folder ID for you.
+2019-08-21 16:41:13	_aD	Have you perhaps performed the former, and ended up with two different folder IDs?
+2019-08-21 16:43:06	_Raijin	Not sure. Do the folders both needed to be added through syncthing before sharing? I tried to remove an unshared folder at one point and it just deleted the entire folder from my drive. 
+2019-08-21 16:43:31	_aD	...you removed a folder using the GUI and it deleted your actual data?
+2019-08-21 16:43:42	_Raijin	Yes
+2019-08-21 16:44:07	 <<< 	cwchristerw (~cwchriste@188-67-9-134.bb.dnainternet.fi) has quit (Remote host closed the connection)
+2019-08-21 16:44:30	_aD	That should never happen. What version of Syncthing are you using?
+2019-08-21 16:45:07	_Raijin	v1.2.1
+2019-08-21 16:45:41	_aD	Just tried a test here and the folder was left behind. What you saw is could be very troubling indeed.
+2019-08-21 16:46:08	_aD	I've been using Syncthing for ages, and removed folders of many configurations and have never seen that happen.
+2019-08-21 16:46:52	_Raijin	I have all the data now. I have both folders added and scanned into syncthing, with different folder IDs. Can I link them or do I have to delete the folder entry on the server side so one can be automatically created when I share from the PC?
+2019-08-21 16:47:12	_aD	OK so yes, the folder IDs must be identical.
+2019-08-21 16:47:52	_aD	It can't be changed via the GUI and I'm not keen on suggestion you mess about with the config file. I suggest that from the Syncthing GUI you remove one of the folders.
+2019-08-21 16:48:39	_aD	Syncthing should show a banner at the top of the GUI to show you that a remote device wants to share a folder.
+2019-08-21 16:49:04	> 	felixfoertsch23 (~felixfoer@92.117.49.220) has joined #syncthing
+2019-08-21 16:49:07	 <<< 	felixfoertsch (~felixfoer@2001:16b8:50b6:5900:7846:c843:697b:af79) has quit (Ping timeout: 250 seconds)
+2019-08-21 16:49:09	_aD	Make sure that on Device A, the folder is configured to be shared with Device B.
+2019-08-21 16:49:14	_Raijin	Just did that, and attempting to reshare now. Whenever I try to interact with the other device, I get the following disconnection errors:  context deadline exceeded (16:47:44)  connection refused (16:48:44)
+2019-08-21 16:49:31	_aD	OK so that is a different problem I suspect.
+2019-08-21 16:49:57	_aD	I believe that when pausing/creating folder shares, Syncthing disconnects from its peers. But I don't think it should then refuse connections.
+2019-08-21 16:50:02	 <<< 	imsodin (~Thunderbi@46-126-191-69.dynamic.hispeed.ch) has quit (Ping timeout: 245 seconds)
+2019-08-21 16:50:35	_aD	I'd say that once you've finished making config changes, wait for a minute or two, to see if the devices re-connect.
+2019-08-21 16:54:40	 <<< 	him-cesjf (~cesjf@unaffiliated/himcesjf) has quit (Excess Flood)
+2019-08-21 16:56:02	> 	him-cesjf (~cesjf@unaffiliated/himcesjf) has joined #syncthing
+2019-08-21 17:12:34	 <<< 	markmcb (~markmcb@207.244.108.244.adsl.inet-telecom.org) has quit (Ping timeout: 268 seconds)
+2019-08-21 17:25:05	 <<< 	SanskritFritz (~quassel@BC2434C7.catv.pool.telekom.hu) has quit (Quit: leaving...)
+2019-08-21 17:33:34	> 	markmcb (~markmcb@23.226.128.22.adsl.inet-telecom.org) has joined #syncthing
+2019-08-21 17:43:19	 <<< 	Soo_Slow (Soo_Slow@gateway/vpn/privateinternetaccess/sooslow/x-31376162) has quit (Remote host closed the connection)
+2019-08-21 17:55:26	 <<< 	him-cesjf (~cesjf@unaffiliated/himcesjf) has quit (*.net *.split)
+2019-08-21 17:55:26	 <<< 	lilmike (~server@mtserver.mwtd.net) has quit (*.net *.split)
+2019-08-21 17:55:27	 <<< 	roasted (~quassel@unaffiliated/roasted) has quit (*.net *.split)
+2019-08-21 17:55:27	 <<< 	pozzoni (pozzoni@2604:180::5a69:7f32) has quit (*.net *.split)
+2019-08-21 17:55:28	 <<< 	icetux (stonewares@gateway/shell/matrix.org/x-trqilvazbfomkpol) has quit (*.net *.split)
+2019-08-21 17:55:31	 <<< 	hgeboner (~duke@v2201801700760097.supersrv.de) has quit (*.net *.split)
+2019-08-21 17:55:35	 <<< 	grumble (~grumble@freenode/staff/grumble) has quit (*.net *.split)
+2019-08-21 17:55:35	 <<< 	fakuivan (~fakuivan@gateway/tor-sasl/fakuivan) has quit (*.net *.split)
+2019-08-21 17:55:36	 <<< 	fork_ (~fork@unaffiliated/fork) has quit (*.net *.split)
+2019-08-21 17:55:36	 <<< 	wasMitNetzen (~quassel@customer-46-39-112-191.stosn.net) has quit (*.net *.split)
+2019-08-21 17:55:36	 <<< 	storrgie (~storrgie@epiphyte.network) has quit (*.net *.split)
+2019-08-21 17:55:36	 <<< 	niemalsnever (~niemalsne@ip-109-91-106-24.hsi12.unitymediagroup.de) has quit (*.net *.split)
+2019-08-21 17:55:36	 <<< 	FragtioN (~fragtion@srv.webintuitive.co.za) has quit (*.net *.split)
+2019-08-21 17:55:37	 <<< 	kpuc (1011@46-97-229-216.sr2.pon.net) has quit (*.net *.split)
+2019-08-21 17:55:37	 <<< 	KBme (~KBme@ra.ndom.dev) has quit (*.net *.split)
+2019-08-21 17:55:37	 <<< 	NightMonkey (~NightMonk@pdpc/supporter/professional/nightmonkey) has quit (*.net *.split)
+2019-08-21 17:55:38	 <<< 	Vaelatern (~Vaelatern@cpe-70-122-180-155.tx.res.rr.com) has quit (*.net *.split)
+2019-08-21 17:55:38	 <<< 	nuuuciano (~luuuciano@unaffiliated/luuuciano) has quit (*.net *.split)
+2019-08-21 17:55:38	 <<< 	frispete (~frispete@ip5f5907d2.dynamic.kabel-deutschland.de) has quit (*.net *.split)
+2019-08-21 17:55:38	 <<< 	shtirlic (~shtirlic@ec2-52-57-69-234.eu-central-1.compute.amazonaws.com) has quit (*.net *.split)
+2019-08-21 17:55:39	 <<< 	biax_ (~biax@unaffiliated/biax) has quit (*.net *.split)
+2019-08-21 17:55:39	 <<< 	sim590 (~sim590@modemcable007.202-59-74.mc.videotron.ca) has quit (*.net *.split)
+2019-08-21 17:55:39	 <<< 	sorinello (~sorinello@unaffiliated/sorinello) has quit (*.net *.split)
+2019-08-21 17:55:39	 <<< 	cyphase (~cyphase@unaffiliated/cyphase) has quit (*.net *.split)
+2019-08-21 17:55:39	 <<< 	hyper_ch (~hyper_ch@openvpn/user/hyper-ch) has quit (*.net *.split)
+2019-08-21 17:55:40	 <<< 	swalladge (~swalladge@unaffiliated/swalladge) has quit (*.net *.split)
+2019-08-21 17:55:40	 <<< 	fxrs (~fxrs@192.227.212.130) has quit (*.net *.split)
+2019-08-21 17:55:40	 <<< 	felixfoertsch23 (~felixfoer@92.117.49.220) has quit (*.net *.split)
+2019-08-21 17:55:40	 <<< 	Snuupy (~Snuupy@unaffiliated/snuupy) has quit (*.net *.split)
+2019-08-21 17:55:41	 <<< 	apetresc (~apetresc@toroon474qw-lp130-03-65-95-169-25.dsl.bell.ca) has quit (*.net *.split)
+2019-08-21 17:55:41	 <<< 	xelra (~xelra@unaffiliated/xelra) has quit (*.net *.split)
+2019-08-21 17:55:42	 <<< 	Trieste (~T@unaffiliated/trieste) has quit (*.net *.split)
+2019-08-21 17:55:42	 <<< 	JayGatsby (~JayGatsby@unaffiliated/jaygatsby7) has quit (*.net *.split)
+2019-08-21 17:55:42	 <<< 	_KaszpiR_ (~kaszpir@unaffiliated/kaszpir/x-3157048) has quit (*.net *.split)
+2019-08-21 17:55:42	 <<< 	StathisA (~StathisA@unaffiliated/stathisa) has quit (*.net *.split)
+2019-08-21 17:55:42	 <<< 	harmonik (~seery@185.162.184.11) has quit (*.net *.split)
+2019-08-21 17:55:42	 <<< 	arooni (~arooni@li1062-244.members.linode.com) has quit (*.net *.split)
+2019-08-21 17:55:43	 <<< 	o3u (o3u@unaffiliated/o3u) has quit (*.net *.split)
+2019-08-21 17:55:43	 <<< 	smeggysmeg (~smeg@unaffiliated/smeggysmeg) has quit (*.net *.split)
+2019-08-21 17:55:43	 <<< 	jasonbraganza (~jasonbrag@unaffiliated/jasonbraganza) has quit (*.net *.split)
+2019-08-21 17:55:43	 <<< 	stac (~stac@ircpuzzles/2016/april-fools/sixth/stac) has quit (*.net *.split)
+2019-08-21 17:55:43	 <<< 	Selavi (sel@unaffiliated/valesi) has quit (*.net *.split)
+2019-08-21 17:55:44	 <<< 	BlastuR (~magnus@unaffiliated/blastur) has quit (*.net *.split)
+2019-08-21 17:55:44	 <<< 	HJL (~quassel@208.68.106.132) has quit (*.net *.split)
+2019-08-21 17:55:44	 <<< 	WilliButz (~WilliButz@butz.cloud) has quit (*.net *.split)
+2019-08-21 17:55:44	 <<< 	vimclippy (~vimclippy@104.244.76.234) has quit (*.net *.split)
+2019-08-21 17:55:44	 <<< 	MichaelGooden (~atlanta.m@atlanta.michaelgooden.net) has quit (*.net *.split)
+2019-08-21 17:55:44	 <<< 	jeddi (~jedd@203.129.25.127) has quit (*.net *.split)
+2019-08-21 17:55:44	 <<< 	quite (~quite@unaffiliated/quite) has quit (*.net *.split)
+2019-08-21 17:55:44	 <<< 	benda` (~benda@ip5b423211.dynamic.kabel-deutschland.de) has quit (*.net *.split)
+2019-08-21 17:55:45	 <<< 	machmalabala (~machmalab@cccp.io) has quit (*.net *.split)
+2019-08-21 17:55:45	 <<< 	canton7 (~canton7@about/csharp/regular/canton7) has quit (*.net *.split)
+2019-08-21 17:55:45	 <<< 	latz (~latz@li193-194.members.linode.com) has quit (*.net *.split)
+2019-08-21 17:55:46	 <<< 	energizer_ (~energizer@unaffiliated/energizer) has quit (*.net *.split)
+2019-08-21 17:55:46	 <<< 	[0]Jmr_ (~0]Jmr@you.know.audrius.rocks) has quit (*.net *.split)
+2019-08-21 17:55:46	 <<< 	calmh (~jb@syncthing/maintainer/calmh) has quit (*.net *.split)
+2019-08-21 17:55:46	 <<< 	diplo (~andy@unaffiliated/diplo) has quit (*.net *.split)
+2019-08-21 17:55:46	 <<< 	hoonetorg (~hoonetorg@77.119.226.254.static.drei.at) has quit (*.net *.split)
+2019-08-21 17:55:47	 <<< 	nekr0z (~nekr0z@128-72-157-101.broadband.corbina.ru) has quit (*.net *.split)
+2019-08-21 17:55:47	 <<< 	raso1 (~raso@deb-multimedia.org) has quit (*.net *.split)
+2019-08-21 17:55:47	 <<< 	MasterNayru (~quassel@campbell.jmo.name) has quit (*.net *.split)
+2019-08-21 17:55:48	 <<< 	lemmi (~lemmi@lpm.pw) has quit (*.net *.split)
+2019-08-21 17:55:48	 <<< 	crater2150 (~crater215@beiboot4.petschge.de) has quit (*.net *.split)
+2019-08-21 17:55:49	 <<< 	hodapp (~hodapp@react-ams-119225.antiddos.solutions) has quit (*.net *.split)
+2019-08-21 17:55:49	 <<< 	cyrozap (~cyrozap@168.235.71.249) has quit (*.net *.split)
+2019-08-21 17:55:49	 <<< 	Darkmatter66 (~Darkmatte@37.237.215.10) has quit (*.net *.split)
+2019-08-21 17:55:49	 <<< 	dvl (~dvl@freebsd/developer/dvl) has quit (*.net *.split)
+2019-08-21 17:55:49	 <<< 	NIN101 (~core@jabber.quitesimple.org) has quit (*.net *.split)
+2019-08-21 17:55:49	 <<< 	niqnaq (~help@unaffiliated/niqnaq) has quit (*.net *.split)
+2019-08-21 17:55:49	 <<< 	Martchus (~martchus@dslb-084-057-118-231.084.057.pools.vodafone-ip.de) has quit (*.net *.split)
+2019-08-21 17:55:49	 <<< 	t4skforce (~t4skforce@cm100-100.liwest.at) has quit (*.net *.split)
+2019-08-21 17:55:50	 <<< 	drawkula (~username@p57BDF003.dip0.t-ipconnect.de) has quit (*.net *.split)
+2019-08-21 17:55:50	 <<< 	Valfor (~Valfor@unaffiliated/mrpps) has quit (*.net *.split)
+2019-08-21 17:55:50	 <<< 	baker0052 (~baker0052@p57B365B7.dip0.t-ipconnect.de) has quit (*.net *.split)
+2019-08-21 17:55:51	 <<< 	devster31 (~devster@host87-199-dynamic.246-95-r.retail.telecomitalia.it) has quit (*.net *.split)
+2019-08-21 17:55:51	 <<< 	nobiz (~barca@unaffiliated/nobiz) has quit (*.net *.split)
+2019-08-21 17:55:51	 <<< 	raj (raj@unaffiliated/cypha) has quit (*.net *.split)
+2019-08-21 17:55:51	 <<< 	joshin (~josh@unaffiliated/joshin) has quit (*.net *.split)
+2019-08-21 17:55:52	 <<< 	teej (uid154177@gateway/web/irccloud.com/x-iyurpxehbunsiwmy) has quit (*.net *.split)
+2019-08-21 17:55:52	 <<< 	lopsided98 (~quassel@2601:18a:0:7723::cd0e) has quit (*.net *.split)
+2019-08-21 17:55:52	 <<< 	ish (sid1441@gateway/web/irccloud.com/x-uryaoezcfrlqtuns) has quit (*.net *.split)
+2019-08-21 17:55:52	 <<< 	akraut (akraut@gateway/web/irccloud.com/x-kqshrfdciqgwsynj) has quit (*.net *.split)
+2019-08-21 17:55:52	 <<< 	Pebby (~awildbird@2607:f598:b280:255:82ee:73ff:fe7c:5ded) has quit (*.net *.split)
+2019-08-21 17:55:52	 <<< 	atrus (~atrus@unaffiliated/atrus) has quit (*.net *.split)
+2019-08-21 17:55:52	 <<< 	AUser (~AUser@2604:a880:800:10::1128:c001) has quit (*.net *.split)
+2019-08-21 17:55:52	 <<< 	_aD (~quadra@unaffiliated/ad/x-0210533) has quit (*.net *.split)
+2019-08-21 17:55:52	 <<< 	Carafly (~Carafly@185.93.2.168) has quit (*.net *.split)
+2019-08-21 17:55:53	 <<< 	Helio- (~quassel@2604:a880:800:10::505:4001) has quit (*.net *.split)
+2019-08-21 17:55:53	 <<< 	moritzdietz (~moritz@unaffiliated/moritzdietz) has quit (*.net *.split)
+2019-08-21 17:55:57	 <<< 	jo-so (joergaleag@gateway/shell/matrix.org/x-cswtcjrnyjfcctaz) has quit (*.net *.split)
+2019-08-21 17:55:57	 <<< 	demure (demure@demu.red) has quit (*.net *.split)
+2019-08-21 17:55:58	 <<< 	`z (sid68223@wikipedia/Zhaofeng-Li) has quit (*.net *.split)
+2019-08-21 17:55:58	 <<< 	Zertrin_ (~zertrin@zertrin.org) has quit (*.net *.split)
+2019-08-21 17:55:58	 <<< 	capi (~capi@cnc.hetzner.dont-panic.cc) has quit (*.net *.split)
+2019-08-21 17:55:59	 <<< 	markmcb (~markmcb@23.226.128.22.adsl.inet-telecom.org) has quit (*.net *.split)
+2019-08-21 17:56:00	 <<< 	JackWinter (~jack@vodsl-10768.vo.lu) has quit (*.net *.split)
+2019-08-21 17:56:00	 <<< 	dirtycajun (~dirtycaju@99.40.228.101) has quit (*.net *.split)
+2019-08-21 17:56:00	 <<< 	joltman (~znc@unaffiliated/joltman) has quit (*.net *.split)
+2019-08-21 17:56:00	 <<< 	tianon (~tianon@unaffiliated/tianon) has quit (*.net *.split)
+2019-08-21 17:56:00	 <<< 	Leopere (~Leopere@s.nixc.us) has quit (*.net *.split)
+2019-08-21 17:56:00	 <<< 	zoni (~zoni@ams1.groenen.me) has quit (*.net *.split)
+2019-08-21 17:56:00	 <<< 	Lunatrius (~Lunatrius@77.38.22.40) has quit (*.net *.split)
+2019-08-21 17:56:00	 <<< 	haritz (~hrtz@unaffiliated/haritz) has quit (*.net *.split)
+2019-08-21 17:56:01	 <<< 	franbird (~franbird@static.82.62.9.5.clients.your-server.de) has quit (*.net *.split)
+2019-08-21 17:56:01	 <<< 	Tahvok (~Tahvok@unaffiliated/tahvok) has quit (*.net *.split)
+2019-08-21 17:56:01	 <<< 	chamunks (chamunks@zeus.entityreborn.com) has quit (*.net *.split)
+2019-08-21 17:56:02	 <<< 	ulili (~quassel@p200300C96F108D00EA9A8FFFFEBD3E0F.dip0.t-ipconnect.de) has quit (*.net *.split)
+2019-08-21 17:56:02	 <<< 	fridim (~fridim@2a01:cb1d:847c:6300:221:ccff:feb6:ba00) has quit (*.net *.split)
+2019-08-21 17:56:02	 <<< 	uebera|| (ueberall_l@unaffiliated/ueberall) has quit (*.net *.split)
+2019-08-21 17:56:02	 <<< 	madduck (~madduck@debian/developer/madduck) has quit (*.net *.split)
+2019-08-21 17:56:06	 <<< 	deepy (deepy@wrongplanet/deepa) has quit (*.net *.split)
+2019-08-21 17:56:06	 <<< 	rumpelsepp (~rumpelsep@2a01:4f8:c2c:87b5::1) has quit (*.net *.split)
+2019-08-21 17:56:06	 <<< 	apejens (omega@numbat.inamo.no) has quit (*.net *.split)
+2019-08-21 17:56:06	 <<< 	whodat (~flash@2001:19f0:5001:898:5400:1ff:fef8:c1fb) has quit (*.net *.split)
+2019-08-21 17:56:06	 <<< 	thomasg (~thomasg@gstaedtner.net) has quit (*.net *.split)
+2019-08-21 17:56:06	 <<< 	terminalator (~terminala@unaffiliated/terminalator) has quit (*.net *.split)
+2019-08-21 17:56:07	 <<< 	kradalby (~kradalby@fap.no) has quit (*.net *.split)
+2019-08-21 17:56:07	 <<< 	Cork (~Cork@firefox/community/cork) has quit (*.net *.split)
+2019-08-21 17:56:07	 <<< 	Len_ (~Len_@fone.len.pw) has quit (*.net *.split)
+2019-08-21 17:56:07	 <<< 	toketin (toketin@gateway/vpn/mullvad/toketin) has quit (*.net *.split)
+2019-08-21 17:56:07	 <<< 	moviuro (~moviuro@ns3007255.ip-151-80-43.eu) has quit (*.net *.split)
+2019-08-21 17:56:07	 <<< 	StatelessCat (~Stateless@unaffiliated/statelesscat) has quit (*.net *.split)
+2019-08-21 17:56:08	 <<< 	z1r0_ (~ziro@node.uchub.io) has quit (*.net *.split)
+2019-08-21 17:56:08	 <<< 	ScrumpyJack (~ScrumpyJa@bigyellowfish.com) has quit (*.net *.split)
+2019-08-21 17:56:08	 <<< 	lxdr (~lxdr@51.15.4.54) has quit (*.net *.split)
+2019-08-21 17:56:08	 <<< 	benoliver999 (~benoliver@fsf/member/benoliver999) has quit (*.net *.split)
+2019-08-21 17:56:09	 <<< 	dancer (~dancer@chryseis.square1tech.com) has quit (*.net *.split)
+2019-08-21 17:58:44	 <<< 	biotim (timhowesma@fsf/member/biotim) has quit (Ping timeout: 252 seconds)
+2019-08-21 17:59:22	> 	biotim (timhowesma@gateway/shell/matrix.org/session) has joined #syncthing
+2019-08-21 18:10:56	> 	grumble (~grumble@freenode/staff/grumble) has joined #syncthing
+2019-08-21 18:11:08	> 	Len_ (~Len_@fone.len.pw) has joined #syncthing
+2019-08-21 18:11:08	> 	fork_ (~fork@unaffiliated/fork) has joined #syncthing
+2019-08-21 18:11:08	> 	wasMitNetzen (~quassel@customer-46-39-112-191.stosn.net) has joined #syncthing
+2019-08-21 18:11:08	> 	storrgie (~storrgie@epiphyte.network) has joined #syncthing
+2019-08-21 18:11:08	> 	niemalsnever (~niemalsne@ip-109-91-106-24.hsi12.unitymediagroup.de) has joined #syncthing
+2019-08-21 18:11:08	> 	FragtioN (~fragtion@srv.webintuitive.co.za) has joined #syncthing
+2019-08-21 18:11:08	> 	kpuc (1011@46-97-229-216.sr2.pon.net) has joined #syncthing
+2019-08-21 18:11:08	> 	KBme (~KBme@ra.ndom.dev) has joined #syncthing
+2019-08-21 18:11:08	> 	NightMonkey (~NightMonk@pdpc/supporter/professional/nightmonkey) has joined #syncthing
+2019-08-21 18:11:08	> 	Vaelatern (~Vaelatern@cpe-70-122-180-155.tx.res.rr.com) has joined #syncthing
+2019-08-21 18:11:17	 <<< 	biotim (timhowesma@gateway/shell/matrix.org/session) has quit (Changing host)
+2019-08-21 18:11:17	> 	biotim (timhowesma@gateway/shell/matrix.org/x-vvrdminjnztgcqyu) has joined #syncthing
+2019-08-21 18:11:29	> 	icetux (stonewares@gateway/shell/matrix.org/x-trqilvazbfomkpol) has joined #syncthing
+2019-08-21 18:11:37	> 	him-cesjf (~cesjf@1.6.186.159) has joined #syncthing
+2019-08-21 18:11:37	> 	Carafly_ (~Carafly@185.93.3.195.adsl.inet-telecom.org) has joined #syncthing
+2019-08-21 18:11:37	> 	felixfoertsch23 (~felixfoer@92.117.49.220) has joined #syncthing
+2019-08-21 18:11:37	> 	Snuupy (~Snuupy@unaffiliated/snuupy) has joined #syncthing
+2019-08-21 18:11:37	> 	apetresc (~apetresc@toroon474qw-lp130-03-65-95-169-25.dsl.bell.ca) has joined #syncthing
+2019-08-21 18:11:37	> 	xelra (~xelra@unaffiliated/xelra) has joined #syncthing
+2019-08-21 18:11:37	> 	Trieste (~T@unaffiliated/trieste) has joined #syncthing
+2019-08-21 18:11:37	> 	JayGatsby (~JayGatsby@unaffiliated/jaygatsby7) has joined #syncthing
+2019-08-21 18:11:37	> 	_KaszpiR_ (~kaszpir@unaffiliated/kaszpir/x-3157048) has joined #syncthing
+2019-08-21 18:11:37	> 	StathisA (~StathisA@unaffiliated/stathisa) has joined #syncthing
+2019-08-21 18:11:37	> 	harmonik (~seery@185.162.184.11) has joined #syncthing
+2019-08-21 18:11:37	> 	arooni (~arooni@li1062-244.members.linode.com) has joined #syncthing
+2019-08-21 18:11:37	> 	o3u (o3u@unaffiliated/o3u) has joined #syncthing
+2019-08-21 18:11:54	> 	ish (sid1441@gateway/web/irccloud.com/session) has joined #syncthing
+2019-08-21 18:11:54	> 	`z (sid68223@gateway/web/irccloud.com/session) has joined #syncthing
+2019-08-21 18:11:54	> 	joshin (~josh@2001:579:812c:20:470:57ff:feaa:6cc1) has joined #syncthing
+2019-08-21 18:11:54	> 	akraut_ (akraut@gateway/web/irccloud.com/session) has joined #syncthing
+2019-08-21 18:11:54	> 	Zertrin__ (~zertrin@zertrin.org) has joined #syncthing
+2019-08-21 18:11:54	> 	Am_ (~quadra@2001:8b0:6572:bbc8:65a9:63e2:ccd:dfb0) has joined #syncthing
+2019-08-21 18:11:54	> 	ulili (~quassel@p200300C96F108D00EA9A8FFFFEBD3E0F.dip0.t-ipconnect.de) has joined #syncthing
+2019-08-21 18:11:54	> 	fridim (~fridim@2a01:cb1d:847c:6300:221:ccff:feb6:ba00) has joined #syncthing
+2019-08-21 18:11:54	> 	uebera|| (ueberall_l@unaffiliated/ueberall) has joined #syncthing
+2019-08-21 18:11:54	> 	madduck (~madduck@debian/developer/madduck) has joined #syncthing
+2019-08-21 18:11:54	> 	deepy (deepy@wrongplanet/deepa) has joined #syncthing
+2019-08-21 18:11:54	> 	thomasg (~thomasg@gstaedtner.net) has joined #syncthing
+2019-08-21 18:11:54	> 	rumpelsepp (~rumpelsep@2a01:4f8:c2c:87b5::1) has joined #syncthing
+2019-08-21 18:11:54	> 	apejens (omega@numbat.inamo.no) has joined #syncthing
+2019-08-21 18:11:54	> 	whodat (~flash@2001:19f0:5001:898:5400:1ff:fef8:c1fb) has joined #syncthing
+2019-08-21 18:12:02	> 	jo-so (joergaleag@gateway/shell/matrix.org/session) has joined #syncthing
+2019-08-21 18:12:02	> 	demure (demure@demu.red) has joined #syncthing
+2019-08-21 18:12:02	> 	teej (uid154177@gateway/web/irccloud.com/session) has joined #syncthing
+2019-08-21 18:12:02	> 	PebbyAtWark (~awildbird@2607:f598:b280:255:82ee:73ff:fe7c:5ded) has joined #syncthing
+2019-08-21 18:12:02	> 	x7c00 (~quassel@2604:a880:800:10::505:4001) has joined #syncthing
+2019-08-21 18:12:02	> 	lilmike (~server@mtserver.mwtd.net) has joined #syncthing
+2019-08-21 18:12:02	> 	roasted (~quassel@unaffiliated/roasted) has joined #syncthing
+2019-08-21 18:12:02	> 	pozzoni (pozzoni@2604:180::5a69:7f32) has joined #syncthing
+2019-08-21 18:12:13	> 	diplo (~andy@unaffiliated/diplo) has joined #syncthing
+2019-08-21 18:12:13	> 	hoonetorg (~hoonetorg@77.119.226.254.static.drei.at) has joined #syncthing
+2019-08-21 18:12:13	> 	nekr0z (~nekr0z@128-72-157-101.broadband.corbina.ru) has joined #syncthing
+2019-08-21 18:12:13	> 	raso1 (~raso@deb-multimedia.org) has joined #syncthing
+2019-08-21 18:12:13	> 	MasterNayru (~quassel@campbell.jmo.name) has joined #syncthing
+2019-08-21 18:12:13	> 	lemmi (~lemmi@lpm.pw) has joined #syncthing
+2019-08-21 18:12:13	> 	hodapp (~hodapp@react-ams-119225.antiddos.solutions) has joined #syncthing
+2019-08-21 18:12:13	> 	crater2150 (~crater215@beiboot4.petschge.de) has joined #syncthing
+2019-08-21 18:12:13	> 	cyrozap (~cyrozap@168.235.71.249) has joined #syncthing
+2019-08-21 18:12:16	> 	capi (~capi@cnc.hetzner.dont-panic.cc) has joined #syncthing
+2019-08-21 18:12:33	 - 	Len_ is now known as Guest95978
+2019-08-21 18:12:42	> 	nuuuciano (~luuuciano@unaffiliated/luuuciano) has joined #syncthing
+2019-08-21 18:12:42	> 	frispete (~frispete@ip5f5907d2.dynamic.kabel-deutschland.de) has joined #syncthing
+2019-08-21 18:12:42	> 	shtirlic (~shtirlic@ec2-52-57-69-234.eu-central-1.compute.amazonaws.com) has joined #syncthing
+2019-08-21 18:12:42	> 	biax_ (~biax@unaffiliated/biax) has joined #syncthing
+2019-08-21 18:12:42	> 	sim590 (~sim590@modemcable007.202-59-74.mc.videotron.ca) has joined #syncthing
+2019-08-21 18:12:42	> 	sorinello (~sorinello@unaffiliated/sorinello) has joined #syncthing
+2019-08-21 18:12:42	> 	cyphase (~cyphase@unaffiliated/cyphase) has joined #syncthing
+2019-08-21 18:12:42	> 	hyper_ch (~hyper_ch@openvpn/user/hyper-ch) has joined #syncthing
+2019-08-21 18:12:42	> 	swalladge (~swalladge@unaffiliated/swalladge) has joined #syncthing
+2019-08-21 18:12:44	 <<< 	akraut_ (akraut@gateway/web/irccloud.com/session) has quit (Changing host)
+2019-08-21 18:12:44	> 	akraut_ (akraut@gateway/web/irccloud.com/x-rbunwkltvgwfclwm) has joined #syncthing
+2019-08-21 18:12:46	 <<< 	`z (sid68223@gateway/web/irccloud.com/session) has quit (Changing host)
+2019-08-21 18:12:46	> 	`z (sid68223@gateway/web/irccloud.com/x-mxiroezrapwltldl) has joined #syncthing
+2019-08-21 18:12:46	 <<< 	ish (sid1441@gateway/web/irccloud.com/session) has quit (Changing host)
+2019-08-21 18:12:46	> 	ish (sid1441@gateway/web/irccloud.com/x-zefhdpeopqddppnx) has joined #syncthing
+2019-08-21 18:12:54	> 	terminalator (~terminala@unaffiliated/terminalator) has joined #syncthing
+2019-08-21 18:12:54	> 	kradalby (~kradalby@fap.no) has joined #syncthing
+2019-08-21 18:12:54	> 	Cork (~Cork@firefox/community/cork) has joined #syncthing
+2019-08-21 18:12:54	> 	toketin (toketin@gateway/vpn/mullvad/toketin) has joined #syncthing
+2019-08-21 18:12:54	> 	moviuro (~moviuro@ns3007255.ip-151-80-43.eu) has joined #syncthing
+2019-08-21 18:12:54	> 	StatelessCat (~Stateless@unaffiliated/statelesscat) has joined #syncthing
+2019-08-21 18:12:54	> 	z1r0_ (~ziro@node.uchub.io) has joined #syncthing
+2019-08-21 18:12:54	> 	ScrumpyJack (~ScrumpyJa@bigyellowfish.com) has joined #syncthing
+2019-08-21 18:12:54	> 	lxdr (~lxdr@51.15.4.54) has joined #syncthing
+2019-08-21 18:12:54	> 	benoliver999 (~benoliver@fsf/member/benoliver999) has joined #syncthing
+2019-08-21 18:12:54	> 	dancer (~dancer@chryseis.square1tech.com) has joined #syncthing
+2019-08-21 18:12:55	 <<< 	teej (uid154177@gateway/web/irccloud.com/session) has quit (Changing host)
+2019-08-21 18:12:55	> 	teej (uid154177@gateway/web/irccloud.com/x-awinxldlepftwmlv) has joined #syncthing
+2019-08-21 18:12:58	> 	smeggysmeg (~smeg@unaffiliated/smeggysmeg) has joined #syncthing
+2019-08-21 18:12:58	> 	jasonbraganza (~jasonbrag@unaffiliated/jasonbraganza) has joined #syncthing
+2019-08-21 18:12:58	> 	stac (~stac@ircpuzzles/2016/april-fools/sixth/stac) has joined #syncthing
+2019-08-21 18:12:58	> 	BlastuR (~magnus@unaffiliated/blastur) has joined #syncthing
+2019-08-21 18:12:58	> 	HJL (~quassel@208.68.106.132) has joined #syncthing
+2019-08-21 18:12:58	> 	WilliButz (~WilliButz@butz.cloud) has joined #syncthing
+2019-08-21 18:12:58	> 	vimclippy (~vimclippy@104.244.76.234) has joined #syncthing
+2019-08-21 18:12:58	> 	MichaelGooden (~atlanta.m@atlanta.michaelgooden.net) has joined #syncthing
+2019-08-21 18:12:58	> 	jeddi (~jedd@203.129.25.127) has joined #syncthing
+2019-08-21 18:12:58	> 	quite (~quite@unaffiliated/quite) has joined #syncthing
+2019-08-21 18:12:58	> 	benda` (~benda@ip5b423211.dynamic.kabel-deutschland.de) has joined #syncthing
+2019-08-21 18:12:58	> 	machmalabala (~machmalab@cccp.io) has joined #syncthing
+2019-08-21 18:12:58	> 	canton7 (~canton7@about/csharp/regular/canton7) has joined #syncthing
+2019-08-21 18:12:58	> 	latz (~latz@li193-194.members.linode.com) has joined #syncthing
+2019-08-21 18:12:58	> 	energizer_ (~energizer@unaffiliated/energizer) has joined #syncthing
+2019-08-21 18:12:58	> 	[0]Jmr_ (~0]Jmr@you.know.audrius.rocks) has joined #syncthing
+2019-08-21 18:12:58	> 	calmh (~jb@syncthing/maintainer/calmh) has joined #syncthing
+2019-08-21 18:12:58	 - 	Mode #syncthing [+vv canton7 calmh] by sinisalo.freenode.net
+2019-08-21 18:13:02	 <<< 	jo-so (joergaleag@gateway/shell/matrix.org/session) has quit (Changing host)
+2019-08-21 18:13:02	> 	jo-so (joergaleag@gateway/shell/matrix.org/x-amteppngiqsbbmwi) has joined #syncthing
+2019-08-21 18:13:04	 <<< 	teej (uid154177@gateway/web/irccloud.com/x-awinxldlepftwmlv) has quit (Max SendQ exceeded)
+2019-08-21 18:13:08	 <<< 	Guest95978 (~Len_@fone.len.pw) has quit (Write error: Broken pipe)
+2019-08-21 18:13:16	> 	hgeboner (~duke@v2201801700760097.supersrv.de) has joined #syncthing
+2019-08-21 18:13:17	> 	_Len (~Len_@fone.len.pw) has joined #syncthing
+2019-08-21 18:13:26	> 	Darkmatter66 (~Darkmatte@37.237.215.10) has joined #syncthing
+2019-08-21 18:13:26	> 	dvl (~dvl@freebsd/developer/dvl) has joined #syncthing
+2019-08-21 18:13:26	> 	NIN101 (~core@jabber.quitesimple.org) has joined #syncthing
+2019-08-21 18:13:26	> 	niqnaq (~help@unaffiliated/niqnaq) has joined #syncthing
+2019-08-21 18:13:26	> 	Martchus (~martchus@dslb-084-057-118-231.084.057.pools.vodafone-ip.de) has joined #syncthing
+2019-08-21 18:13:26	> 	t4skforce (~t4skforce@cm100-100.liwest.at) has joined #syncthing
+2019-08-21 18:13:26	> 	drawkula (~username@p57BDF003.dip0.t-ipconnect.de) has joined #syncthing
+2019-08-21 18:13:26	> 	Valfor (~Valfor@unaffiliated/mrpps) has joined #syncthing
+2019-08-21 18:13:26	> 	baker0052 (~baker0052@p57B365B7.dip0.t-ipconnect.de) has joined #syncthing
+2019-08-21 18:13:26	> 	devster31 (~devster@host87-199-dynamic.246-95-r.retail.telecomitalia.it) has joined #syncthing
+2019-08-21 18:13:26	> 	nobiz (~barca@unaffiliated/nobiz) has joined #syncthing
+2019-08-21 18:13:37	> 	fakuivan (~fakuivan@gateway/tor-sasl/fakuivan) has joined #syncthing
+2019-08-21 18:13:51	> 	markmcb (~markmcb@23.226.128.22.adsl.inet-telecom.org) has joined #syncthing
+2019-08-21 18:13:52	> 	JackWinter (~jack@vodsl-10768.vo.lu) has joined #syncthing
+2019-08-21 18:13:52	> 	dirtycajun (~dirtycaju@99.40.228.101) has joined #syncthing
+2019-08-21 18:13:52	> 	joltman (~znc@unaffiliated/joltman) has joined #syncthing
+2019-08-21 18:13:52	> 	tianon (~tianon@unaffiliated/tianon) has joined #syncthing
+2019-08-21 18:13:52	> 	Leopere (~Leopere@s.nixc.us) has joined #syncthing
+2019-08-21 18:13:52	> 	zoni (~zoni@ams1.groenen.me) has joined #syncthing
+2019-08-21 18:13:52	> 	Lunatrius (~Lunatrius@77.38.22.40) has joined #syncthing
+2019-08-21 18:13:52	> 	haritz (~hrtz@unaffiliated/haritz) has joined #syncthing
+2019-08-21 18:13:52	> 	franbird (~franbird@static.82.62.9.5.clients.your-server.de) has joined #syncthing
+2019-08-21 18:13:52	> 	Tahvok (~Tahvok@unaffiliated/tahvok) has joined #syncthing
+2019-08-21 18:13:52	> 	chamunks (chamunks@zeus.entityreborn.com) has joined #syncthing
+2019-08-21 18:15:01	> 	teej (uid154177@gateway/web/irccloud.com/session) has joined #syncthing
+2019-08-21 18:15:31	 <<< 	icetux (stonewares@gateway/shell/matrix.org/x-trqilvazbfomkpol) has quit (Ping timeout: 248 seconds)
+2019-08-21 18:15:36	 <<< 	biotim (timhowesma@gateway/shell/matrix.org/x-vvrdminjnztgcqyu) has quit (Ping timeout: 252 seconds)
+2019-08-21 18:15:37	 <<< 	teej (uid154177@gateway/web/irccloud.com/session) has quit (Changing host)
+2019-08-21 18:15:37	> 	teej (uid154177@gateway/web/irccloud.com/x-mkiggndldyigjhxq) has joined #syncthing
+2019-08-21 18:16:22	 <<< 	jo-so (joergaleag@gateway/shell/matrix.org/x-amteppngiqsbbmwi) has quit (Ping timeout: 276 seconds)
+2019-08-21 18:17:24	 - 	`z is now known as Guest15281
+2019-08-21 18:17:24	 - 	ish is now known as Guest82208
+2019-08-21 18:18:06	 <<< 	teej (uid154177@gateway/web/irccloud.com/x-mkiggndldyigjhxq) has quit (Changing host)
+2019-08-21 18:18:06	> 	teej (uid154177@unaffiliated/teej) has joined #syncthing
+2019-08-21 18:18:06	 <<< 	teej (uid154177@unaffiliated/teej) has quit (Changing host)
+2019-08-21 18:18:06	> 	teej (uid154177@gateway/web/irccloud.com/x-mkiggndldyigjhxq) has joined #syncthing
+2019-08-21 18:19:06	 - 	him-cesjf is now known as Guest87473
+2019-08-21 18:19:54	 <<< 	Guest82208 (sid1441@gateway/web/irccloud.com/x-zefhdpeopqddppnx) has quit
+2019-08-21 18:20:27	> 	Guest82208 (sid1441@gateway/web/irccloud.com/x-yachecihximhgdpw) has joined #syncthing
+2019-08-21 18:21:46	> 	atrus (~atrus@2600:3c01:e000:308::250:2) has joined #syncthing
+2019-08-21 18:21:47	> 	Selavi (sel@unaffiliated/valesi) has joined #syncthing
+2019-08-21 18:21:49	 <<< 	atrus (~atrus@2600:3c01:e000:308::250:2) has quit (Changing host)
+2019-08-21 18:21:49	> 	atrus (~atrus@unaffiliated/atrus) has joined #syncthing
+2019-08-21 18:21:54	> 	fxrs (~fxrs@192.227.212.130) has joined #syncthing
+2019-08-21 18:21:59	> 	AUser (~AUser@104.236.233.252) has joined #syncthing
+2019-08-21 18:22:01	> 	moritzdietz (~moritz@unaffiliated/moritzdietz) has joined #syncthing
+2019-08-21 18:22:42	> 	raj (raj@unaffiliated/cypha) has joined #syncthing
+2019-08-21 18:22:53	> 	lopsided98 (~quassel@2601:18a:0:7723::cd0e) has joined #syncthing
+2019-08-21 18:27:25	> 	biotim (timhowesma@fsf/member/biotim) has joined #syncthing
+2019-08-21 18:28:06	> 	icetux (stonewares@gateway/shell/matrix.org/x-nuqierstiimamqzl) has joined #syncthing
+2019-08-21 18:31:01	 <<< 	Guest82208 (sid1441@gateway/web/irccloud.com/x-yachecihximhgdpw) has quit
+2019-08-21 18:31:42	> 	ish (sid1441@gateway/web/irccloud.com/x-zswaduttgsxagjku) has joined #syncthing
+2019-08-21 18:32:16	 <<< 	biax_ (~biax@unaffiliated/biax) has quit (Ping timeout: 272 seconds)
+2019-08-21 18:35:28	> 	jo-so (joergaleag@gateway/shell/matrix.org/x-ojtyvabggtsfqlwd) has joined #syncthing
+2019-09-20 10:31:10	> 	_Raijin (~gideon@2603:3023:708:9c00::d400) has joined #syncthing
+2019-09-20 10:31:10	 - 	Topic for #syncthing is "Register with services to talk || FAQ: https://docs.syncthing.net/users/faq.html || Services: http://status.syncthing.net"
+2019-09-20 10:31:10	 - 	Topic set by calmh (~jb@syncthing/maintainer/calmh) on  
+2019-09-20 10:31:10	 - 	Channel #syncthing: 141 nicks (0 ops, 2 voices, 139 normals)
+2019-09-20 10:31:10	 - 	URL for #syncthing: https://syncthing.net/
+2019-09-20 10:31:12	 - 	Channel created on  
+2019-09-20 10:32:53	_Raijin	Hello, I am wondering If I have misconfigured something because syncthing is acting extremely slow. Basically I have a home PC and a media server, which both can download music. Any music downloaded on one gets synced to the other. Now I have about 7GB of music trying to sync from my server to my home PC, across my LAN. I left it going overnight and it doesnt even look CLOSE to being done
+2019-09-20 10:34:16	_Raijin	Clicking the "Download rate" button changed the speed from 1.5KiB/Sec to about 1Mb/Sec. A bit confused. At this rate the transfer would still take ages
+2019-09-20 10:43:12	 <<< 	lfam (~lfam@12.108.108.5) has quit (Ping timeout: 258 seconds)
+2019-09-20 10:52:31	> 	lfam (~lfam@12.108.108.5) has joined #syncthing
+2019-09-20 11:00:36	> 	gareppa (~gareppa@unaffiliated/gareppa) has joined #syncthing
+2019-09-20 11:08:53	 <<< 	hyper_ch (~hyper_ch@openvpn/user/hyper-ch) has quit (Quit: ZNC 1.7.4 - https://znc.in)
+2019-09-20 11:11:30	> 	hyper_ch (~hyper_ch@openvpn/user/hyper-ch) has joined #syncthing
+2019-09-20 11:26:04	 <<< 	AlmarShenwan (~quassel@128.234.222.68) has quit (Read error: Connection reset by peer)
+2019-09-20 11:26:17	> 	AlmarShenwan (~quassel@128.234.222.68) has joined #syncthing
+2019-09-20 11:26:28	> 	SanskritFritz (~quassel@BC2434C7.catv.pool.telekom.hu) has joined #syncthing
+2019-09-20 11:27:06	 <<< 	machmalabala (~machmalab@ip235.ip-164-132-151.eu) has quit (Read error: Connection reset by peer)
+2019-09-20 11:27:20	 <<< 	Carafly (~Carafly@185.93.3.195.adsl.inet-telecom.org) has quit (Read error: Connection reset by peer)
+2019-09-20 11:27:34	> 	Carafly (~Carafly@185.59.221.158.adsl.inet-telecom.org) has joined #syncthing
+2019-09-20 11:28:13	 <<< 	Snuupy (~Snuupy@unaffiliated/snuupy) has quit (Quit: Ping timeout (120 seconds))
+2019-09-20 11:28:22	> 	machmalabala (~machmalab@ip235.ip-164-132-151.eu) has joined #syncthing
+2019-09-20 11:28:40	 <<< 	suchademon (~suchademo@sons-of-sparda.at) has quit (Quit: ZNC 1.6.2+deb2+b2 - http://znc.in)
+2019-09-20 11:28:45	 <<< 	arooni (~arooni@li1062-244.members.linode.com) has quit (Quit: ZNC - http://znc.in)
+2019-09-20 11:28:45	 <<< 	franbird (~franbird@static.82.62.9.5.clients.your-server.de) has quit (Remote host closed the connection)
+2019-09-20 11:28:53	> 	franbird (~franbird@static.82.62.9.5.clients.your-server.de) has joined #syncthing
+2019-09-20 11:28:54	> 	suchademon (~suchademo@2a03:4000:f:18a::6969) has joined #syncthing
+2019-09-20 11:29:08	> 	arooni (~arooni@li1062-244.members.linode.com) has joined #syncthing
+2019-09-20 11:29:16	> 	Snuupy (~Snuupy@unaffiliated/snuupy) has joined #syncthing
+2019-09-20 11:33:39	 <<< 	gareppa (~gareppa@unaffiliated/gareppa) has quit (Quit: Leaving)
+2019-09-20 11:51:49	 <<< 	lfam (~lfam@12.108.108.5) has quit (Ping timeout: 258 seconds)
+2019-09-20 12:09:49	> 	lfam (~lfam@12.108.108.5) has joined #syncthing
+2019-09-20 12:40:36	 <<< 	lfam (~lfam@12.108.108.5) has quit (Ping timeout: 246 seconds)
+2019-09-20 12:43:39	 <<< 	astronavt (~astronavt@unaffiliated/astronavt) has quit (Quit: ...)
+2019-09-20 12:44:00	> 	astronavt (~astronavt@unaffiliated/astronavt) has joined #syncthing
+2019-09-20 12:44:36	> 	imsodin (~Thunderbi@46-126-191-69.dynamic.hispeed.ch) has joined #syncthing
+2019-09-20 13:32:02	 <<< 	imsodin (~Thunderbi@46-126-191-69.dynamic.hispeed.ch) has quit (Ping timeout: 240 seconds)
+2019-09-20 13:40:06	 <<< 	JackWinter (~jack@ppp-294.vo.lu) has quit (Quit: Konversation terminated!)
+2019-09-20 13:41:43	> 	JackWinter (~jack@ppp-294.vo.lu) has joined #syncthing
+2019-09-20 13:47:43	> 	JackWinter_ (~jack@ppp-294.vo.lu) has joined #syncthing
+2019-09-20 13:48:00	> 	_aD (~quadra@226.84.2.81.in-addr.arpa) has joined #syncthing
+2019-09-20 13:48:01	 <<< 	_aD (~quadra@226.84.2.81.in-addr.arpa) has quit (Changing host)
+2019-09-20 13:48:01	> 	_aD (~quadra@unaffiliated/ad/x-0210533) has joined #syncthing
+2019-09-20 13:49:14	 <<< 	JackWinter (~jack@ppp-294.vo.lu) has quit (Ping timeout: 240 seconds)
+2019-09-20 13:50:34	+calmh	_Raijin: https://docs.syncthing.net/users/faq.html#why-is-the-sync-so-slow
+2019-09-20 13:50:40	+calmh	clicking the rate just changes the unit
+2019-09-20 14:12:55	> 	JackWinter (~jack@ppp-294.vo.lu) has joined #syncthing
+2019-09-20 14:15:02	 <<< 	JackWinter_ (~jack@ppp-294.vo.lu) has quit (Ping timeout: 245 seconds)
+2019-09-20 14:20:13	 <<< 	SanskritFritz (~quassel@BC2434C7.catv.pool.telekom.hu) has quit (Quit: leaving...)
+2019-09-20 14:44:49	> 	nuuuciano_ (~luuuciano@unaffiliated/luuuciano) has joined #syncthing
+2019-09-20 14:44:50	 <<< 	nuuuciano (~luuuciano@unaffiliated/luuuciano) has quit (Ping timeout: 240 seconds)
+2019-09-20 17:07:40	 <<< 	nitdega (~nitdega@2600:1700:3570:fa7f:2b66:cb62:ee92:789a) has quit (Quit: ZNC - 1.6.0 - http://znc.in)
+2019-09-20 17:09:09	 <<< 	Soo_Slow (Soo_Slow@gateway/vpn/privateinternetaccess/sooslow/x-31376162) has quit (Remote host closed the connection)
+2019-09-20 17:39:39	 <<< 	lilmike (~server@mtserver.mwtd.net) has quit (Ping timeout: 265 seconds)
+2019-09-20 17:39:44	> 	lfam (~lfam@2601:47:4100:7f52:2d6a:4ce1:1d49:5668) has joined #syncthing
+2019-09-20 17:49:05	> 	lilmike (~server@mtserver.mwtd.net) has joined #syncthing
+2019-09-20 18:16:37	> 	nitdega (~nitdega@2600:1700:3570:fa7f:2b66:cb62:ee92:789a) has joined #syncthing
+2019-09-20 19:14:28	 <<< 	ulili (~quassel@p200300C96F101300EA9A8FFFFEBD3E0F.dip0.t-ipconnect.de) has quit (Ping timeout: 245 seconds)
+2019-09-20 19:15:09	> 	ulili (~quassel@p200300C96F3B7800EA9A8FFFFEBD3E0F.dip0.t-ipconnect.de) has joined #syncthing
+2019-09-20 19:36:39	> 	felixfoertsch23 (~felixfoer@2001:16b8:50b7:e200:fc47:ab31:62f3:27b3) has joined #syncthing
+2019-09-20 19:37:35	 <<< 	felixfoertsch (~felixfoer@109.250.102.201) has quit (Ping timeout: 265 seconds)
+2019-09-20 20:10:43	 <<< 	lfam (~lfam@2601:47:4100:7f52:2d6a:4ce1:1d49:5668) has quit (Ping timeout: 245 seconds)
+2019-09-20 20:14:51	 - 	n1qn4q is now known as Guest56124
+2019-09-20 20:15:02	> 	niqnaq (~help@unaffiliated/niqnaq) has joined #syncthing
+2019-09-20 20:17:38	 <<< 	Guest56124 (~help@unaffiliated/niqnaq) has quit (Ping timeout: 240 seconds)
+2019-09-20 20:43:12	 <<< 	felixfoertsch23 (~felixfoer@2001:16b8:50b7:e200:fc47:ab31:62f3:27b3) has quit (Quit: ZNC 1.7.3 - https://znc.in)
+2019-09-20 20:43:22	> 	felixfoertsch (~felixfoer@2001:16b8:50b7:e200:e440:917f:455f:4548) has joined #syncthing
+2019-09-20 21:44:29	 <<< 	_aD (~quadra@unaffiliated/ad/x-0210533) has quit (Ping timeout: 268 seconds)
+2019-09-20 22:35:09	 <<< 	jasonbraganza (~jasonbrag@unaffiliated/jasonbraganza) has quit (Quit: Au revoir …)
+2019-09-20 22:37:33	> 	jasonbraganza (~jasonbrag@unaffiliated/jasonbraganza) has joined #syncthing
+2019-09-20 22:44:53	> 	SanskritFritz (~quassel@BC2434C7.catv.pool.telekom.hu) has joined #syncthing
+2019-09-20 23:43:29	 <<< 	nuuuciano_ (~luuuciano@unaffiliated/luuuciano) has quit (Remote host closed the connection)
+2019-09-20 23:50:11	> 	Mattiaslndstrm (~Mattiasln@c-484c72d5.018-449-6e6b701.bbcust.telenor.se) has joined #syncthing
+2019-09-21 00:18:11	> 	t4skforce (~t4skforce@178.113.80.253.wireless.dyn.drei.com) has joined #syncthing
+2019-09-21 01:48:58	> 	Zykino (~Thunderbi@2a01:e0a:28e:9d00:d4f8:5142:b3b:86c4) has joined #syncthing
+2019-09-21 02:09:31	 <<< 	Mattiaslndstrm (~Mattiasln@c-484c72d5.018-449-6e6b701.bbcust.telenor.se) has quit (Quit: Textual IRC Client: www.textualapp.com)
+2019-09-21 02:12:00	> 	Mattiaslndstrm (~Mattiasln@c-484c72d5.018-449-6e6b701.bbcust.telenor.se) has joined #syncthing
+2019-09-21 02:16:31	 <<< 	Mattiaslndstrm (~Mattiasln@c-484c72d5.018-449-6e6b701.bbcust.telenor.se) has quit (Remote host closed the connection)
+2019-09-21 02:17:27	> 	Mattiaslndstrm (~Mattiasln@c-484c72d5.018-449-6e6b701.bbcust.telenor.se) has joined #syncthing
+2019-09-21 02:21:40	 <<< 	quite (~quite@unaffiliated/quite) has quit (Quit: quite)
+2019-09-21 03:17:40	> 	ShapeShifter499 (~ShapeShif@unaffiliated/shapeshifter499) has joined #syncthing
+2019-09-21 03:17:55	 <<< 	hyper_ch (~hyper_ch@openvpn/user/hyper-ch) has quit (Read error: Connection reset by peer)
+2019-09-21 03:19:08	> 	hyper_ch (~hyper_ch@openvpn/user/hyper-ch) has joined #syncthing
+2019-09-21 03:22:09	> 	quite (~quite@unaffiliated/quite) has joined #syncthing
+2019-09-21 04:01:29	 <<< 	hyper_ch (~hyper_ch@openvpn/user/hyper-ch) has quit (Read error: Connection reset by peer)
+2019-09-21 04:02:44	> 	hyper_ch (~hyper_ch@openvpn/user/hyper-ch) has joined #syncthing
+2019-09-21 04:16:16	> 	tekmans13 (~tekmans@2a01:e35:8799:80a0:3187:8e87:3d8b:5d92) has joined #syncthing
+2019-09-21 04:16:56	 <<< 	tekmans13 (~tekmans@2a01:e35:8799:80a0:3187:8e87:3d8b:5d92) has quit (Client Quit)
+2019-09-21 04:21:41	 <<< 	SanskritFritz (~quassel@BC2434C7.catv.pool.telekom.hu) has quit (Quit: leaving...)
+2019-09-21 04:33:46	> 	gareppa (~gareppa@unaffiliated/gareppa) has joined #syncthing
+2019-09-21 05:06:48	> 	jobroe (~hannes@p5DD7FDA7.dip0.t-ipconnect.de) has joined #syncthing
+2019-09-21 05:51:27	 <<< 	shtirlic (~shtirlic@ec2-52-57-69-234.eu-central-1.compute.amazonaws.com) has quit (Quit: ZNC - http://znc.in)
+2019-09-21 05:52:50	> 	shtirlic (~shtirlic@ec2-52-57-69-234.eu-central-1.compute.amazonaws.com) has joined #syncthing
+2019-09-21 06:42:26	 <<< 	apetresc (~apetresc@toroon474qw-lp130-03-65-95-169-25.dsl.bell.ca) has quit (Read error: Connection reset by peer)
+2019-09-21 06:49:30	> 	apetresc (~apetresc@toroon474qw-lp130-03-65-95-169-25.dsl.bell.ca) has joined #syncthing
+2019-09-21 07:14:42	 <<< 	roasted (~quassel@unaffiliated/roasted) has quit (Read error: Connection reset by peer)
+2019-09-21 07:20:48	> 	lilmike_ (~server@mtserver.mwtd.net) has joined #syncthing
+2019-09-21 07:22:35	 <<< 	lilmike (~server@mtserver.mwtd.net) has quit (Ping timeout: 276 seconds)
+2019-09-21 07:22:35	 - 	lilmike_ is now known as lilmike
+2019-09-21 07:25:52	 <<< 	ShapeShifter499 (~ShapeShif@unaffiliated/shapeshifter499) has quit (Remote host closed the connection)
+2019-09-21 07:44:30	 <<< 	StathisA (~StathisA@unaffiliated/stathisa) has quit (Ping timeout: 268 seconds)
+2019-09-21 07:53:39	> 	StathisA (~StathisA@unaffiliated/stathisa) has joined #syncthing
+2019-09-21 08:03:44	> 	fakuivan (~fakuivan@gateway/tor-sasl/fakuivan) has joined #syncthing
+2019-09-21 08:05:18	> 	wCPO (~wCPO@unaffiliated/wcpo) has joined #syncthing
+2019-09-21 08:06:12	wCPO	Is it expected that ST tries to set up inotify for/scan ignored folders?
+2019-09-21 08:06:41	+canton7	I think so - there are some threads on the forum about this with more details
+2019-09-21 08:09:45	 <<< 	fakuivan (~fakuivan@gateway/tor-sasl/fakuivan) has quit (Remote host closed the connection)
+2019-09-21 08:09:46	wCPO	Thanks. It is a bit annoying as some of my ignored folders contain a lot of files and therefor sometimes break inotify.
+2019-09-21 08:13:08	> 	fakuivan (~fakuivan@gateway/tor-sasl/fakuivan) has joined #syncthing
+2019-09-21 08:24:30	 <<< 	gareppa (~gareppa@unaffiliated/gareppa) has quit (Quit: Leaving)
+2019-09-21 08:34:35	 <<< 	jobroe (~hannes@p5DD7FDA7.dip0.t-ipconnect.de) has quit (Quit: Konversation terminated!)
+2019-09-21 08:47:45	> 	AlmarShenwan_ (~quassel@188.52.193.166) has joined #syncthing
+2019-09-21 08:50:50	 <<< 	AlmarShenwan (~quassel@128.234.222.68) has quit (Ping timeout: 240 seconds)
+2019-09-21 09:25:33	 <<< 	fakuivan (~fakuivan@gateway/tor-sasl/fakuivan) has quit (Remote host closed the connection)
+2019-09-21 09:28:53	> 	fakuivan (~fakuivan@gateway/tor-sasl/fakuivan) has joined #syncthing
+2019-09-21 09:49:30	 <<< 	hyper_ch (~hyper_ch@openvpn/user/hyper-ch) has quit (Quit: ZNC 1.7.4 - https://znc.in)
+2019-09-21 09:51:34	> 	hyper_ch (~hyper_ch@openvpn/user/hyper-ch) has joined #syncthing
+2019-09-21 09:59:47	 <<< 	JackWinter (~jack@ppp-294.vo.lu) has quit (Quit: Konversation terminated!)
+2019-09-21 10:00:55	> 	JackWinter (~jack@ppp-294.vo.lu) has joined #syncthing
+2019-09-21 10:13:05	> 	_Len (~Len_@fone.len.pw) has joined #syncthing
+2019-09-21 10:13:14	> 	dirtycajun7 (~dirtycaju@99.40.228.101) has joined #syncthing
+2019-09-21 10:13:20	> 	dvl_ (~dvl@znc.unixathome.org) has joined #syncthing
+2019-09-21 10:13:23	> 	ueberall (ueberall_l@unaffiliated/ueberall) has joined #syncthing
+2019-09-21 10:14:12	> 	silvermere (~silvermer@expedition.whatbox.ca) has joined #syncthing
+2019-09-21 10:16:59	> 	sim590_ (~sim590@modemcable007.202-59-74.mc.videotron.ca) has joined #syncthing
+2019-09-21 10:19:38	> 	latz_ (~latz@li193-194.members.linode.com) has joined #syncthing
+2019-09-21 10:20:42	 <<< 	harmonik (~seery@185.162.184.11) has quit (*.net *.split)
+2019-09-21 10:20:42	 <<< 	uebera|| (ueberall_l@unaffiliated/ueberall) has quit (*.net *.split)
+2019-09-21 10:20:42	 <<< 	Len_ (~Len_@199.188.100.113) has quit (*.net *.split)
+2019-09-21 10:20:42	 <<< 	dirtycajun (~dirtycaju@99.40.228.101) has quit (*.net *.split)
+2019-09-21 10:20:42	 <<< 	sim590 (~sim590@modemcable007.202-59-74.mc.videotron.ca) has quit (*.net *.split)
+2019-09-21 10:20:42	 <<< 	dvl (~dvl@freebsd/developer/dvl) has quit (*.net *.split)
+2019-09-21 10:20:42	 <<< 	NightMonkey (~NightMonk@pdpc/supporter/professional/nightmonkey) has quit (*.net *.split)
+2019-09-21 10:20:42	 <<< 	benoliver999 (~benoliver@fsf/member/benoliver999) has quit (*.net *.split)
+2019-09-21 10:20:43	 <<< 	kpuc (1011@46-97-229-216.sr2.pon.net) has quit (*.net *.split)
+2019-09-21 10:20:43	 <<< 	silvermere_ (~silvermer@expedition.whatbox.ca) has quit (*.net *.split)
+2019-09-21 10:20:43	 <<< 	Selavi (sel@unaffiliated/valesi) has quit (*.net *.split)
+2019-09-21 10:20:43	 <<< 	smeggysmeg (~smeg@unaffiliated/smeggysmeg) has quit (*.net *.split)
+2019-09-21 10:20:43	 <<< 	MichaelGooden (~atlanta.m@atlanta.michaelgooden.net) has quit (*.net *.split)
+2019-09-21 10:20:43	 <<< 	latz (~latz@li193-194.members.linode.com) has quit (*.net *.split)
+2019-09-21 10:20:43	 <<< 	energizer (~energizer@unaffiliated/energizer) has quit (*.net *.split)
+2019-09-21 10:20:43	 <<< 	[0]Jmr_ (~0]Jmr@you.know.audrius.rocks) has quit (*.net *.split)
+2019-09-21 10:20:45	 - 	sim590_ is now known as sim590
+2019-09-21 10:20:47	> 	benoliver999_ (~benoliver@fsf/member/benoliver999) has joined #syncthing
+2019-09-21 10:20:47	 - 	_Len is now known as Len_
+2019-09-21 10:20:58	> 	kpuc (1011@46-97-229-216.sr2.pon.net) has joined #syncthing
+2019-09-21 10:21:17	 - 	Len_ is now known as Guest56178
+2019-09-21 10:21:31	> 	energizer (~energizer@unaffiliated/energizer) has joined #syncthing
+2019-09-21 10:21:47	> 	harmonik (~seery@185.162.184.11) has joined #syncthing
+2019-09-21 10:22:01	 - 	benoliver999_ is now known as benoliver999
+2019-09-21 10:22:26	> 	MichaelGooden (~atlanta.m@atlanta.michaelgooden.net) has joined #syncthing
+2019-09-21 10:22:51	 <<< 	StathisA (~StathisA@unaffiliated/stathisa) has quit (Ping timeout: 240 seconds)
+2019-09-21 10:23:02	> 	smeggysmeg (~smeg@unaffiliated/smeggysmeg) has joined #syncthing
+2019-09-21 10:23:04	> 	[0]Jmr (~0]Jmr@you.know.audrius.rocks) has joined #syncthing
+2019-09-21 10:23:04	 - 	Mode #syncthing [+v [0]Jmr] by ChanServ
+2019-09-21 10:24:13	> 	Selavi (sel@unaffiliated/valesi) has joined #syncthing
+2019-09-21 10:25:35	> 	NightMonkey (~NightMonk@pdpc/supporter/professional/nightmonkey) has joined #syncthing
+2019-09-21 10:28:45	> 	StathisA (~StathisA@unaffiliated/stathisa) has joined #syncthing
+2019-09-21 10:36:58	 <<< 	fakuivan (~fakuivan@gateway/tor-sasl/fakuivan) has quit (Remote host closed the connection)
+2019-09-21 10:40:01	> 	fakuivan (~fakuivan@gateway/tor-sasl/fakuivan) has joined #syncthing
+2019-09-21 11:26:33	 - 	Guest56178 is now known as Len_
+2019-09-21 12:50:04	> 	SanskritFritz (~quassel@BC2434C7.catv.pool.telekom.hu) has joined #syncthing
+2019-09-21 13:09:40	 <<< 	smeggysmeg (~smeg@unaffiliated/smeggysmeg) has quit (Ping timeout: 264 seconds)
+2019-09-21 13:11:39	 <<< 	fakuivan (~fakuivan@gateway/tor-sasl/fakuivan) has quit (Remote host closed the connection)
+2019-09-21 13:14:58	> 	fakuivan (~fakuivan@gateway/tor-sasl/fakuivan) has joined #syncthing
+2019-09-21 13:16:44	> 	smeggysmeg (~smeg@unaffiliated/smeggysmeg) has joined #syncthing
+2019-09-21 13:32:52	 <<< 	SanskritFritz (~quassel@BC2434C7.catv.pool.telekom.hu) has quit (Quit: leaving...)
+2019-09-21 13:49:44	> 	_aD (~quadra@2001:8b0:6572:bbc8:79b3:58ef:b71e:82c2) has joined #syncthing
+2019-09-21 13:49:44	 <<< 	_aD (~quadra@2001:8b0:6572:bbc8:79b3:58ef:b71e:82c2) has quit (Changing host)
+2019-09-21 13:49:44	> 	_aD (~quadra@unaffiliated/ad/x-0210533) has joined #syncthing
+2019-09-21 14:08:00	 <<< 	toketin (toketin@gateway/vpn/mullvad/toketin) has quit (Ping timeout: 246 seconds)
+2019-09-21 14:29:53	> 	toketin (toketin@gateway/vpn/mullvad/toketin) has joined #syncthing
+2019-09-21 16:40:25	 <<< 	Zykino (~Thunderbi@2a01:e0a:28e:9d00:d4f8:5142:b3b:86c4) has quit (Quit: Zykino)
+2019-09-21 16:47:58	 <<< 	AlmarShenwan_ (~quassel@188.52.193.166) has quit (Quit: No Ping reply in 180 seconds.)
+2019-09-21 16:49:23	> 	AlmarShenwan (~quassel@188.52.193.166) has joined #syncthing
+2019-09-21 17:00:46	 <<< 	lilmike (~server@mtserver.mwtd.net) has quit (Quit: ZNC 1.7.4 - https://znc.in)
+2019-09-21 17:01:46	> 	lilmike (~server@mtserver.mwtd.net) has joined #syncthing
+2019-09-21 17:24:38	> 	Am_ (~quadra@2001:8b0:6572:bbc8:79b3:58ef:b71e:82c2) has joined #syncthing
+2019-09-21 17:24:38	 <<< 	Am_ (~quadra@2001:8b0:6572:bbc8:79b3:58ef:b71e:82c2) has quit (Changing host)
+2019-09-21 17:24:38	> 	Am_ (~quadra@unaffiliated/ad/x-0210533) has joined #syncthing
+2019-09-21 17:24:38	 <<< 	_aD (~quadra@unaffiliated/ad/x-0210533) has quit (Read error: Connection reset by peer)
+2019-09-21 17:24:38	 - 	Am_ is now known as _aD
+2019-09-21 18:05:39	> 	nuuuciano (~luuuciano@unaffiliated/luuuciano) has joined #syncthing
+2019-09-21 18:47:28	 <<< 	_aD (~quadra@unaffiliated/ad/x-0210533) has quit (Read error: Connection reset by peer)
+2019-09-21 18:47:46	> 	_aD (~quadra@2001:8b0:6572:bbc8:79b3:58ef:b71e:82c2) has joined #syncthing
+2019-09-21 18:47:46	 <<< 	_aD (~quadra@2001:8b0:6572:bbc8:79b3:58ef:b71e:82c2) has quit (Changing host)
+2019-09-21 18:47:46	> 	_aD (~quadra@unaffiliated/ad/x-0210533) has joined #syncthing
+2019-09-21 19:13:13	 <<< 	ulili (~quassel@p200300C96F3B7800EA9A8FFFFEBD3E0F.dip0.t-ipconnect.de) has quit (Ping timeout: 245 seconds)
+2019-09-21 19:13:50	> 	ulili (~quassel@p200300C96F4E6000EA9A8FFFFEBD3E0F.dip0.t-ipconnect.de) has joined #syncthing
+2019-09-21 19:37:11	> 	felixfoertsch23 (~felixfoer@2001:16b8:505c:1800:e440:917f:455f:4548) has joined #syncthing
+2019-09-21 19:39:02	 <<< 	felixfoertsch (~felixfoer@2001:16b8:50b7:e200:e440:917f:455f:4548) has quit (Ping timeout: 276 seconds)
+2019-09-21 19:56:35	 <<< 	fakuivan (~fakuivan@gateway/tor-sasl/fakuivan) has quit (Remote host closed the connection)
+2019-09-21 20:06:03	> 	fakuivan (~fakuivan@gateway/tor-sasl/fakuivan) has joined #syncthing
+2019-09-21 20:12:50	 - 	niqnaq is now known as Guest20653
+2019-09-21 20:13:03	> 	n1qn4q (~help@unaffiliated/niqnaq) has joined #syncthing
+2019-09-21 20:15:38	 <<< 	Guest20653 (~help@unaffiliated/niqnaq) has quit (Ping timeout: 240 seconds)
+2019-09-21 21:00:50	 <<< 	nuuuciano (~luuuciano@unaffiliated/luuuciano) has quit (Ping timeout: 240 seconds)
+2019-09-21 21:09:35	 <<< 	fakuivan (~fakuivan@gateway/tor-sasl/fakuivan) has quit (Remote host closed the connection)
+2019-09-21 21:13:00	> 	fakuivan (~fakuivan@gateway/tor-sasl/fakuivan) has joined #syncthing
+2019-09-21 21:16:08	 <<< 	_aD (~quadra@unaffiliated/ad/x-0210533) has quit (Ping timeout: 245 seconds)
+2019-09-21 21:22:58	 <<< 	nitdega (~nitdega@2600:1700:3570:fa7f:2b66:cb62:ee92:789a) has quit (Quit: ZNC - 1.6.0 - http://znc.in)
+2019-09-21 21:30:15	> 	nitdega (~nitdega@2600:1700:3570:fa7f:2b66:cb62:ee92:789a) has joined #syncthing
+2019-09-21 21:50:04	 <<< 	felixfoertsch23 (~felixfoer@2001:16b8:505c:1800:e440:917f:455f:4548) has quit (Quit: ZNC 1.7.3 - https://znc.in)
+2019-09-21 21:50:15	> 	felixfoertsch (~felixfoer@109.250.97.16) has joined #syncthing
+2019-09-21 22:20:11	 <<< 	machmalabala (~machmalab@ip235.ip-164-132-151.eu) has quit (Read error: Connection reset by peer)
+2019-09-21 22:20:36	> 	machmalabala (~machmalab@ip235.ip-164-132-151.eu) has joined #syncthing
+2019-09-21 22:21:24	 <<< 	ueberall (ueberall_l@unaffiliated/ueberall) has quit (Remote host closed the connection)
+2019-09-21 22:21:45	> 	uebera|| (ueberall_l@188.68.49.177) has joined #syncthing
+2019-09-21 22:21:45	 <<< 	uebera|| (ueberall_l@188.68.49.177) has quit (Changing host)
+2019-09-21 22:21:45	> 	uebera|| (ueberall_l@unaffiliated/ueberall) has joined #syncthing
+2019-09-21 22:21:47	 <<< 	shtirlic (~shtirlic@ec2-52-57-69-234.eu-central-1.compute.amazonaws.com) has quit (Quit: ZNC - http://znc.in)
+2019-09-21 22:22:06	 <<< 	JackWinter (~jack@ppp-294.vo.lu) has quit (Read error: Connection reset by peer)
+2019-09-21 22:22:11	> 	shtirlic (~shtirlic@ec2-52-57-69-234.eu-central-1.compute.amazonaws.com) has joined #syncthing
+2019-09-21 22:22:21	> 	JackWinter (~jack@ppp-294.vo.lu) has joined #syncthing
+2019-09-21 23:33:27	> 	SanskritFritz (~quassel@BC2434C7.catv.pool.telekom.hu) has joined #syncthing
+2019-09-21 23:38:53	 <<< 	dirtycajun7 (~dirtycaju@99.40.228.101) has quit (Quit: Peace up... A-Town down.)
+2019-09-21 23:39:30	> 	dirtycajun (~dirtycaju@99.40.228.101) has joined #syncthing
+2019-09-22 00:16:34	 <<< 	fakuivan (~fakuivan@gateway/tor-sasl/fakuivan) has quit (Remote host closed the connection)
+2019-09-22 00:20:03	> 	fakuivan (~fakuivan@gateway/tor-sasl/fakuivan) has joined #syncthing
+2019-09-22 01:57:02	> 	Zykino (~Thunderbi@2a01:e0a:28e:9d00:4599:1218:81a1:9584) has joined #syncthing
+2019-09-22 02:07:29	 <<< 	lilmike (~server@mtserver.mwtd.net) has quit (Quit: ZNC 1.7.4 - https://znc.in)
+2019-09-22 02:08:44	> 	lilmike (~server@mtserver.mwtd.net) has joined #syncthing
+2019-09-22 02:27:32	 <<< 	lilmike (~server@mtserver.mwtd.net) has quit (Quit: ZNC 1.7.4 - https://znc.in)
+2019-09-22 02:28:35	> 	lilmike (~server@mtserver.mwtd.net) has joined #syncthing
+2019-09-22 02:29:26	> 	jobroe (~hannes@p57A59A4E.dip0.t-ipconnect.de) has joined #syncthing
+2019-09-22 02:37:56	 <<< 	lilmike (~server@mtserver.mwtd.net) has quit (Quit: ZNC 1.7.4 - https://znc.in)
+2019-09-22 02:38:56	> 	lilmike (~server@mtserver.mwtd.net) has joined #syncthing
+2019-09-22 02:53:00	 <<< 	SanskritFritz (~quassel@BC2434C7.catv.pool.telekom.hu) has quit (Quit: leaving...)
+2019-09-22 02:58:40	 <<< 	lilmike (~server@mtserver.mwtd.net) has quit (Quit: ZNC 1.7.4 - https://znc.in)
+2019-09-22 02:59:43	> 	lilmike (~server@mtserver.mwtd.net) has joined #syncthing
+2019-09-22 03:12:54	 <<< 	lilmike (~server@mtserver.mwtd.net) has quit (Quit: ZNC 1.7.4 - https://znc.in)
+2019-09-22 03:13:58	> 	lilmike (~server@mtserver.mwtd.net) has joined #syncthing
+2019-09-22 03:23:40	 <<< 	lilmike (~server@mtserver.mwtd.net) has quit (Quit: ZNC 1.7.4 - https://znc.in)
+2019-09-22 03:24:47	> 	lilmike (~server@mtserver.mwtd.net) has joined #syncthing
+2019-09-22 03:35:13	 <<< 	lilmike (~server@mtserver.mwtd.net) has quit (Quit: ZNC 1.7.4 - https://znc.in)
+2019-09-22 03:36:17	> 	lilmike (~server@mtserver.mwtd.net) has joined #syncthing
+2019-09-22 04:12:13	 <<< 	niemalsnever (~niemalsne@ip-109-91-106-24.hsi12.unitymediagroup.de) has quit (Quit: ZNC 1.7.3 - https://znc.in)
+2019-09-22 04:14:29	> 	niemalsnever (~niemalsne@2a02:908:d40:b340:dea6:32ff:fe0d:5f8c) has joined #syncthing
+2019-09-22 04:18:25	 <<< 	frispete (~frispete@ip5f590446.dynamic.kabel-deutschland.de) has quit (Quit: Konversation terminated!)
+2019-09-22 04:19:17	+calmh	wCPO: do you have uniginore patterns? ("!foo" and such)
+2019-09-22 04:19:25	+calmh	if so i think it's exptedc
+2019-09-22 04:19:37	+calmh	if not, i don't think it's expected that it watches ignored directories
+2019-09-22 04:19:54	> 	frispete (~frispete@ip5f590446.dynamic.kabel-deutschland.de) has joined #syncthing
+2019-09-22 05:01:22	> 	kiwi_55 (d944bb24@gateway/web/cgi-irc/kiwiirc.com/ip.217.68.187.36) has joined #syncthing
+2019-09-22 05:09:39	> 	frispete_ (~frispete@ip5f5901ba.dynamic.kabel-deutschland.de) has joined #syncthing
+2019-09-22 05:09:57	 <<< 	frispete (~frispete@ip5f590446.dynamic.kabel-deutschland.de) has quit (Ping timeout: 246 seconds)
+2019-09-22 05:27:38	> 	kingmanor (~kingmanor@ool-44c06476.dyn.optonline.net) has joined #syncthing
+2019-09-22 05:55:14	 <<< 	kingmanor (~kingmanor@ool-44c06476.dyn.optonline.net) has quit (Quit: My MacBook has gone to sleep. ZZZzzz…)
+2019-09-22 06:04:20	> 	kingmanor (~kingmanor@ool-44c06476.dyn.optonline.net) has joined #syncthing
+2019-09-22 06:28:38	 <<< 	fakuivan (~fakuivan@gateway/tor-sasl/fakuivan) has quit (Remote host closed the connection)
+2019-09-22 06:31:59	> 	fakuivan (~fakuivan@gateway/tor-sasl/fakuivan) has joined #syncthing
+2019-09-22 07:36:36	 <<< 	kiwi_55 (d944bb24@gateway/web/cgi-irc/kiwiirc.com/ip.217.68.187.36) has quit (Remote host closed the connection)
+2019-09-22 08:49:04	> 	SanskritFritz (~quassel@BC2434C7.catv.pool.telekom.hu) has joined #syncthing
+2019-09-22 08:54:10	> 	hoonetorg (~hoonetorg@77.119.226.254.static.drei.at) has joined #syncthing
+2019-09-22 10:20:26	 <<< 	Mattiaslndstrm (~Mattiasln@c-484c72d5.018-449-6e6b701.bbcust.telenor.se) has quit (Ping timeout: 276 seconds)
+2019-09-22 10:23:26	> 	Mattiaslndstrm (~Mattiasln@c-484c72d5.018-449-6e6b701.bbcust.telenor.se) has joined #syncthing
+2019-09-22 11:02:31	 <<< 	jobroe (~hannes@p57A59A4E.dip0.t-ipconnect.de) has quit (Quit: Konversation terminated!)
+2019-09-22 11:13:38	 <<< 	JackWinter (~jack@ppp-294.vo.lu) has quit (Quit: Konversation terminated!)
+2019-09-22 11:14:56	> 	JackWinter (~jack@ppp-294.vo.lu) has joined #syncthing
+2019-09-22 11:19:02	 <<< 	JackWinter (~jack@ppp-294.vo.lu) has quit (Client Quit)
+2019-09-22 11:20:11	> 	JackWinter (~jack@ppp-294.vo.lu) has joined #syncthing
+2019-09-22 11:35:43	 <<< 	niemalsnever (~niemalsne@2a02:908:d40:b340:dea6:32ff:fe0d:5f8c) has quit (Ping timeout: 245 seconds)
+2019-09-22 11:37:46	> 	niemalsnever (~niemalsne@ip-109-91-106-24.hsi12.unitymediagroup.de) has joined #syncthing
+2019-09-22 11:56:48	> 	AlmarShenwan_ (~quassel@188.52.193.166) has joined #syncthing
+2019-09-22 11:58:50	 <<< 	AlmarShenwan (~quassel@188.52.193.166) has quit (Ping timeout: 240 seconds)
+2019-09-22 11:59:44	 <<< 	Mattiaslndstrm (~Mattiasln@c-484c72d5.018-449-6e6b701.bbcust.telenor.se) has quit (Quit: My MacBook has gone to sleep. ZZZzzz…)
+2019-09-22 12:37:07	 <<< 	niemalsnever (~niemalsne@ip-109-91-106-24.hsi12.unitymediagroup.de) has quit (Ping timeout: 245 seconds)
+2019-09-22 12:39:16	> 	niemalsnever (~niemalsne@ip-109-91-106-24.hsi12.unitymediagroup.de) has joined #syncthing
+2019-09-22 12:45:02	 <<< 	niemalsnever (~niemalsne@ip-109-91-106-24.hsi12.unitymediagroup.de) has quit (Ping timeout: 245 seconds)
+2019-09-22 12:46:46	> 	niemalsnever (~niemalsne@ip-109-91-106-24.hsi12.unitymediagroup.de) has joined #syncthing
+2019-09-22 13:12:32	 <<< 	kingmanor (~kingmanor@ool-44c06476.dyn.optonline.net) has quit (Ping timeout: 245 seconds)
+2019-09-22 13:13:27	> 	kingmano_ (~kingmanor@ool-3f8fc20d.dyn.optonline.net) has joined #syncthing
+2019-09-22 13:15:18	 <<< 	kingmano_ (~kingmanor@ool-3f8fc20d.dyn.optonline.net) has quit (Read error: Connection reset by peer)
+2019-09-22 13:17:03	> 	kingmanor (~kingmanor@ool-3f8fc20d.dyn.optonline.net) has joined #syncthing
+2019-09-22 13:29:35	 <<< 	kingmanor (~kingmanor@ool-3f8fc20d.dyn.optonline.net) has quit (Read error: Connection reset by peer)
+2019-09-22 13:30:15	> 	kingmanor (~kingmanor@ool-3f8fc20d.dyn.optonline.net) has joined #syncthing
+2019-09-22 13:35:19	 <<< 	kingmanor (~kingmanor@ool-3f8fc20d.dyn.optonline.net) has quit (Read error: Connection reset by peer)
+2019-09-22 13:39:20	> 	kingmanor (~kingmanor@ool-3f8fc20d.dyn.optonline.net) has joined #syncthing
+2019-09-22 13:42:49	 <<< 	kingmanor (~kingmanor@ool-3f8fc20d.dyn.optonline.net) has quit (Read error: Connection reset by peer)
+2019-09-22 13:43:41	> 	kingmano_ (~kingmanor@ool-3f8fc20d.dyn.optonline.net) has joined #syncthing
+2019-09-22 13:45:27	> 	lfam (~lfam@2601:47:4100:7f52:2d6a:4ce1:1d49:5668) has joined #syncthing
+2019-09-22 13:46:02	> 	kingmanor (~kingmanor@ool-3f8fc20d.dyn.optonline.net) has joined #syncthing
+2019-09-22 13:46:44	 <<< 	kingmano_ (~kingmanor@ool-3f8fc20d.dyn.optonline.net) has quit (Read error: Connection reset by peer)
+2019-09-22 13:47:59	> 	nuuuciano (~luuuciano@unaffiliated/luuuciano) has joined #syncthing
+2019-09-22 13:49:30	> 	kingmano_ (~kingmanor@ool-3f8fc20d.dyn.optonline.net) has joined #syncthing
+2019-09-22 13:49:40	> 	_aD (~quadra@2001:8b0:6572:bbc8:ec57:7b64:23b6:83de) has joined #syncthing
+2019-09-22 13:49:40	 <<< 	_aD (~quadra@2001:8b0:6572:bbc8:ec57:7b64:23b6:83de) has quit (Changing host)
+2019-09-22 13:49:40	> 	_aD (~quadra@unaffiliated/ad/x-0210533) has joined #syncthing
+2019-09-22 13:52:07	 <<< 	kingmanor (~kingmanor@ool-3f8fc20d.dyn.optonline.net) has quit (Ping timeout: 245 seconds)
+2019-09-22 13:53:10	wCPO	calmh: I have my download folder ignored "/Hentet" but Syncthing complain if can't access a directory in "Hentet"
+2019-09-22 13:53:54	wCPO	calmh: I have a few unignore patterns
+2019-09-22 13:54:02	 <<< 	kingmano_ (~kingmanor@ool-3f8fc20d.dyn.optonline.net) has quit (Ping timeout: 240 seconds)
+2019-09-22 13:54:39	wCPO	But they aren't "wildcards" it is absolute paths. Like "!/.password-store"
+2019-09-22 13:56:41	> 	kingmanor (~kingmanor@ool-44c06476.dyn.optonline.net) has joined #syncthing
+2019-09-22 13:58:38	 <<< 	kingmanor (~kingmanor@ool-44c06476.dyn.optonline.net) has quit (Client Quit)
+2019-09-22 14:32:48	 <<< 	lfam (~lfam@2601:47:4100:7f52:2d6a:4ce1:1d49:5668) has quit (Ping timeout: 245 seconds)
+2019-09-22 14:37:03	 <<< 	SanskritFritz (~quassel@BC2434C7.catv.pool.telekom.hu) has quit (Quit: leaving...)
+2019-09-22 14:37:42	 <<< 	fakuivan (~fakuivan@gateway/tor-sasl/fakuivan) has quit (Remote host closed the connection)
+2019-09-22 14:40:59	> 	fakuivan (~fakuivan@gateway/tor-sasl/fakuivan) has joined #syncthing
+2019-09-22 15:40:56	 <<< 	toketin (toketin@gateway/vpn/mullvad/toketin) has quit (Ping timeout: 265 seconds)
+2019-09-22 15:41:28	> 	toketin (toketin@gateway/vpn/mullvad/toketin) has joined #syncthing
+2019-09-22 16:15:19	> 	kingmanor (~kingmanor@ool-44c06476.dyn.optonline.net) has joined #syncthing
+2019-09-22 16:37:52	> 	lfam (~lfam@2601:47:4100:7f52:2d6a:4ce1:1d49:5668) has joined #syncthing
+2019-09-22 16:57:07	 <<< 	Zykino (~Thunderbi@2a01:e0a:28e:9d00:4599:1218:81a1:9584) has quit (Quit: Zykino)
+2019-09-22 17:29:28	 <<< 	lfam (~lfam@2601:47:4100:7f52:2d6a:4ce1:1d49:5668) has quit (Ping timeout: 245 seconds)
+2019-09-22 18:00:27	 <<< 	AlmarShenwan_ (~quassel@188.52.193.166) has quit (Ping timeout: 240 seconds)
+2019-09-22 18:42:26	 <<< 	apetresc (~apetresc@toroon474qw-lp130-03-65-95-169-25.dsl.bell.ca) has quit (Read error: Connection reset by peer)
+2019-09-22 18:46:59	> 	apetresc (~apetresc@toroon474qw-lp130-03-65-95-169-25.dsl.bell.ca) has joined #syncthing
+2019-09-22 19:12:05	> 	lfam (~lfam@2601:47:4100:7f52:2d6a:4ce1:1d49:5668) has joined #syncthing
+2019-09-22 19:12:23	 <<< 	ulili (~quassel@p200300C96F4E6000EA9A8FFFFEBD3E0F.dip0.t-ipconnect.de) has quit (Ping timeout: 245 seconds)
+2019-09-22 19:13:01	> 	ulili (~quassel@p200300C96F0C1200EA9A8FFFFEBD3E0F.dip0.t-ipconnect.de) has joined #syncthing
+2019-09-22 19:19:38	 <<< 	nuuuciano (~luuuciano@unaffiliated/luuuciano) has quit (Ping timeout: 240 seconds)
+2019-09-22 19:34:42	> 	felixfoertsch23 (~felixfoer@92.117.60.5) has joined #syncthing
+2019-09-22 19:37:46	 <<< 	felixfoertsch (~felixfoer@109.250.97.16) has quit (Ping timeout: 265 seconds)
+2019-09-22 20:11:46	 <<< 	n1qn4q (~help@unaffiliated/niqnaq) has quit (Disconnected by services)
+2019-09-22 20:11:52	> 	niqnaq (~help@unaffiliated/niqnaq) has joined #syncthing

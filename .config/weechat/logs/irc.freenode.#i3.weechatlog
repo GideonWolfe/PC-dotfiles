@@ -1,0 +1,53 @@
+2019-06-08 13:38:27	> 	_Raijin (~gideon@2603:3023:708:9c00::dca6) has joined #i3
+2019-06-08 13:38:27	 - 	Topic for #i3 is "i3 v4.16.1 released | i3status 2.12 released | i3lock 2.11.1 released | http://code.i3wm.org/ | http://i3wm.org/ | http://faq.i3wm.org/ | https://bintray.com/i3/i3-autobuild/i3-wm#statistics | paste at http://p.nnev.de/ | file upload at https://transfer.sh/ | Container tutorial: https://youtu.be/AWA8Pl57UBY | #i3-offtopic"
+2019-06-08 13:38:27	 - 	Topic set by sECuRE (~sECuRE@i3/creator/sECuRE) on  
+2019-06-08 13:38:27	 - 	Channel #i3: 375 nicks (2 ops, 0 voices, 373 normals)
+2019-06-08 13:38:29	 - 	Channel created on  
+2019-06-08 13:39:16	_Raijin	Hey guys, I am having some super strange issue with workspace rendering on multiple monitors. I made a post here: https://www.reddit.com/r/i3wm/comments/bybhzt/images_not_being_drawn_on_just_one_monitor/
+2019-06-08 13:39:16	botty	_Raijin: Hello! Please be patient, as it may be some time before someone is around who can answer your question. In the meantime, please remember to read the user guide, as well as the current /topic
+2019-06-08 13:39:25	 <<< 	andi- (~andi-@NixOS/user/andi-) has quit (Remote host closed the connection)
+2019-06-08 13:42:10	 <<< 	framend (~framend@unaffiliated/framend) has quit (Quit: WeeChat 2.4)
+2019-06-08 13:42:15	> 	nomn (~nomn@119.98.113.78.rev.sfr.net) has joined #i3
+2019-06-08 13:43:14	 <<< 	sydney_untangle (~sydney@supertux/sydney) has quit (Quit: Lost terminal)
+2019-06-08 13:43:44	> 	andi- (~andi-@NixOS/user/andi-) has joined #i3
+2019-06-08 13:48:48	 <<< 	cantstanya (~chatting@gateway/tor-sasl/cantstanya) has quit (Remote host closed the connection)
+2019-06-08 13:51:57	> 	cantstanya (~chatting@gateway/tor-sasl/cantstanya) has joined #i3
+2019-06-08 13:54:06	> 	m_ben (~m_ben@unaffiliated/m-ben/x-5917362) has joined #i3
+2019-06-08 13:57:28	> 	n0p513d (~gary@ppp-124-122-123-44.revip2.asianet.co.th) has joined #i3
+2019-06-08 14:09:26	 <<< 	madzharov (~madzharov@2001:1c00:1e09:ba00:946d:849e:4387:7b0d) has quit (Quit: WeeChat 1.9.1)
+2019-06-08 14:16:43	 <<< 	lagagnon (~larry@S0106a84e3f677ee3.gv.shawcable.net) has quit (Ping timeout: 248 seconds)
+2019-06-08 14:19:11	 <<< 	arn0x (~arn0x@2a01:e34:ee55:d3a0:9165:5288:a0d8:467e) has quit (Ping timeout: 258 seconds)
+2019-06-08 14:19:54	 <<< 	kupi (uid212005@gateway/web/irccloud.com/x-uujujvfvbnbtfcyk) has quit (Quit: Connection closed for inactivity)
+2019-06-08 14:24:37	 <<< 	meribold (~meribold@ec2-13-115-248-105.ap-northeast-1.compute.amazonaws.com) has quit (Ping timeout: 245 seconds)
+2019-06-08 14:24:55	> 	meribold (~meribold@ec2-13-115-248-105.ap-northeast-1.compute.amazonaws.com) has joined #i3
+2019-06-08 14:31:39	> 	ghasem_ (~Ghasem@5.52.87.109) has joined #i3
+2019-06-08 14:33:20	 <<< 	hedin (~hedin@81.25.179.168) has quit (Ping timeout: 248 seconds)
+2019-06-08 14:34:01	> 	hedin (~hedin@gateway.ls.fo) has joined #i3
+2019-06-08 14:34:32	 <<< 	ghasem (~Ghasem@5.52.87.109) has quit (Ping timeout: 272 seconds)
+2019-06-08 14:37:08	 <<< 	kwispel (~kwispel@62-205-78-39.access.telenet.be) has quit (Ping timeout: 245 seconds)
+2019-06-08 14:38:30	 <<< 	rememberYou (~user@unaffiliated/rememberyou) has quit (Remote host closed the connection)
+2019-06-08 14:50:24	 <<< 	linux_dream (~isaac@unaffiliated/linux-dream/x-5839402) has quit (Quit: WeeChat 2.4)
+2019-06-08 15:02:54	> 	aristaware (~adrian@108.98.27.77.dynamic.reverse-mundo-r.com) has joined #i3
+2019-06-08 15:07:51	 <<< 	linarcx (~linarcx@151.241.49.31) has quit (Quit: WeeChat 2.4)
+2019-06-08 15:19:44	 <<< 	shruggie (~shruggie@p4FDCCD40.dip0.t-ipconnect.de) has quit (Ping timeout: 248 seconds)
+2019-06-08 15:24:15	 <<< 	m_ben (~m_ben@unaffiliated/m-ben/x-5917362) has left #i3 ("WeeChat 2.5")
+2019-06-08 15:25:11	 <<< 	ghasem_ (~Ghasem@5.52.87.109) has quit (Remote host closed the connection)
+2019-06-08 15:25:35	> 	ghasem_ (~Ghasem@5.52.87.109) has joined #i3
+2019-06-08 15:34:37	 <<< 	n0p513d (~gary@ppp-124-122-123-44.revip2.asianet.co.th) has quit (Ping timeout: 246 seconds)
+2019-06-08 15:42:02	> 	n0p513d (~gary@ppp-124-122-123-44.revip2.asianet.co.th) has joined #i3
+2019-06-08 15:51:30	 <<< 	plexigras (plexigras@gateway/vpn/privateinternetaccess/plexigras) has quit (Ping timeout: 244 seconds)
+2019-06-08 16:06:40	 <<< 	justanotheruser (~justanoth@unaffiliated/justanotheruser) has quit (Ping timeout: 248 seconds)
+2019-06-08 16:07:04	> 	justanotheruser (~justanoth@unaffiliated/justanotheruser) has joined #i3
+2019-06-08 16:10:24	 <<< 	aristaware (~adrian@108.98.27.77.dynamic.reverse-mundo-r.com) has quit (Ping timeout: 248 seconds)
+2019-06-08 16:20:57	> 	jonhxp_ (quassel@gateway/vpn/protonvpn/jonhxp/x-09604321) has joined #i3
+2019-06-08 16:23:12	 <<< 	raspbeguy (~raspbeguy@193.33.56.37) has quit (Ping timeout: 248 seconds)
+2019-06-08 16:24:06	 <<< 	nomn (~nomn@119.98.113.78.rev.sfr.net) has quit (Ping timeout: 272 seconds)
+2019-06-08 16:25:59	> 	raspbeguy (~raspbeguy@193.33.56.37) has joined #i3
+2019-06-08 16:30:09	> 	gary_ (~gary@ppp-110-168-242-209.revip5.asianet.co.th) has joined #i3
+2019-06-08 16:30:09	 <<< 	n0p513d (~gary@ppp-124-122-123-44.revip2.asianet.co.th) has quit (Read error: Connection reset by peer)
+2019-06-08 16:30:32	 - 	gary_ is now known as Guest55762
+2019-06-08 16:35:28	 <<< 	Guest55762 (~gary@ppp-110-168-242-209.revip5.asianet.co.th) has quit (Quit: Leaving)
+2019-06-08 16:35:53	> 	n0p513d (~gary@ppp-110-168-242-209.revip5.asianet.co.th) has joined #i3
+2019-06-08 16:47:54	> 	nomn (~nomn@119.98.113.78.rev.sfr.net) has joined #i3
+2019-06-08 16:58:30	> 	sydney_untangle (~sydney@supertux/sydney) has joined #i3
+2019-06-08 17:09:53	 - 	irc: disconnected from server
