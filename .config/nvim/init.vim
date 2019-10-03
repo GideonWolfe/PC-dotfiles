@@ -1,9 +1,9 @@
 
-" ___      ___ ___  _____ ______           ________  ________  ________   ________ ___  ________     
-"|\  \    /  /|\  \|\   _ \  _   \        |\   ____\|\   __  \|\   ___  \|\  _____\\  \|\   ____\    
-"\ \  \  /  / | \  \ \  \\\__\ \  \       \ \  \___|\ \  \|\  \ \  \\ \  \ \  \__/\ \  \ \  \___|    
-" \ \  \/  / / \ \  \ \  \\|__| \  \       \ \  \    \ \  \\\  \ \  \\ \  \ \   __\\ \  \ \  \  ___  
-"  \ \    / /   \ \  \ \  \    \ \  \       \ \  \____\ \  \\\  \ \  \\ \  \ \  \_| \ \  \ \  \|\  \ 
+" ___      ___ ___  _____ ______           ________  ________  ________   ________ ___  ________
+"|\  \    /  /|\  \|\   _ \  _   \        |\   ____\|\   __  \|\   ___  \|\  _____\\  \|\   ____\
+"\ \  \  /  / | \  \ \  \\\__\ \  \       \ \  \___|\ \  \|\  \ \  \\ \  \ \  \__/\ \  \ \  \___|
+" \ \  \/  / / \ \  \ \  \\|__| \  \       \ \  \    \ \  \\\  \ \  \\ \  \ \   __\\ \  \ \  \  ___
+"  \ \    / /   \ \  \ \  \    \ \  \       \ \  \____\ \  \\\  \ \  \\ \  \ \  \_| \ \  \ \  \|\  \
 "   \ \__/ /     \ \__\ \__\    \ \__\       \ \_______\ \_______\ \__\\ \__\ \__\   \ \__\ \_______\
 "    \|__|/       \|__|\|__|     \|__|        \|_______|\|_______|\|__| \|__|\|__|    \|__|\|_______|
 
@@ -17,7 +17,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'tpope/vim-fugitive'
 
 " Code Snippets Engine
-Plug 'SirVer/ultisnips'
+" Plug 'SirVer/ultisnips'
 
 " Snippets for ultisnips
 Plug 'honza/vim-snippets'
@@ -29,22 +29,22 @@ Plug 'dylanaraps/wal'
 Plug 'tpope/vim-surround'
 
 " Linter
-Plug 'w0rp/ale' 
+Plug 'dense-analysis/ale'
 
 " Auto pairs
-Plug 'jiangmiao/auto-pairs' 
+Plug 'jiangmiao/auto-pairs'
 
 " Multiple Cursors
 Plug 'terryma/vim-multiple-cursors'
 
 " Indent guides
-Plug 'Yggdroot/indentLine' 
+Plug 'Yggdroot/indentLine'
 
 " COC
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " Smart completion (to work with CoC)
-Plug 'zxqfl/tabnine-vim'
+" Plug 'zxqfl/tabnine-vim'
 
 " Custom start page
 Plug 'mhinz/vim-startify'
@@ -78,8 +78,16 @@ Plug 'Xuyuanp/nerdtree-git-plugin'
 " Emoji support
 Plug 'junegunn/vim-emoji'
 
-" goyo distraction free mode 
+" goyo distraction free mode
 Plug 'junegunn/goyo.vim'
+
+" LaTeX support
+Plug 'lervag/vimtex'
+
+" Wal theme
+Plug 'dylanaraps/wal.vim'
+
+Plug 'deviantfero/wpgtk.vim'
 
 call plug#end()
 
@@ -87,6 +95,31 @@ set completefunc=emoji#complete
 """"""""""""""""""""
 " Plugin Settings "
 """"""""""""""""""""
+" Colorsheme
+colorscheme wpgtk
+
+" VimTex settings
+let g:latex_view_general_viewer = "zathura"
+let g:vimtex_view_method = "zathura"
+let g:tex_flavor = "latex"
+let g:vimtex_quickfix_open_on_warning = 0
+let g:vimtex_quickfix_mode = 2
+let g:vimtex_compiler_method = "latexmk"
+let g:vimtex_compiler_progname = 'nvr'
+let g:vimtex_compiler_latexmk = {
+    \ 'background' : 1,
+    \ 'build_dir' : '',
+    \ 'callback' : 1,
+    \ 'continuous' : 1,
+    \ 'executable' : 'latexmk',
+    \ 'options' : [
+    \   '-verbose',
+    \   '-file-line-error',
+    \   '-synctex=1',
+    \   '-interaction=nonstopmode',
+    \ ],
+    \}
+
 " Goyo settings
 nmap <F6> :Goyo<CR>
 let g:goyo_width=100
@@ -144,22 +177,45 @@ let g:NERDTreeIndicatorMapCustom = {
         \ "unknown"   : "?"
         \ }
 
-" COC Settings
-
 " Vim-Airline setings
+let g:airline_theme='wpgtk'
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#ale#enabled = 1
+let g:airline_powerline_fonts = 1
+if !exists('g:airline_symbols')
+    let g:airline_symbols = {}
+endif
 let g:airline_left_sep = ''
 let g:airline_left_alt_sep = ''
 let g:airline_right_sep = ''
 let g:airline_right_alt_sep = ''
 let g:airline_symbols_branch = ''
 let g:airline_powerline_fonts = 1
+let g:airline_symbols.crypt = ''
+let g:airline_symbols.linenr = '☰'
+let g:airline_symbols.linenr = '␊'
+let g:airline_symbols.linenr = '␤'
+let g:airline_symbols.linenr = '¶'
+let g:airline_symbols.maxlinenr = ''
+let g:airline_symbols.paste = 'ρ'
+let g:airline_symbols.paste = 'Þ'
+let g:airline_symbols.paste = '∥'
+let g:airline_symbols.spell = 'Ꞩ'
+let g:airline_symbols.notexists = 'Ɇ'
+let g:airline_symbols.whitespace = 'Ξ'
+
+
+
 
 " DevIcon settings
 let g:webdevicons_enable = 1
 let g:webdevicons_enable_airline_tabline = 1
 let g:webdevicons_enable_airline_statusline = 1
 let g:WebDevIconsUnicodeGlyphDoubleWidth = 1
-
+let g:WebDevIconsUnicodeDecorateFolderNodesDefaultSymbol = ''
+let g:DevIconsDefaultFolderOpenSymbol = ''
+let g:airline#extensions#unicode#enabled = 1
+"
 " Comfy Scroll
 noremap <silent> <ScrollWheelDown> :call comfortable_motion#flick(40)<CR>
 noremap <silent> <ScrollWheelUp>   :call comfortable_motion#flick(-40)<CR>
@@ -167,14 +223,14 @@ let g:comfortable_motion_friction = 50.0
 let g:comfortable_motion_air_drag = 1.0
 
 " Autocomplete Settings
-let g:deoplete#enable_at_startup = 1
+" let g:deoplete#enable_at_startup = 1
 inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 
-" Indent Guide Settings 
+" Indent Guide Settings
 let g:indentLine_char = '▏'
 filetype plugin indent on    " required
-let g:indentLine_fileTypeExclude = ['defx', 'denite', 'startify', 'tagbar', 'vista_kind', 'vista']
+let g:indentLine_fileTypeExclude = ['defx', 'markdown', 'denite', 'startify', 'tagbar', 'vista_kind', 'vista']
 
 " Autopairs Config
 let g:AutoPairsFlyMode = 0
@@ -236,6 +292,7 @@ let g:startify_custom_footer = s:center(s:footer)
 """"""""""""""""
 " Vim Settings "
 """"""""""""""""
+set conceallevel=0
 
 " Enable mouse scroll
 set mouse=a
@@ -245,9 +302,14 @@ set statusline+=%F
 set cmdheight=2
 
 " Tab Settings
-set expandtab           
-set tabstop=4           
+set expandtab
+set tabstop=4
+set softtabstop=4
 set shiftwidth=4
+set smarttab
+set autoindent
+set smartindent
+set shiftround
 
 " Misc
 syntax on
@@ -260,12 +322,12 @@ set clipboard=unnamed
 
 " Show next 3 lines while scrolling.
 if !&scrolloff
-    set scrolloff=3       
+    set scrolloff=3
 endif
 
 " Show next 5 columns while side-scrolling.
 if !&sidescrolloff
-    set sidescrolloff=5   
+    set sidescrolloff=5
 endif
 
 " Not sure what this does
@@ -287,7 +349,7 @@ augroup numbertoggle
 augroup END
 
 "alphsubs ---------------------- {{{
-        execute "digraphs ks " . 0x2096 
+        execute "digraphs ks " . 0x2096
         execute "digraphs as " . 0x2090
         execute "digraphs es " . 0x2091
         execute "digraphs hs " . 0x2095
@@ -319,12 +381,11 @@ augroup textSpell
     autocmd BufRead,BufNewFile *.txt setlocal spell
 augroup END
 
-
-" COC TEST SETTINGS
+" COC Settings
 set hidden
 
 set updatetime=300
-
+let g:ycm_server_python_interpreter = '/usr/bin/python3'
 let g:coc_snippet_next = '<TAB>'
 let g:coc_snippet_prev = '<S-TAB>'
 let g:coc_status_error_sign = '•'
@@ -342,15 +403,12 @@ augroup end
 " Highlight symbol under cursor on CursorHold
 autocmd CursorHold * silent call CocActionAsync('highlight')
 
-"Use tab for trigger completion with characters ahead and navigate
+" map <tab> to trigger completion and navigate to the next item
 inoremap <silent><expr> <TAB>
       \ pumvisible() ? "\<C-n>" :
       \ <SID>check_back_space() ? "\<TAB>" :
       \ coc#refresh()
-
 inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
-"inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
-inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 
 function! s:check_back_space() abort
   let col = col('.') - 1
@@ -358,3 +416,37 @@ function! s:check_back_space() abort
 endfunction
 
 
+" ALE Settings
+let g:ale_sign_column_always = 1
+let g:ale_lint_on_insert_leave = 0
+let g:ale_fix_on_save = 1
+let g:ale_echo_msg_error_str = 'E'
+let g:ale_echo_msg_warning_str = 'W'
+let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
+let g:ale_open_list = 1
+let g:ale_list_window_size = 5
+let g:ale_sign_error = ''
+let g:ale_sign_warning = ''
+let g:ale_fixers = {
+\   '*': ['remove_trailing_lines', 'trim_whitespace'],
+\   'javascript': ['prettier'],
+\   'javascript.jsx': ['prettier'],
+\   'typescript': ['prettier'],
+\   'typescript.tsx': ['prettier'],
+\   'python': ['yapf'],
+\   'json': ['prettier'],
+\   'html': ['prettier'],
+\   'css': ['prettier', 'stylelint'],
+\   'scss': ['prettier', 'stylelint'],
+\}
+let g:ale_linters = {
+\   'javascript': ['eslint'],
+\   'javascript.jsx': ['eslint'],
+\   'typescript': ['eslint'],
+\   'typescript.tsx': ['eslint'],
+\   'python': ['flake8'],
+\   'json': ['jsonlint'],
+\   'html': ['htmlhint'],
+\   'css': ['stylelint'],
+\   'scss': ['stylelint'],
+\}
