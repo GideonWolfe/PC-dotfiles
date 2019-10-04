@@ -155,11 +155,13 @@ let g:tagbar_type_go = {
     \ 'ctagsargs' : '-sort -silent'
     \ }
 
+
 " NERDTree settings"
 map <F7> :NERDTreeToggle<CR>
 let nerdtreequitonopen = 0
-let NERDTreeShowHidden=0
+let NERDTreeShowHidden=1
 let nerdchristmastree=1
+let g:NERDTreeMinimalUI = 1
 let g:nerdtreewinsize = 25
 let g:NERDTreeDirArrowExpandable = '▷'
 let g:NERDTreeDirArrowCollapsible = '▼'
@@ -203,8 +205,10 @@ let g:airline_symbols.paste = '∥'
 let g:airline_symbols.spell = 'Ꞩ'
 let g:airline_symbols.notexists = 'Ɇ'
 let g:airline_symbols.whitespace = 'Ξ'
-
-
+let airline#extensions#coc#stl_format_err = '%E{[%e(#%fe)]}'
+let airline#extensions#coc#stl_format_warn = '%W{[%w(#%fw)]}'
+let g:airline_section_error = '%{airline#util#wrap(airline#extensions#coc#get_error(),0)}'
+let g:airline_section_warning = '%{airline#util#wrap(airline#extensions#coc#get_warning(),0)}'
 
 
 " DevIcon settings
@@ -289,23 +293,119 @@ let s:footer = [
 let g:startify_change_to_dir = 1
 let g:startify_custom_header = s:center(s:header)
 let g:startify_custom_footer = s:center(s:footer)
+
+" COC Settings
+" coc.nvim color changes
+"hi! link CocErrorSign WarningMsg
+"hi! link CocWarningSign Number
+"hi! link CocInfoSign Type
+" Make background transparent for many things
+"hi! Normal ctermbg=NONE guibg=NONE
+"hi! NonText ctermbg=NONE guibg=NONE
+"hi! LineNr ctermfg=NONE guibg=NONE
+"hi! SignColumn ctermfg=NONE guibg=NONE
+"hi! StatusLine guifg=#16252b guibg=#6699CC
+"hi! StatusLineNC guifg=#16252b guibg=#16252b
+
+set hidden
+set updatetime=300
+let g:ycm_server_python_interpreter = '/usr/bin/python3'
+let g:coc_snippet_next = '<TAB>'
+let g:coc_snippet_prev = '<S-TAB>'
+let g:coc_status_error_sign = '•'
+let g:coc_status_warning_sign = '•'
+let g:coc_global_extensions =['coc-html','coc-css','coc-snippets','coc-prettier','coc-eslint','coc-emmet','coc-tsserver','coc-pairs','coc-json','coc-python','coc-imselect','coc-highlight','coc-git','coc-emoji','coc-lists','coc-post','coc-stylelint','coc-yaml','coc-template','coc-tabnine']
+
+augroup MyAutoCmd
+  autocmd!
+  " Setup formatexpr specified filetype(s).
+  autocmd FileType typescript,json setl formatexpr=CocAction('formatSelected')
+  " Update signature help on jump placeholder
+  autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
+augroup end
+
+" Highlight symbol under cursor on CursorHold
+autocmd CursorHold * silent call CocActionAsync('highlight')
+
+" map <tab> to trigger completion and navigate to the next item
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
+
+" ALE Settings
+let g:ale_sign_column_always = 1
+let g:ale_lint_on_insert_leave = 1
+let g:ale_fix_on_save = 1
+let g:ale_echo_msg_error_str = 'E'
+let g:ale_echo_msg_warning_str = 'W'
+let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
+let g:ale_open_list = 1
+let g:ale_list_window_size = 5
+let g:ale_sign_error = ''
+let g:ale_sign_warning = ''
+let g:ale_fixers = {
+\   '*': ['remove_trailing_lines', 'trim_whitespace'],
+\   'javascript': ['prettier'],
+\   'javascript.jsx': ['prettier'],
+\   'typescript': ['prettier'],
+\   'typescript.tsx': ['prettier'],
+\   'python': ['yapf'],
+\   'json': ['prettier'],
+\   'html': ['prettier'],
+\   'css': ['prettier', 'stylelint'],
+\   'scss': ['prettier', 'stylelint'],
+\}
+let g:ale_linters = {
+\   'javascript': ['eslint'],
+\   'javascript.jsx': ['eslint'],
+\   'typescript': ['eslint'],
+\   'typescript.tsx': ['eslint'],
+\   'python': ['flake8'],
+\   'json': ['jsonlint'],
+\   'html': ['htmlhint'],
+\   'css': ['stylelint'],
+\   'scss': ['stylelint'],
+\}
+
+
+
 """"""""""""""""
 " Vim Settings "
 """"""""""""""""
+
+" Don't automatically collapse markdown
 set conceallevel=0
+
+" Don't dispay mode in command line (airilne already shows it)
+set noshowmode
+
+" Automatically re-read file if a change was detected outside of vim
+set autoread
+
+" no case sensative search unless uppercase is present
+set ignorecase
+set smartcase
 
 " Enable mouse scroll
 set mouse=a
 
 "Statusline Config
 set statusline+=%F
-set cmdheight=2
+set cmdheight=1
 
 " Tab Settings
 set expandtab
-set tabstop=4
-set softtabstop=4
-set shiftwidth=4
+set tabstop=2
+set softtabstop=2
+set shiftwidth=2
 set smarttab
 set autoindent
 set smartindent
@@ -319,6 +419,7 @@ set formatoptions+=o
 set nocompatible
 colorscheme wal
 set clipboard=unnamed
+set nowrap
 
 " Show next 3 lines while scrolling.
 if !&scrolloff
@@ -380,73 +481,3 @@ augroup textSpell
     autocmd FileType text setlocal spell
     autocmd BufRead,BufNewFile *.txt setlocal spell
 augroup END
-
-" COC Settings
-set hidden
-
-set updatetime=300
-let g:ycm_server_python_interpreter = '/usr/bin/python3'
-let g:coc_snippet_next = '<TAB>'
-let g:coc_snippet_prev = '<S-TAB>'
-let g:coc_status_error_sign = '•'
-let g:coc_status_warning_sign = '•'
-let g:coc_global_extensions =['coc-html','coc-css','coc-snippets','coc-prettier','coc-eslint','coc-emmet','coc-tsserver','coc-pairs','coc-json','coc-python','coc-imselect','coc-highlight','coc-git','coc-emoji','coc-lists','coc-post','coc-stylelint','coc-yaml','coc-template','coc-tabnine']
-
-augroup MyAutoCmd
-  autocmd!
-  " Setup formatexpr specified filetype(s).
-  autocmd FileType typescript,json setl formatexpr=CocAction('formatSelected')
-  " Update signature help on jump placeholder
-  autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
-augroup end
-
-" Highlight symbol under cursor on CursorHold
-autocmd CursorHold * silent call CocActionAsync('highlight')
-
-" map <tab> to trigger completion and navigate to the next item
-inoremap <silent><expr> <TAB>
-      \ pumvisible() ? "\<C-n>" :
-      \ <SID>check_back_space() ? "\<TAB>" :
-      \ coc#refresh()
-inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
-
-function! s:check_back_space() abort
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~# '\s'
-endfunction
-
-
-" ALE Settings
-let g:ale_sign_column_always = 1
-let g:ale_lint_on_insert_leave = 0
-let g:ale_fix_on_save = 1
-let g:ale_echo_msg_error_str = 'E'
-let g:ale_echo_msg_warning_str = 'W'
-let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
-let g:ale_open_list = 1
-let g:ale_list_window_size = 5
-let g:ale_sign_error = ''
-let g:ale_sign_warning = ''
-let g:ale_fixers = {
-\   '*': ['remove_trailing_lines', 'trim_whitespace'],
-\   'javascript': ['prettier'],
-\   'javascript.jsx': ['prettier'],
-\   'typescript': ['prettier'],
-\   'typescript.tsx': ['prettier'],
-\   'python': ['yapf'],
-\   'json': ['prettier'],
-\   'html': ['prettier'],
-\   'css': ['prettier', 'stylelint'],
-\   'scss': ['prettier', 'stylelint'],
-\}
-let g:ale_linters = {
-\   'javascript': ['eslint'],
-\   'javascript.jsx': ['eslint'],
-\   'typescript': ['eslint'],
-\   'typescript.tsx': ['eslint'],
-\   'python': ['flake8'],
-\   'json': ['jsonlint'],
-\   'html': ['htmlhint'],
-\   'css': ['stylelint'],
-\   'scss': ['stylelint'],
-\}
