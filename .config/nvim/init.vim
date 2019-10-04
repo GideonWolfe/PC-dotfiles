@@ -29,7 +29,7 @@ Plug 'dylanaraps/wal'
 Plug 'tpope/vim-surround'
 
 " Linter
-Plug 'dense-analysis/ale'
+"Plug 'dense-analysis/ale'
 
 " Auto pairs
 Plug 'jiangmiao/auto-pairs'
@@ -95,6 +95,10 @@ set completefunc=emoji#complete
 """"""""""""""""""""
 " Plugin Settings "
 """"""""""""""""""""
+
+" Set leader to space bar
+let mapleader = " "
+
 " Colorsheme
 colorscheme wpgtk
 
@@ -312,9 +316,17 @@ set updatetime=300
 let g:ycm_server_python_interpreter = '/usr/bin/python3'
 let g:coc_snippet_next = '<TAB>'
 let g:coc_snippet_prev = '<S-TAB>'
-let g:coc_status_error_sign = '•'
-let g:coc_status_warning_sign = '•'
-let g:coc_global_extensions =['coc-html','coc-css','coc-snippets','coc-prettier','coc-eslint','coc-emmet','coc-tsserver','coc-pairs','coc-json','coc-python','coc-imselect','coc-highlight','coc-git','coc-emoji','coc-lists','coc-post','coc-stylelint','coc-yaml','coc-template','coc-tabnine']
+let g:coc_status_error_sign = ''
+let g:coc_status_warning_sign = ''
+let g:coc_global_extensions =['coc-html', 'coc-css','coc-snippets','coc-prettier','coc-eslint','coc-emmet','coc-tsserver','coc-pairs','coc-json','coc-python','coc-imselect','coc-highlight','coc-git','coc-emoji','coc-lists','coc-post','coc-stylelint','coc-yaml','coc-template','coc-tabnine']
+" Remap keys for gotos
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+" Remap for rename current word
+nmap <leader>rn <Plug>(coc-rename)
 
 augroup MyAutoCmd
   autocmd!
@@ -380,6 +392,9 @@ let g:ale_linters = {
 """"""""""""""""
 " Vim Settings "
 """"""""""""""""
+
+" Limit line length for text files
+autocmd FileType text,markdown,tex setlocal textwidth=80
 
 " Don't automatically collapse markdown
 set conceallevel=0
