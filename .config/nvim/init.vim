@@ -23,7 +23,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'tpope/vim-fugitive'
 
 " Code Snippets Engine
-" Plug 'SirVer/ultisnips'
+ Plug 'SirVer/ultisnips'
 
 " Snippets for ultisnips
 Plug 'honza/vim-snippets'
@@ -78,7 +78,6 @@ Plug 'yuttie/comfortable-motion.vim'
 Plug 'ryanoasis/vim-devicons'
 
 " Tagbar
-Plug 'majutsushi/tagbar'
 Plug 'liuchengxu/vista.vim'
 
 " NERDTree
@@ -96,12 +95,10 @@ Plug 'lervag/vimtex'
 
 " Wal theme
 Plug 'dylanaraps/wal.vim'
-
 Plug 'deviantfero/wpgtk.vim'
 
 call plug#end()
 
-set completefunc=emoji#complete
 
 
 "#####################################################################################################
@@ -148,7 +145,21 @@ set smartcase
 " Enable mouse scroll
 set mouse=a
 
-"Statusline Config
+" Window Navigation
+" Navigate to left window.
+nnoremap <C-h> <C-w>h
+" Navigate to down window.
+nnoremap <C-j> <C-w>j
+" Navigate to top window.
+nnoremap <C-k> <C-w>k
+" Navigate to right window.
+nnoremap <C-l> <C-w>l
+" Horizontal split then move to bottom window.
+nnoremap <Leader>- <C-w>s
+" Vertical split then move to right window.
+nnoremap <Leader>\| <C-w>v<C-w>l
+
+" Statusline Config
 set statusline+=%F
 set cmdheight=1
 
@@ -162,15 +173,74 @@ set autoindent
 set smartindent
 set shiftround
 
-" Misc
-syntax on
-filetype plugin indent on
-set showmatch
-set formatoptions+=o
-set nocompatible
+" Faster ESC.
+inoremap jk <ESC>
+inoremap kj <ESC>
+
+" Indent controls
+" Reselect text ater indent/unindent.
+vnoremap < <gv
+vnoremap > >gv
+" Tab to indent in visual mode.
+vnoremap <Tab> >gv
+" Shift+Tab to unindent in visual mode.
+vnoremap <S-Tab> <gv
+
+" Text alignment
+nnoremap <Leader>Al :left<CR>
+nnoremap <Leader>Ac :center<CR>
+nnoremap <Leader>Ar :right<CR>
+vnoremap <Leader>Al :left<CR>
+vnoremap <Leader>Ac :center<CR>
+vnoremap <Leader>Ar :right<CR>
+
+" Color scheme to use
 colorscheme wal
-set clipboard=unnamed
+
+" Enable syntax highlighting
+syntax on
+
+" Print syntax highlighting.
+set printoptions+=syntax:y
+
+
+" Matching braces/tags
+set showmatch
+
+" Keep a backup file.
+set backup
+
+" Save undo tree.
+set undofile
+
+" Do not back up temporary files.
+set backupskip=/tmp/*,/private/tmp/*"
+
+" Store backup files in one place.
+set backupdir^=$HOME/.config/nvim//storage/backups//
+
+" Store swap files in one place.
+set dir^=$HOME/.config/nvim//storage/swaps//
+
+" Store undo files in one place.
+set undodir^=$HOME/.config/nvim/storage/undos//
+
+" No line wrapping
 set nowrap
+
+" Turns on detection for fyletypes, indentation files and plugin files
+filetype plugin indent on
+
+" Split window appears right the current one.
+set splitright
+
+set formatoptions-=o
+
+" Make sure compatible mode is disabled
+set nocompatible
+
+" Share yank buffer with system clipboard
+set clipboard=unnamedplus
 
 " Show next 3 lines while scrolling.
 if !&scrolloff
@@ -182,15 +252,11 @@ if !&sidescrolloff
     set sidescrolloff=5
 endif
 
-" Not sure what this does
+" Jump to the last known position when reopening a file.
 if has("autocmd")
   au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
     \| exe "normal! g'\"" | endif
 endif
-
-" Share the yank buffer
-set clipboard=unnamedplus
-
 
 " Relative line numbers
 set number
@@ -200,6 +266,8 @@ augroup numbertoggle
   autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
 augroup END
 
+
+" Subscript digraphs for maths
 "alphsubs ---------------------- {{{
         execute "digraphs ks " . 0x2096
         execute "digraphs as " . 0x2090
@@ -219,6 +287,7 @@ augroup END
         execute "digraphs vs " . 0x1D65
         execute "digraphs xs " . 0x2093
 "}}}
+
 
 " Enable spellchecking for certain files
 augroup markdownSpell
@@ -271,7 +340,6 @@ let g:vimtex_compiler_latexmk = {
 " Goyo    "
 """""""""""
 nmap <F6> :Goyo<CR>
-let g:goyo_width=100
 
 
 """""""""""
@@ -367,11 +435,17 @@ noremap <silent> <ScrollWheelUp>   :call comfortable_motion#flick(-40)<CR>
 let g:comfortable_motion_friction = 50.0
 let g:comfortable_motion_air_drag = 1.0
 
+""""""""""
+" Emoji  "
+""""""""""
+set completefunc=emoji#complete
+
+
 """""""""""""""""
 "Indent Guides  "
 """""""""""""""""
 let g:indentLine_char = '▏'
-filetype plugin indent on    " required
+let g:indent_guides_auto_colors = 1
 let g:indentLine_fileTypeExclude = [
       \'defx',
       \'markdown',
@@ -390,10 +464,11 @@ let g:AutoPairsFlyMode = 0
 """""""""""""
 "Ultinsips  "
 """""""""""""
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<c-b>"
-let g:UltiSnipsJumpBackwardTrigger="<c-z>"
-let g:UltiSnipsListSnippets="<c-tab>"
+" These were interfering with coc.nvims completion keybinds
+"let g:UltiSnipsExpandTrigger="<tab>"
+"let g:UltiSnipsJumpForwardTrigger="<c-b>"
+"let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+"let g:UltiSnipsListSnippets="<c-tab>"
 
 """"""""""""
 "Startify  "
@@ -445,17 +520,6 @@ let g:startify_custom_header = s:center(s:header)
 """""""
 "COC  "
 """""""
-" TEST ZONE! Settings to disable and test effects
-"inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
-"inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
-"hi! link CocWarningSign Number
-"hi! link CocInfoSign Type
-" Make background transparent for many things
-"hi! Normal ctermbg=NONE guibg=NONE
-"hi! NonText ctermbg=NONE guibg=NONE
-"hi! LineNr ctermfg=NONE guibg=NONE
-"hi! SignColumn ctermfg=NONE guibg=NONE
-"hi! StatusLineNC guifg=#16252b guibg=#16252b
 
 " Define Error Symbols and colors
 let airline#extensions#coc#warning_symbol = ':'
@@ -464,9 +528,16 @@ let g:coc_status_warning_sign = ''
 let g:coc_status_error_sign = ''
 hi CocWarningSign ctermfg=blue 
 hi CocErrorSign ctermfg=red
+hi CocInfoSign ctermfg=yellow
+hi CocHintSign ctermfg=green
 
 " Transparent popup window
 hi! Pmenu ctermbg=black
+hi! PmenuSel ctermfg=2
+hi! PmenuSel ctermbg=0
+
+" Brighter line numbers
+hi! LineNr ctermfg=NONE guibg=NONE
 
 " KEY REMAPS ""
 set hidden
@@ -594,4 +665,8 @@ let g:ale_linters = {
 \   'css': ['stylelint'],
 \   'scss': ['stylelint'],
 \}
+
+
+
+
 
