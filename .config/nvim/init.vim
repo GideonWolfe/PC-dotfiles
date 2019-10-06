@@ -359,6 +359,7 @@ let g:airline_symbols.notexists = 'Ɇ'
 let g:airline_symbols.whitespace = 'Ξ'
 let airline#extensions#coc#stl_format_err = '%E{[%e(#%fe)]}'
 let airline#extensions#coc#stl_format_warn = '%W{[%w(#%fw)]}'
+let g:airline#extensions#unicode#enabled = 1
 let g:airline_section_error = '%{airline#util#wrap(airline#extensions#coc#get_error(),0)}'
 let g:airline_section_warning = '%{airline#util#wrap(airline#extensions#coc#get_warning(),0)}'
 
@@ -367,12 +368,19 @@ let g:airline_section_warning = '%{airline#util#wrap(airline#extensions#coc#get_
 "Devicons   "
 """""""""""""
 let g:webdevicons_enable = 1
+let g:webdevicons_enable_unite = 1
+let g:webdevicons_enable_denite = 1
+let g:webdevicons_enable_nerdtree = 1
 let g:webdevicons_enable_airline_tabline = 1
+let g:webdevicons_enable_vimfiler = 1
+let g:WebDevIconsUnicodeDecorateFileNodes = 1
+let g:WebDevIconsUnicodeDecorateFolderNodes = 1
+let g:WebDevIconsUnicodeGlyphDoubleWidth = 1
 let g:webdevicons_enable_airline_statusline = 1
+let g:WebDevIconsNerdTreeGitPluginForceVAlign = 1
 let g:WebDevIconsUnicodeGlyphDoubleWidth = 1
 let g:WebDevIconsUnicodeDecorateFolderNodesDefaultSymbol = ''
 let g:DevIconsDefaultFolderOpenSymbol = ''
-let g:airline#extensions#unicode#enabled = 1
 
 """""""""""""""""
 "Comfy-Scroll   "
@@ -387,7 +395,15 @@ let g:comfortable_motion_air_drag = 1.0
 """""""""""""""""
 let g:indentLine_char = '▏'
 filetype plugin indent on    " required
-let g:indentLine_fileTypeExclude = ['defx', 'markdown', 'denite', 'startify', 'tagbar', 'vista_kind', 'vista']
+let g:indentLine_fileTypeExclude = [
+      \'defx',
+      \'markdown',
+      \'denite',
+      \'startify',
+      \'tagbar',
+      \'vista_kind',
+      \'vista'
+      \]
 
 """""""""""""
 "Autopairs  "
@@ -443,38 +459,18 @@ let s:header= [
       \"             ::::::`:::::;'  /  /   `#",
       \]
 
-"let s:footer = [
-"    \"               ...",
-"    \"             ;::::;",
-"    \"           ;::::; :;",
-"    \"         ;:::::'   :;",
-"    \"        ;:::::;     ;.",
-"    \"       ,:::::'       ;           OOO\ ",
-"    \"       ::::::;       ;          OOOOO\ ",
-"    \"       ;:::::;       ;         OOOOOOOO",
-"    \"      ,;::::::;     ;'         / OOOOOOO",
-"    \"    ;:::::::::`. ,,,;.        /  / DOOOOOO",
-"    \"  .';:::::::::::::::::;,     /  /     DOOOO",
-"    \" ,::::::;::::::;;;;::::;,   /  /        DOOO",
-"    \";`::::::`'::::::;;;::::: ,#/  /          DOOO",
-"    \":`:::::::`;::::::;;::: ;::#  /            DOOO",
-"    \"::`:::::::`;:::::::: ;::::# /              DOO",
-"    \"`:`:::::::`;:::::: ;::::::#/               DOO",
-"    \" :::`:::::::`;; ;:::::::::##                OO",
-"    \" ::::`:::::::`;::::::::;:::#                OO",
-"    \" `:::::`::::::::::::;'`:;::#                O",
-"    \"  `:::::`::::::::;' /  / `:#",
-"    \"   ::::::`:::::;'  /  /   `#",
-"  \]
 let g:startify_change_to_dir = 1
 let g:startify_custom_header = s:center(s:header)
+" Optionally create and use footer
+"let s:header= []
 "let g:startify_custom_footer = s:center(s:footer)
 
 """""""
 "COC  "
 """""""
-" coc.nvim color changes
-"hi! link CocErrorSign WarningMsg
+" TEST ZONE! Settings to disable and test effects
+"inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+"inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 "hi! link CocWarningSign Number
 "hi! link CocInfoSign Type
 " Make background transparent for many things
@@ -482,20 +478,69 @@ let g:startify_custom_header = s:center(s:header)
 "hi! NonText ctermbg=NONE guibg=NONE
 "hi! LineNr ctermfg=NONE guibg=NONE
 "hi! SignColumn ctermfg=NONE guibg=NONE
-"hi! StatusLine guifg=#16252b guibg=#6699CC
 "hi! StatusLineNC guifg=#16252b guibg=#16252b
+
+" Define Error Symbols and colors
+let airline#extensions#coc#warning_symbol = ':'
+let airline#extensions#coc#error_symbol = ':'
+let g:coc_status_warning_sign = ''
+let g:coc_status_error_sign = ''
+hi CocWarningSign ctermfg=blue 
+hi CocErrorSign ctermfg=red
+
+" Transparent popup window
 hi! Pmenu ctermbg=black
+
 " KEY REMAPS ""
-inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
-inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 set hidden
 set updatetime=300
 let g:ycm_server_python_interpreter = '/usr/bin/python3'
 let g:coc_snippet_next = '<TAB>'
 let g:coc_snippet_prev = '<S-TAB>'
-let g:coc_status_error_sign = ''
-let g:coc_status_warning_sign = ''
-let g:coc_global_extensions =['coc-html', 'coc-css','coc-snippets','coc-prettier','coc-eslint','coc-emmet','coc-tsserver','coc-pairs','coc-json','coc-python','coc-imselect','coc-highlight','coc-git','coc-emoji','coc-lists','coc-post','coc-stylelint','coc-yaml','coc-template','coc-tabnine']
+
+" Extensions. Some need configuration. 
+" coc-java needs a valid JVM filepath defined in coc-settings
+" coc-ccls needs ccls (available on aur)
+" coc-eslint needs eslint npm package installed globally
+let g:coc_global_extensions = [
+      \'coc-html', 
+      \'coc-xml', 
+      \'coc-java', 
+      \'coc-ccls', 
+      \'coc-powershell', 
+      \'coc-r-lsp', 
+      \'coc-vimlsp', 
+      \'coc-lua', 
+      \'coc-sql', 
+      \'coc-go', 
+      \'coc-css', 
+      \'coc-sh', 
+      \'coc-snippets',
+      \'coc-prettier',
+      \'coc-eslint',
+      \'coc-emmet',
+      \'coc-tsserver',
+      \'coc-translator',
+      \'coc-fish',
+      \'coc-docker',
+      \'coc-pairs',
+      \'coc-json',
+      \'coc-python',
+      \'coc-imselect',
+      \'coc-highlight',
+      \'coc-git',
+      \'coc-github',
+      \'coc-gitignore',
+      \'coc-emoji',
+      \'coc-lists',
+      \'coc-post',
+      \'coc-stylelint',
+      \'coc-yaml',
+      \'coc-template',
+      \'coc-tabnine',
+      \'coc-utils'
+      \]
+
 " Remap keys for gotos
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
