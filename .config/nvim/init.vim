@@ -50,7 +50,10 @@ Plug 'Yggdroot/indentLine'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " Smart completion (to work with CoC)
-" Plug 'zxqfl/tabnine-vim'
+Plug 'zxqfl/tabnine-vim'
+
+" More langage support packs
+Plug 'sheerun/vim-polyglot'
 
 " Custom start page
 Plug 'mhinz/vim-startify'
@@ -76,6 +79,7 @@ Plug 'ryanoasis/vim-devicons'
 
 " Tagbar
 Plug 'majutsushi/tagbar'
+Plug 'liuchengxu/vista.vim'
 
 " NERDTree
 Plug 'scrooloose/nerdtree'
@@ -269,40 +273,13 @@ let g:vimtex_compiler_latexmk = {
 nmap <F6> :Goyo<CR>
 let g:goyo_width=100
 
-"""""""""""
-" Tagbar  "
-"""""""""""
-nmap <F8> :TagbarToggle<CR>
-let g:tagbar_width=35
-let g:tagbar_type_go = {
-    \ 'ctagstype' : 'go',
-    \ 'kinds' : [
-        \ 'p:package',
-        \ 'i:imports:1',
-        \ 'c:constants',
-        \ 'v:variables',
-        \ 't:types',
-        \ 'n:interfaces',
-        \ 'w:fields',
-        \ 'e:embedded',
-        \ 'm:methods',
-        \ 'r:constructor',
-        \ 'f:functions'
-    \ ],
-    \ 'sro' : '.',
-    \ 'kind2scope' : {
-        \ 't' : 'ctype',
-        \ 'n' : 'ntype'
-    \ },
-    \ 'scope2kind' : {
-        \ 'ctype' : 't',
-        \ 'ntype' : 'n'
-    \ },
-    \ 'ctagsbin' : 'gotags',
-    \ 'ctagsargs' : '-sort -silent'
-    \ }
 
-
+"""""""""""
+" Vista  "
+"""""""""""
+nmap <F8> :Vista!!<CR>
+let g:vista_icon_indent = ["╰─▸ ", "├─▸ "]
+let g:vista#renderer#enable_icon = 1
 
 """"""""""""
 "NerdTree  "
