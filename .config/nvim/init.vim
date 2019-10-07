@@ -84,6 +84,7 @@ Plug 'liuchengxu/vista.vim'
 " NERDTree
 Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 
 " Emoji support
 Plug 'junegunn/vim-emoji'
@@ -162,6 +163,13 @@ nnoremap <C-l> <C-w>l
 nnoremap <Leader>- <C-w>s
 " Vertical split then move to right window.
 nnoremap <Leader>\| <C-w>v<C-w>l
+" Cycle tabs with Tab and Shift+Tab
+nnoremap<silent> <Tab> :bnext<CR>
+nnoremap<silent> <S-Tab> :bprevious<CR>
+" Kill buffer with Space+bk
+nnoremap<silent> <Space>bk :bdelete<CR> 
+
+
 
 " Statusline Config
 set statusline+=%F
@@ -355,17 +363,24 @@ nmap <F6> :Goyo<CR>
 " Vista  "
 """""""""""
 nmap <F8> :Vista!!<CR>
+let g:vista_executive_for = {
+      \ 'c': 'coc',
+      \ }
+nnoremap <silent><leader>vf :Vista finder coc<CR>
 let g:vista_icon_indent = ["╰─▸ ", "├─▸ "]
 let g:vista#renderer#enable_icon = 1
+let g:vista_sidebar_width = 50
 
 """"""""""""
 "NerdTree  "
 """"""""""""
+" if nerdtree is only window, kill nerdtree so buffer can die
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | :bdelete | endif
 map <F7> :NERDTreeToggle<CR>
 let nerdtreequitonopen = 0
 let NERDTreeShowHidden=1
 let nerdchristmastree=1
-let g:NERDTreeMinimalUI = 1
+let g:NERDTreeMinimalUI = 0
 let g:nerdtreewinsize = 25
 let g:NERDTreeDirArrowExpandable = '▷'
 let g:NERDTreeDirArrowCollapsible = '▼'
