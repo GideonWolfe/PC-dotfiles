@@ -21,9 +21,10 @@ call plug#begin('~/.vim/plugged')
 
 " Git wrapper
 Plug 'tpope/vim-fugitive'
+Plug 'airblade/vim-gitgutter'
 
 " Code Snippets Engine
- Plug 'SirVer/ultisnips'
+Plug 'SirVer/ultisnips'
 
 " Snippets for ultisnips
 Plug 'honza/vim-snippets'
@@ -35,7 +36,7 @@ Plug 'dylanaraps/wal'
 Plug 'tpope/vim-surround'
 
 " Linter
-"Plug 'dense-analysis/ale'
+""Plug 'dense-analysis/ale'
 
 " Auto pairs
 Plug 'jiangmiao/auto-pairs'
@@ -43,7 +44,7 @@ Plug 'jiangmiao/auto-pairs'
 " Multiple Cursors
 Plug 'terryma/vim-multiple-cursors'
 
-" Indent guides
+"" Indent guides
 Plug 'Yggdroot/indentLine'
 
 " COC
@@ -144,6 +145,9 @@ set smartcase
 
 " Enable mouse scroll
 set mouse=a
+
+" Allow a new buffer to be opened without saving current
+set hidden
 
 " Window Navigation
 " Navigate to left window.
@@ -311,6 +315,11 @@ augroup END
 "
 "*****************************************************************************************
 
+"""""""""""""""
+" Git Gutter  "
+"""""""""""""""
+let g:gitgutter_enabled = 1
+let g:gitgutter_grep=''
 
 """""""""""
 " VimTex  "
@@ -373,17 +382,16 @@ let g:NERDTreeIndicatorMapCustom = {
         \ 'ignored'   : '☒',
         \ "unknown"   : "?"
         \ }
+ 
 
 """"""""""""
 "Airline   "
 """"""""""""
+"main settings
 let g:airline_theme='wpgtk'
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#ale#enabled = 1
 let g:airline_powerline_fonts = 1
-if !exists('g:airline_symbols')
-    let g:airline_symbols = {}
-endif
+let g:airline_symbols = {}
+let g:airline_skip_empty_sections = 1
 let g:airline_left_sep = ''
 let g:airline_left_alt_sep = ''
 let g:airline_right_sep = ''
@@ -402,11 +410,24 @@ let g:airline_symbols.paste = '∥'
 let g:airline_symbols.spell = 'Ꞩ'
 let g:airline_symbols.notexists = 'Ɇ'
 let g:airline_symbols.whitespace = 'Ξ'
-let airline#extensions#coc#stl_format_err = '%E{[%e(#%fe)]}'
-let airline#extensions#coc#stl_format_warn = '%W{[%w(#%fw)]}'
-let g:airline#extensions#unicode#enabled = 1
+let g:airline_symbols.modified = ' '
 let g:airline_section_error = '%{airline#util#wrap(airline#extensions#coc#get_error(),0)}'
 let g:airline_section_warning = '%{airline#util#wrap(airline#extensions#coc#get_warning(),0)}'
+"extensions
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#ale#enabled = 1
+let g:airline#extensions#coc#enabled = 1
+let g:airline#extensions#unicode#enabled = 1
+let g:airline#extensions#branch#enabled = 1
+let g:airline#extensions#vista#enabled = 1
+let g:airline#extensions#hunks#enabled = 1
+"extension settings
+let airline#extensions#coc#stl_format_err = '%E{[%e(#%fe)]}'
+let airline#extensions#coc#stl_format_warn = '%W{[%w(#%fw)]}'
+let airline#extensions#coc#warning_symbol = ':'
+let airline#extensions#coc#error_symbol = ':'
+let g:airline#extensions#hunks#hunk_symbols = [':', ':', ':']
+let g:airline#extensions#branch#format = 2
 
 
 """"""""""""""
@@ -522,8 +543,6 @@ let g:startify_custom_header = s:center(s:header)
 """""""
 
 " Define Error Symbols and colors
-let airline#extensions#coc#warning_symbol = ':'
-let airline#extensions#coc#error_symbol = ':'
 let g:coc_status_warning_sign = ''
 let g:coc_status_error_sign = ''
 hi CocWarningSign ctermfg=blue 
@@ -540,7 +559,6 @@ hi! PmenuSel ctermbg=0
 hi! LineNr ctermfg=NONE guibg=NONE
 
 " KEY REMAPS ""
-set hidden
 set updatetime=300
 let g:ycm_server_python_interpreter = '/usr/bin/python3'
 let g:coc_snippet_next = '<TAB>'
@@ -665,8 +683,6 @@ let g:ale_linters = {
 \   'css': ['stylelint'],
 \   'scss': ['stylelint'],
 \}
-
-
 
 
 
