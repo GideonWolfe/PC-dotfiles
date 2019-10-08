@@ -14,7 +14,7 @@
 
 
 # Mod Key Binding
-set $mod Mod1
+set $mod Mod4
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -224,6 +224,9 @@ exec --no-startup-id xrandr --dpi 210
 # automount usb
 #exec udiskie &
 
+#daemon for spotify
+exec --no-startup-id spotifyd
+
 #firefox
 exec --no-startup-id i3-msg 'workspace 4: Web ; exec /usr/bin/firefox'
 
@@ -254,5 +257,5 @@ bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -2%
 bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
 
 # Disables screen blanking
-exec --no-startup-id xset s off
-exec --no-startup-id xset -dpms
+exec_always --no-startup-id xset s off
+exec_always --no-startup-id xset -dpms
